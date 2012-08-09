@@ -1,0 +1,415 @@
+\section{Introduction}
+% Computer Society journal papers do something a tad strange with the very
+% first section heading (almost always called "Introduction"). They place it
+% ABOVE the main text! IEEEtran.cls currently does not do this for you.
+% However, You can achieve this effect by making LaTeX jump through some
+% hoops via something like:
+%
+%\ifCLASSOPTIONcompsoc
+%  \noindent\raisebox{2\baselineskip}[0pt][0pt]%
+%  {\parbox{\columnwidth}{\section{Introduction}\label{sec:introduction}%
+%  \global\everypar=\everypar}}%
+%  \vspace{-1\baselineskip}\vspace{-\parskip}\par
+%\else
+%  \section{Introduction}\label{sec:introduction}\par
+%\fi
+%
+% Admittedly, this is a hack and may well be fragile, but seems to do the
+% trick for me. Note the need to keep any \label that may be used right
+% after \section in the above as the hack puts \section within a raised box.
+
+
+
+% The very first letter is a 2 line initial drop letter followed
+% by the rest of the first word in caps (small caps for compsoc).
+% 
+% form to use if the first word consists of a single letter:
+% \IEEEPARstart{A}{demo} file is ....
+% 
+% form to use if you need the single drop letter followed by
+% normal text (unknown if ever used by IEEE):
+% \IEEEPARstart{A}{}demo file is ....
+% 
+% Some journals put the first two words in caps:
+% \IEEEPARstart{T}{his demo} file is ....
+% 
+% Here we have the typical use of a "T" for an initial drop letter
+% and "HIS" in caps to complete the first word.
+\IEEEPARstart{T}{he}   main purpose of graphics is to summarize data and present them in a way that readers are able to extract the main message(s) quickly and with a minimum of distortion (cleveland, tufte - lie-factor). 
+
+As designers of charts we have to be aware of the innate or culturally imposed perceptual limitations of our audience.
+%
+
+%% from http://what-when-how.com/sociology/statistical-graphics/
+%The effectiveness of statistical graphs is rooted in the remarkable ability of people to apprehend, process, and remember pictorial information. The human visual system, however, is subject to distortion and illusion, processes that can affect the perception of graphs. Good graphical design can minimize and counteract the limitations of human vision. In Figure 9, for example, it appears that the difference between the hypothetical import and export series is changing when this difference actually is constant (cf., Playfair’s time series graph in Figure 2 a). 
+
+The top chart in Figure \ref{playfair} shows Playfair's  visualization of the balance of trade between England and the East Indies as published in his Commercial and Political Atlas, 1786 \cite{playfair, playfair2}. The chart at the bottom of  figure \ref{playfair}, where a line is sketched for the difference between imports and exports. The steep rise in the difference between the lines starting just before 1760 is missed by many onlookers, exhibiting a particularly strong line width illusion. This phenomenon  is known and widely discussed in statistical graphics literature \citep{cleveland:1984, wainer:2000, robbins:2005}. 
+The line width illusion is due to our  tendency to assess distance between curves as the minimal (orthogonal) distance rather than the  vertical distance -- see sketch \ref{fig:linewidth} for a more detailed discussion and some results from a user study.
+
+We will next give an overview of  charts commonly used for displaying associations between categorical variables within the framework of parallel coordinate plots, and discuss their performance with respect to the line width illusion.
+
+XXX Why don't we mention mosaics? - I don't want to, but we need a better reason
+
+\begin{figure}
+\includegraphics[width=.9\linewidth]{playfair_east_indies_gross}
+\includegraphics[width=.8\linewidth]{playfair_differenz_cleveland}
+\caption{Playfair's chart from the Commercial and Political Atlas, 1786 (above). The sketch below shows  the difference between the lines for export and import - the steep rise in the difference around 1760  comes as a surprise to many onlookers.  }
+\label{playfair}
+\end{figure}
+
+
+
+\subsection{Parallel Coordinate Plots for Categorical Data}
+
+
+Parallel Sets have been introduced by R Kosara \citep{kosara:2006} as a way to visualize categorical data within the framework of parallel coordinate plots \citep{pcp:1885, inselberg:1985, wegman:1990} and have by now spread into main media, see e.g. the article on decision making in the BBC \citep{bbc:2009}. 
+
+XXX Description of parallel sets - and example
+
+However, the parallel sets plot suffer from a line width illusion, that can -- as we demonstrate in this paper -- be so severe as to lead the user to wrong conclusions about the displayed data. 
+Hammock plots \citep{schonlau:2003} provide an alternative to parallel sets that does not suffer from the illusion. 
+XXX Description of hammock plots and example
+
+Hammock plots need control over the plotting device - such as a fixed aspect ratio, which is sometimes problematic. 
+In this paper, we propose a new approach to visualizing categorical variables in a parallel coordinate plot setting, called the {\it common angle} display. 
+
+
+\subsection{Strength of the Linewidth Illusion}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=.9\linewidth]{images/hammock-titanic}
+\caption{\label{question1a} Parallel sets plot showing Survival by Class for the Titanic Data as assembled by \citep{dawson:1995}.}
+\end{figure}
+
+\begin{figure}[hbtp]
+\begin{center}
+\includegraphics[width=.8\linewidth]{images/bar1-titanic}
+\includegraphics[width=.8\linewidth]{images/bar2-titanic}
+\end{center}
+\caption{\label{question1b} Barcharts showing Survival by Class for the Titanic Data.}
+\end{figure}
+
+
+
+Participants are asked to rank class levels according to the number of survivors based on one of the two plots in figures \ref{question1a} and \ref{question1b}. The actual number of survivors by class are
+%
+\begin{center}
+\begin{tabular}{rrrr}
+Crew & 1st & 2nd & 3rd \\ \hline
+212 & 203 & 118 & 178
+\end{tabular}
+\end{center}
+
+
+% latex table generated in R 2.15.0 by xtable 1.7-0 package
+% Sat May 12 20:04:08 2012
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{rrrl}
+  \hline
+ & barcharts & parallel sets & Correct \\ 
+  \hline
+1st, Crew, 3rd, 2nd & 3 & 1 &  \\ 
+  2nd, Crew, 3rd, 1st & 0 & 8 &  \\ 
+  3rd, Crew, 2nd, 1st & 0 & 4 &  \\ 
+  Crew, 1st, 3rd, 2nd & 7 & 0 & * \\ 
+  Crew, 2nd, 3rd, 1st & 1 & 0 &  \\ 
+  Crew, 3rd, 2nd, 1st & 1 & 0 &  \\ 
+   \hline
+(all) & 12 & 13 &  \\ 
+   \hline
+\end{tabular}
+\caption{Overview of survey results: 7 out of 12 participants facing the barchart picked the correct order of `Crew, 1st, 3rd, 2nd'. None of the 13 participants evaluating the parallel set plot picked the correct result. XXX we need to figure out whether participants sorted lowest to highest or highest to lowest}
+\label{tab:results}
+\end{center}
+\end{table}
+
+
+
+Table \ref{tab:results} shows an overview of the results from the survey: 7 out of 12 participants evaluating the barcharts identify the correct order, whereas none of the 13 participants evaluating the parallel sets plot do (XXXX significance?). This is due to a strong preference of evaluating the width of lines orthogonal to their slopes as opposed to horizontally (see sketch \ref{fig:linewidth}), as would be needed for a correct assessment of the parallel sets plot.
+Orthogonal $w_o$ and horizontal $w_h$ linewidths are related -- the orthogonal linewidth depends on the angle (or slope) of the line:
+\[
+w_o = w_h \text{cos } \theta,
+\]
+where $\theta$ is the angle of the line with respect to the horizontal line.
+While the intuitive assessment of line widths by their width orthogonal to slope is well known (XXX point towards Playfair's import export chart/  need literature reference here), it is surprising to see its strength: in this particular setting, it is strong enough to `shrink' the horizontally widest line by more than 16\%, from 212 to below 178. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.6\linewidth]{images/linewidth}
+\end{center}
+\caption{\label{fig:linewidth}Sketch of linewidth assessments: (a) is showing the horizontal width, (b) is  width orthogonal to the slope. Participants preferred method (b) over (a).}
+\end{figure}
+
+\begin{figure*}[htbp]
+\begin{center}
+\includegraphics[height=1.25in]{images/aspect31-titanic.pdf}
+\includegraphics[height=1.25in]{images/aspect33-titanic.pdf}
+\end{center}
+\caption{\label{fig:aspect}Parallel sets plots of survival on the Titanic by class. Different aspect ratios  seemingly change the (orthogonal) line width, compare e.g. number of survivors in 3rd class and in the crew. }
+\end{figure*}
+
+The slope very much depends on the aspect ratio of a plot - changing the aspect ratio will change the assessment of the order. Figure \ref{fig:aspect} shows the same parallel sets plot of survival on the Titanic by class: in the left plot the number of surviving 3rd class passengers seems to be about twice as big as the number of survivors among crew members, whereas on the right the lines have about equal (orthogonal) width.
+% needed in second column of first page if using \IEEEpubid
+%\IEEEpubidadjcol
+
+\section{ Common Angle Plots}
+\subsection{Construction}
+
+%library(ggparallel)
+%ggparallel(names(titanic)[c(1,2)], order=0, titanic, weight="Freq", angle=0) +%    scale_fill_brewer(palette="Set1", guide="none") +%    scale_colour_brewer(palette="Set1", guide="none") + coord_flip() 
+%ggsave("ca-titanic.pdf", width=5, height=3)
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=\linewidth]{ca-titanic} 
+   \caption{Common Angle plot}
+   \label{fig:ca-titanic}
+\end{figure}
+
+Figure \ref{fig:ca-titanic} shows a common angle plot. 
+XXX Jen Christensen
+\subsection{Applications}
+XXX biological findings - pathways - what are the new findings?
+
+\begin{figure*}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=\linewidth]{ca-kegg} 
+   \caption{Common angle plot }
+   \label{fig:kegg}
+\end{figure*}
+
+\subsection{Implementation}
+All three of the discussed variants of parallel coordinate plots for categorical data are implemented as package {\tt ggparallel} in the software {\tt R} 2.15.1 \citep{R}.
+\section{Evaluation}
+XXX need IRB modification to allow comparison of common angles, parallel sets and hammock plots
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE CS typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+% However, the Computer Society has been known to put floats at the bottom.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE CS papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals use top floats exclusively.
+% However, Computer Society journals sometimes do use bottom floats - bear
+% this in mind when choosing appropriate optional arguments for the
+% figure/table environments.
+% Note that, LaTeX2e, unlike IEEE journals, places footnotes above bottom
+% floats. This can be corrected via the \fnbelowfloat command of the
+% stfloats package.
+
+
+
+\section{Conclusion}
+%The conclusion goes here. The conclusion goes here.The conclusion goes here.The conclusion goes here.The conclusion goes here.The conclusion goes here.The conclusion goes here.The conclusion goes here.The conclusion goes here.The conclusion goes here.The conclusion goes here.The conclusion goes here.The conclusion goes here.The conclusion goes here.The conclusion goes here.The conclusion goes here.The conclusion goes here.The conclusion goes here.The conclusion goes here.The conclusion goes here. The conclusion goes here.The conclusion goes here.The conclusion goes here.The conclusion goes here.
+
+
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+%
+%\appendices
+%\section{Proof of the First Zonklar Equation}
+%Appendix one text goes here.
+%
+% you can choose not to have a title for an appendix
+% if you want by leaving the argument blank
+%\section{}
+%Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.Appendix two text goes here.
+%
+
+% use section* for acknowledgement
+\ifCLASSOPTIONcompsoc
+  % The Computer Society usually uses the plural form
+  \section*{Acknowledgments}
+\else
+  % regular IEEE prefers the singular form
+  \section*{Acknowledgment}
+\fi
+
+
+The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...The authors would like to thank...
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+\bibliography{references}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+%\begin{thebibliography}{1}
+%
+%\bibitem{IEEEhowto:kopka}
+%%This is an example of a book reference
+%H. Kopka and P.W. Daly, \emph{A Guide to {\LaTeX}}, third ed. Harlow, U.K.: Addison-Wesley, 1999.
+%
+%
+%%This is an example of a Transactions article reference
+%%D.S. Coming and O.G. Staadt, "Velocity-Aligned Discrete Oriented Polytopes for Dynamic Collision Detection," IEEE Trans. Visualization and Computer Graphics, vol.†14,† no.†1,† pp. 1-12,† Jan/Feb† 2008, doi:10.1109/TVCG.2007.70405.
+%
+%%This is an example of a article from a conference proceeding
+%%H. Goto, Y. Hasegawa, and M. Tanaka, "Efficient Scheduling Focusing on the Duality of MPL Representation," Proc. IEEE Symp. Computational Intelligence in Scheduling (SCIS '07), pp. 57-64, Apr. 2007, doi:10.1109/SCIS.2007.367670.
+%
+%%This is an example of a PrePrint reference
+%%J.M.P. Martinez, R.B. Llavori, M.J.A. Cabo, and T.B. Pedersen, "Integrating Data Warehouses with Web Data: A Survey," IEEE Trans. Knowledge and Data Eng., preprint, 21 Dec. 2007, doi:10.1109/TKDE.2007.190746.
+%
+%%Again, see the IEEEtrans_HOWTO.pdf for several more bibliographical examples. Also, more style examples
+%%can be seen at http://www.computer.org/author/style/transref.htm
+%\end{thebibliography}
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{biography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+
+\begin{IEEEbiography}{Heike Hofmann}
+Biography text here.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}{Marie Vendettuoli}
+Biography text here.
+\end{IEEEbiography}
+
+% if you will not have a photo at all:
+%\begin{IEEEbiographynophoto}{John Doe}
+%Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.
+%\end{IEEEbiographynophoto}
+%
+%% insert where needed to balance the two columns on the last page with
+%% biographies
+%%\newpage
+%
+%\begin{IEEEbiographynophoto}{Jane Doe}
+%Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.Biography text here.
+%\end{IEEEbiographynophoto}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+% that's all folks
