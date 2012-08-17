@@ -1,3 +1,4 @@
+% !TEX root = journal.tex
 \section{Introduction}
 % Computer Society journal papers do something a tad strange with the very
 % first section heading (almost always called "Introduction"). They place it
@@ -39,6 +40,7 @@
 
 As designers of charts we have to be aware of the innate or culturally imposed perceptual limitations of our audience.
 %
+In this paper we focus on the use of parallel coordinate plots \citep{pcp:1885, inselberg:1985, wegman:1990} for categorical data and the perceptual implications this has.
 
 %% from http://what-when-how.com/sociology/statistical-graphics/
 %The effectiveness of statistical graphs is rooted in the remarkable ability of people to apprehend, process, and remember pictorial information. The human visual system, however, is subject to distortion and illusion, processes that can affect the perception of graphs. Good graphical design can minimize and counteract the limitations of human vision. In Figure 9, for example, it appears that the difference between the hypothetical import and export series is changing when this difference actually is constant (cf., Playfair’s time series graph in Figure 2 a). 
@@ -48,7 +50,7 @@ The line width illusion is due to our  tendency to assess distance between curve
 
 We will next give an overview of  charts commonly used for displaying associations between categorical variables within the framework of parallel coordinate plots, and discuss their performance with respect to the line width illusion.
 
-XXX Why don't we mention mosaics? - I don't want to, but we need a better reason
+%XXX Why don't we mention mosaics? - I don't want to, but we need a better reason
 
 \begin{figure}
 \includegraphics[width=.9\linewidth]{playfair_east_indies_gross}
@@ -59,26 +61,22 @@ XXX Why don't we mention mosaics? - I don't want to, but we need a better reason
 
 
 
-\subsection{Parallel Coordinate Plots for Categorical Data}
+\subsection{Parallel Set Plots}
 
 
-Parallel Sets have been introduced by R Kosara \citep{kosara:2006} as a way to visualize categorical data within the framework of parallel coordinate plots \citep{pcp:1885, inselberg:1985, wegman:1990} and have by now spread into main media, see e.g. the article on decision making in the BBC \citep{bbc:2009}. 
+Parallel Sets have been introduced by R Kosara \citep{kosara:2006} as a way to visualize categorical data within the framework of parallel coordinate plots  and have by now spread into main media, see e.g. the article on decision making in the BBC \citep{bbc:2009}. 
 
-XXX Description of parallel sets - and example
+%XXX Description of parallel sets - and example
+Figure \ref{question1a} gives an example for a parallel sets of the Titanic data \citet{dawson:1995}. The top bar shows classification of people on board according to their status as crew member and passengers. Passengers are further divided into first, second or third class. The bottom bar shows survival status as yes and no for non-survival. Between the bars lines are drawn to visualize survival status according to class membership. Based on the proportion of survivor and non survivors bands are drawn from each class, the (horizontal) width of which is proportional to the number of people they represent.
 
-However, the parallel sets plot suffer from a line width illusion, that can -- as we demonstrate in this paper -- be so severe as to lead the user to wrong conclusions about the displayed data. 
-Hammock plots \citep{schonlau:2003} provide an alternative to parallel sets that does not suffer from the illusion. 
-XXX Description of hammock plots and example
-
-Hammock plots need control over the plotting device - such as a fixed aspect ratio, which is sometimes problematic. 
-In this paper, we propose a new approach to visualizing categorical variables in a parallel coordinate plot setting, called the {\it common angle} display. 
+However, the parallel sets plot suffers from the line width illusion, that can in extreme cases be so severe as to lead the user to wrong conclusions about the displayed data.  Section \ref{survey1} will show more details on the strength of this illusion.
 
 
-\subsection{Strength of the Linewidth Illusion}
+\subsection{Strength of the Linewidth Illusion}\label{survey1}
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=.9\linewidth]{images/hammock-titanic}
-\caption{\label{question1a} Parallel sets plot showing Survival by Class for the Titanic Data as assembled by \citep{dawson:1995}.}
+\includegraphics[width=.9\linewidth]{images/parset-titanic}
+\caption{\label{question1a} Parallel sets plot showing Survival by Class for the Titanic Data. }
 \end{figure}
 
 \begin{figure}[hbtp]
@@ -94,9 +92,10 @@ In this paper, we propose a new approach to visualizing categorical variables in
 Participants are asked to rank class levels according to the number of survivors based on one of the two plots in figures \ref{question1a} and \ref{question1b}. The actual number of survivors by class are
 %
 \begin{center}
-\begin{tabular}{rrrr}
-Crew & 1st & 2nd & 3rd \\ \hline
-212 & 203 & 118 & 178
+\begin{tabular}{rrrrr}
+& Crew & 1st & 2nd & 3rd \\ \hline
+Survivors & 212 & 203 & 118 & 178\\
+Non-Survivors & 673 & 122 & 167 &  528  
 \end{tabular}
 \end{center}
 
@@ -109,9 +108,9 @@ Crew & 1st & 2nd & 3rd \\ \hline
   \hline
  & barcharts & parallel sets & Correct \\ 
   \hline
-1st, Crew, 3rd, 2nd & 3 & 1 &  \\ 
-  2nd, Crew, 3rd, 1st & 0 & 8 &  \\ 
-  3rd, Crew, 2nd, 1st & 0 & 4 &  \\ 
+ 1st, 3rd, Crew,  2nd & 0 & 8 &  \\ 
+  1st, 2nd, Crew, 3rd & 0 & 4 &  \\ 
+ 1st, Crew, 3rd, 2nd & 3 & 1 &  \\ 
   Crew, 1st, 3rd, 2nd & 7 & 0 & * \\ 
   Crew, 2nd, 3rd, 1st & 1 & 0 &  \\ 
   Crew, 3rd, 2nd, 1st & 1 & 0 &  \\ 
@@ -119,7 +118,7 @@ Crew & 1st & 2nd & 3rd \\ \hline
 (all) & 12 & 13 &  \\ 
    \hline
 \end{tabular}
-\caption{Overview of survey results: 7 out of 12 participants facing the barchart picked the correct order of `Crew, 1st, 3rd, 2nd'. None of the 13 participants evaluating the parallel set plot picked the correct result. XXX we need to figure out whether participants sorted lowest to highest or highest to lowest}
+\caption{Overview of survey results: 7 out of 12 participants facing the barchart picked the correct order of `Crew, 1st, 3rd, 2nd' (highest number of survivors to lowest). None of the 13 participants evaluating the parallel set plot picked the correct result. }
 \label{tab:results}
 \end{center}
 \end{table}
@@ -152,6 +151,21 @@ While the intuitive assessment of line widths by their width orthogonal to slope
 The slope very much depends on the aspect ratio of a plot - changing the aspect ratio will change the assessment of the order. Figure \ref{fig:aspect} shows the same parallel sets plot of survival on the Titanic by class: in the left plot the number of surviving 3rd class passengers seems to be about twice as big as the number of survivors among crew members, whereas on the right the lines have about equal (orthogonal) width.
 % needed in second column of first page if using \IEEEpubid
 %\IEEEpubidadjcol
+\subsection{Hammock Plots}
+Hammock plots \citep{schonlau:2003} provide an alternative to parallel sets that does not suffer from the illusion. 
+XXX Description of hammock plots and example
+
+\begin{figure}
+%ggparallel(names(titanic)[c(1,4,2,1)], order=0, method="hammock", angle=0, titanic, weight="Freq") +%scale_fill_brewer(palette="Paired", guide="none") +%scale_colour_brewer(palette="Paired", guide="none") + coord_flip()
+%ggsave("hammock-titanic.pdf", width=6, height=8)
+\centering
+\includegraphics[width=.9\linewidth]{images/hammock-titanic}
+\caption{\label{hammock} Hammock plot of the Titanic Data. Line widths are representing the number of people each combination has (adjusted for the slope of the line).  Barely any women were in the crew, while male crew members make up the second largest contingent overall. While a few more men survived than women, proportionally the situation is much different -- a much higher percentage of women survived than men. We also see, that more first class passengers survived than not, while second class passengers survival chances were about fifty-fifty. For third class passengers and crew members fewer members did  survive than not. }
+\end{figure}
+
+Hammock plots need control over the plotting device - such as a fixed aspect ratio, which is sometimes problematic. 
+In this paper, we propose a new approach to visualizing categorical variables in a parallel coordinate plot setting, called the {\it common angle} display. 
+
 
 \section{ Common Angle Plots}
 \subsection{Construction}
@@ -186,7 +200,7 @@ XXX biological findings - pathways - what are the new findings?
 \end{figure*}
 
 \subsection{Implementation}
-All three of the discussed variants of parallel coordinate plots for categorical data are implemented as package {\tt ggparallel} in the software {\tt R} 2.15.1 \citep{R}.
+All three of the discussed variants of parallel coordinate plots for categorical data are implemented as package {\tt ggparallel} based on the {\tt ggplot2} \cite{ggplot2} plotting framework in the software {\tt R} 2.15.1 \citep{R}.
 \section{Evaluation}
 XXX need IRB modification to allow comparison of common angles, parallel sets and hammock plots
 
