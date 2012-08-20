@@ -123,7 +123,7 @@ Non-Survivors & 673 & 122 & 167 &  528
 \end{center}
 \end{table}
 
-
+Other results from the survey?
 
 Table \ref{tab:results} shows an overview of the results from the survey: 7 out of 12 participants evaluating the barcharts identify the correct order, whereas none of the 13 participants evaluating the parallel sets plot do (a Mantel-Haenszel test yields a $p$-value of 0.015, indicating a significant difference between the proportion of correct responses).
 The line width illusion is brought on by a strong preference of evaluating the width of lines orthogonal to their slopes as opposed to horizontally (see sketch \ref{fig:linewidth}), as would be needed for a correct assessment of the parallel sets plot.
@@ -143,13 +143,13 @@ While the intuitive assessment of line widths by their width orthogonal to slope
 
 \begin{figure*}[htbp]
 \begin{center}
-\includegraphics[height=1.6in]{images/aspect31-titanic.pdf}
-\includegraphics[height=1.6in]{images/aspect33-titanic.pdf}
+\includegraphics[height=1.5in]{images/aspect31-titanic.pdf}
+\includegraphics[height=1.5in]{images/aspect33-titanic.pdf}
 \end{center}
 \caption{\label{fig:aspect}Parallel sets plots of survival on the Titanic by class. Different aspect ratios  seemingly change the (orthogonal) line width, compare e.g. number of survivors in 3rd class and in the crew. }
 \end{figure*}
 
-The slope of a line very much depends on the aspect ratio of the corresponding plot - changing the height to width ratio of a display  will change our perception of the corresponding line widths, if they are not adjusted for the slope. Figure \ref{fig:aspect} shows an example for that. The same parallel sets plot is shown twice in this figure, but with very different aspect rations: again, we are looking at survival on the Titanic. In the left plot the number of surviving 3rd class passengers seems to be about twice as big as the number of survivors among crew members, whereas on the right the lines have about equal (orthogonal) width. Obviously, the numbers don't change, but our (intuitive) evaluation of the situation changes. Reordering categories, as well as controlling the aspect ratio to avoid huge differences in the slope of lines helps reduce the potential of drawing wrong conclusions from these plot, but none of these measures is enough to avoid all perceptual traps.
+The slope of a line very much depends on the aspect ratio of the corresponding plot - changing the height to width ratio of a display  will change our perception of the corresponding line widths, if they are not adjusted for the slope. Figure \ref{fig:aspect} shows an example for that. The same parallel sets plot is shown twice in this figure, but with very different aspect rations: again, we are looking at survival on the Titanic. In the left plot the number of surviving 3rd class passengers seems to be about twice as big as the number of survivors among crew members, whereas on the right the lines have about equal (orthogonal) width. Obviously, the numbers don't change, but our (intuitive) evaluation of the situation does. Reordering categories, as well as controlling the aspect ratio to avoid huge differences in the slope of lines helps reduce the potential of drawing wrong conclusions from these plot, but none of these measures is enough to avoid all perceptual traps.
 % needed in second column of first page if using \IEEEpubid
 %\IEEEpubidadjcol
 \subsection{Hammock Plots}
@@ -157,7 +157,9 @@ The slope of a line very much depends on the aspect ratio of the corresponding p
 
 Hammock plots \citep{schonlau:2003} provide an alternative to parallel sets that does not suffer from the distortion. Figure \ref{hammock} shows an example of a four dimensional hammock plot of the Titanic data. From top to bottom Class, Gender, Survival, and again Class are shown. 
 \begin{figure}
-%ggparallel(names(titanic)[c(1,4,2,1)], order=0, method="hammock", angle=0, titanic, weight="Freq") +%scale_fill_brewer(palette="Paired", guide="none") +%scale_colour_brewer(palette="Paired", guide="none") + coord_flip()
+%ggparallel(names(titanic)[c(1,4,2,1)], order=0, method="hammock", angle=0, titanic, weight="Freq") +
+%scale_fill_brewer(palette="Paired", guide="none") +
+%scale_colour_brewer(palette="Paired", guide="none") + coord_flip()
 %ggsave("hammock-titanic.pdf", width=6, height=8)
 \centering
 \includegraphics[width=\linewidth]{hammock-titanic}
@@ -194,8 +196,6 @@ In this paper, we propose a new approach to visualizing categorical variables in
 
 Figure \ref{fig:ca-titanic} shows a common angle plot of the same data as the hammock plot.
 
-XXX http://www.jenchristiansen.com/ Jen Christiansen 
-
 As in the previously discussed display types ribbons are drawn between categories with widths  that are proportional to  the number of records they represent.
 
 In order to ensure that their widths are all comparable without any distortion, their slopes  are artificially made the same in the following manner: 
@@ -203,11 +203,20 @@ assuming a vertical display as shown in figure \ref{fig:ca-titanic}, we modify  
 The pre-specified angle $\theta$ (between the line and the vertical band) is given as --at most-- the angle of the longest connecting line between two categories of neighboring variables. 
 This makes the width of ribbons  comparable without being affected by the distortion, since all ribbons are sharing at least one segment that has the same angle. 
 
-\section{Evaluation}
+\subsection{Origins}
+XXX http://www.jenchristiansen.com/ Jen Christiansen 
+http://jenchristiansen.com/?p=20
+Scientific American references 
+
+Sankey diagrams William O'Brien 'Preliminary Investigation of the use of Sankey diagrams ...'
+
+
+\subsection{Evaluation}
 XXX need IRB modification to allow comparison of common angles, parallel sets and hammock plots
 
+XXX reverse axis for coord_flip
 
-\subsection{Applications}
+\section{Applications}
 XXX biological findings - pathways - what are the new findings?
 
 \begin{figure*}[htbp] %  figure placement: here, top, bottom, or page
@@ -224,95 +233,12 @@ XXX biological findings - pathways - what are the new findings?
    \label{fig:kegg:2}
 \end{figure*}
 
-\subsection{Implementation}
+\section{Extension to continuous variables}
+
+\section{Implementation}
 All three of the discussed variants of parallel coordinate plots for categorical data are implemented as package {\tt ggparallel} based on the {\tt ggplot2} \cite{ggplot2} plotting framework in the software {\tt R} 2.15.1 \citep{R}. The  {\tt ggparallel} package is freely available from CRAN (\url{http://www.r-project.org/}).
 
-% An example of a floating figure using the graphicx package.
-% Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
-% Note that IEEEtran v1.7 and later has special internal code that
-% is designed to preserve the operation of \label within \caption
-% even when the captionsoff option is in effect. However, because
-% of issues like this, it may be the safest practice to put all your
-% \label just after \caption rather than within \caption{}.
-%
-% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
-% option should be used if it is desired that the figures are to be
-% displayed while in draft mode.
-%
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex, 
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation Results}
-%\label{fig_sim}
-%\end{figure}
-
-% Note that IEEE CS typically puts floats only at the top, even when this
-% results in a large percentage of a column being occupied by floats.
-% However, the Computer Society has been known to put floats at the bottom.
-
-
-% An example of a double column floating figure using two subfigures.
-% (The subfig.sty package must be loaded for this to work.)
-% The subfigure \label commands are set within each subfloat command, the
-% \label for the overall figure must come after \caption.
-% \hfil must be used as a separator to get equal spacing.
-% The subfigure.sty package works much the same way, except \subfigure is
-% used instead of \subfloat.
-%
-%\begin{figure*}[!t]
-%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
-%\label{fig_first_case}}
-%\hfil
-%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
-%\label{fig_second_case}}}
-%\caption{Simulation results}
-%\label{fig_sim}
-%\end{figure*}
-%
-% Note that often IEEE CS papers with subfigures do not employ subfigure
-% captions (using the optional argument to \subfloat), but instead will
-% reference/describe all of them (a), (b), etc., within the main caption.
-
-
-% An example of a floating table. Note that, for IEEE style tables, the 
-% \caption command should come BEFORE the table. Table text will default to
-% \footnotesize as IEEE normally uses this smaller font for tables.
-% The \label must come after \caption as always.
-%
-%\begin{table}[!t]
-%% increase table row spacing, adjust to taste
-%\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-%\caption{An Example of a Table}
-%\label{table_example}
-%\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
-%\end{tabular}
-%\end{table}
-
-
-% Note that IEEE does not put floats in the very first column - or typically
-% anywhere on the first page for that matter. Also, in-text middle ("here")
-% positioning is not used. Most IEEE journals use top floats exclusively.
-% However, Computer Society journals sometimes do use bottom floats - bear
-% this in mind when choosing appropriate optional arguments for the
-% figure/table environments.
-% Note that, LaTeX2e, unlike IEEE journals, places footnotes above bottom
-% floats. This can be corrected via the \fnbelowfloat command of the
-% stfloats package.
-
+Choice of color. 
 
 
 \section{Conclusion}
