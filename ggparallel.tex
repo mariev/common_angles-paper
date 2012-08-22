@@ -45,10 +45,17 @@ In this paper we focus on the use of parallel coordinate plots \citep{pcp:1885, 
 %% from http://what-when-how.com/sociology/statistical-graphics/
 %The effectiveness of statistical graphs is rooted in the remarkable ability of people to apprehend, process, and remember pictorial information. The human visual system, however, is subject to distortion and illusion, processes that can affect the perception of graphs. Good graphical design can minimize and counteract the limitations of human vision. In Figure 9, for example, it appears that the difference between the hypothetical import and export series is changing when this difference actually is constant (cf., Playfair’s time series graph in Figure 2 a). 
 
-The top chart in Figure \ref{playfair} shows Playfair's  visualization of the balance of trade between England and the East Indies as published in his Commercial and Political Atlas, 1786 \cite{playfair, playfair2}. The chart at the bottom of  figure \ref{playfair}, where a line is sketched for the difference between imports and exports. The steep rise in the difference between the lines starting just before 1760 is missed by many onlookers, exhibiting a  strong line width illusion (XXX not sure whether this really is an illusion or a distortion). This phenomenon  is known and widely discussed in statistical graphics literature \citep{cleveland:1984, wainer:2000, robbins:2005}. 
+The top chart in Figure \ref{playfair} shows Playfair's  visualization of the balance of trade between England and the East Indies as published in his Commercial and Political Atlas, 1786 \cite{playfair, playfair2}. The chart at the bottom of  figure \ref{playfair}, where a line is sketched for the difference between imports and exports. The steep rise in the difference between the lines starting just before 1760 is missed by many onlookers. This phenomenon  is known and widely discussed in statistical graphics literature \citep{cleveland:1984, wainer:2000, robbins:2005}. 
+In the perception literature, the phenomenon is known as part of a group of geometrical optical misperceptions classified as M\"uller-Lyer illusions
+(perception literature Day RH, Stecher EJ (1991) Sine of an illusion. Perception 20;49–55;  Screenshot of Michael Bach's website?)
+
 The line width illusion is due to our  tendency to assess distance between curves as the minimal (orthogonal) distance rather than the  vertical distance -- see sketch \ref{fig:linewidth} for a more detailed discussion and some results from a user study.
 
+
+
+
 We will next give an overview of  charts commonly used for displaying associations between categorical variables within the framework of parallel coordinate plots, and discuss their performance with respect to the line width illusion.
+
 
 %XXX Why don't we mention mosaics? - I don't want to, but we need a better reason
 
@@ -57,6 +64,12 @@ We will next give an overview of  charts commonly used for displaying associatio
 \includegraphics[width=.8\linewidth]{playfair_differenz_cleveland}
 \caption{Playfair's chart from the Commercial and Political Atlas, 1786 (above). The sketch below shows  the difference between the lines for export and import - the steep rise in the difference around 1760  comes as a surprise to many onlookers.  }
 \label{playfair}
+\end{figure}
+
+\begin{figure}
+\centering \includegraphics[width=.75\linewidth]{sine-illusion}
+\caption{Screenshot of an applet by Michael Bach \citep{sine} showing an example of a sine illusion. The applet is giving the possibility for compensating the line lengths in the regions with the highest slope. }
+\label{sine-illusion}
 \end{figure}
 
 
@@ -280,6 +293,7 @@ Choice of color.
 
 
 All surveys for this study were carried out with approval from  IRB-ID 12-204.
+
 
 % Can use something like this to put references on a page
 % by themselves when using endfloat and the captionsoff option.
