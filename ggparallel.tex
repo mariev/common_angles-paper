@@ -45,16 +45,8 @@ In this paper we focus on the use of parallel coordinate plots \citep{pcp:1885, 
 %% from http://what-when-how.com/sociology/statistical-graphics/
 %The effectiveness of statistical graphs is rooted in the remarkable ability of people to apprehend, process, and remember pictorial information. The human visual system, however, is subject to distortion and illusion, processes that can affect the perception of graphs. Good graphical design can minimize and counteract the limitations of human vision. In Figure 9, for example, it appears that the difference between the hypothetical import and export series is changing when this difference actually is constant (cf., Playfair’s time series graph in Figure 2 a). 
 
-The top chart in Figure \ref{playfair} shows Playfair's  visualization of the balance of trade between England and the East Indies as published in his Commercial and Political Atlas, 1786 \cite{playfair, playfair2}. The chart at the bottom of  figure \ref{playfair}, where a line is sketched for the difference between imports and exports. The steep rise in the difference between the lines starting just before 1760 is missed by many onlookers. This phenomenon  is known and widely discussed in statistical graphics literature \citep{cleveland:1984, wainer:2000, robbins:2005}. 
-In the perception literature, the phenomenon is known as part of a group of geometrical optical misperceptions classified as M\"uller-Lyer illusions
-(perception literature Day RH, Stecher EJ (1991) Sine of an illusion. Perception 20;49–55;  Screenshot of Michael Bach's website?)
+The top chart in Figure \ref{playfair} shows Playfair's  visualization of the balance of trade between England and the East Indies as published in his Commercial and Political Atlas, 1786 \cite{playfair, playfair2}. The chart at the bottom of  figure \ref{playfair}, where a line is sketched for the difference between imports and exports. The steep rise in the difference between the lines starting just before 1760 is missed by many onlookers. This phenomenon  is known and widely discussed in statistical graphics literature \citep{cleveland:1984, wainer:2000, robbins:2005}. The line width illusion is due to our  tendency to assess distance between curves as the minimal (orthogonal) distance rather than the  vertical distance -- see sketch \ref{fig:linewidth}.
 
-The line width illusion is due to our  tendency to assess distance between curves as the minimal (orthogonal) distance rather than the  vertical distance -- see sketch \ref{fig:linewidth} for a more detailed discussion and some results from a user study.
-
-
-
-
-We will next give an overview of  charts commonly used for displaying associations between categorical variables within the framework of parallel coordinate plots, and discuss their performance with respect to the line width illusion.
 
 
 %XXX Why don't we mention mosaics? - I don't want to, but we need a better reason
@@ -66,12 +58,17 @@ We will next give an overview of  charts commonly used for displaying associatio
 \label{playfair}
 \end{figure}
 
+In the perception literature, the phenomenon is known as part of a group of geometrical optical misperceptions classified as M\"uller-Lyer illusions \citep{day:1991}. Figure \ref{sine-illusion} shows a screen shot of applet displaying the sine illusion. The sine illusion is closely related to the line width phenomenon -- the line segments in the are of the steepest slope of the sine curve appear to be the shortest: ``The illusion is explained in terms of a perceptual compromise between the vertical extent and the greater overall dimensions of the section at the turn of the sine-wave figure and is thereby held to be the same in principle as the M\"uller-Lyer illusion." \citep{day:1991}
+M Bach's applet \citep{bach} gives the option to compensate the line length manually for its perceived shortcoming. The amount of compensation chosen turns out to be highly dependent on both the length of the vertical line segments and the amplitude of the sine function. The amplitude directly affects the slope -- the steeper  the slope the more compensation is necessary, see section \ref{distortion}  for a more detailed discussion and some results from a user study.
+
+
 \begin{figure}
 \centering \includegraphics[width=.75\linewidth]{sine-illusion}
-\caption{Screenshot of an applet by Michael Bach \citep{sine} showing an example of a sine illusion. The applet is giving the possibility for compensating the line lengths in the regions with the highest slope. }
+\caption{Screenshot of an applet by M Bach \citep{bach} showing an example of a sine illusion. The applet is giving the possibility for compensating the line lengths in the regions with the highest slope. }
 \label{sine-illusion}
 \end{figure}
 
+We will next give an overview of  charts commonly used for displaying associations between categorical variables within the framework of parallel coordinate plots, and discuss their performance with respect to the line width illusion.
 
 
 \subsection{Parallel Set Plots}
@@ -80,7 +77,7 @@ We will next give an overview of  charts commonly used for displaying associatio
 Parallel Sets have been introduced by R Kosara \citep{kosara:2006} as a way to visualize categorical data within the framework of parallel coordinate plots  and have by now spread into main media, see e.g. the article on decision making in the BBC \citep{bbc:2009}. 
 
 %XXX Description of parallel sets - and example
-Figure \ref{question1a} gives an example for a parallel sets of the Titanic data \citet{dawson:1995}. The top bar shows classification of people on board according to their status as crew member and passengers. Passengers are further divided into first, second or third class. The bottom bar shows survival status as yes and no for non-survival. Between the bars lines are drawn to visualize survival status according to class membership. Based on the proportion of survivor and non survivors bands are drawn from each class, the (horizontal) width of which is proportional to the number of people they represent. 
+Figure \ref{question1a} gives an example for a parallel sets of the Titanic data \citep{dawson:1995}. The top bar shows classification of people on board according to their status as crew member and passengers. Passengers are further divided into first, second or third class. The bottom bar shows survival status as yes and no for non-survival. Between the bars lines are drawn to visualize survival status according to class membership. Based on the proportion of survivor and non survivors bands are drawn from each class, the (horizontal) width of which is proportional to the number of people they represent. 
 
 However, the parallel sets plot suffers from the line width illusion, that can in extreme cases be so severe as to lead the user to wrong conclusions about the displayed data.  Section \ref{distortion} will show more details on the strength of this illusion.
 
