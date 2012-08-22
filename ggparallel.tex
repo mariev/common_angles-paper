@@ -58,7 +58,7 @@ The top chart in Figure \ref{playfair} shows Playfair's  visualization of the ba
 \label{playfair}
 \end{figure}
 
-In the perception literature, the phenomenon is known as part of a group of geometrical optical misperceptions classified as M\"uller-Lyer illusions \citep{day:1991}. Figure \ref{sine-illusion} shows a screen shot of applet displaying the sine illusion. The sine illusion is closely related to the line width phenomenon -- the line segments in the are of the steepest slope of the sine curve appear to be the shortest: ``The illusion is explained in terms of a perceptual compromise between the vertical extent and the greater overall dimensions of the section at the turn of the sine-wave figure and is thereby held to be the same in principle as the M\"uller-Lyer illusion." \citep{day:1991}
+In the perception literature, the phenomenon is known as part of a group of geometrical optical misperceptions classified as M\"uller-Lyer illusions \citep{day:1991}. Figure \ref{sine-illusion} shows a screen shot of applet displaying the sine illusion. The sine illusion is closely related to the line width phenomenon -- the line segments in the are of the steepest slope of the sine curve appear to be the shortest: ``The illusion is explained in terms of a perceptual compromise between the vertical extent and the greater overall dimensions of the section at the turn of the sine-wave figure and is thereby held to be the same in principle as the M\"uller-Lyer illusion." \citep{day:1991}.
 M Bach's applet \citep{bach} gives the option to compensate the line length manually for its perceived shortcoming. The amount of compensation chosen turns out to be highly dependent on both the length of the vertical line segments and the amplitude of the sine function. The amplitude directly affects the slope -- the steeper  the slope the more compensation is necessary, see section \ref{distortion}  for a more detailed discussion and some results from a user study.
 
 
@@ -139,7 +139,7 @@ Table \ref{tab:results} shows an overview of the results from the survey: 7 out 
 The line width illusion is brought on by a strong preference of evaluating the width of lines orthogonal to their slopes as opposed to horizontally (see sketch \ref{fig:linewidth}), as would be needed for a correct assessment of the parallel sets plot.
 Orthogonal $w_o$ and horizontal $w_h$ line widths are related -- the orthogonal line width depends on the angle (or slope) of the line:
 \[
-w_o = w_h \cos \theta,
+w_o = w_h \sin \theta,
 \]
 where $\theta$ is the angle of the line with respect to the horizontal line.
 While the intuitive assessment of line widths by their width orthogonal to slope is well known, it is surprising to see its strength: in this particular setting, it is strong enough to `shrink' the horizontally widest line for 8 out of 13 participants by more than 16\%, from 212 to below 178 (see table \ref{tab:results} for the survey results and table above for the actual number of survivors by class). 
@@ -278,6 +278,32 @@ Choice of color.
 23 students, staff and faculty from Iowa State University participated in the survey investigating the strength of the perceptual line width distortion. 
 \subsection*{Survey II}\label{app2}
 %
+\subsection*{Discussion of Sine Illusion}
+Using the notation given in the applet, we assume a value $s$ for the sine amplitude, $\ell$ for the vertical length of line segments, and $\ell_c$ for the amount of compensation. 
+The sine curve is then given as 
+\[
+f(x) = s/2 \sin(x)
+\]
+for $x$ in $[-\pi, \pi]$. The slope of the sine curve is the steepest in the reflection point at $x=0$. The slope is given as $f^\prime(x) = s/2 \cos(x)$, which in $x=0$ yields a slope of $s/2$.
+
+The physical dimensions of the applet are 500 pixels by 500 pixels, corresponding to an extent in the $x$ axis of $2 \pi$ and a maximum amplitude and line lengths of 250 in the $y$ axis. This results in an aspect ratio of $250 : (2\pi)$.
+For the physical angle $\theta$ of the slope with respect to the horizontal axis we get
+\[
+\tan \theta =  s/2 \cdot 2\pi/250 = s\pi/250
+\]
+Adding a compensation of $\ell_c$ to the length of line segments is supposed to make the orthogonal width of the region of the steepest slope appear as wide as the vertical length in the turning point. Since the slope in the turning point is zero, the extent of the width is unchanged and is therefore equal to $\ell$. 
+We therefore get for an `optimal' compensation as
+\[
+\ell \stackrel{!}{=} \cos \theta \cdot \left( \ell + \ell_c \right),
+\]
+yielding 
+\[
+\ell_c = \left(1 - \cos \theta\right)/\cos \theta \ \  \ell.
+\]
+%theta <- function(s) atan(s*pi/250)
+%compensate <- function(theta) (1-cos(theta))/cos(theta)
+
+
 
 % use section* for acknowledgement
 \ifCLASSOPTIONcompsoc
