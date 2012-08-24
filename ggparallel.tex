@@ -43,7 +43,7 @@ As designers of charts we have to be aware of the innate or culturally imposed p
 In this paper we focus on the use of parallel coordinate plots \citep{pcp:1885, inselberg:1985, wegman:1990} for categorical data and the perceptual implications this has.
 
 %% from http://what-when-how.com/sociology/statistical-graphics/
-%The effectiveness of statistical graphs is rooted in the remarkable ability of people to apprehend, process, and remember pictorial information. The human visual system, however, is subject to distortion and illusion, processes that can affect the perception of graphs. Good graphical design can minimize and counteract the limitations of human vision. In Figure 9, for example, it appears that the difference between the hypothetical import and export series is changing when this difference actually is constant (cf., Playfair’s time series graph in Figure 2 a). 
+%The effectiveness of statistical graphs is rooted in the remarkable ability of people to apprehend, process, and remember pictorial information. The human visual system, however, is subject to distortion and illusion, processes that can affect the perception of graphs. Good graphical design can minimize and counteract the limitations of human vision. In Figure 9, for example, it appears that the difference between the hypothetical import and export series is changing when this difference actually is constant (cf., Playfair?s time series graph in Figure 2 a). 
 
 The top chart in Figure \ref{playfair} shows Playfair's  visualization of the balance of trade between England and the East Indies as published in his Commercial and Political Atlas, 1786 \cite{playfair, playfair2}. The chart at the bottom of  figure \ref{playfair}, where a line is sketched for the difference between imports and exports. The steep rise in the difference between the lines starting just before 1760 is missed by many onlookers. This phenomenon  is known and widely discussed in statistical graphics literature \citep{cleveland:1984, wainer:2000, robbins:2005}. The line width illusion is due to our  tendency to assess distance between curves as the minimal (orthogonal) distance rather than the  vertical distance -- see sketch \ref{fig:linewidth}.
 
@@ -224,11 +224,11 @@ Sankey diagrams William O'Brien 'Preliminary Investigation of the use of Sankey 
 \subsection{Evaluation}
 XXX need IRB modification to allow comparison of common angles, parallel sets and hammock plots
 
-XXX reverse axis for coord_flip
+XXX reverse axis for coord\_flip
 
 \section{Applications}
-XXX biological findings - pathways - what are the new findings?
-
+%XXX biological findings - pathways - what are the new findings?
+One application using biochemical pathway data is visualization of screening for drug interaction. Setting one bar to classify by pathways and a second bar to classify by physical location (e.g. chromosome), the ribbon widths indicate the number of genes on a particular chromosome that are active in a pathway. A chromosome with ribbons connecting to multiple pathways are a physical target for drugs that possibly affect both paths. In Figure XXX the bottom bar shows two pathways: hsa00232, which is involved in caffeine metabolism, and hsa00982, which is involved with drug metabolism via the cytochrome P450 superfamily. The top bar classifies by chromosome location. Gene CYP1A2 is involved in both pathways - clomipramine (an antidepressant) and caffeine both may act as a substrate.
 \begin{figure*}[htbp] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=\linewidth]{ca-kegg} 
@@ -242,6 +242,14 @@ XXX biological findings - pathways - what are the new findings?
    \caption{Common angle plot }
    \label{fig:kegg:2}
 \end{figure*}
+
+\begin{figure*}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=\linewidth]{caffiene_drug} 
+   \caption{Common gene activity for caffeine and drug metabolism}
+   \label{fig:caffeine}
+\end{figure*}
+
 
 \section{Extension to continuous variables}
 
@@ -356,7 +364,7 @@ All surveys for this study were carried out with approval from  IRB-ID 12-204.
 %
 %
 %%This is an example of a Transactions article reference
-%%D.S. Coming and O.G. Staadt, "Velocity-Aligned Discrete Oriented Polytopes for Dynamic Collision Detection," IEEE Trans. Visualization and Computer Graphics, vol.†14,† no.†1,† pp. 1-12,† Jan/Feb† 2008, doi:10.1109/TVCG.2007.70405.
+%%D.S. Coming and O.G. Staadt, "Velocity-Aligned Discrete Oriented Polytopes for Dynamic Collision Detection," IEEE Trans. Visualization and Computer Graphics, vol.?14,? no.?1,? pp. 1-12,? Jan/Feb? 2008, doi:10.1109/TVCG.2007.70405.
 %
 %%This is an example of a article from a conference proceeding
 %%H. Goto, Y. Hasegawa, and M. Tanaka, "Efficient Scheduling Focusing on the Duality of MPL Representation," Proc. IEEE Symp. Computational Intelligence in Scheduling (SCIS '07), pp. 57-64, Apr. 2007, doi:10.1109/SCIS.2007.367670.
