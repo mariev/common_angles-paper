@@ -180,7 +180,7 @@ Similar to the parallel sets plot, the bars are divided according to class membe
 
 In this example, we see that barely any women were in the crew, while male crew members make up the second largest contingent overall. While a few more men survived than women, proportionally the situation is much different -- a much higher percentage of women survived than men. We also see, that more first class passengers survived than not, while second class passengers survival chances were about fifty-fifty. For third class passengers and crew members fewer members did  survive than not. 
 
-Since the adjustment of line widths is made with respect to the angle $\theta$, which itself depends on the aspect ratio of a plot, we need complete control over these properties of the plotting device when constructing Hammock plots  -- in our implementation (see below for details) we have dealt with this issue by fixing the aspect ratio. This is problematic in some situation, where the rendering has to be done without knowledge of the plotting device. 
+Since the adjustment of line widths is made with respect to the angle $\theta$, which itself depends on the aspect ratio of a plot, we need complete control over these properties of the plotting device when constructing Hammock plots  -- in our implementation (see below for details) we have dealt with this issue by fixing the aspect ratio. This is problematic in some situations, where the rendering has to be done without knowledge of the plotting device. 
 
 
 
@@ -302,11 +302,11 @@ Choice of color.
 %
 \subsection*{Discussion of Sine Illusion}
 Using the notation given in the applet, we assume a value $s$ for the sine amplitude, $\ell$ for the vertical length of line segments, and $\ell_c$ for the amount of compensation. 
-The sine curve is then given as 
+The sine curve is then given by function $f$, written as 
 \[
 f(x) = s/2 \sin(x)
 \]
-for $x$ in $[-\pi, \pi]$. The slope of the sine curve is the steepest in the reflection point at $x=0$. The slope is given as $f^\prime(x) = s/2 \cos(x)$, which in $x=0$ yields a slope of $s/2$.
+for $x$ in $[-\pi, \pi]$. The slope of the sine curve is the steepest in its reflection point at $x=0$. We can calculate the slope as $f^\prime(x) = s/2 \cos(x)$, which in $x=0$ yields a slope of $s/2$.
 
 The physical dimensions of the applet are 500 pixels by 500 pixels, corresponding to an extent in the $x$ axis of $2 \pi$ and a maximum amplitude and line lengths of 250 in the $y$ axis. This results in an aspect ratio of $250 : (2\pi)$.
 For the physical angle $\theta$ of the slope with respect to the horizontal axis we get
