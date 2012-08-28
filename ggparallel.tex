@@ -58,7 +58,7 @@ The top chart in Figure \ref{playfair} shows Playfair's  visualization of the ba
 \label{playfair}
 \end{figure}
 
-In the perception literature, the phenomenon is known as part of a group of geometrical optical misperceptions classified as M\"uller-Lyer illusions \citep{day:1991}. Interestingly, there seems to be a general agreement that this illusion exist, but a quantification of it is curiously absent from the literature.
+In the perception literature, the phenomenon is known as part of a group of geometrical optical misperceptions of a context-sensitive nature classified as M\"uller-Lyer illusions \citep{day:1991}. Interestingly, there seems to be a general agreement that this illusion exists, but a quantification of it is curiously absent from the literature.
 %Figure \ref{sine-illusion} shows a screen shot of applet displaying the sine illusion. The sine illusion is closely related to the line width phenomenon -- the line segments in the are of the steepest slope of the sine curve appear to be the shortest: ``The illusion is explained in terms of a perceptual compromise between the vertical extent and the greater overall dimensions of the section at the turn of the sine-wave figure and is thereby held to be the same in principle as the M\"uller-Lyer illusion." \citep{day:1991}.
 %M Bach's applet \citep{bach} gives the option to compensate the line length manually for its perceived shortcoming. The amount of compensation chosen turns out to be highly dependent on both the length of the vertical line segments and the amplitude of the sine function. The amplitude directly affects the slope -- the steeper  the slope the more compensation is necessary, see section \ref{distortion}  for a more detailed discussion and some results from a user study.
 %
@@ -100,7 +100,7 @@ However, the parallel sets plot suffers from the line width illusion, that can i
 
 
 
-In a first survey (described in more detail in section \ref{app1}), we asked participants to rank class  levels according to the number of survivors (from highest to lowest) based on one of the two plots in figures \ref{question1a} and \ref{question1b}. The actual number of survivors by class are
+In a first survey (described in more detail in section \ref{app1}), we asked participants to order class  levels according to the number of survivors (from highest to lowest) based on one of the two plots in figures \ref{question1a} and \ref{question1b}. The actual number of survivors by class are
 %
 \begin{center}
 \begin{tabular}{rrrrr}
@@ -151,9 +151,10 @@ Non-Survivors & 673 & 122 & 167 &  528
 %  1342                                           1      0       1
 %  1432                                          10      0      11
 
-Other results from the survey?
 
-Table \ref{tab:results} shows an overview of the results from the survey: 7 out of 12 participants evaluating the barcharts identify the correct order, whereas none of the 13 participants evaluating the parallel sets plot do (a Mantel-Haenszel test yields a $p$-value of 0.015, indicating a significant difference between the proportion of correct responses).
+Table \ref{tab:results} shows an overview of the results from the survey: 7 out of 12 participants evaluating the barcharts identified the correct order, whereas none of the 13 participants evaluating the parallel sets plot did (a Mantel-Haenszel test yields a $p$-value of 0.015, indicating a significant difference between the proportion of correct responses).
+In contrast to that, a second question asking participants to order class levels according to survival {\it rates} of members did not yield any indication that parallel sets were performing less efficiently than barcharts; 11 out of 12 (barcharts) and 12 out of 13 (parallel sets) participants were able to answer this question correctly. The answer to this question involves a comparison of line widths, but the illusion is not that strong, that it would have an impact on the order of the results.
+
 The line width illusion is brought on by a strong preference of evaluating the width of lines orthogonal to their slopes as opposed to horizontally (see sketch \ref{fig:linewidth}), as would be needed for a correct assessment of the parallel sets plot.
 Orthogonal $w_o$ and horizontal $w_h$ line widths are related -- the orthogonal line width depends on the angle (or slope) of the line:
 \[
@@ -232,11 +233,14 @@ The pre-specified angle $\theta$ (between the line and the vertical band) is giv
 This makes the width of ribbons  comparable without being affected by the distortion, since all ribbons are sharing at least one segment that has the same angle. 
 
 \subsection{Origins}
-XXX http://www.jenchristiansen.com/ Jen Christiansen 
-http://jenchristiansen.com/?p=20
-Scientific American references 
+Historically, the common angle diagram has its roots in Sankey diagrams \citep{sankey:1898}. Sankey diagrams have their origin and main use of application in the area of industrial engineering. They are often used to show flows,  particularly, in the framework of energy consumption and losses within systems.
+One of the most famous charts that can be classified as a Sankey diagram is Minard's map of Napoleon's march on Moscow \citep{minard:1812}. This map  shows the size of the army as a flow chart from West to East and the subsequent retreat back. Usually, Sankey diagrams do not show a geographic co-variate, though. Modern uses of Sankey diagrams are discussed in  detail in \citep{schmidt:2008};  they can also be found in charts designed by Jen Christiansen, such as in \cite{jen1} and \cite{jen2}.
 
-Sankey diagrams William O'Brien 'Preliminary Investigation of the use of Sankey diagrams ...'
+%XXX http://www.jenchristiansen.com/ Jen Christiansen 
+%http://jenchristiansen.com/?p=20
+%Scientific American references 
+%
+%Sankey diagrams William O'Brien 'Preliminary Investigation of the use of Sankey diagrams ...'
 
 
 \subsection{Evaluation}
@@ -263,7 +267,7 @@ One application using biochemical pathway data is visualization of screening for
 
 \begin{figure*}[htbp] %  figure placement: here, top, bottom, or page
    \centering
-   \includegraphics[width=\linewidth]{caffiene_drug} 
+   \includegraphics[width=\linewidth]{caffeine_drug} 
    \caption{Common gene activity for caffeine and drug metabolism}
    \label{fig:caffeine}
 \end{figure*}
