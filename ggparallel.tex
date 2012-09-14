@@ -212,11 +212,8 @@ In this paper, we propose a new approach to visualizing categorical variables in
 
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
 %titanic <- as.data.frame(Titanic)
-%ggparallel(names(titanic)[c(1,4,2,1)], order=c(0,1,1,0), titanic, weight="Freq", angle=0) + 
-%   scale_fill_brewer(palette="Paired", guide="none") + 
-%   scale_colour_brewer(palette="Paired", guide="none") +
-%   coord_flip()
-%ggsave("ca-titanic.pdf", width=6, height=8)
+%ggparallel(names(titanic)[c(1,4,2,1)], order=c(0,1,1,0), titanic, weight="Freq", text.angle=0) +  %      scale_fill_brewer(palette="Paired", guide="none") + %       scale_colour_brewer(palette="Paired", guide="none") +   coord_flip()
+%ggsave("ca-titanic.pdf", width=6, height=6)
    \centering
    \includegraphics[width=\linewidth]{ca-titanic} 
    \caption{Common Angle plot of the Titanic data. }
@@ -273,10 +270,17 @@ One application using biochemical pathway data is visualization of screening for
 \end{figure*}
 
 
-\section{Extension to continuous variables}
+\section{Extensions}
+\subsection{Hammock-adjusted common angle plots}
 
+\begin{figure}[hbtp]
+%titanic <- as.data.frame(Titanic)%ggparallel(names(titanic)[c(1,4,2,1)], order=0, method='adj.angle', text.angle=0, weight="Freq", titanic, ratio=0.035) + scale_fill_brewer(palette="Paired") + scale_colour_brewer(palette="Paired") + coord_flip() + theme(legend.position="none")
+% ggsave("adj-angle.pdf", width=6, height=10)
+\includegraphics[width=\linewidth]{adj-angle}
+\end{figure}
 \section{Implementation}
-All three of the discussed variants of parallel coordinate plots for categorical data are implemented as package {\tt ggparallel} based on the {\tt ggplot2} \cite{ggplot2} plotting framework in the software {\tt R} 2.15.1 \citep{R}. The  {\tt ggparallel} package is freely available from CRAN (\url{http://www.r-project.org/}).
+
+All  of the discussed variants of parallel coordinate plots for categorical data are implemented as package {\tt ggparallel} based on the {\tt ggplot2} \cite{ggplot2} plotting framework in the software {\tt R} 2.15.1 \citep{R}. The  {\tt ggparallel} package is freely available from CRAN (\url{http://www.r-project.org/}).
 
 Choice of color. 
 
