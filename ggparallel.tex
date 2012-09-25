@@ -36,15 +36,16 @@
 % 
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
-\IEEEPARstart{T}{he}   main purpose of graphics is to summarize data and present them in a way that readers are able to extract the main message(s) quickly and with a minimum of distortion (cleveland, tufte - lie-factor). 
+\IEEEPARstart{T}{he}   main purpose of graphics is to summarize data and present them in a way that readers are able to extract the main message quickly and with a minimum of distortion. Tufte  coined the amount of distortion the \emph{Lie-Factor} \citep[p. 57--69]{tufte} of a chart, defined as the ratio of the size of an effect shown in a chart in comparison to the size of the same effect in the data. Ideally, this ratio is one. 
 
-As designers of charts we have to be aware of the innate or culturally imposed perceptual limitations of our audience.
+As designers of charts we have to be aware of the innate or culturally imposed perceptual limitations of our audience. This gives rise to another kind of distortion that may lead to effects similar to a Lie-Factor.
 %
 In this paper we focus on the use of parallel coordinate plots \citep{pcp:1885, inselberg:1985, wegman:1990} for categorical data and the perceptual implications this has.
 
 %% from http://what-when-how.com/sociology/statistical-graphics/
 %The effectiveness of statistical graphs is rooted in the remarkable ability of people to apprehend, process, and remember pictorial information. The human visual system, however, is subject to distortion and illusion, processes that can affect the perception of graphs. Good graphical design can minimize and counteract the limitations of human vision. In Figure 9, for example, it appears that the difference between the hypothetical import and export series is changing when this difference actually is constant (cf., Playfair?s time series graph in Figure 2 a). 
 
+\subsection*{The Phenomenon}
 The top chart in Figure \ref{playfair} shows Playfair's  visualization of the balance of trade between England and the East Indies as published in his Commercial and Political Atlas, 1786 \cite{playfair, playfair2}. The chart at the bottom of  figure \ref{playfair}, where a line is sketched for the difference between imports and exports. The steep rise in the difference between the lines starting just before 1760 is missed by many onlookers. This phenomenon  is known and widely discussed in statistical graphics literature \citep{cleveland:1984, wainer:2000, robbins:2005}. The line width illusion is due to our  tendency to assess distance between curves as the minimal (orthogonal) distance rather than the  vertical distance -- see sketch \ref{fig:linewidth}.
 
 
@@ -58,7 +59,7 @@ The top chart in Figure \ref{playfair} shows Playfair's  visualization of the ba
 \label{playfair}
 \end{figure}
 
-In the perception literature, the phenomenon is known as part of a group of geometrical optical misperceptions of a context-sensitive nature classified as M\"uller-Lyer illusions \citep{day:1991}. Interestingly, there seems to be a general agreement that this illusion exists, but a quantification of it is curiously absent from the literature.
+In the perception literature, this phenomenon is known as part of a group of geometrical optical misperceptions of a context-sensitive nature classified as M\"uller-Lyer illusions \citep{day:1991}. Interestingly, there seems to be a general agreement that this illusion exists, but a quantification of it is curiously absent from the literature.
 %Figure \ref{sine-illusion} shows a screen shot of applet displaying the sine illusion. The sine illusion is closely related to the line width phenomenon -- the line segments in the are of the steepest slope of the sine curve appear to be the shortest: ``The illusion is explained in terms of a perceptual compromise between the vertical extent and the greater overall dimensions of the section at the turn of the sine-wave figure and is thereby held to be the same in principle as the M\"uller-Lyer illusion." \citep{day:1991}.
 %M Bach's applet \citep{bach} gives the option to compensate the line length manually for its perceived shortcoming. The amount of compensation chosen turns out to be highly dependent on both the length of the vertical line segments and the amplitude of the sine function. The amplitude directly affects the slope -- the steeper  the slope the more compensation is necessary, see section \ref{distortion}  for a more detailed discussion and some results from a user study.
 %
@@ -78,7 +79,7 @@ We will next give an overview of  charts commonly used for displaying associatio
 Parallel Sets have been introduced by R Kosara \citep{kosara:2006} as a way to visualize categorical data within the framework of parallel coordinate plots  and have by now spread into main media, see e.g. the article on decision making in the BBC \citep{bbc:2009}. 
 
 %XXX Description of parallel sets - and example
-Figure \ref{question1a} gives an example for a parallel sets of the Titanic data \citep{dawson:1995}. The top bar shows classification of people on board according to their status as crew member and passengers. Passengers are further divided into first, second or third class. The bottom bar shows survival status as yes and no for non-survival. Between the bars lines are drawn to visualize survival status according to class membership. Based on the proportion of survivor and non survivors bands are drawn from each class, the (horizontal) width of which is proportional to the number of people they represent. 
+Figure \ref{question1a} gives an example for a parallel sets plot of the Titanic data \citep{dawson:1995}. The top bar shows classification of people on board according to their status as crew member and passengers. Passengers are further divided into first, second or third class. The bottom bar shows survival  as yes and no. Between the bars lines are drawn to visualize the relationship between class membership and  survival. Based on the proportion of survivor and non survivors bands are drawn from each class, the (horizontal) width of which is proportional to the number of people they represent. 
 
 However, the parallel sets plot suffers from the line width illusion, that can in extreme cases be so severe as to lead the user to wrong conclusions about the displayed data.  Section \ref{distortion} will show more details on the strength of this illusion.
 
@@ -212,7 +213,9 @@ In this paper, we propose a new approach to visualizing categorical variables in
 
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
 %titanic <- as.data.frame(Titanic)
-%ggparallel(names(titanic)[c(1,4,2,1)], order=c(0,1,1,0), titanic, weight="Freq", text.angle=0) +  %      scale_fill_brewer(palette="Paired", guide="none") + %       scale_colour_brewer(palette="Paired", guide="none") +   coord_flip()
+%ggparallel(names(titanic)[c(1,4,2,1)], order=c(0,1,1,0), titanic, weight="Freq", text.angle=0) + 
+ %      scale_fill_brewer(palette="Paired", guide="none") + 
+%       scale_colour_brewer(palette="Paired", guide="none") +   coord_flip()
 %ggsave("ca-titanic.pdf", width=6, height=6)
    \centering
    \includegraphics[width=\linewidth]{ca-titanic} 
@@ -272,11 +275,14 @@ One application using biochemical pathway data is visualization of screening for
 
 \section{Extensions}
 \subsection{Hammock-adjusted common angle plots}
-
+A logical next step in making ribbons comparable across all their parts and multiple variables, we can additionally adjust sloped parts of the ribbons using the hammock-adjustment described above. This leads to a representation as shown in figure \ref{adj.angle}. Ribbons no longer fill the marginal bars. This choice was made to reduce the amount of overplotting resulting from the increase in width of the lines under an angle. Note, that the hammock adjustment results in re-introducing the aspect ratio as a crucial quantity. 
 \begin{figure}[hbtp]
-%titanic <- as.data.frame(Titanic)%ggparallel(names(titanic)[c(1,4,2,1)], order=0, method='adj.angle', text.angle=0, weight="Freq", titanic, ratio=0.035) + scale_fill_brewer(palette="Paired") + scale_colour_brewer(palette="Paired") + coord_flip() + theme(legend.position="none")
+%titanic <- as.data.frame(Titanic)
+%ggparallel(names(titanic)[c(1,4,2,1)], order=0, method='adj.angle', text.angle=0, weight="Freq", titanic, ratio=0.035) + scale_fill_brewer(palette="Paired") + scale_colour_brewer(palette="Paired") + coord_flip() + theme(legend.position="none")
 % ggsave("adj-angle.pdf", width=6, height=10)
 \includegraphics[width=\linewidth]{adj-angle}
+\caption{Adjusted common angle plot of the Titanic data.}
+\label{adj.angle}
 \end{figure}
 \section{Implementation}
 
