@@ -278,6 +278,7 @@ Order  & \rotatebox{90}{Common Angles}
    \hline
 \end{tabular}
 \end{center}
+\label{a2}
 \caption{Responses to question A.2: order levels of Class by the number of survivors (smallest to largest). }
 \end{table}
 
@@ -285,7 +286,7 @@ Ordering the levels of the variable class can be done in 24 different ways corre
 Figure \ref{cubes} shows an overview of those orderings - each ordering is represented by one dot. Orderings that are only one swap of levels apart are connected by a line, yielding a regular graph of degree 6, i.e.  i.e.  each node connects to  six other nodes. The colored dots on top of the graph correspond to the responses from the survey - size of the dots is proportional to the number of observers choosing this particular ordering. It becomes obvious from the three graphs in figure \ref{cubes} that  answers for each design are close - usually separated by only one edge. We also see that the answers to each design populate quite  different regions of the graph. 
 The correct ordering, as well as the orderings assuming the line width illusion and its reverse are marked with symbols. Answers for the common angle design are centered around the correct answer, while responses to parallel sets are clustered around the response corresponding to the line width illusion. Due to the small number of responses to the hammock design a clear clustering of the answers is not recognizable, but the answer for the inverse line width illusion is among the responses.
 
-The same holds true for the third question in the survey -- where participants are, again, asked to order categories by the number of records they correspond to. Common angle displays show the best performance in terms of correctness (73.7\% on 19 responses), compared to a correctness of 18.5\% for parallel sets plots on 27 responses, indicating a significantly better performance of common angle plots at a level of 0.00022, based on a Mantel-Haenszel test (the difference in performance to Hammock plots is also significant at a level of 0.01162; but there is no significant difference in correctness between Hammock plots or parallel sets.).
+The same holds true for the third question in the survey -- where participants are, again, asked to order categories by the number of records they correspond to. Common angle displays show the best performance in terms of correctness (73.7\% on 19 responses), compared to a correctness of 18.5\% for parallel sets plots on 27 responses, indicating a significantly better performance of common angle plots at a level of 0.00022, based on a Mantel-Haenszel test (the difference in performance to Hammock plots is also significant at a level of 0.01162; but there is no significant difference in correctness between Hammock plots and parallel sets.).
 \begin{figure*}
 \includegraphics[width=\linewidth]{cubes}
 \caption{Answers to question A.2 -- each node corresponds to a single ordering of the levels in variable 'Class'. Lines are drawn between orderings that are only one swap of levels apart (which corresponds to a Cayley distance of 1). The colored dots show responses from the survey, their sizes depend on the number of responses for each ordering. }
@@ -299,38 +300,68 @@ Order &  \rotatebox{90}{Common Angles}
 & \rotatebox{90}{Hammock Plots}
 & \rotatebox{90}{Parallel Sets} &\\
   \hline
-  c, b, a &  &  2 &  \\
-    a, b, c &  1 &  5 &  & inverse illusion\\ 
-  a, c, b & 14 &  2 &  5 & correct\\ 
-  b, c, a &  2 &  &  2 \\ 
-  c, a, b &  2 &  & 15 & line width illusion\\ 
-  b, a, c &  &  &  5 \\ 
+c, b, a &  &  2 &  \\
+a, b, c &  1 &  5 &  & inverse illusion\\ 
+a, c, b & 14 &  2 &  5 & correct\\ 
+b, c, a &  2 &  &  2 \\ 
+c, a, b &  2 &  & 15 & line width illusion\\ 
+b, a, c &  &  &  5 \\ 
  \hline
   Total & 19 &  9 & 27 \\ 
    \hline
 \end{tabular}
 \end{center}
 \caption{Responses to question A.3: order combinations from smallest to largest, where 'a' is first class female, 'b' are male survivors, and 'c' are crew survivors. }
+\label{a3}
 \end{table}
 
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{clrrrl}
+  Qu & Design & \rotatebox{90}{Agree} & \rotatebox{90}{Disagree} & \rotatebox{90}{Don't Know}   & Reason\\ \hline
+  \hline
+1 & common &   0 &  16 &   1 \\ 
+   & hammock &   0 &  15 &   1 \\ 
+ & parallel &   8 &   7 &   0 & line width illusion\\ \hline
+2 & common &  16 &   0 &   1 \\ 
+& hammock &   9 &   7 &   0 & inverse illusion\\ 
+& parallel &  15 &   0 &   0 \\ \hline
+3& common &  16 &   0 &   1 \\ 
+& hammock &  16 &   0 &   0 \\ 
+& parallel &  15 &   0 &   0 \\ 
+   \hline
+\end{tabular}
+\end{center}
+\caption{Responses to question B.1}
+\label{tab:b1}
+\end{table}
 
+Table \ref{tab:b1} shows a summary to three questions with possible answers ``agree", ``disagree", and ``don't know".
+The first two questions are  examples, where the line width illusion, and its reverse will lead to answers that differ from the correct answer. Parallel sets plots are susceptible to the line width illusion, while hammock plots suffer from the reverse. The data shows that in about 50\% of the responses we can see this difference. 8 out of 15 answers for the parallel sets plots in question 1 deviate from the correct answer, and 7 out of 16 responses corresponding to hammock plots in question 2 show the wrong answer.
+
+
+\begin{tabular}{lp{0.8\linewidth}}
+ 1) & There are about the same number of genes in the group ``steroid biosynthesis on chromosome 1" as in the group ``caffeine metabolism on chromosome 8"\\
+ 2) & The group with the greatest number of genes is ``drug metabolism onchromosome 4"\\
+ 3) & There are more genes involved in the group ``drug metabolism on chromosome 1" than all genes involved in the caffeine metabolism pathway
+\end{tabular}
 
 \section{Applications}
 %XXX biological findings - pathways - what are the new findings?
 One application using biochemical pathway data is visualization of screening for drug interaction. Setting one bar to classify by pathways and a second bar to classify by physical location (e.g. chromosome), the ribbon widths indicate the number of genes on a particular chromosome that are active in a pathway. A chromosome with ribbons connecting to multiple pathways are a physical target for drugs that possibly affect both paths. In Figure XXX the bottom bar shows two pathways: hsa00232, which is involved in caffeine metabolism, and hsa00982, which is involved with drug metabolism via the cytochrome P450 superfamily. The top bar classifies by chromosome location. Gene CYP1A2 is involved in both pathways - clomipramine (an antidepressant) and caffeine both may act as a substrate.
-\begin{figure*}[htbp] %  figure placement: here, top, bottom, or page
-   \centering
-   \includegraphics[width=\linewidth]{ca-kegg} 
-   \caption{Common angle plot }
-   \label{fig:kegg}
-\end{figure*}
-
-\begin{figure*}[htbp] %  figure placement: here, top, bottom, or page
-   \centering
-   \includegraphics[width=\linewidth]{ca-kegg-2} 
-   \caption{Common angle plot }
-   \label{fig:kegg:2}
-\end{figure*}
+%\begin{figure*}[htbp] %  figure placement: here, top, bottom, or page
+%   \centering
+%   \includegraphics[width=\linewidth]{ca-kegg} 
+%   \caption{Common angle plot }
+%   \label{fig:kegg}
+%\end{figure*}
+%
+%\begin{figure*}[htbp] %  figure placement: here, top, bottom, or page
+%   \centering
+%   \includegraphics[width=\linewidth]{ca-kegg-2} 
+%   \caption{Common angle plot }
+%   \label{fig:kegg:2}
+%\end{figure*}
 
 \begin{figure*}[htbp] %  figure placement: here, top, bottom, or page
    \centering
