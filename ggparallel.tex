@@ -253,7 +253,7 @@ One of the most famous charts that can be classified as a Sankey diagram is Mina
 
 
 \subsection{Evaluation}
-
+To determine the effectiveness of the common angle display, participants were selected to participate in a survey asking them to provide responses regarding the structure of two datasets. All individuals were presented with the same questions, however the type of chart provided as reference for answering questions varied randomly among the types decribed previously. See appendix for details regarding the survey demographics, and data.
 \begin{table}[ht]
 \begin{center}
 \begin{tabular}{rrrrl}
@@ -413,9 +413,13 @@ The colors for the plots have been chosen using color schemes from the ColorBrew
 %
 \appendix
 \subsection*{Demographics of the pre-cursory survey I}\label{app1}
-33 students, staff and faculty from Iowa State University participated in the survey investigating the strength of the perceptual line width distortion. The Qualtrics system \cite{} was used to create the survey and all students, staff and faculty from programs in Statistics, Bioinformatics and Computational Biology and Human Computer Interaction were invited to participate by email. No personally identifiable information was collected, nor was any compensation offered. Participants used their own personal computing devices to access the survey. A majority of participants used WoW64 (Windows 32-bit or Windows 64-bit), with the next most common operating system Intel Mac OS X10.6.8 (Snow Leopard). The preferred choice of browser was  Chrome, followed by Firefox. 
+33 students, staff and faculty from Iowa State University participated in the survey investigating the strength of the perceptual line width distortion. The Qualtrics system \cite{} was used to create the survey and all students, staff and faculty from programs in Statistics, Bioinformatics and Computational Biology and Human Computer Interaction were invited to participate by email. No personally identifiable information was collected, nor was any compensation offered. Participants used their own personal computing devices to access the survey. A majority of participants used WoW64 (Windows 32-bit or Windows 64-bit), with the next most common operating system Intel Mac OS X10.6.8 (Snow Leopard). The preferred choice of browser was  Chrome, followed by Firefox. For two participants, the Qualtrics survey software was unable to capture operating system or browser information.
+
+One question in this survey asked participants to rank the number of survivors in the titanic dataset by class. The results are summarized in table  \ref{tab:results} .
+
+
 %No participants chose to do so using internet explorer. 
-For two participants, the Qualtrics survey software was unable to capture operating system or browser information.
+
 % ## operating system
 % summary(df2$Q2_3_TEXT)
 % #                      Intel Mac OS X 10_6_8 Intel Mac OS X 10_7_3   Intel Mac OS X 10.6          Linux x86_64 
@@ -429,11 +433,69 @@ For two participants, the Qualtrics survey software was unable to capture operat
 % #         Chrome Firefox  Safari 
 % #      2      16      10       5 
 
-In contrast to that, a second question asking participants to order class levels according to survival {\it rates} of members did not yield any indication that parallel sets were performing less efficiently than barcharts; 11 out of 12 (barcharts) and 12 out of 13 (parallel sets) participants were able to answer this question correctly. The answer was also based on either figure \ref{question1a} or \ref{question1b}. While the line width illusion is present, its effect for this instance is not strong enough to have an impact on the order of the results.
+% In contrast to that, a second question asking participants to order class levels according to survival {\it rates} of members did not yield any indication that parallel sets were performing less efficiently than barcharts; 11 out of 12 (barcharts) and 12 out of 13 (parallel sets) participants were able to answer this question correctly. The answer was also based on either figure \ref{question1a} or \ref{question1b}. While the line width illusion is present, its effect for this instance is not strong enough to have an impact on the order of the results.
 
 
 
 \subsection*{Survey II}\label{app2}
+All students, staff and faculty from Iowa State University programs in Statistics, Bioinformatics and Computational Biology and Human Computer Interaction were invited to participate by email. 93 individuals accessed the survey, with 47 individuals submitting responses for all questions. As in the first survey, participants used their own personal computing devices to access the survey, which was created using Qualtrics Labs, Inc software. No personally identifiable information was collected, nor was any compensation offered. At the survey start, participants were presented a brief tutorial regarding the different plot types. In the survey, participants were first asked three questions regarding the titanic dataset, three questions regarding the gene dataset, then two questions soliciting feedback regarding plot types, allowing for free response. \\
+
+\noindent The questions pertaining to the titanic dataset were: \\ \\
+\emph{A1. Agree, Disagree or Don't Know/Can't Determine with the following statements:}
+\begin{itemize}
+\item There were an approximately equal number of Male and Female Survivors
+\item The group with largest number of travelers was Female Survivors
+\item There were more Male Non-Survivors than number of males in First AND Second Class Combined
+\end{itemize}
+
+\noindent \\ \emph{A2. Order the categories of Class by number Survived, fewest to most.} 
+\begin{itemize}
+\item 1st
+\item 2nd 
+\item 3rd
+\item Crew
+\end{itemize}
+
+\noindent \\ \emph{A3. Order the following groups by number, fewest to most}
+\begin{itemize}
+\item 1st Class female passengers
+\item Male Survivors
+\item Crew Survivors
+\end{itemize}
+
+
+\noindent \\  The questions pertaining to the gene dataset were: 
+
+\noindent \\ \emph{B1. Agree, Disagree or Don't Know/Can't Determine with the following statements:}
+\begin{itemize}
+\item There are about the same number of genes in the group "steroid biosynthesis:chromosome 1" as in the group "caffeine metabolism: chromosome 8"
+\item The group with the greatest number of genes is "drug metabolism:chromosome 4"
+\item there are more genes involved in the group "drug metabolism: chromosome 1" than all genes involved in the caffeine metabolism pathway
+\end{itemize}
+
+\noindent \\ \emph{B2. Order the following chromosomes by number of genes involved in steroid biosynthesis pathway, fewest to most.}
+\begin{itemize}
+\item chromosome 1
+\item chromosome 4
+\item chromosome 8 
+\item chromosome X
+\end{itemize}
+
+\noindent \\ \emph{B3. Order the following chromosomes by number of genes involved, fewest to most.}
+\begin{itemize}
+\item steroid biosynthesis :: chromosome X
+\item steroid biosynthesis :: chromosome 4
+\item drug metabolism :: chromosome X
+\end{itemize} 
+
+\noindent \\Participants were randomly assigned to one of six blocks, each of approximately equal size. While individuals in all blocks were presented with the same questions and datasets in the order shown above, each block was presented with a unique ordering of only two of the plot types (e.g parallel sets and hammock plot; common angles and parallel sets, etc) to use as reference when respon. This study design structure was imposed, in part,  to encourage participation by reducing the amount of time for survey completion. Completion of all survey questions was anticipated to take 10 - 15 minutes.
+
+\subsection*{Data and preprocessing}
+Data for questions A1, A2 and A3 in survey 2 were previously published in: \citep{dawson:1995}.
+
+Data for questions B1, B2 and B3 in survey 2 was obtained using the UCSC Genome Browser \cite{ucsc:2002} for humane genome assembly (hg18, May2006). The data was subsetted for genes involved in pathways hsaXXX (drug metabolism), hsaXXX (caffeine metabolism), and hsaXXX (steroid biosynthesis). From this data, genes active on selected chromosomes were displayed in plots.
+
+All data manipulation was performed  using software {\tt R} 2.15.1 \citep{R} with Bioconductor package KEGG.db \cite{kegg}
 %
 %\subsection*{Discussion of Sine Illusion}
 %Using the notation given in the applet, we assume a value $s$ for the sine amplitude, $\ell$ for the vertical length of line segments, and $\ell_c$ for the amount of compensation. 
