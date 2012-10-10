@@ -282,11 +282,33 @@ As a logical next step in making ribbons comparable across all their parts and m
 
 \section{Evaluation}
 \subsection{Survey Design}
-To determine the effectiveness of the common angle display, participants were selected to participate in a survey asking them to provide responses regarding the structure of two datasets. All individuals were presented with the same questions, however the type of chart provided as reference for answering questions varied randomly among the types described previously. See appendix for details regarding the survey demographics, and data.
+% description of general design
+To determine the effectiveness of the common angle display, we conducted a user experiment in form of a survey asking participants to provide responses regarding the structure in two data sets.
+
+ All individuals were presented with the same six questions, in two blocks of three questions each. The first block of question investigated structure in the Titanic data set, including a follow-up of the survival-class ordering issue discussed earlier. Participants were exposed to one of the three types of displays shown in figures \ref{hammock} and \ref{angle}, or a parallel sets plot (not shown).
+ 
+ The second block consisted of questions regarding gene-pathway relationships, in a dataset constructed from the UCSC Genome Browser \cite{ucsc:2002} for humane genome assembly. 
+ While each participant was giving feedback to the exact same questions, we varied the types of plots to allow for a direct comparison of their effectiveness.
+% table of participation across different sets
+
+%% however the type of chart provided as reference for answering questions varied randomly among the types described previously. 
+%%
+%%In the survey, participants were first asked three questions regarding the titanic dataset, three questions regarding the gene dataset, then two questions soliciting feedback regarding plot types, allowing for free response.
+
+
+
+%
+
+% 
+
+
+See appendix for details regarding the survey demographics, and data.
 
 XXX discussion of datasets
+%XXX biological findings - pathways - what are the new findings?
+One application using biochemical pathway data is visualization of screening for drug interaction. Setting one bar to classify by pathways and a second bar to classify by physical location (e.g. chromosome), the ribbon widths indicate the number of genes on a particular chromosome that are active in a pathway. A chromosome with ribbons connecting to multiple pathways are a physical target for drugs that possibly affect both paths. In Figure XXX the bottom bar shows two pathways: hsa00232, which is involved in caffeine metabolism, and hsa00982, which is involved with drug metabolism via the cytochrome P450 superfamily. The top bar classifies by chromosome location. Gene CYP1A2 is involved in both pathways - clomipramine (an antidepressant) and caffeine both may act as a substrate.
 
-XXX construction of pathway filter 
+
 
 \subsection{Results and Analysis}\label{results}
 \begin{table}[ht]
@@ -398,9 +420,8 @@ The first two questions are  examples, where the line width illusion, and its re
  3) & There are more genes involved in the group ``drug metabolism on chromosome 1" than all genes involved in the caffeine metabolism pathway
 \end{tabular}
 
-\section{Applications}
-%XXX biological findings - pathways - what are the new findings?
-One application using biochemical pathway data is visualization of screening for drug interaction. Setting one bar to classify by pathways and a second bar to classify by physical location (e.g. chromosome), the ribbon widths indicate the number of genes on a particular chromosome that are active in a pathway. A chromosome with ribbons connecting to multiple pathways are a physical target for drugs that possibly affect both paths. In Figure XXX the bottom bar shows two pathways: hsa00232, which is involved in caffeine metabolism, and hsa00982, which is involved with drug metabolism via the cytochrome P450 superfamily. The top bar classifies by chromosome location. Gene CYP1A2 is involved in both pathways - clomipramine (an antidepressant) and caffeine both may act as a substrate.
+%\section{Applications}
+
 %\begin{figure*}[htbp] %  figure placement: here, top, bottom, or page
 %   \centering
 %   \includegraphics[width=\linewidth]{ca-kegg} 
@@ -478,7 +499,7 @@ The colors for the plots have been chosen using color schemes from the ColorBrew
 
 
 \subsection*{Survey }\label{app2}
-All students, staff and faculty from Iowa State University programs in Statistics, Bioinformatics and Computational Biology and Human Computer Interaction were invited to participate by email. 93 individuals accessed the survey, with 47 individuals submitting responses for all questions. As in the first survey, participants used their own personal computing devices to access the survey, which was created using Qualtrics Labs, Inc software. No personally identifiable information was collected, nor was any compensation offered. At the survey start, participants were presented a brief tutorial regarding the different plot types. In the survey, participants were first asked three questions regarding the titanic dataset, three questions regarding the gene dataset, then two questions soliciting feedback regarding plot types, allowing for free response. \\
+All students, staff and faculty from Iowa State University programs in Statistics, Bioinformatics and Computational Biology and Human Computer Interaction were invited to participate by email. 93 individuals accessed the survey, with 47 individuals submitting responses for all questions. As in the first survey, participants used their own personal computing devices to access the survey, which was created using Qualtrics Labs, Inc software. No personally identifiable information was collected, nor was any compensation offered. At the survey start, participants were presented a brief tutorial regarding the different plot types.  \\
 
 \noindent The questions pertaining to the titanic dataset were: \\ \\
 \emph{A1. Agree, Disagree or Don't Know/Can't Determine with the following statements:}
