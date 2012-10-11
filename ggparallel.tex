@@ -109,6 +109,8 @@ Non-Survivors & 673 & 122 & 167 &  528
 \end{tabular}
 \end{center}
 This identifies an order of crew, first class, third class, followed by second class as correct. We will discuss the origin and effects that determine the strength of the line width illusion in the next section.
+
+XXX difference between our implementation of parallel sets and hierarchical definition by Kosara
 %
 \subsection{Strength of the line width illusion}\label{distortion}
 
@@ -285,12 +287,24 @@ As a logical next step in making ribbons comparable across all their parts and m
 % description of general design
 To determine the effectiveness of the common angle display, we conducted a user experiment in form of a survey asking participants to provide responses regarding the structure in two data sets with predominantly categorical variables.
 
- All individuals were presented with the same six questions, in two blocks of three questions each. The first block of questions investigated structure in the Titanic data set, including a follow-up of the survival-class ordering issue discussed earlier. Participants were exposed to one of the three types of displays shown in figures \ref{hammock} and \ref{fig:ca-titanic}, or a parallel sets plot (not shown).
+ All individuals were presented with the same six questions, in two blocks of three questions each. The first block of questions investigated structures in the Titanic data set, including a follow-up of the survival-class ordering issue discussed earlier. Participants were exposed to one of the three types of displays discussed: a parallel sets plot, the Hammock plot of figure \ref{hammock}, or the common angle plot of  figure \ref{fig:ca-titanic}.
  
- The second block consisted of questions regarding gene-pathway relationships, in a dataset constructed from the UCSC Genome Browser \cite{ucsc:2002} for humane genome assembly. 
- While each participant was giving feedback to the exact same questions, we varied the types of plots to allow for a direct comparison of their effectiveness.
+The second block  of questions regarded gene-pathway relationships in a dataset constructed from the UCSC Genome Browser \cite{ucsc:2002} for humane genome assembly. Ribbon widths here indicate the number of genes on a  chromosome that are active in a particular pathway. The pathways we focus on here, are involved in caffeine metabolism (hsa00232),  steroid biosynthesis (hsa00100), and hsa00982, which is involved with drug metabolism via the cytochrome P450 superfamily.  One important question when dealing with drug development are interactions with other drugs. Those interactions are more likely to happen when pathways use similar locations, e.g. gene CYP1A2 is involved in both  caffeine metabolism and the drug pathway -- clomipramine (an antidepressant) and caffeine both may act as a substrate. Chromosomes give a --very rough-- approximation to location. Connections between chromosomes and pathways are therefore interesting, when they show involvement of chromosomes in several pathways.
+ 
+%% Marie, I'm not quite sure what  clomipramine has to do with either durgs or caffeine - or is clomipramine a drug that uses hsa00982? If so, we might need an additional sentence here.
+ 
+Participants were asked a second set of three questions (see appendix \ref{app2} for details) on this data set, but they were exposed to a  type of display different from the type accompanying questions from block 1.
+  
+This resulted in six different survey administrations: 
 
-XXX table of participation across different sets and questions
+\raggedright{
+\scalebox{0.9}{
+\begin{tabular}{rrrrrrr}
+Block 1 & PS & CA & Ham & PS & CA & PS \\ 
+ Block 2 & CA & PS & PS & Ham & Ham & CA \\ \hline
+  Total &  9 &  8 &  9 &  7 & 11 & 11 \\ 
+\#responses & 
+\end{tabular}}}
 
 %% however the type of chart provided as reference for answering questions varied randomly among the types described previously. 
 %%
@@ -307,7 +321,7 @@ See appendix for details regarding the survey demographics, and data.
 
 XXX discussion of datasets
 %XXX biological findings - pathways - what are the new findings?
-One application using biochemical pathway data is visualization of screening for drug interaction. Setting one bar to classify by pathways and a second bar to classify by physical location (e.g. chromosome), the ribbon widths indicate the number of genes on a particular chromosome that are active in a pathway. A chromosome with ribbons connecting to multiple pathways are a physical target for drugs that possibly affect both paths. In Figure XXX the bottom bar shows two pathways: hsa00232, which is involved in caffeine metabolism, and hsa00982, which is involved with drug metabolism via the cytochrome P450 superfamily. The top bar classifies by chromosome location. Gene CYP1A2 is involved in both pathways - clomipramine (an antidepressant) and caffeine both may act as a substrate.
+%One application using biochemical pathway data is visualization of screening for drug interaction. Setting one bar to classify by pathways and a second bar to classify by physical location (e.g. chromosome), the ribbon widths indicate the number of genes on a particular chromosome that are active in a pathway. A chromosome with ribbons connecting to multiple pathways are a physical target for drugs that possibly affect both paths. In Figure XXX the bottom bar shows two pathways: hsa00232, which is involved in caffeine metabolism, and hsa00982, which is involved with drug metabolism via the cytochrome P450 superfamily. The top bar classifies by chromosome location. Gene CYP1A2 is involved in both pathways - clomipramine (an antidepressant) and caffeine both may act as a substrate.
 
 
 
