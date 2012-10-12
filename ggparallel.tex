@@ -310,16 +310,13 @@ Block 1 & PS & CA & Ham & PS & CA & PS \\
 %%In the survey, participants were first asked three questions regarding the titanic dataset, three questions regarding the gene dataset,  then two questions soliciting feedback regarding plot types, allowing for free response.
 
 \noindent
-This design allows us the following comparisons:
-
-XXX
-% describe set up  of model
-%
-
-% 
+This design allows us to compare designs across different questions and data sets, while at the same time allowing to adjust for individuals' different skill sets. 
+For the analysis, we first fit two linear mixed effects models, $M1$ and $M2$ -- the first one gives a general overview of comparing the designs, the second one further highlights the performance of the designs in each question.
+We will then proceed to investigate some of the results in more detail.
 
 
-See appendix for details regarding the survey demographics, and data.
+
+%See appendix for details regarding the survey demographics, and data.
 
 %XXX discussion of datasets
 %XXX biological findings - pathways - what are the new findings?
@@ -328,6 +325,50 @@ See appendix for details regarding the survey demographics, and data.
 
 
 \subsection{Results and Analysis}\label{results}
+Answers for each question on the survey were assessed for correctness, giving us a binary variable of 1s and 0s, which we used to investigate performance of different designs. 
+
+In a first model, $M1$, we are only interested in the overall difference in performance between designs. We can express this as a model of the form
+\begin{equation}\label{model1}[M1]
+\qquad\qquad y_i = \mu + d_{j(i)} + u_{k(i)} + \varepsilon_i \qquad\qquad
+\end{equation}
+where $y_i$ is the $i$th response, for $i = 1, ..., n$. $d_{j(i)}$ is the parameter measuring the effect of design $j$ ($j = C, H, P$ for \underline{C}ommon Angle, \underline{H}ammock plot, and \underline{P}arallel sets plot), $u_{k(i)}$ is the effect of participant's $k$ individual skills in evaluating these plots, $k \in \{1, ..., XXX\}$. The assumption is that skills are independent and normally distributed with an expected value of zero and a variance of $\sigma_u^2$.
+$\varepsilon_i$ is, similarly to a regular linear model, assumed to be independently distributed according to a normal distribution with mean of zero and variance $\sigma^2$.
+
+Table \ref{coef1} gives an overview of the model coefficients and their estimates. The effect of the common angle design is used as a baseline, i.e all the effects shown are differences with respect to the performance of common angle plots. Both Hammock plots and Parallel sets plot have negative effects on the correctness of the response. This indicates a significantly worse performance of these designs than under the common angle design.
+
+Table \ref{raw} shows percentages of correctness for each design and each question. Bold numbers indicate significantly different (worse) performance of a design compared to the common angle design. Note that question $A2$ overall had the worst performance, parallel sets  exhibit significantly worse performance in four out of the six questions, Hammock plots are inferior to the common angle plot in two out the six questions. Note that in the last question Hammock plots have the best performance-- but this is does not  constitute a significant difference to the performance of the common angle design.
+
+
+%xtable(summary(m1)@coefs)% latex table generated in R 2.15.1 by xtable 1.7-0 package% Fri Oct 12 09:08:11 2012\begin{table}[ht]\begin{center}\begin{tabular}{lrrrrl}  \hline & Estimate & Std. Error & z value & Pr($>$$|$z$|$) & \\   \hline$\mu$ & 1.79 & 0.25 & 7.30 & 0.00 & ***\\ [5pt]  $d_C$& 0.00 & -- & -- & -- \\   $d_H$ & -0.81 & 0.35 & -2.36 & 0.02 & * \\   $d_P$ & -1.48 & 0.30 & -4.96 & 0.00 & ***\\    \hline
+\multicolumn{5}{l}{Signif. codes:  0 Ô***Õ 0.001 Ô**Õ 0.01 Ô*Õ 0.05 Ô.Õ 0.1 Ô Õ 1 }\end{tabular}\end{center}
+\label{coef1}
+\caption{Model fit for $M1$ measuring correctness of answers in the survey. The common angle design is used as baseline -- both Hammock plots and, to a larger degree, Parallel sets, show a significantly worse performance.}\end{table}
+
+
+%xtable(round(acast(survey, qu~design, fun=mean, value.var="correct")*100,3), digits=1)% latex table generated in R 2.15.1 by xtable 1.7-0 package% Fri Oct 12 11:21:19 2012\begin{table}[ht]\begin{center}\begin{tabular}{rrrr}  \hline & common & hammock & parallel \\   \hlineA1 & 86.0 & 74.1 & 81.5 \\   A2 & 63.2 & {\bf 11.1} & {\bf 7.4} \\   A3 & 73.7 & {\bf 22.2} & {\bf 18.5} \\   B1 & 94.1 & 83.3 & 82.2 \\   B2 & 76.5 & 68.8 & {\bf 6.7} \\   B3 & 76.5 & 87.5 & {\bf 53.3} \\    \hline\end{tabular}\end{center}
+\label{raw}
+\caption{Raw percentages of correctness of responses for each question and design. Bold numbers indicate significant difference from common angle performances,}
+\end{table}
+
+Model $M2$ extends the first model by additionally 
+
+
+\begin{equation}\label{model2}[M2]
+\quad y_i = \mu + d_{j(i)}  + q_{q(i)} + p_{j(i),q(i)} + u_{k(i)} + \varepsilon_i \quad
+\end{equation}
+
+$q \in \{A1, A2, A3, B1, B2, B3\}$;  $j(i), q (i)$ is the combination of design and question in the $i$th observation.
+
+
+
+% xtable(summary(m4)@coefs)% latex table generated in R 2.15.1 by xtable 1.7-0 package% Fri Oct 12 09:12:32 2012\begin{table}[ht]\begin{center}\begin{tabular}{rrrrrl}  \hline & Estimate & Std. Error & z value & Pr($>$$|$z$|$) & \\   \hline$\mu$ & 2.58 & 0.56 & 4.58 & 0.00  & ***\\ [5pt]Design\\
+  $d_C$ & 0.00 & -- & -- & -- \\   $d_H$ & -1.32 & 0.86 & -1.53 & 0.13 \\   $d_P$ & -0.62 & 0.71 & -0.87 & 0.38 \\ [5pt]Questions\\
+  $q_{A1}$ & 0.00 & -- & -- & -- \\   $q_{A2}$  & -1.75 & 0.71 & -2.46 & 0.01 &* \\   $q_{A3}$  & -1.05 & 0.75 & -1.41 & 0.16 \\   $q_{B1}$  & 1.43 & 1.07 & 1.33 & 0.18 \\   $q_{B2}$  & -0.88 & 0.97 & -0.91 & 0.36 \\   $q_{B3}$  & -0.88 & 0.97 & -0.91 & 0.36 \\ [5pt]Interaction \\
+$p_{H, A2}$ & -2.05 & 1.50 & -1.37 & 0.17 \\ $p_{P,A2}$ & -3.48 & 1.22 & -2.86 & 0.00 &**\\ $p_{H,A3}$ & -1.81 & 1.26 & -1.43 & 0.15 \\ $p_{P,A3}$ & -2.92 & 1.02 & -2.86 & 0.00 &**\\ $p_{H,B1}$ & -0.61 & 1.39 & -0.44 & 0.66 \\ $p_{P,B1}$ & -1.28 & 1.33 & -0.97 & 0.33 \\ $p_{H,B2}$ & 0.66 & 1.37 & 0.48 & 0.63 \\ $p_{P,B2}$ & -4.40 & 1.74 & -2.53 & 0.01 &*\\ $p_{H,B3}$ & 2.09 & 1.50 & 1.39 & 0.16 \\ $p_{P,B3}$ & -0.81 & 1.29 & -0.63 & 0.53 \\    \hline
+\multicolumn{5}{l}{Signif. codes:  0 Ô***Õ 0.001 Ô**Õ 0.01 Ô*Õ 0.05 Ô.Õ 0.1 Ô Õ 1 }\end{tabular}\end{center}\label{m1}
+\caption{Model fit for $M2$ measuring correctness of answers in the survey, detailing performance of designs on each question. All design comparisons are with respect to the common angle design.}\end{table}
+
+
 \begin{table}[ht]
 \begin{center}
 \begin{tabular}{rrrrl}
@@ -411,11 +452,11 @@ XXX amount of distortion in linewidth illusion?
 \begin{table}[ht]
 \begin{center}
 \begin{tabular}{clrrrl}
-  Qu & Design & \rotatebox{90}{Agree} & \rotatebox{90}{Disagree} & \rotatebox{90}{Don't Know}   & Reason\\ \hline
+  Qu & Design & \rotatebox{90}{Correct} & \rotatebox{90}{Incorrect} & \rotatebox{90}{No Answer}   & Reason\\ \hline
   \hline
-1 & common &   0 &  16 &   1 \\ 
-   & hammock &   0 &  15 &   1 \\ 
- & parallel &   8 &   7 &   0 & line width illusion\\ \hline
+1 & common &   16 &  0 &   1 \\ 
+   & hammock &   15 &  0 &   1 \\ 
+ & parallel &   7 &   8 &   0 & line width illusion\\ \hline
 2 & common &  16 &   0 &   1 \\ 
 & hammock &   9 &   7 &   0 & inverse illusion\\ 
 & parallel &  15 &   0 &   0 \\ \hline
@@ -432,12 +473,6 @@ XXX amount of distortion in linewidth illusion?
 Table \ref{tab:b1} shows a summary to three questions with possible answers ``agree", ``disagree", and ``don't know".
 The first two questions are  examples, where the line width illusion, and its reverse will lead to answers that differ from the correct answer. Parallel sets plots are susceptible to the line width illusion, while hammock plots suffer from the reverse. The data shows that in about 50\% of the responses we can see this difference. 8 out of 15 answers for the parallel sets plots in question 1 deviate from the correct answer, and 7 out of 16 responses corresponding to hammock plots in question 2 show the wrong answer.
 
-
-\begin{tabular}{lp{0.8\linewidth}}
- 1) & There are about the same number of genes in the group ``steroid biosynthesis on chromosome 1" as in the group ``caffeine metabolism on chromosome 8"\\
- 2) & The group with the greatest number of genes is ``drug metabolism onchromosome 4"\\
- 3) & There are more genes involved in the group ``drug metabolism on chromosome 1" than all genes involved in the caffeine metabolism pathway
-\end{tabular}
 
 %\section{Applications}
 
