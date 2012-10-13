@@ -50,7 +50,7 @@ We will first give an overview of  charts commonly used for displaying associati
 %The effectiveness of statistical graphs is rooted in the remarkable ability of people to apprehend, process, and remember pictorial information. The human visual system, however, is subject to distortion and illusion, processes that can affect the perception of graphs. Good graphical design can minimize and counteract the limitations of human vision. In Figure 9, for example, it appears that the difference between the hypothetical import and export series is changing when this difference actually is constant (cf., Playfair?s time series graph in Figure 2 a). 
 
 \subsection{Line-width illusion}
-As an example for the phenomenon under investigation in this paper, we refer you to the top chart in  figure  \ref{playfair}. 
+As an example for the phenomenon under investigation in this paper, we refer %you% to the top chart in  figure  \ref{playfair}. 
 This chart shows Playfair's  visualization of the balance of trade between England and the East Indies as published in his Commercial and Political Atlas, 1786 \cite{playfair, playfair2}. One of the purposes of this chart is to demonstrate the difference between imports and exports in a particular year and its pattern over the time frame. The difference in exports and imports is encoded as the vertical difference between the lines. When observers are asked to sketch out the difference between exports and imports  \citep{cleveland:1984}, they very often  miss the steep rise in the difference between the lines starting just before 1760 (see the chart at the bottom for the actual difference between imports and exports).
 
 
@@ -110,8 +110,8 @@ Non-Survivors & 673 & 122 & 167 &  528
 \end{center}
 This identifies an order of crew, first class, third class, followed by second class as correct. We will discuss the origin and effects that determine the strength of the line width illusion in the next section.
 
-XXX difference between our implementation of parallel sets and hierarchical definition by Kosara
-%
+The plot in figure \ref{question1a} was created using an implementation of parallel sets written for the {\tt R} environment, found in the package {\tt ggparallel} (see section Implementation). A major distinction from the most recent {\tt ParSets v2.1} Java application is the choice to remain faithful to the structure of parallel sets proposed by Kosara in \citep{kosara:2006} and display frequency of each category as scaled boxes. Maintaining visual emphasis on the marginal probabilities of categories within a single dimension \citep{parsetredesign} reduces the impact of the line-width illusion for cognizant users.
+
 \subsection{Strength of the line width illusion}\label{distortion}
 
 %The difference between perceived and actual line width 
@@ -338,12 +338,45 @@ Table \ref{coef1} gives an overview of the model coefficients and their estimate
 Table \ref{raw} shows percentages of correctness for each design and each question. Bold numbers indicate significantly different (worse) performance of a design compared to the common angle design. Note that question $A2$ overall had the worst performance, parallel sets  exhibit significantly worse performance in four out of the six questions, Hammock plots are inferior to the common angle plot in two out the six questions. Note that in the last question Hammock plots have the best performance -- but this is does not  constitute a significant difference to the performance of the common angle design.
 Also note, that the table shows raw percentages, i.e. these performance rates are not adjusted for skills of individuals. 
 
-%xtable(summary(m1)@coefs)% latex table generated in R 2.15.1 by xtable 1.7-0 package% Fri Oct 12 09:08:11 2012\begin{table}[ht]\begin{center}\begin{tabular}{lrrrrl}  \hline & Estimate & Std. Error & z value & Pr($>$$|$z$|$) & \\   \hline$\mu$ & 1.79 & 0.25 & 7.30 & 0.00 & ***\\ [5pt]  $d_C$& 0.00 & -- & -- & -- \\   $d_H$ & -0.81 & 0.35 & -2.36 & 0.02 & * \\   $d_P$ & -1.48 & 0.30 & -4.96 & 0.00 & ***\\    \hline
-\multicolumn{5}{l}{Signif. codes:  0 Ô***Õ 0.001 Ô**Õ 0.01 Ô*Õ 0.05 Ô.Õ 0.1 Ô Õ 1 }\end{tabular}\end{center}
-\caption{\label{coef1} Model fit for $M1$ measuring correctness of answers in the survey. The common angle design is used as baseline -- both Hammock plots and, to a larger degree, Parallel sets, show a significantly worse performance.}\end{table}
+%xtable(summary(m1)@coefs)
+% latex table generated in R 2.15.1 by xtable 1.7-0 package
+% Fri Oct 12 09:08:11 2012
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{lrrrrl}
+  \hline
+ & Estimate & Std. Error & z value & Pr($>$$|$z$|$) & \\ 
+  \hline
+$\mu$ & 1.79 & 0.25 & 7.30 & 0.00 & ***\\ [5pt]
+  $d_C$& 0.00 & -- & -- & -- \\ 
+  $d_H$ & -0.81 & 0.35 & -2.36 & 0.02 & * \\ 
+  $d_P$ & -1.48 & 0.30 & -4.96 & 0.00 & ***\\ 
+   \hline
+\multicolumn{5}{l}{Signif. codes:  0 ?***? 0.001 ?**? 0.01 ?*? 0.05 ?.? 0.1 ? ? 1 }
+\end{tabular}
+\end{center}
+\caption{\label{coef1} Model fit for $M1$ measuring correctness of answers in the survey. The common angle design is used as baseline -- both Hammock plots and, to a larger degree, Parallel sets, show a significantly worse performance.}
+\end{table}
 
 
-%xtable(round(acast(survey, qu~design, fun=mean, value.var="correct")*100,3), digits=1)% latex table generated in R 2.15.1 by xtable 1.7-0 package% Fri Oct 12 11:21:19 2012\begin{table}[ht]\begin{center}\begin{tabular}{rrrr}  \hline & common & hammock & parallel \\   \hlineA1 & 86.0 & 74.1 & 81.5 \\   A2 & 63.2 & {\bf 11.1} & {\bf 7.4} \\   A3 & 73.7 & {\bf 22.2} & {\bf 18.5} \\   B1 & 94.1 & 83.3 & 82.2 \\   B2 & 76.5 & 68.8 & {\bf 6.7} \\   B3 & 76.5 & 87.5 & {\bf 53.3} \\    \hline\end{tabular}\end{center}
+%xtable(round(acast(survey, qu~design, fun=mean, value.var="correct")*100,3), digits=1)
+% latex table generated in R 2.15.1 by xtable 1.7-0 package
+% Fri Oct 12 11:21:19 2012
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{rrrr}
+  \hline
+ & common & hammock & parallel \\ 
+  \hline
+A1 & 86.0 & 74.1 & 81.5 \\ 
+  A2 & 63.2 & {\bf 11.1} & {\bf 7.4} \\ 
+  A3 & 73.7 & {\bf 22.2} & {\bf 18.5} \\ 
+  B1 & 94.1 & 83.3 & 82.2 \\ 
+  B2 & 76.5 & 68.8 & {\bf 6.7} \\ 
+  B3 & 76.5 & 87.5 & {\bf 53.3} \\ 
+   \hline
+\end{tabular}
+\end{center}
 \caption{\label{raw} Raw percentages of correctness of responses for each question and design. Bold numbers indicate significant difference from common angle performances,}
 \end{table}
 
@@ -362,12 +395,45 @@ Table \ref{model2} shows an overview of the  parameters and their estimates for 
 \caption{\label{fitted.m2} Histograms of fitted values under model $M2$, facetted by actual performance of participants. On the left, correct responses are shown. The histogram of fitted values is skewed to the right, with most values above 0.5. The histogram on the right corresponds to wrong answers. There are fewer wrong answers, and they tend to have low fitted values, but there are more false positives among them than false negatives for correct answers. }
 \end{figure}
 
-In the next section we will investigate the results from the survey in further detail for some questions, and highlight the link to the line width illusion and its inverse.% xtable(summary(m4)@coefs)% latex table generated in R 2.15.1 by xtable 1.7-0 package% Fri Oct 12 09:12:32 2012\begin{table}[ht]\begin{center}\begin{tabular}{rrrrrl}  \hline & Estimate & Std. Error & z value & Pr($>$$|$z$|$) & \\   \hline$\mu$ & 2.58 & 0.56 & 4.58 & 0.00  & ***\\ [5pt]Design\\
-  $d_C$ & 0.00 & -- & -- & -- \\   $d_H$ & -1.32 & 0.86 & -1.53 & 0.13 \\   $d_P$ & -0.62 & 0.71 & -0.87 & 0.38 \\ [5pt]Questions\\
-  $q_{A1}$ & 0.00 & -- & -- & -- \\   $q_{A2}$  & -1.75 & 0.71 & -2.46 & 0.01 &* \\   $q_{A3}$  & -1.05 & 0.75 & -1.41 & 0.16 \\   $q_{B1}$  & 1.43 & 1.07 & 1.33 & 0.18 \\   $q_{B2}$  & -0.88 & 0.97 & -0.91 & 0.36 \\   $q_{B3}$  & -0.88 & 0.97 & -0.91 & 0.36 \\ [5pt]Interaction \\
-$p_{H, A2}$ & -2.05 & 1.50 & -1.37 & 0.17 \\ $p_{P,A2}$ & -3.48 & 1.22 & -2.86 & 0.00 &**\\ $p_{H,A3}$ & -1.81 & 1.26 & -1.43 & 0.15 \\ $p_{P,A3}$ & -2.92 & 1.02 & -2.86 & 0.00 &**\\ $p_{H,B1}$ & -0.61 & 1.39 & -0.44 & 0.66 \\ $p_{P,B1}$ & -1.28 & 1.33 & -0.97 & 0.33 \\ $p_{H,B2}$ & 0.66 & 1.37 & 0.48 & 0.63 \\ $p_{P,B2}$ & -4.40 & 1.74 & -2.53 & 0.01 &*\\ $p_{H,B3}$ & 2.09 & 1.50 & 1.39 & 0.16 \\ $p_{P,B3}$ & -0.81 & 1.29 & -0.63 & 0.53 \\    \hline
-\multicolumn{5}{l}{Signif. codes:  0 Ô***Õ 0.001 Ô**Õ 0.01 Ô*Õ 0.05 Ô.Õ 0.1 Ô Õ 1 }\end{tabular}\end{center}
-\caption{\label{model2} Model fit for $M2$ measuring correctness of answers in the survey, detailing performance of designs on each question. All design comparisons are with respect to the common angle design.}\end{table}
+In the next section we will investigate the results from the survey in further detail for some questions, and highlight the link to the line width illusion and its inverse.
+% xtable(summary(m4)@coefs)
+% latex table generated in R 2.15.1 by xtable 1.7-0 package
+% Fri Oct 12 09:12:32 2012
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{rrrrrl}
+  \hline
+ & Estimate & Std. Error & z value & Pr($>$$|$z$|$) & \\ 
+  \hline
+$\mu$ & 2.58 & 0.56 & 4.58 & 0.00  & ***\\ [5pt]
+Design\\
+  $d_C$ & 0.00 & -- & -- & -- \\ 
+  $d_H$ & -1.32 & 0.86 & -1.53 & 0.13 \\ 
+  $d_P$ & -0.62 & 0.71 & -0.87 & 0.38 \\ [5pt]
+Questions\\
+  $q_{A1}$ & 0.00 & -- & -- & -- \\ 
+  $q_{A2}$  & -1.75 & 0.71 & -2.46 & 0.01 &* \\ 
+  $q_{A3}$  & -1.05 & 0.75 & -1.41 & 0.16 \\ 
+  $q_{B1}$  & 1.43 & 1.07 & 1.33 & 0.18 \\ 
+  $q_{B2}$  & -0.88 & 0.97 & -0.91 & 0.36 \\ 
+  $q_{B3}$  & -0.88 & 0.97 & -0.91 & 0.36 \\ [5pt]
+Interaction \\
+$p_{H, A2}$ & -2.05 & 1.50 & -1.37 & 0.17 \\ 
+$p_{P,A2}$ & -3.48 & 1.22 & -2.86 & 0.00 &**\\ 
+$p_{H,A3}$ & -1.81 & 1.26 & -1.43 & 0.15 \\ 
+$p_{P,A3}$ & -2.92 & 1.02 & -2.86 & 0.00 &**\\ 
+$p_{H,B1}$ & -0.61 & 1.39 & -0.44 & 0.66 \\ 
+$p_{P,B1}$ & -1.28 & 1.33 & -0.97 & 0.33 \\ 
+$p_{H,B2}$ & 0.66 & 1.37 & 0.48 & 0.63 \\ 
+$p_{P,B2}$ & -4.40 & 1.74 & -2.53 & 0.01 &*\\ 
+$p_{H,B3}$ & 2.09 & 1.50 & 1.39 & 0.16 \\ 
+$p_{P,B3}$ & -0.81 & 1.29 & -0.63 & 0.53 \\ 
+   \hline
+\multicolumn{5}{l}{Signif. codes:  0 ?***? 0.001 ?**? 0.01 ?*? 0.05 ?.? 0.1 ? ? 1 }
+\end{tabular}
+\end{center}
+\caption{\label{model2} Model fit for $M2$ measuring correctness of answers in the survey, detailing performance of designs on each question. All design comparisons are with respect to the common angle design.}
+\end{table}
 
 
 %%%%%%%%%%%%%%
