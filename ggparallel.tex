@@ -356,6 +356,11 @@ Here, $q$ indicates the effects on performance for  each question, where $q(i)$ 
 Model $M2$ is a significant improvement over model $M1$ (a corresponding log-likelihood ratio test is significant at a level of $<< 10^{-8}$).
 Table \ref{model2} shows an overview of the  parameters and their estimates for model $M2$. After adjusting for individuals' skills Parallel sets perform significantly worse than common angle plots in three of the six questions.
 
+\begin{figure}
+\includegraphics[width=\linewidth]{fitted-m2}
+\caption{\label{fitted.m2} Histograms of fitted values under model $M2$, facetted by actual performance of participants. On the left, correct responses are shown. The histogram of fitted values is skewed to the right, with most values above 0.5. The histogram on the right corresponds to wrong answers. There are fewer wrong answers, and they tend to have low fitted values, but there are more false positives among them than false negatives for correct answers. }
+\end{figure}
+
 In the next section we will investigate the results from the survey in further detail for some questions, and highlight the link to the line width illusion and its inverse.% xtable(summary(m4)@coefs)% latex table generated in R 2.15.1 by xtable 1.7-0 package% Fri Oct 12 09:12:32 2012\begin{table}[ht]\begin{center}\begin{tabular}{rrrrrl}  \hline & Estimate & Std. Error & z value & Pr($>$$|$z$|$) & \\   \hline$\mu$ & 2.58 & 0.56 & 4.58 & 0.00  & ***\\ [5pt]Design\\
   $d_C$ & 0.00 & -- & -- & -- \\   $d_H$ & -1.32 & 0.86 & -1.53 & 0.13 \\   $d_P$ & -0.62 & 0.71 & -0.87 & 0.38 \\ [5pt]Questions\\
   $q_{A1}$ & 0.00 & -- & -- & -- \\   $q_{A2}$  & -1.75 & 0.71 & -2.46 & 0.01 &* \\   $q_{A3}$  & -1.05 & 0.75 & -1.41 & 0.16 \\   $q_{B1}$  & 1.43 & 1.07 & 1.33 & 0.18 \\   $q_{B2}$  & -0.88 & 0.97 & -0.91 & 0.36 \\   $q_{B3}$  & -0.88 & 0.97 & -0.91 & 0.36 \\ [5pt]Interaction \\
