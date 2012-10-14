@@ -36,21 +36,29 @@
 % 
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
-\IEEEPARstart{G}{raphics} are tools of communications: their main purpose is  to summarize quantitative information and present it in a way that readers are able to extract the main message quickly and with a minimum of distortion. Tufte  coined the amount of distortion the \emph{Lie-Factor} \citep[p. 57--69]{tufte}. The Lie-Factor is defined as the ratio of the displayed size of an effect and the size of the same effect in the data. A ratio of one indicates no distortion, values less than one indicate a visual underrepresentation of an effect, values above one a corresponding overrepresentation. Three-dimensional depth effects, in particular, are prone to large Lie-factors.
+\IEEEPARstart{G}{raphics} are tools of communications: their main purpose is  to summarize quantitative information and present it in such a way that readers are able to extract the main message quickly and with a minimum of distortion. Tufte  coined the amount of distortion the \emph{Lie-Factor} \citep[p. 57--69]{tufte}. The Lie-Factor is defined as the ratio of the displayed size of an effect and the size of the same effect in the data. A ratio of one indicates no distortion, values less than one indicate a visual underrepresentation of an effect, values above one a corresponding overrepresentation. Three-dimensional depth effects, in particular, are prone to large Lie-factors.
 
-Another source of distortion are perceptual limitations of our audience. Illusions, in particular, give rise to a distortion similar to a Lie-Factor effect, yet not directly measurable in the actual representation: a physical quantity drawn in the chart might  perfectly reflect the  size of an effect in the data, but if an observer  intuitively interprets another property of the geometrical object, this leads  to distorted, if not altogether wrong, conclusions. 
-As designers of charts we have to be aware of the innate or culturally imposed perceptual limitations of our audience. Good graphical designs minimize and counteract these limitations. 
+Other sources of distortion are perceptual limitations of the audience. Illusions in particular give rise to a distortion similar to a Lie-Factor effect, not directly measurable in the actual representation: A physical quantity drawn in the chart might  perfectly reflect the  size of an effect in the data, but if an observer  intuitively interprets another property of the geometrical object, this leads  to distorted, if not altogether wrong, conclusions. As designers of charts we must be aware of innate or culturally imposed perceptual limitations of the audience. Good graphical designs minimize and counteract these limitations. 
 
-In this paper we discuss the effect and strength of the {\it line-width illusion}  on designs related to displaying associations between categorical variables. We will focus in particular on the use of parallel coordinate plots \citep{pcp:1885, inselberg:1985, wegman:1990} for categorical data and the perceptual implications this has.
+%In this paper we discuss the effect and strength of the {\it line-width illusion}  on designs related to displaying associations between categorical variables. We will focus in particular on the use of parallel coordinate plots \citep{pcp:1885, inselberg:1985, wegman:1990} for categorical data and the perceptual implications this has.
 
-We will first give an overview of  charts commonly used for displaying associations between categorical variables within the framework of parallel coordinate plots, and then discuss their performance with respect to the line width illusion based on user experiments.
+Recent adaptations of parallel coordinates \citep{pcp:1885, inselberg:1985, wegman:1990} and frequency-based methods to display categorical data \citep{hartigan:1981, friendly:1992, hofmann:2000, theus:1997, kosara:2006, bendix:2005, leblanc:1990, 
+spenke:2003}  have addressed perceptual constraints \citep{cleveland:1984} at a theoretical level, but lack reporting of human subjects testing as validation. Usability testing provides empircal evidence to support underlying metaphorical models that new tools implement and identifies sources of unexpected or unpredicted perceptual illusions.
+
+
+We present the Common Angle Chart as a method for displaying categorical data in a manner that minimizes perceptual illusions, particularly the effect and strength of the {\it line-width illusion}. The display preserves dimensional independence and presents frequency information. In addition to case studies demonstrating application to data from distinct disciplines, Common Angle Charts have been tested against a set of  displays that share the framework of parallel coordinates.
+
+In this paper we discuss the effect and strength of line-width illusions when using different displays. Details regarding the construction, external influences, variations and implementation of Common Angle Charts is provided. Structure, demographics and analysis of user testing is provided. We show that the Common Angle Chart resolves a distortion that is a common feature of alternate displays of categorical data.
+
+%We will first give an overview of  charts commonly used for displaying associations between categorical variables within the framework of parallel coordinate plots, and then discuss their performance with respect to the line width illusion based on user experiments.
 %
 
 %% from http://what-when-how.com/sociology/statistical-graphics/
 %The effectiveness of statistical graphs is rooted in the remarkable ability of people to apprehend, process, and remember pictorial information. The human visual system, however, is subject to distortion and illusion, processes that can affect the perception of graphs. Good graphical design can minimize and counteract the limitations of human vision. In Figure 9, for example, it appears that the difference between the hypothetical import and export series is changing when this difference actually is constant (cf., Playfair?s time series graph in Figure 2 a). 
 
-\subsection{Line-width illusion}
-As an example for the phenomenon under investigation in this paper, we refer %you% to the top chart in  figure  \ref{playfair}. 
+\section{Line-width illusion in data displays}
+For an example of the phenomenon under investigation in this paper, we refer %you% 
+to the top chart in  figure  \ref{playfair}. 
 This chart shows Playfair's  visualization of the balance of trade between England and the East Indies as published in his Commercial and Political Atlas, 1786 \cite{playfair, playfair2}. One of the purposes of this chart is to demonstrate the difference between imports and exports in a particular year and its pattern over the time frame. The difference in exports and imports is encoded as the vertical difference between the lines. When observers are asked to sketch out the difference between exports and imports  \citep{cleveland:1984}, they very often  miss the steep rise in the difference between the lines starting just before 1760 (see the chart at the bottom for the actual difference between imports and exports).
 
 
@@ -68,7 +76,6 @@ This phenomenon  is known and widely discussed in statistical graphics literatur
 In the perception literature, this phenomenon is known as part of a group of geometrical optical misperceptions of a context-sensitive nature classified as M\"uller-Lyer illusions \citep{day:1991}. Interestingly, there seems to be a general agreement that this illusion exists, but a quantification of it is curiously absent from the literature. 
 
 
-%XXX Why don't we mention mosaics? - I don't want to, but we need a better reason
 
 
 %Figure \ref{sine-illusion} shows a screen shot of applet displaying the sine illusion. The sine illusion is closely related to the line width phenomenon -- the line segments in the are of the steepest slope of the sine curve appear to be the shortest: ``The illusion is explained in terms of a perceptual compromise between the vertical extent and the greater overall dimensions of the section at the turn of the sine-wave figure and is thereby held to be the same in principle as the M\"uller-Lyer illusion." \citep{day:1991}.
@@ -87,14 +94,17 @@ In the perception literature, this phenomenon is known as part of a group of geo
 \subsection{Parallel Set plots}
 
 
-Parallel Sets have been introduced by R Kosara \citep{kosara:2006} as a way to visualize categorical data within the framework of parallel coordinate plots  and have by now spread into main media, see e.g. the article on decision making and risk assessment in the BBC \citep{bbc:2009}. 
+Parallel Sets have been introduced by R Kosara \citep{kosara:2006} as one way to visualize categorical data within the framework of parallel coordinate plots  and have by now spread into main media, see %e.g.% 
+the article on decision making and risk assessment in the BBC \citep{bbc:2009}.  While retaining the independent dimensionality that is a hallmark of parallel coordinates, Parallel Sets introduces the frequency scale that is a feature of other categorical displays such as mosaic plots \citep{kosara:2006}. 
+
+XXX Description of parallel sets - and example
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=.9\linewidth]{images/parset-titanic}
 \caption{\label{question1a} Parallel sets plot showing the relationship between survival of the sinking of the HMS Titanic and class membership. }
 \end{figure}
-%XXX Description of parallel sets - and example
+
 Figure \ref{question1a} gives an example for a parallel sets plot of Survival on board the HMS Titanic  \citep{dawson:1995} and irs relationship to passenger status and crew membership -- this information is combined in the variable 'Class'.
  The top bar in figure \ref{question1a} shows the Class variable. Passengers are further divided into first, second or third class. The bottom bar shows survival  as yes and no. Between the bars lines are drawn to visualize the relationship between class membership and  survival. Based on the proportion of survivor and non survivors these bands are drawn from each class, and their (horizontal) width is proportional to the number of people they represent. 
 %XXX PS and line-width illusion
