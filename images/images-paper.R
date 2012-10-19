@@ -33,7 +33,7 @@ cols <- rep(c("orange", "steelblue"),23)
 
 gg <- ggparallel(names(titanic)[c(1, 3, 2, 4)],  order=0, text.angle=0, label=FALSE, tit, weight="Freq", width=0.1) +
   scale_fill_manual(values=cols, guide="none") +
-  scale_colour_manual(values=cols, guide="none") + coord_flip() + scale_x_discrete(labels=rev(c("Survived", "Sex", "Age", "Class")))
+  scale_colour_manual(values=cols, guide="none") + coord_flip()
 
 #levels(titanic$Sex) <- c("Female", "Male")
 library(reshape)
@@ -41,14 +41,28 @@ dfm <- melt(titanic, id.vars="Freq", measure.vars=c(1, 2, 3, 4))
 
 gg2 <- geom_bar(aes(x=variable, weight=Freq, group=value), width=.125, fill="grey40", colour="grey80", data=dfm)
 
-gg + gg2 + geom_text(aes(x=variable, weight=Freq/, ))
+dfm$variable <- factor(dfm$variable, levels=levels(dfm$variable)[c(1,3,2,4)])
 
+label.stats <- ddply(dfm, .(variable, value), summarize,
+                     n = length(Freq),
+                     weight=sum(Freq)
+)
+maxWeight <- sum(label.stats$weight)/length(unique(label.stats$variable))
+label.stats$ypos <- cumsum(label.stats$weight)-(as.numeric(label.stats$variable)-1)*maxWeight
+label.stats$ypos <- label.stats$ypos-label.stats$weight/2
 
-geom_text(aes(x=as.numeric(variable)+0.01+text.offset, y=ypos-0.01, label=labels),
-          colour = "grey90", data=label.stats, angle=text.angle, size=4)
+text.offset <- 0
+label.stats$text.offset <- rep(text.offset, length=nrow(label.stats))
 
+varnames <- paste(unlist(vars), sep="|", collapse="|")
+label.stats$labels <- as.character(label.stats$value)
+gt1 <- geom_text(aes(x=as.numeric(variable), y=ypos-0.01, label=labels),
+                colour = "black", data=label.stats, angle=0, size=4)
+gt <- geom_text(aes(x=as.numeric(variable)+0.01+text.offset, y=ypos-0.01, label=labels),
+          colour = "grey90", data=label.stats, angle=0, size=4)
 
-
+gg + gg2 + gt1 + gt
+  
 #############################
 data(genes)
 genes$chromN <- gsub("chr","", as.character(genes$chrom))
