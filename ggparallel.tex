@@ -318,7 +318,7 @@ One of the most famous charts that can be classified as a Sankey diagram is Mina
 
 \subsection{Extensions}
 \subsubsection{Hammock-adjusted common angle plots}
-As a logical next step in making ribbons comparable across all their parts and multiple variables, we can additionally adjust sloped parts of the ribbons using the hammock-adjustment described above. This leads to a representation as shown in figure \ref{adj.angle}. Note that ribbons no longer are required to fill the marginal bars. This choice was made to reduce the amount of overplotting resulting from the increase in width of the lines under an angle. The hammock adjustment results in re-introducing the aspect ratio as a crucial quantity. 
+As a logical next step in making ribbons comparable across all their parts and multiple variables, we can additionally adjust sloped parts of the ribbons using the hammock-adjustment described above. This leads to a representation as shown in figure \ref{adj.angle}. Note that ribbons no longer are required to fill the marginal bars. This choice was made to reduce the amount of overplotting resulting from the increase in width of the lines under an angle. The hammock adjustment results in re-introducing the aspect ratio of the display as a crucial quantity, and with that the implied dependency on  properties of the plotting device. 
 \begin{figure}[hbtp]
 %ggparallel(names(titanic)[c(1,4,2,1)], order=c(0,1,1,0), method='adj.angle', text.angle=0, weight="Freq", titanic, ratio=0.035) + 
 %  scale_fill_manual(values=cols, guide="none") +
@@ -401,7 +401,7 @@ The second block  of questions regarded gene-pathway relationships in a dataset 
 %One application using 
 Screening public databases of biochemical pathway and genetic sequence data to identify targets for further analysis is a common exploratory analysis task that benefits from visualization methods. One application may be to determine if a drug that is known to affect a particular pathway may also affect function on a different pathway. Such information would be useful in identifying new product markets or accurate warning labels. Another application would be discovery of colocalization between genes involved in multiple pathways; physical proximity is one indicator of evolutionary origin and may also provide clues regarding the mechanism that a pathway employs.
  
- Fits into Shneiderman's Visual Information Seeking mantra `Overview first, zoom and filter, then details-on-demand' XXX reference?
+ Fits into Shneiderman's Visual Information Seeking mantra `Overview first, zoom and filter, then details-on-demand' \cite{shneiderman:1996}
  
 In Figure XXX the bottom bar shows three pathways: hsa00232, which is involved in caffeine metabolism; hsa00982, which is involved with drug metabolism via the cytochrome P450 superfamily; and hsa00100, which is involved in steroid biosynthesis. The top bar identifies chromosome location. A chromosome with ribbons connecting to multiple pathways are a physical target for drugs that possibly affect both paths. Gene CYP1A2 is involved in both caffeine metabolism and drug metabolism - clomipramine (an antidepressant) and caffeine both may act as a substrate for this gene. From a user perspective screening by the meta-location of chromosome reduces the colocalization question to one of searching for common elements from amongst 15 genes (number of genes active on a single chromosome for pathways hsa00232 and hsa00982) - reducing the search space by over 90\% (from 193 total genes listed for the pathways).
 
