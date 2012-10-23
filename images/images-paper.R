@@ -62,7 +62,7 @@ gt <- geom_text(aes(x=as.numeric(variable)+0.01+text.offset, y=ypos-0.01, label=
           colour = "grey90", data=label.stats, angle=0, size=4)
 
 gg + gg2 + gt1 + gt
-  
+ggsave(file="ca-hierarchy.pdf", height=7, width=6)  
 #############################
 data(genes)
 genes$chromN <- gsub("chr","", as.character(genes$chrom))
