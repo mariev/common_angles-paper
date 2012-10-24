@@ -35,7 +35,7 @@ gg <- ggparallel(names(titanic)[c(1, 3, 2, 4)],  order=0, text.angle=0, label=FA
   scale_fill_manual(values=cols, guide="none") +
   scale_colour_manual(values=cols, guide="none") + coord_flip()
 
-#levels(titanic$Sex) <- c("Female", "Male")
+levels(titanic$Sex) <- c("Female", "Male")
 library(reshape)
 dfm <- melt(titanic, id.vars="Freq", measure.vars=c(1, 2, 3, 4))
 
@@ -54,8 +54,8 @@ label.stats$ypos <- label.stats$ypos-label.stats$weight/2
 text.offset <- 0
 label.stats$text.offset <- rep(text.offset, length=nrow(label.stats))
 
-varnames <- paste(unlist(vars), sep="|", collapse="|")
 label.stats$labels <- as.character(label.stats$value)
+label.stats$labels[7:8] <- c("Male", "Female")
 gt1 <- geom_text(aes(x=as.numeric(variable), y=ypos-0.01, label=labels),
                 colour = "black", data=label.stats, angle=0, size=4)
 gt <- geom_text(aes(x=as.numeric(variable)+0.01+text.offset, y=ypos-0.01, label=labels),
