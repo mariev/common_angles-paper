@@ -111,10 +111,10 @@ However, the line width illusion is not restricted to this situation only. We ne
 
 
 
-\subsection{Parallel Set plots}
+\subsection{Parallel set plots}
 
 
-Parallel Sets have been introduced by R Kosara \citep{kosara:2006} as one way to visualize multivariate categorical data. Since their initial publication, they have spread to mass media outlets: see e.g. 
+Parallel sets (parsets) have been introduced by R Kosara \citep{kosara:2006} as one way to visualize multivariate categorical data. Since their initial publication, they have spread to mass media outlets: see e.g. 
 ``How to understand risk in 13 clicks," BBC \citep{bbc:2009}.
 
   While retaining the %independent 
@@ -317,6 +317,8 @@ This makes the width of ribbons  comparable without being affected by the distor
 \subsection{Origins}
 Historically, the common angle diagram has its roots in Sankey diagrams \citep{sankey:1898}. Sankey diagrams have their origin and main use of application in the area of industrial engineering. They are often used to show flows,  particularly, in the framework of energy consumption and losses within systems.
 One of the most famous charts that can be classified as a Sankey diagram is Minard's map of Napoleon's march on Moscow \citep{minard:1812}. This map  shows the size of the army as a flow chart from West to East and the subsequent retreat. Usually, Sankey diagrams do not show a geographic co-variate, though. Modern uses of Sankey diagrams are discussed in  detail in \citep{schmidt:2008};  they can also be found in charts designed by Jen Christiansen, such as in \cite{jen3} and \cite{jen2}.
+
+Shane Carter and Mike Bostock's chart `Over the Decades, How States Have Shifted' at \url{http://www.nytimes.com/interactive/2012/10/15/us/politics/swing-history.html} NY Times Oct 15 2012
 
 %XXX http://www.jenchristiansen.com/ Jen Christiansen 
 %http://jenchristiansen.com/?p=20
@@ -659,6 +661,18 @@ XXX which chart did you like better?
 
 XXX breakdown of qualitative feedback
 
+Out of the 14 cases where respondents saw both parallel sets and common angle plots....
+
+8* (57\%) cited comparison of width, area or "size"
+3* (21\%) cited the angle of incidence
+2 (14\%) cited the underlying data structure  - fewer variables, "logical"
+1 (7\%) said choice was "easier"
+1 (7\%) gave other responses - asked for clarification of the plot type,
+
+
+*one person cited both area and angle of incidence
+
+12 people preferred common angles
 
 
 \section{Implementation}\label{sec:implementation}
@@ -674,7 +688,7 @@ We have been investigating different types of plots used for visualizing structu
 We have presented strong evidence that Hammock plots and parallel sets suffer from a type of M\"uller Lyer illusion, which we have coined the line width illusion and its reverse. 
 We have introduced common angle plots as a measure to avoid the line width illusions and found strong evidence that  the performance of the common angle plot is not affected by these line width illusions and significantly better in these situations.
 
-We have presented overwhelming evidence in the `case against straight lines', in particular when line width is encoding quantitative information. Even though straight lines are the simple and mathematically perfect solution to represent  connections  between levels of two variables, they are far from optimal for the peruser of the chart in two ways:   Parallel Sets are affected by the line width illusion, which is a clash between need and nature -- mathematics tells us that we  need to assess line widths in a vertical or horizontal fashion to get a correct evaluation of the encoded information. This clashes with a strong innate tendency to evaluate  widths of lines orthogonally to their  direction. 
+We have presented overwhelming evidence in the `case against straight lines', in particular when line width is encoding quantitative information. Even though straight lines are the simple and mathematically perfect solution to represent  connections  between levels of two variables, they are far from optimal for the peruser of the chart in two ways: firstly by the line width illusion in Parallel sets plots, and secondly by the reverse of the line width illusion after the adjustment in Hammock Plots.   Parallel Sets are affected by the line width illusion, which is a clash between need and nature -- mathematics tells us that we  need to assess line widths in a vertical or horizontal fashion to get a correct evaluation of the encoded information. This clashes with a strong innate tendency to evaluate  widths of lines orthogonally to their  direction. 
 Hammock plots are adjusting for the line width illusion by changing the  width corresponding to the slope of the line segment. However, this makes either end of the segments susceptible to the reverse line width illusion. We found strong support in the survey we conducted for the existence of both the line width illusion in common angle plots and the reverse in Hammock plot. By giving up on the paradigm of straight lines for drawing connections between levels in the common angle display, we are able to circumnavigate both illusions, and present an illusion-free alternative that encodes the same information as the widely used Parallel sets plots or the Hammock plots.
 
 
