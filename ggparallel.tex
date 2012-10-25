@@ -36,22 +36,27 @@
 % 
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
-\IEEEPARstart{G}{raphics} are tools of communication: their main purpose is  to summarize quantitative information and present it in a way that readers are able to extract the main message easily and with a minimum of distortion. Tufte  coined the amount of distortion the \emph{Lie-Factor} \citep[p. 57--69]{tufte} and defined it as the ratio of the effect size displayed and the size of the same effect in the data. A ratio of one indicates no distortion, values less than one indicate a visual underrepresentation of an effect, while values above one indicate a corresponding overrepresentation. Three-dimensional depth effects, in particular, are prone to large Lie-factors.
+\IEEEPARstart{G}{raphics} are tools of communication: the purpose of a good chart is  to summarize quantitative information and present it in a way that enables readers  to extract the main message easily and with a minimum of distortion. Tufte  coined the amount of distortion the \emph{Lie-Factor} \citep[p. 57--69]{tufte} and defined it as the ratio of the effect size displayed and the size of the same effect in the data. A ratio of one indicates no distortion, values less than one indicate a visual underrepresentation of an effect, while values above one indicate a corresponding overrepresentation. Three-dimensional depth effects, in particular, are prone to large Lie-Factors.
 
-Another source of distortion is introduced by perceptual limitations of our audience. Illusions, in particular, give rise to a distortion similar to a Lie-Factor effect, yet are not directly measurable in the actual representation: a physical quantity drawn in the chart might  perfectly reflect the  size of an effect in the data, but if an observer  intuitively interprets another property of the geometrical object, this leads  to distorted, if not altogether wrong, conclusions. 
+Perceptual limitations of our audience are another source of distortions. Illusions, in particular, give rise to a distortion similar to a Lie-Factor effect. However, these distortions are not directly measurable in the actual representation: a physical quantity drawn in the chart might  perfectly reflect the  size of an effect in the data, but if an observer  intuitively interprets another property of the geometrical object, this leads  to distorted, if not altogether wrong, conclusions. 
 As designers of charts we have to be aware of the innate or culturally imposed perceptual limitations of our audience. Good graphical designs minimize and counteract these limitations. 
+Since we cannot measure effects from illusions directly, we have to employ usability studies to provide empirical evidence in support of underlying metaphorical models or for identification of unexpected or unpredicted effects from perceptual illusions.
 
-%In this paper we discuss the effect and strength of the {\it line-width illusion}  on designs related to displaying associations between categorical variables. We will focus in particular on the use of parallel coordinate plots \citep{pcp:1885, inselberg:1985, wegman:1990} for categorical data and the perceptual implications this has.
 
-Parallel coordinate plots were introduced to visualize large numbers of numeric variables \citep{pcp:1885, inselberg:1985, wegman:1990}.
+In this paper we discuss the effect and strength of the {\it line-width illusion}  on designs related to displaying associations between categorical variables. We will focus in particular on the use of parallel coordinate plots \citep{pcp:1885, inselberg:1985, wegman:1990} for categorical data and the perceptual implications this has.
+
+Parallel coordinate plots were introduced to visualize large numbers of numeric variables. 
 Recent adaptations of parallel coordinates  \citep{ kosara:2006, bendix:2005, leblanc:1990, 
-spenke:2003} and other, frequency-based, methods to display categorical data, such as mosaic plots  \citep{hartigan:1981, friendly:1992, hofmann:2000, theus:1997},  have addressed perceptual constraints \citep{cleveland:1984} at a theoretical level, but lack reporting of human subjects testing as validation. 
-Usability testing provides empirical evidence to support underlying metaphorical models that new tools implement and identifies sources of unexpected or unpredicted perceptual illusions.
+spenke:2003, schonlau:2003} and other, frequency-based, methods to display categorical data, such as mosaic plots  \citep{hartigan:1981, friendly:1992, hofmann:2000, theus:1997},  have addressed perceptual constraints \citep{cleveland:1984} at a theoretical level, but lack reporting of human subjects testing as validation. 
 
+We will first show how the line-width illusion affects  parallel coordinate plots for categorical data, and in a second step introduce the {\it common-angle plot} as an alternative  method for displaying categorical data in a manner that minimizes the effect from perceptual illusions.
+The display preserves properties of parallel coordinate plots, such as the potential to visualize a large number of dimensions simultaneously, but also presents frequency information. 
+ 
+Finally, we present results from user studies as evidence that common angle charts resolve the problem of the line-width illusion. 
 
-We present the Common Angle Chart as a method for displaying categorical data in a manner that minimizes perceptual illusions, particularly the effect and strength of the {\it line-width illusion}. The display preserves dimensional independence and presents frequency information. In addition to case studies demonstrating application to data from distinct disciplines, Common Angle Charts have been tested against a set of  displays that share the framework of parallel coordinates.
-
-In this paper we discuss {\it line-width illusion} and its effect when using different displays. Details regarding the construction, external influences, variations and implementation of Common Angle Charts are provided. Discussion regarding structure, demographics and analysis of user testing follow. We show that the Common Angle Chart resolves a distortion that is a common feature of alternate displays of categorical data.
+% In addition to case studies demonstrating application to data from distinct disciplines, Common Angle Charts have been tested against a set of  displays that share the framework of parallel coordinates.
+%
+% Details regarding the construction, external influences, variations and implementation of Common Angle Charts are provided. Discussion regarding structure, demographics and analysis of user testing follow. We show that the Common Angle Chart resolves a distortion that is a common feature of alternate displays of categorical data.
 
 %We will first give an overview of  charts commonly used for displaying associations between categorical variables within the framework of parallel coordinate plots, and then discuss their performance with respect to the line width illusion based on user experiments.
 %
@@ -68,7 +73,7 @@ Playfair's chart from the Commercial and Political Atlas (1786) showing the bala
 An example of the  {\it line-width illusion} is displayed in  figure  \ref{playfair}. 
 
 
-This chart displays the balance of trade between England and the East Indies as shown by William Playfair in his Commercial and Political Atlas, 1786 \cite{playfair, playfair2}.  One purpose of this chart is to demonstrate the difference between imports and exports in a particular year and its pattern over that time frame. The difference in exports and imports is encoded as the vertical difference between the lines. When observers are asked to sketch out the difference between exports and imports  \citep{cleveland:1984}, they very often  miss the steep rise in the difference between the lines starting just before 1760. Figure \ref{playfair2} shows the  actual difference between imports and exports. 
+This chart displays the balance of trade between England and the East Indies as shown by William Playfair in his Commercial and Political Atlas, 1786 \cite{playfair, playfair2}.  One purpose of this chart is to demonstrate the difference between imports and exports in a particular year and its pattern over that time frame. The difference in exports and imports is encoded as the vertical difference between the lines. When observers are asked to sketch out the difference between exports and imports  \citep{cleveland:1984}, they very often  miss the steep rise in the difference between the lines in the years between about 1755 and 1765. Figure \ref{playfair2} shows the  actual difference between imports and exports. 
 
 
 
@@ -80,12 +85,15 @@ Difference between exports and imports from England to and from the East Indies 
 \end{figure}
 
 
-This phenomenon  is known and widely discussed in statistical graphics literature \citep{wainer:2000, robbins:2005}. It  is due to our  tendency to assess distance between curves as the minimal (orthogonal) distance rather than the  vertical distance -- see sketch \ref{fig:linewidth} for a visual representation of both.
+This phenomenon  is known and widely discussed in statistical graphics literature \citep{cleveland:1984, tufte, wainer:2000, robbins:2005}. It  is due to our  tendency to assess distance between curves as the minimal (orthogonal) distance rather than the  vertical distance -- see sketch \ref{fig:linewidth} for a visual representation of both.
 
 
 In the perception literature, this phenomenon is known as part of a group of geometrical optical misperceptions of a context-sensitive nature classified as M\"uller-Lyer illusions \citep{day:1991}. Interestingly, there seems to be a general agreement that this illusion exists, but a quantification of it is curiously absent from the literature. 
 
-We will first give an overview of  charts commonly used for displaying associations between categorical variables within the framework of parallel coordinate plots, and then discuss their performance with respect to the line width illusion. % based on user experiments.
+While we see the type of chart as shown in figure~\ref{playfair} proposed by Playfair quite commonly, particular in election years -- where these kind of charts are used to enable comparisons of support for several candidates, the recommendation from the literature is to avoid charts in which the audience is asked to do visual subtractions, and show these differences directly.
+
+However, the line width illusion is not restricted to this situation only. We next discuss how other charts, such as the parallel sets plots \citep{kosara:2006}, are affected by it.
+%We will first give an overview of  charts commonly used for displaying associations between categorical variables within the framework of parallel coordinate plots, and then discuss their performance with respect to the line width illusion. % based on user experiments.
 
 
 
@@ -111,7 +119,7 @@ Parallel Sets have been introduced by R Kosara \citep{kosara:2006} as one way to
 
   While retaining the %independent 
 ability to visualize a large number of dimensions simultaneously that is the parallel coordinates' hallmark trade, Parallel Sets introduce the frequency scale that is a well-known feature of other categorical displays such as barcharts or mosaic plots \citep{hartigan:1981, friendly:1992, hofmann:2000, theus:1997}.
- Initially frequency of categories  were displayed as boxes; in the later versions of Parallel Sets the boxes were reduced to simple lines \citep{parsetredesign}. Various implementations of parallel sets exist besides the original Java version, e.g.  J Davies introduced a d3 \citep{d3} version in  \citep{davies}.  The implementation of Parallel Sets-style displays in this paper retain the original box placeholders and does not enforce a tree hierarchy via color grouping. %See section Implementation for details.
+ Initially, frequencies of categories  were displayed as stacked boxes; in the later versions of Parallel Sets the boxes were reduced to simple lines \citep{parsetredesign}. Various implementations of parallel sets exist besides the original Java version, e.g.  J Davies introduced a d3 \citep{d3} version in  \citep{davies}.  The implementation of Parallel Sets-style displays in this paper is done in the software R \citep{R}. It retains the original box placeholders and does not enforce a tree hierarchy via color grouping. Section \ref{sec:implementation} gives details on the implementation, section \ref{sec:hierarchy} discusses dealings with hierarchical structures in the data.
 
 
 
@@ -328,7 +336,7 @@ As a logical next step in making ribbons comparable across all their parts and m
 \caption{\label{adj.angle} Adjusted common angle plot of the Titanic data.}
 \end{figure}
 
-\subsubsection{Hierarchies in Common Angle Displays}
+\subsubsection{Hierarchies in Common Angle Displays}\label{sec:hierarchy}
 In the original paper, parallel sets have been introduced to reflect a hierarchy of variables. In this paper, we have only used  sets of two-dimensional plots to focus on the association between pairs of variables. 
 However, it is possible, to show hierarchies in all of the types of displays by defining the data correspondingly. 
 
@@ -653,7 +661,7 @@ XXX breakdown of qualitative feedback
 
 
 
-\section{Implementation}
+\section{Implementation}\label{sec:implementation}
 
 All  of the discussed variants of parallel coordinate plots for categorical data are implemented as part of the package {\tt ggparallel} based on the {\tt ggplot2} \cite{ggplot2} plotting framework in the software {\tt R} 2.15.1 \citep{R}. The  {\tt ggparallel} package is freely available from CRAN (\url{http://www.r-project.org/}).
 The colors for the plots have been chosen using color schemes from the ColorBrewer project  \cite{colorbrewer} , as implemented in the R package {\tt RColorBrewer}  \cite{RColorBrewer} .
