@@ -119,7 +119,7 @@ Parallel sets (parsets) have been introduced by R Kosara \citep{kosara:2006} as 
 
   While retaining the %independent 
 ability to visualize a large number of dimensions simultaneously that is the parallel coordinates' hallmark trade, Parallel Sets introduce the frequency scale that is a well-known feature of other categorical displays such as barcharts or mosaic plots \citep{hartigan:1981, friendly:1992, hofmann:2000, theus:1997}.
- Initially, frequencies of categories  were displayed as stacked boxes; in the later versions of Parallel Sets the boxes were reduced to simple lines \citep{parsetredesign}. Various implementations of parallel sets exist besides the original Java version, e.g.  J Davies introduced a d3 \citep{d3} version in  \citep{davies}.  The implementation of Parallel Sets-style displays in this paper is done in the software R \citep{R}. It retains the original box placeholders and does not enforce a tree hierarchy via color grouping. Section \ref{sec:implementation} gives details on the implementation, section \ref{sec:hierarchy} discusses dealings with hierarchical structures in the data.
+ Initially, frequencies of categories  were displayed as stacked boxes; in  later versions of Parallel Sets the boxes are reduced to simple lines \citep{parsetredesign}. Various implementations of parallel sets exist besides the original Java version of Eagereyes \citep{eagereyes}, e.g.  J Davies introduced a d3 \citep{d3} version in  \citep{davies}.  The implementation of Parallel Sets-style displays in this paper is done in the software R \citep{R}. It retains the original box placeholders and does not enforce a tree hierarchy via color grouping. Section \ref{sec:implementation} gives details on the implementation, section \ref{sec:hierarchy} discusses dealings with hierarchical structures in the data.
 
 
 
@@ -136,12 +136,11 @@ ability to visualize a large number of dimensions simultaneously that is the par
 %The  perceived width of the lines between the variables in figure \ref{question1a} would  lead us to assume that 1st class passengers had the highest number of survivors, followed by 3rd class passengers and about even numbers of survivors in the 2nd class  and  the crew. However, the  actual numbers are:
 
 
-Figure \ref{question1a} gives an example for a two dimensional parallel sets plot investigating the relationship between class status and survival on board the HMS Titanic  \citep{dawson:1995}. Class status is recorded as either crew member or passengers, passengers are further classified as member of the first, second, or third class. 
+Figure \ref{question1a} gives an example for a two dimensional parallel sets plot investigating the relationship between class status and survival on board the HMS Titanic  \citep{dawson:1995}. Class status is recorded as either crew member or passengers in  first, second, or third class. 
 
  The top bar in figure \ref{question1a} shows the  variable Class. The bottom bar shows survival  as yes and no. Between the bars lines are drawn to visualize the relationship between class membership and  survival. 
   Based on the number of survivor and non survivors
   these bands are drawn from each class, and their (horizontal) width is proportional to the number of people they represent. 
-% Based on the proportion of survivor and non survivors these bands are drawn from each class, and their (horizontal) width is proportional to the number of people they represent. 
 %XXX PS and line-width illusion
 
 This definition implies that lines are drawn under different angles, which makes the plots susceptible to the line width illusion. As an example, try to order the levels of variable 'class'  according to the number of survivors they have. In order to do that, we need to evaluate the width of the bands between upper and lower bars in figure \ref{question1a}.
@@ -166,9 +165,9 @@ We will discuss next how this finding relates to the line width illusion and how
 
 %The difference between perceived and actual line width 
 When visually evaluating lines of thickness greater than one, the line width illusion applies, only now the {\it edges} of a single line  take on the role of the separate curves. %in the parallel sets 
-As above, there is a strong preference of evaluating the width of lines orthogonal to their slopes as opposed to horizontally (see figure \ref{fig:linewidth}), which is needed for a correct  evaluation of parallel sets-style displays.
+As above, there is a strong preference of evaluating the width of lines orthogonal to their slopes as opposed to horizontally (see figure \ref{fig:linewidth})  needed for a correct  evaluation of parallel sets-style displays.
 
-Orthogonal $w_o$ and horizontal $w_h$ line widths are related -- the orthogonal line width depends on the angle (or slope) of the line:
+Orthogonal $w_o$ and horizontal $w_h$ line widths are related -- the orthogonal line width depends on the angle (or, equivalently, the slope) of the line:
 \begin{equation}\label{adjust}
 w_o = w_h \sin \theta,
 \end{equation}
@@ -191,14 +190,15 @@ where $\theta$ is the angle of the line with respect to the horizontal line.
 \includegraphics[height=1.5in]{images/aspect31-titanic.pdf}
 \includegraphics[height=1.5in]{images/aspect33-titanic.pdf}
 \end{center}
-\caption{\label{fig:aspect}Parallel sets plots of survival on the Titanic by class. Different aspect ratios  seemingly change the (orthogonal) line width, compare e.g. number of survivors in 3rd class and in the crew. }
+\caption{\label{fig:aspect}Parallel sets plots of survival on the Titanic by class. Different aspect ratios  seemingly change the thickness of line segments, compare e.g. number of survivors in 3rd class and in the crew. }
 \end{figure*}
 
 
 
-The perceived slope of a line very much depends on the aspect ratio of the corresponding plot -- changing the height to width ratio of a display  will change our perception of the corresponding line widths, if they are not adjusted for the slope \cite{cleveland:1984}. This finding is not new, but its strength on our perception is surprising, as can be seen in the example of  figure \ref{fig:aspect}.  Again, survival and class membership on the Titanic is shown; the same parallel sets plot is shown twice in this figure, but with very different aspect ratios: in the  plot on the left the number of surviving 3rd class passengers seems to be about twice as big as the number of survivors among crew members, whereas in the plot on the right the lines have about equal (orthogonal) width. Obviously, this is not due to a change in numbers, nor a change in the way the plot is rendered. 
+The perceived slope of a line very much depends on the aspect ratio of the corresponding plot -- changing the height to width ratio of a display  will change our perception of the corresponding line widths, if they are not adjusted for the slope \cite{cleveland:1984}. This finding is not new, but its strength on our perception is surprising, as can be seen in the example of  figure \ref{fig:aspect}.  Again, survival and class membership on the Titanic is shown; the same parallel sets plot is shown twice in this figure, but with very different aspect ratios: in the  plot on the left the number of surviving 3rd class passengers seems to be about twice as big as the number of survivors among crew members, whereas in the plot on the right the lines have about equal (orthogonal) width. Obviously, this is not due to a change in numbers.
 
-For parallel sets-style displays, the audience has an alternate visual cue when evaluating frequencies. Because height (width, when display is rotated 90 degrees) of a particular line is fixed for all line segments in the display, the width of a particular line segment is proportional to that segment's area. Comparison of area may be employed as a proxy or to augment line-width evaluations. This method of comparison is particularly troubling because it is prone to error in two scenarios commonly seen in Parallel Sets: (1) extreme aspect ratios of the rectangular shape occupied by thick line segments and (2) when comparing rectangles rotated relative to each other \citep{heer:2010, kong:2010}. Additionally, the incorrect perception and comparison of area provides contextual evidence that reinforce and strengthen distortion introduced by the line-width illusion.
+For parallel sets-style displays, the audience has an alternate visual cue when evaluating frequencies. Because height (width, when display is rotated 90 degrees) of a particular line is fixed for all line segments in the display, the width of a particular line segment is proportional to that segment's area. Comparison of area may be employed as a proxy or to augment line-width evaluations. 
+This method of comparison is particularly troubling because it is prone to error in two scenarios commonly seen in Parallel Sets: (1) extreme aspect ratios of the rectangular shape occupied by thick line segments and (2) when comparing rectangles rotated relative to each other \citep{heer:2010, kong:2010}. Additionally, the incorrect perception and comparison of area provides contextual evidence that reinforce and strengthen distortion introduced by the line-width illusion.
 
 
 Designers of good graphics have to accommodate changes in intuitive evaluation of the situation. While reordering categories and controlling the aspect ratio aids in reduction of audience potentially drawing wrong conclusions from a plot, none of these measures is enough to avoid all perceptual pitfalls due to the line width illusion.
@@ -279,10 +279,10 @@ Hammock plots, introduced by M Schonlau in \citep{schonlau:2003}, provide an alt
 \caption{\label{hammock} Hammock plot of the relationship between Class and Survival on the Titanic. }
 \end{figure}
 
-Similar to the parallel sets plot, the bars are divided according to class membership numbers.  Lines connect categories between neighboring bars, orthogonal line widths are representing the number of individuals in each combination. Unlike the parallel sets, the lines start from the middle of the bin and connect to the middle of the other variable's bins. 
+Similarly to the parallel sets plot, the bars are divided according to class membership numbers.  Lines connect categories between neighboring variables, orthogonal line widths are representing the number of individuals in each combination. Unlike the parallel sets, the lines start from the middle of the bin and connect to the middle of the other variable's bins. 
 %Line widths are adjusted in such a way, that the orthogonal width (see sketch \ref{fig:linewidth}) represents numbers.
 
-Here, we see that barely any women were in the crew, while male crew members make up the second largest contingent overall. Overall a few more men survived than women, proportionally the situation is much different -- a much higher percentage of women survived than men. We also see, that more first class passengers survived than not, while second class passengers survival chances were about fifty-fifty. For third class passengers and crew members fewer members did  survive than not. 
+Here, we see that barely any women were in the crew, while male crew members make up the second largest contingent overall. Overall a few more men survived than women. Proportionally the situation is much different -- a much higher percentage of women survived than men. We also see, that more first class passengers survived than not, while  survival chances of second class passengers were about fifty-fifty. For third class passengers and crew members fewer members did  survive than not. 
 
 As the adjustment of line widths is made with respect to the angle $\theta$, which itself depends on the aspect ratio of a plot, we need complete control over these properties of the plotting device when constructing Hammock plots  -- in our implementation (see below for details) we have dealt with this issue by fixing the aspect ratio. This is problematic in some situations, where the rendering has to be done without knowledge of the plotting device. 
 
