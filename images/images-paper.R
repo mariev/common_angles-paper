@@ -82,13 +82,14 @@ qplot(order, chrom, data=genes)
 qplot(order, path, colour=chrom, data=genes)
 
 
-qplot(order, data=subset(genes, path %in% c("hsa04110", "hsa00232", "hsa03410")))
+qplot(order, data=subset(genes, path %in% c("hsa00100", "hsa00232", "hsa00982")))
 
-genesub <- subset(genes, path %in% c("hsa04110", "hsa00232", "hsa03410"))
-ggparallel(c("path", "order", "path"), order=0, method='angle', label=FALSE,
+genesub <- subset(genes, path %in% c("hsa00100", "hsa00232", "hsa00982"))
+ggparallel(vars=c("chrom", "path"), order=0, method='angle', label=FALSE,
            text.angle=0, data=genesub) + 
   scale_fill_manual(values=rep("grey", 288), guide="none") +
   scale_colour_manual(values=rep("white",288), guide="none") + coord_flip() 
 
-
+gg <- ggparallel(c("chrom", "path"),  order=0, text.angle=0, label=FALSE, genesub) +
+  
 

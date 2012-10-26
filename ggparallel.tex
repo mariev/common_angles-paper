@@ -340,7 +340,7 @@ As a logical next step in making ribbons comparable across all their parts and m
 
 \subsubsection{Hierarchies in Common Angle Displays}\label{sec:hierarchy}
 In the original paper, parallel sets have been introduced to reflect a hierarchy of variables. In this paper, we have only used  sets of two-dimensional plots to focus on the association between pairs of variables. 
-However, it is possible, to show hierarchies in all of the types of displays by defining the data correspondingly. 
+However, it is possible, to show hierarchies in all of the types of displays by using a color coding introducing a hierarchical structure to the data. 
 
 Figure \ref{tit-hierarchy}
 shows a common-angle plot  with a hierarchy: survivors of the disaster are marked in blue, non-survivors by orange. From top to bottom of the plot a hierarchy is drawn, considering first, survival, then gender, followed by age and finally, class membership. The coloring helps to keep track of survival status throughout the hierarchy, the common angle layout makes comparisons valid across all levels. This is of particular importance in hierarchical displays, as these displays, by definition, have a larger number of smaller groups than displays without a hierarchy acerbating problems induced by the line width illusion.
@@ -402,18 +402,28 @@ To determine the effectiveness of the common angle display, we conducted a user 
 
  All individuals were presented with the same six questions, in two blocks of three questions each. The first block of questions investigated structures in the Titanic data set, including a follow-up of the survival-class ordering issue discussed earlier. Participants were exposed to one of the three types of displays discussed: a parallel sets plot, the Hammock plot of figure \ref{hammock}, or the common angle plot of  figure \ref{fig:ca-titanic}.
  
-The second block  of questions regarded gene-pathway relationships in a dataset constructed from the UCSC Genome Browser \cite{ucsc:2002} for humane genome assembly. Ribbon widths here indicate the number of genes on a  chromosome that are active in a particular pathway. The pathways we focus on here, are involved in caffeine metabolism (hsa00232),  steroid biosynthesis (hsa00100), and hsa00982, which is involved with drug metabolism via the cytochrome P450 superfamily.  One important question when dealing with drug development are interactions with other drugs. Those interactions are more likely to happen when pathways use similar locations, e.g. gene CYP1A2 is involved in both  caffeine metabolism and the drug pathway -- clomipramine (an antidepressant) and caffeine both may act as a substrate. Chromosomes give a --very rough-- approximation to location. Connections between chromosomes and pathways are therefore interesting, when they show involvement of chromosomes in several pathways.
- 
-%See appendix for details regarding the survey demographics, and data.
+The second block  of questions regarded gene-pathway relationships in a dataset constructed from the UCSC Genome Browser \cite{ucsc:2002} for humane genome assembly. 
 
-%XXX discussion of datasets
+Screening public databases of biochemical pathway and genetic sequence data to identify targets for further analysis is a common exploratory analysis task that benefits from visualization methods. One application is to determine if a drug that is known to affect a particular pathway may also affect function on a different pathway. Such information is useful in identifying new product markets or accurate warning labels. Another application is the discovery of co-localization of genes involved in multiple pathways; physical proximity is one indicator of evolutionary origin and may also provide clues regarding the mechanism that a pathway employs.
 
-%One application using 
-Screening public databases of biochemical pathway and genetic sequence data to identify targets for further analysis is a common exploratory analysis task that benefits from visualization methods. One application may be to determine if a drug that is known to affect a particular pathway may also affect function on a different pathway. Such information would be useful in identifying new product markets or accurate warning labels. Another application would be discovery of colocalization between genes involved in multiple pathways; physical proximity is one indicator of evolutionary origin and may also provide clues regarding the mechanism that a pathway employs.
+
+The pathways we focus on here, are involved in caffeine metabolism (hsa00232),  steroid biosynthesis (hsa00100), and hsa00982, which is involved with drug metabolism via the cytochrome P450 superfamily.  
+
+% Those interactions are more likely to happen when pathways use similar locations, e.g. gene CYP1A2 is involved in both  caffeine metabolism and the drug pathway -- clomipramine (an antidepressant) and caffeine both may act as a substrate. Chromosomes give a --very rough-- overview to location.
+%Connections between chromosomes and pathways are therefore interesting, when they show involvement of chromosomes in several pathways.
+
+The pathway-chromosome relationship is shown in a common angle plot in figure \ref{XXX}.
+. 
+
+The top bar identifies chromosome location, the bottom pathways. Ribbon widths  visualize the number of genes on a  chromosome that are active in a particular pathway.  A chromosome with ribbons connecting to multiple pathways is a physical target for drugs that possibly affect both paths.  Gene CYP1A2 is involved in both caffeine metabolism and drug metabolism - clomipramine (an antidepressant) and caffeine both may act as a substrate for this gene. From a user perspective screening by the meta-location of chromosome reduces the  question of co-localization of genes to one of searching for common elements from amongst 15 genes  - reducing the search space by over 90\% (to 15 from 193 total genes listed for the pathways).
+
+Alternative displays are graph networks that usually focus on the display of nodes within a pathway, or circos displays \cite{k}, which generally emphasize the chromosome-chromosome interaction.
+
+
+ Common angle plots of gene-pathway interactions fit into Shneiderman's  Visual Information Seeking mantra `Overview first, zoom and filter, then details-on-demand' \cite{shneiderman:96} as the first step that allows us to get an overview of the data and easily identify areas of potential interest for further investigation. 
+  
  
- Fits into Shneiderman's Visual Information Seeking mantra `Overview first, zoom and filter, then details-on-demand' \cite{shneiderman:96}
  
-In Figure XXX the bottom bar shows three pathways: hsa00232, which is involved in caffeine metabolism; hsa00982, which is involved with drug metabolism via the cytochrome P450 superfamily; and hsa00100, which is involved in steroid biosynthesis. The top bar identifies chromosome location. A chromosome with ribbons connecting to multiple pathways are a physical target for drugs that possibly affect both paths. Gene CYP1A2 is involved in both caffeine metabolism and drug metabolism - clomipramine (an antidepressant) and caffeine both may act as a substrate for this gene. From a user perspective screening by the meta-location of chromosome reduces the colocalization question to one of searching for common elements from amongst 15 genes (number of genes active on a single chromosome for pathways hsa00232 and hsa00982) - reducing the search space by over 90\% (from 193 total genes listed for the pathways).
 
  
 Participants were asked a second set of three questions (see appendix \ref{app2} for details) on this data set, but they were exposed to a  type of display different from the type accompanying questions from block 1.
