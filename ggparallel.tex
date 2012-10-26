@@ -318,7 +318,8 @@ This makes the width of ribbons  comparable without being affected by the distor
 Historically, the common angle diagram has its roots in Sankey diagrams \citep{sankey:1898}. Sankey diagrams have their origin and main use of application in the area of industrial engineering. They are often used to show flows,  particularly, in the framework of energy consumption and losses within systems.
 One of the most famous charts that can be classified as a Sankey diagram is Minard's map of Napoleon's march on Moscow \citep{minard:1812}. This map  shows the size of the army as a flow chart from West to East and the subsequent retreat. Usually, Sankey diagrams do not show a geographic co-variate, though. Modern uses of Sankey diagrams are discussed in  detail in \citep{schmidt:2008};  they can also be found in charts designed by Jen Christiansen, such as in \cite{jen3} and \cite{jen2}.
 
-Shane Carter and Mike Bostock's chart `Over the Decades, How States Have Shifted' \citep{bostock:2012} is an example for a mixture of designs, involving a Sankey diagram.
+A very recent example of related work can be found in \citep{bostock:2012}; the chart is an interactive d3 display that shows political shifts of states and corresponding electoral votes in a mixture of a parallel coordinate plot of state-based votes and a Sankey-type overlay to connect states across past elections.
+
 
 %XXX http://www.jenchristiansen.com/ Jen Christiansen 
 %http://jenchristiansen.com/?p=20
@@ -573,7 +574,7 @@ In the next section we will investigate the results from the survey in further d
 \subsubsection{Evidence for line width illusions}
 
 Question $A2$ asked participants to order  class levels  according to the number of survivors, fewest to highest. There are 4! = 24 distinct orderings of the levels, corresponding to all permutations of length 4. Some orderings are closer to one another than other orderings. The Cayley distance defines a way to quantify the distance between  each pair of permutations; the Cayley distance is defined as the minimal number of transpositions, i.e. swaps of two elements,  necessary to transform one permutation into the other.
-We can make use of this distance to define a graph on the space of all permutations: let all permutations be nodes of the graph; for each two permutations with a Cayley distance of one, we add an edge to this graphs. This results in a regular graph of degree six, i.e. each  node is connected to six other nodes in the graph. The Cayley distance between any two nodes is then given as the length of the shortest path between the nodes through the graph.
+We can make use of this distance to define a graph on the space of all permutations: let all permutations be nodes of the graph; for each two permutations with a Cayley distance of one, we add an edge between these nodes to the graph. This results in a regular graph of degree six, i.e. each  node is connected to six other nodes. The Cayley distance between any two nodes is then given as the length of the shortest connecting path between these two nodes through the graph.
 Figure \ref{cubes} shows an overview of the permutation space together with an overview of the survey results. Each permutation is represent by one dot. 
 
 The colored dots on top of the graph correspond to the responses from the survey - the size of the dots is proportional to the number of observers choosing this particular ordering. It becomes obvious from the three graphs in figure \ref{cubes} that
