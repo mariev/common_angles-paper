@@ -515,9 +515,11 @@ $\mu$ & 1.72 & 0.24 & 7.04 & 0.00 & ***\\ [5pt]
 \end{table}
 
 Model $M2$ extends the first model by including both  effects for individual questions and the interaction effects with each design in the following form:
-\begin{equation}\label{m2}[M2]
-\quad g(P(y_i=1)) = \mu + d_{j(i)}  + q_{q(i)} + p_{j(i),q(i)} + u_{k(i)} + \varepsilon_i \quad
-\end{equation}
+\begin{eqnarray}\nonumber
+[M2]  \ \ \qquad g(P(y_i=1)) =  \qquad\qquad\qquad\qquad\qquad&&\\ \label{m2}
+\mu + d_{j(i)}  + q_{q(i)} + p_{j(i),q(i)} + u_{k(i)} + \varepsilon_i 
+\end{eqnarray}
+
 Here, $q$ indicates the effects on performance for  each question, where $q(i)$ describes one of the questions $\{A1, A2, A3, B1, B2, B3\}$. $p$ is the parameter for the interaction effect of design and question, its index is a tuple consisting of a combination of a question and design. 
 
 Figure \ref{fitted.m2} gives an overview of the goodness of fit of model $M2$ -- histograms of fitted values are drawn facetted by levels of the dependent variable. For correct responses fitted values are highly left skewed, with most values  above 0.5. For wrong answers we see a symmetric, if not quite as clear-cut picture: fitted values are skewed right. 
