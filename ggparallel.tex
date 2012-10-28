@@ -409,9 +409,9 @@ The second block  of questions regarded gene-pathway relationships in a dataset 
 Screening public databases of biochemical pathway and genetic sequence data to identify targets for further analysis is a common exploratory analysis task that benefits from visualization methods. One application is to determine if a drug that is known to affect a particular pathway may also affect function on a different pathway. Such information is useful in identifying new product markets or accurate warning labels. Another application is the discovery of co-localization of genes involved in multiple pathways; physical proximity is one indicator of evolutionary origin and may also provide clues regarding the mechanism that a pathway employs.
 
 
-The pathways we focus on here, are involved in caffeine metabolism (hsa00232),  steroid biosynthesis (hsa00100), and hsa00982, which is involved with drug metabolism via the cytochrome P450 superfamily. For simplicity, we also focus on just four different chromosomes instead of the regular 22.  
+The pathways we focus on here, are involved in caffeine metabolism (hsa00232),  steroid biosynthesis (hsa00100), and hsa00982, which is involved with drug metabolism via the cytochrome P450 superfamily. For simplicity, we also focus on just four different chromosomes instead of the regular 22.  All data manipulation was performed  using software {\tt R} 2.15.1 \citep{R} with Bioconductor package KEGG.db \cite{kegg}.
 
-The pathway-chromosome relationship is shown in a common angle plot in figure \ref{XXX}.The top bar identifies chromosome location, the bottom pathways. Ribbon widths  visualize the number of genes on a  chromosome that are active in a particular pathway.  A chromosome with ribbons connecting to multiple pathways is a physical target for drugs that possibly affect both paths.  Gene CYP1A2 is involved in both caffeine metabolism and drug metabolism - clomipramine (an antidepressant) and caffeine both may act as a substrate for this gene. From a user perspective screening by the meta-location of chromosome reduces the  question of co-localization of genes to one of searching for common elements from amongst 15 genes  - reducing the search space by over 90\% (to 15 from 193 total genes listed for the pathways).
+The pathway-chromosome relationship is shown in a common angle plot in figure \ref{XXX}. The top bar identifies chromosome location, the bottom pathways. Ribbon widths  visualize the number of genes on a  chromosome that are active in a particular pathway.  A chromosome with ribbons connecting to multiple pathways is a physical target for drugs that possibly affect both paths.  Gene CYP1A2 is involved in both caffeine metabolism and drug metabolism - clomipramine (an antidepressant) and caffeine both may act as a substrate for this gene. From a user perspective screening by the meta-location of chromosome reduces the  question of co-localization of genes to one of searching for common elements from amongst 15 genes  - reducing the search space by over 90\% (to 15 from 193 total genes listed for the pathways).
 
 Alternative displays are graph networks that usually focus on the display of nodes within a pathway, or circos displays \cite{k}, which generally emphasize the chromosome-chromosome interaction.
 
@@ -588,9 +588,7 @@ The correct ordering, as well as the orderings assuming the line width illusion 
 \begin{table}[ht]
 \begin{center}
 \begin{tabular}{rrrrl}
-Order  & \rotatebox{90}{Common angles}
-& \rotatebox{90}{Hammock plots}
-& \rotatebox{90}{Parallel sets} &\\
+Order  & CA & H & PS\\
   \hline
   Crew, 1st, 3rd, 2nd &  &  2 &  \\ 
   2nd, 1st, 3rd, Crew &  &  6 &  & inverse illusion \\ 
@@ -627,9 +625,7 @@ Responses to question A.3 exhibit a similar pattern, see table \ref{a3}.
 \begin{table}[ht]
 \begin{center}
 \begin{tabular}{rrrrl}
-Order &  \rotatebox{90}{Common angles}
-& \rotatebox{90}{Hammock plots}
-& \rotatebox{90}{Parallel sets} &\\
+Order & CA & H & PS\\
   \hline
 c, b, a &  &  2 &  \\
 a, b, c &  1 &  12 &  & inverse illusion\\ 
@@ -699,7 +695,7 @@ The colors for the plots have been chosen using color schemes from the ColorBrew
 %
 % What did we do? 
 We have been investigating different types of plots used for visualizing structures between categorical variables, the parallel sets display, and the hammock display.
-We have presented strong evidence that hammock plots and parallel sets suffer from a type of M\"uller Lyer illusion, which we have coined the line width illusion and its reverse. 
+We have presented strong evidence that hammock plots and parallel sets suffer from a type of M\"uller-Lyer illusion, which we have coined the line width illusion and its reverse. 
 We have introduced common angle plots as a measure to avoid the line width illusions and found strong evidence that  the performance of the common angle plot is not affected by these line width illusions and significantly better in these situations.
 
 We have presented overwhelming evidence in the `case against straight lines', in particular when line width is encoding quantitative information. Even though straight lines are the simple and mathematically perfect solution to represent  connections  between levels of two variables, they are far from optimal for the peruser of the chart in two ways: firstly by the line width illusion in parallel sets, and secondly by the reverse of the line width illusion after the adjustment in hammock plots.   Parallel sets are affected by the line width illusion, which is a clash between need and nature -- mathematics tells us that we  need to assess line widths in a vertical or horizontal fashion to get a correct evaluation of the encoded information. This clashes with a strong innate tendency to evaluate  widths of lines orthogonally to their  direction. Hammock plots are adjusting for the line width illusion by changing the  width corresponding to the slope of the line segment. However, this makes either end of the segments susceptible to the reverse line width illusion. We found strong support in the survey we conducted for the existence of both the line width illusion in common angle plots and the reverse in hammock plot. By giving up on the paradigm of straight lines for drawing connections between levels in the common angle display, we are able to circumnavigate both illusions, and present an illusion-free alternative that encodes the same information as the widely used parallel sets  or the hammock plots.
@@ -734,13 +730,15 @@ We have presented overwhelming evidence in the `case against straight lines', in
 
 
 \subsection*{Survey }\label{app2}
-All students, staff and faculty from Iowa State University programs in Statistics, Bioinformatics and Computational Biology and Human Computer Interaction were invited to participate by email. 93 individuals accessed the survey;
-86 participants gave consent, 15  of those dropped out right after, 20 went to the training site and did not return.
-Out of the remaining 51 participants, 46  individuals submitted responses for all questions and 5 gave responses to the first block of questions.
+The survey was created using the  Qualtrics Labs, Inc software (\url{www.qualtrics.com}). 
+At the survey start, participants were presented a brief tutorial regarding the different plot types. The tutorial can be found at \url{XXX}
 
-Participants used their own personal computing devices to access the survey, which was created using the  Qualtrics Labs, Inc software (\url{www.qualtrics.com}). No personally identifiable information was collected, nor was any compensation offered. At the survey start, participants were presented a brief tutorial regarding the different plot types.  \\
+The survey consists of two blocks of questions each pertaining to one data set (titanic data or chromosome-pathway interactions). Each block was presented with a single plot  to use as reference when responding. Two different plot types were shown for the two different blocks, yielding a total of six unique orderings of plot types (CA-PS, PS-CA, CA-H, H-CA, H-PS, and PS-H). 
 
-\noindent The questions pertaining to the titanic dataset were: \\ \\
+Participants were randomly assigned to one of these six combinations, each of approximately equal size.  This study design structure was imposed, in part,  to encourage participation by reducing the amount of time for survey completion. Completion of all survey questions was anticipated to take 10 - 15 minutes.
+No personally identifiable information was collected, nor was any compensation offered.   
+
+The questions pertaining to the titanic dataset were: 
 \begin{itemize}
 \item[A.1]\emph{Agree, Disagree or Don't Know/Can't Determine with the following statements:}
 \begin{itemize}
@@ -793,17 +791,16 @@ Participants used their own personal computing devices to access the survey, whi
 \end{itemize} 
 \end{itemize} 
 
-%\noindent \\Participants were randomly assigned to one of six blocks, each of approximately equal size. While individuals in all blocks were presented with the same questions and datasets in the order shown above, each block was presented with a unique ordering of only two of the plot types (e.g parallel sets and hammock plot; common angles and parallel sets, etc) to use as reference when respon. This study design structure was imposed, in part,  to encourage participation by reducing the amount of time for survey completion. Completion of all survey questions was anticipated to take 10 - 15 minutes.
 
-\subsection*{Data and preprocessing}
-Data for questions A1, A2 and A3 in survey 2 were previously published in: \citep{dawson:1995}.
-
-Data for questions B1, B2 and B3 in survey 2 was obtained using the UCSC Genome Browser \cite{ucsc:2002} for humane genome assembly (hg18, May2006). The data was subsetted for genes involved in pathways hsaXXX (drug metabolism), hsaXXX (caffeine metabolism), and hsaXXX (steroid biosynthesis). From this data, genes active on selected chromosomes were displayed in plots.
-
-All data manipulation was performed  using software {\tt R} 2.15.1 \citep{R} with Bioconductor package KEGG.db \cite{kegg}
-%
 \subsection*{Participants' demographics}
+All students, staff and faculty from Iowa State University programs in Statistics, Bioinformatics and Computational Biology and Human Computer Interaction were invited to participate by email. 93 individuals accessed the survey;
+86 participants gave consent, 15  of those dropped out right after, 20 went to the training site and did not return.
+Out of the remaining 51 participants, 46  individuals submitted responses for all questions and 5 gave responses to the first block of questions.
+
+Participants used their own personal computing devices to access the survey, 
+
 XXX Add breakdown of operating system
+
 
 % use section* for acknowledgement
 \ifCLASSOPTIONcompsoc
