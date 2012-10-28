@@ -60,14 +60,6 @@ The display preserves properties of parallel coordinate plots, such as the poten
  
 Finally, we present results from user studies as evidence that common angle charts resolve the problem of the line-width illusion. 
 
-% In addition to case studies demonstrating application to data from distinct disciplines, Common Angle Charts have been tested against a set of  displays that share the framework of parallel coordinates.
-%
-% Details regarding the construction, external influences, variations and implementation of Common Angle Charts are provided. Discussion regarding structure, demographics and analysis of user testing follow. We show that the Common Angle Chart resolves a distortion that is a common feature of alternate displays of categorical data.
-
-%We will first give an overview of  charts commonly used for displaying associations between categorical variables within the framework of parallel coordinate plots, and then discuss their performance with respect to the line width illusion based on user experiments.
-%
-
-
 
 \section{Illusions and Displays}
 \subsection{Line width illusion}
@@ -94,22 +86,6 @@ In the perception literature, this phenomenon is known as part of a group of geo
 While we see the type of chart as shown in figure~\ref{playfair} proposed by Playfair quite commonly, particular in election years -- where these kind of charts are used to enable comparisons of support for several candidates, the recommendation from the literature is to avoid charts in which the audience is asked to do visual subtractions, and show these differences directly.
 
 However, the line width illusion is not restricted to this situation only. We next discuss how other charts, such as the parallel sets plots \citep{kosara:2006}, are affected by it.
-%We will first give an overview of  charts commonly used for displaying associations between categorical variables within the framework of parallel coordinate plots, and then discuss their performance with respect to the line width illusion. % based on user experiments.
-
-
-
-
-%Figure \ref{sine-illusion} shows a screen shot of applet displaying the sine illusion. The sine illusion is closely related to the line width phenomenon -- the line segments in the are of the steepest slope of the sine curve appear to be the shortest: ``The illusion is explained in terms of a perceptual compromise between the vertical extent and the greater overall dimensions of the section at the turn of the sine-wave figure and is thereby held to be the same in principle as the M\"uller-Lyer illusion." \citep{day:1991}.
-%M Bach's applet \citep{bach} gives the option to compensate the line length manually for its perceived shortcoming. The amount of compensation chosen turns out to be highly dependent on both the length of the vertical line segments and the amplitude of the sine function. The amplitude directly affects the slope -- the steeper  the slope the more compensation is necessary, see section \ref{distortion}  for a more detailed discussion and some results from a user study.
-%
-%
-%\begin{figure}
-%\centering \includegraphics[width=.75\linewidth]{sine-illusion}
-%\caption{Screenshot of an applet by M Bach \citep{bach} showing an example of a sine illusion. The applet is giving the possibility for compensating the line lengths in the regions with the highest slope. }
-%\label{sine-illusion}
-%\end{figure}
-
-
 
 
 \subsection{Parallel sets}
@@ -133,10 +109,6 @@ ability to visualize a large number of dimensions simultaneously that is the par
 
 
 %%XXX PS and line-width illusion
-%Parallel sets are  susceptible to the line width illusion: when we, for example, try to order passenger class and crew membership according to their respective numbers of survivors, we need to evaluate the width of the bands between upper and lower bars in figure \ref{question1a}.
-%The  perceived width of the lines between the variables in figure \ref{question1a} would  lead us to assume that 1st class passengers had the highest number of survivors, followed by 3rd class passengers and about even numbers of survivors in the 2nd class  and  the crew. However, the  actual numbers are:
-
-
 Figure \ref{question1a} gives an example for a two dimensional parallel sets plot investigating the relationship between class status and survival on board the HMS Titanic  \citep{dawson:1995}. Class status is recorded as either crew member or passengers in  first, second, or third class. 
 
  The top bar in figure \ref{question1a} shows the  variable Class. The bottom bar shows survival  as yes and no. Between the bars lines are drawn to visualize the relationship between class membership and  survival. 
@@ -157,8 +129,6 @@ Non-Survivors & 673 & 122 & 167 &  528
 This identifies an order of crew, first class, third class, followed by second class as correct. 
 We will discuss next how this finding relates to the line width illusion and how this helps us in quantifying the strength of the illusion.
 
-
-%The plot in figure \ref{question1a} was created using an implementation of parallel sets written for the {\tt R} environment, found in the package {\tt ggparallel} (see section Implementation). A major distinction from the most recent {\tt ParSets v2.1} Java application is the choice to remain faithful to the structure of parallel sets proposed by Kosara in \citep{kosara:2006} and display frequency of each category as scaled boxes. Maintaining visual emphasis on the marginal probabilities of categories within a single dimension \citep{parsetredesign} reduces the impact of the line-width illusion for cognizant users.
 
 
 %
@@ -198,68 +168,15 @@ where $\theta$ is the angle of the line with respect to the horizontal line.
 
 The perceived slope of a line very much depends on the aspect ratio of the corresponding plot -- changing the height to width ratio of a display  will change our perception of the corresponding line widths, if they are not adjusted for the slope \cite{cleveland:1984}. This finding is not new, but its strength on our perception is surprising, as can be seen in the example of  figure \ref{fig:aspect}.  Again, survival and class membership on the Titanic is shown; the same parallel sets plot is shown twice in this figure, but with very different aspect ratios: in the  plot on the left the number of surviving 3rd class passengers seems to be about twice as big as the number of survivors among crew members, whereas in the plot on the right the lines have about equal (orthogonal) width. Obviously, this is not due to a change in numbers.
 
-For parallel sets-style displays, the audience has an alternate visual cue when evaluating frequencies. Because height (width, when display is rotated 90 degrees) of a particular line is fixed for all line segments in the display, the width of a particular line segment is proportional to that segment's area. Comparison of area may be employed as a proxy or to augment line-width evaluations. 
-This method of comparison is particularly troubling because it is prone to error in two scenarios commonly seen in parallel sets: (1) extreme aspect ratios of the rectangular shape occupied by thick line segments and (2) when comparing rectangles rotated relative to each other \citep{heer:2010, kong:2010}. Additionally, the incorrect perception and comparison of area provides contextual evidence that reinforce and strengthen distortion introduced by the line-width illusion.
+For parallel sets-style displays, the audience has {\it area of the line segment} an alternate visual cue when evaluating frequencies. Because height (or width for a rotated display) of  line segments is constant across the display, the width of a particular  segment is proportional to its area. We can therefore employ area comparisons as a proxy or to augment line width evaluations. 
+However, the literature suggests, that this method of comparison is particularly  prone to errors in two scenarios commonly seen in parallel sets: (1) extreme aspect ratios of the rectangular shape \citep{heer:2010} %occupied by thick line segments 
+and (2) when comparing rectangles rotated relative to each other \citep{kong:2010}. 
+This incorrect perception and comparison of areas provides additional contextual evidence that reinforce and strengthen distortion introduced by the line width illusion.
 
 
-Designers of good graphics have to accommodate changes in intuitive evaluation of the situation. While reordering categories and controlling the aspect ratio aids in reduction of audience potentially drawing wrong conclusions from a plot, none of these measures is enough to avoid all perceptual pitfalls due to the line width illusion.
+Designers of good graphics have to accommodate changes in intuitive evaluation of the situation. While reordering categories and controlling the aspect ratio reduces the potential that audiences  draw wrong conclusions from a plot, none of these measures is enough to avoid all perceptual pitfalls due to the line width illusion.
 
 
-
-
-%
-%\begin{figure}[hbtp]
-%\begin{center}
-%\includegraphics[width=.8\linewidth]{images/bar1-titanic}
-%\includegraphics[width=.8\linewidth]{images/bar2-titanic}
-%\end{center}
-%\caption{\label{question1b} Barcharts showing Survival by Class for the Titanic Data.}
-%\end{figure}
-
-
-
-%In a preliminary survey participants were asked to order class  levels according to the number of survivors (from highest to lowest) based on  either the parallel sets plot of figure \ref{question1a} or the set of two barcharts in figure \ref{question1b} showing the same data.  
-%
-%% latex table generated in R 2.15.0 by xtable 1.7-0 package
-%% Sat May 12 20:04:08 2012
-%\begin{table}[ht]
-%\begin{center}
-%\begin{tabular}{rrrl}
-%  \hline
-% & barcharts & parallel sets & Correct \\ 
-%  \hline
-% 1st, 3rd, Crew,  2nd & 0 & 8 &  \\ 
-%  1st, 2nd, Crew, 3rd & 0 & 4 &  \\ 
-% 1st, Crew, 3rd, 2nd & 3 & 1 &  \\ 
-%  Crew, 1st, 3rd, 2nd & 7 & 0 & * \\ 
-%  Crew, 2nd, 3rd, 1st & 1 & 0 &  \\ 
-%  Crew, 3rd, 2nd, 1st & 1 & 0 &  \\ 
-%   \hline
-%(all) & 12 & 13 &  \\ 
-%   \hline
-%\end{tabular}
-%\caption{Overview of survey results: 7 out of 12 participants facing the barchart picked the correct order of `Crew, 1st, 3rd, 2nd' (highest number of survivors to lowest). None of the 13 participants evaluating the parallel set plot picked the correct result. }
-%\label{tab:results}
-%\end{center}
-%\end{table}
-%
-%
-%%  , , qid = 2
-%%
-%%                                              plottype
-%%response                                       bar circos hammock
-%%  1243                                           1      0       0
-%%  2134                                           0      0       1
-%%  3124                                           1      0       1
-%%  4123                                          10      0      11
-%%
-%%, , qid = 3
-%%
-%%                                              plottype
-%%response                                       bar circos hammock
-%%  1342                                           1      0       1
-%%  1432                                          10      0      11
-%
 
 
 % needed in second column of first page if using \IEEEpubid
@@ -281,7 +198,6 @@ Hammock plots, introduced by M Schonlau in \citep{schonlau:2003}, provide an alt
 \end{figure}
 
 Similarly to the parallel sets plot, the bars are divided according to class membership numbers.  Lines connect categories between neighboring variables, orthogonal line widths are representing the number of individuals in each combination. Unlike the parallel sets, the lines start from the middle of the bin and connect to the middle of the other variable's bins. 
-%Line widths are adjusted in such a way, that the orthogonal width (see sketch \ref{fig:linewidth}) represents numbers.
 
 Here, we see that barely any women were in the crew, while male crew members make up the second largest contingent overall. Overall a few more men survived than women. Proportionally the situation is much different -- a much higher percentage of women survived than men. We also see, that more first class passengers survived than not, while  survival chances of second class passengers were about fifty-fifty. For third class passengers and crew members fewer members did  survive than not. 
 
@@ -321,12 +237,6 @@ One of the most famous charts that can be classified as a Sankey diagram is Mina
 
 A very recent example of related work can be found in \citep{bostock:2012}; the chart is an interactive d3 display that shows political shifts of states and corresponding electoral votes in a mixture of a parallel coordinate plot of state-based votes and a Sankey-type overlay to connect states across past elections.
 
-
-%XXX http://www.jenchristiansen.com/ Jen Christiansen 
-%http://jenchristiansen.com/?p=20
-%Scientific American references 
-%
-%Sankey diagrams William O'Brien 'Preliminary Investigation of the use of Sankey diagrams ...'
 
 \subsection{Extensions}
 \subsubsection{Hammock-adjusted common angle plots}
@@ -409,9 +319,15 @@ The second block  of questions regarded gene-pathway relationships in a dataset 
 Screening public databases of biochemical pathway and genetic sequence data to identify targets for further analysis is a common exploratory analysis task that benefits from visualization methods. One application is to determine if a drug that is known to affect a particular pathway may also affect function on a different pathway. Such information is useful in identifying new product markets or accurate warning labels. Another application is the discovery of co-localization of genes involved in multiple pathways; physical proximity is one indicator of evolutionary origin and may also provide clues regarding the mechanism that a pathway employs.
 
 
-The pathways we focus on here, are involved in caffeine metabolism (hsa00232),  steroid biosynthesis (hsa00100), and hsa00982, which is involved with drug metabolism via the cytochrome P450 superfamily. For simplicity, we also focus on just four different chromosomes instead of the regular 22.  All data manipulation was performed  using software {\tt R} 2.15.1 \citep{R} with Bioconductor package KEGG.db \cite{kegg}.
+The pathways we focus on here, are involved in caffeine metabolism (hsa00232),  steroid biosynthesis (hsa00100), and hsa00982, which is involved with drug metabolism via the cytochrome P450 superfamily. For simplicity, we also focus on just six different chromosomes instead of the regular 22.  All data manipulation was performed  using software {\tt R} 2.15.1 \citep{R} with Bioconductor package KEGG.db \cite{kegg}.
 
-The pathway-chromosome relationship is shown in a common angle plot in figure \ref{XXX}. The top bar identifies chromosome location, the bottom pathways. Ribbon widths  visualize the number of genes on a  chromosome that are active in a particular pathway.  A chromosome with ribbons connecting to multiple pathways is a physical target for drugs that possibly affect both paths.  Gene CYP1A2 is involved in both caffeine metabolism and drug metabolism - clomipramine (an antidepressant) and caffeine both may act as a substrate for this gene. From a user perspective screening by the meta-location of chromosome reduces the  question of co-localization of genes to one of searching for common elements from amongst 15 genes  - reducing the search space by over 90\% (to 15 from 193 total genes listed for the pathways).
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=.9\linewidth]{caffeine-ca} 
+   \caption{\label{fig:caffeine}Common angle plot of chromosome and pathway relationship. Line width corresponds to number of genes pathways and chromosomes have in common. Both drug metabolism (hsa00982) and caffeine metabolism (hsa00232) make use of genes on chromsome 2.}
+\end{figure}
+
+The pathway-chromosome relationship is shown in a common angle plot in figure \ref{fig:caffeine}. The top bar identifies chromosome location, the bottom pathways. Ribbon widths  visualize the number of genes on a  chromosome that are active in a particular pathway.  A chromosome with ribbons connecting to multiple pathways is a physical target for drugs that possibly affect both paths.  Gene CYP1A2 is involved in both caffeine metabolism and drug metabolism - clomipramine (an antidepressant) and caffeine both may act as a substrate for this gene. From a user perspective screening by the meta-location of chromosome reduces the  question of co-localization of genes to one of searching for common elements from amongst 15 genes  - reducing the search space by over 90\% (to 15 from 193 total genes listed for the pathways).
 
 Alternative displays are graph networks that usually focus on the display of nodes within a pathway, or circos displays \cite{k}, which generally emphasize the chromosome-chromosome interaction.
 
@@ -435,10 +351,6 @@ Block 1 & PS & CA & Ham & PS & CA & Ham \\
 \end{tabular}
 \caption{\label{tab:designs} Overview of study design and participation numbers. The number in parenthesis indicates the number of participants completing the first block, but not the second.}
 \end{table}
-
-%% however the type of chart provided as reference for answering questions varied randomly among the types described previously. 
-%%
-%%In the survey, participants were first asked three questions regarding the titanic dataset, three questions regarding the gene dataset,  then two questions soliciting feedback regarding plot types, allowing for free response.
 
 This crossover design allows us to compare designs across different questions and data sets, while at the same time allowing to adjust for individuals' different skill sets. 
 For the analysis, we first fit two linear mixed effects models, $M1$ and $M2$ -- the first one gives a general overview of comparing the designs, the second one further highlights the performance of the designs in each question.
@@ -731,7 +643,7 @@ We have presented overwhelming evidence in the `case against straight lines', in
 
 \subsection*{Survey }\label{app2}
 The survey was created using the  Qualtrics Labs, Inc software (\url{www.qualtrics.com}). 
-At the survey start, participants were presented a brief tutorial regarding the different plot types. The tutorial can be found at \url{XXX}
+At the survey start, participants were presented a brief tutorial regarding the different plot types. The tutorial can be found at \url{http://mariev.net/tutorial.html}
 
 The survey consists of two blocks of questions each pertaining to one data set (titanic data or chromosome-pathway interactions). Each block was presented with a single plot  to use as reference when responding. Two different plot types were shown for the two different blocks, yielding a total of six unique orderings of plot types (CA-PS, PS-CA, CA-H, H-CA, H-PS, and PS-H). 
 
@@ -876,9 +788,9 @@ The survey for this study was carried out with approval from  IRB-ID 12-204.
 %\begin{biography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
 % or if you just want to reserve a space for a photo:
 
-\begin{IEEEbiography}{Heike Hofmann}
-Biography text here.
-\end{IEEEbiography}
+\begin{IEEEbiographynophoto}{Heike Hofmann}
+is associate professor of Statistics at Iowa State University. She is a member of the inter-disciplinary Human Computer Interaction program at Iowa State and serves as faculty member for the Bioinformatics and Computational Biology program. Her research interests are the visual exploration of high-dimensional and large data. Her research group has been the recipient of several awards for their data detective and visualization skills.  
+\end{IEEEbiographynophoto}
 
 \begin{IEEEbiography}{Marie Vendettuoli}
 Biography text here.
@@ -903,7 +815,7 @@ Biography text here.
 % on the last page and whether or not the columns
 % are being equalized.
 
-%\vfill
+\vfill
 
 % Can be used to pull up biographies so that the bottom of the last one
 % is flush with the other column.
