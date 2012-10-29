@@ -92,4 +92,12 @@ ggparallel(vars=c("chrom", "path"), order=0, method='angle', label=FALSE,
 
 gg <- ggparallel(c("chrom", "path"),  order=0, text.angle=0, label=FALSE, genesub) +
   
-
+###################
+require(ggparallel)
+require(RColorBrewer)
+library(reshape)
+cols <- c(brewer.pal(name="Blues", 6)[-c(1,2)], rev(brewer.pal(name="Oranges", 3)[-1]), rev(brewer.pal(name="Greens",3)[-1]))
+ggparallel(names(titanic)[c(1,4,2,1)], order=c(0,1,1,0), method="hammock", ratio=.25, text.angle=0, titanic, weight="Freq") +
+  scale_fill_manual(values=cols, guide="none") +
+  scale_colour_manual(values=cols, guide="none") + coord_flip() 
+ggsave("hammock-titanic.pdf", width=6, height=8)
