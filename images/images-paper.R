@@ -99,5 +99,17 @@ library(reshape)
 cols <- c(brewer.pal(name="Blues", 6)[-c(1,2)], rev(brewer.pal(name="Oranges", 3)[-1]), rev(brewer.pal(name="Greens",3)[-1]))
 ggparallel(names(titanic)[c(1,4,2,1)], order=c(0,1,1,0), method="hammock", ratio=.25, text.angle=0, titanic, weight="Freq") +
   scale_fill_manual(values=cols, guide="none") +
-  scale_colour_manual(values=cols, guide="none") + coord_flip() 
-ggsave("hammock-titanic.pdf", width=6, height=8)
+  scale_colour_manual(values=cols, guide="none") + coord_flip() + theme_bw()
+ggsave("hammock-titanic.pdf", width=6, height=6)
+
+
+ggparallel(names(titanic)[c(1,4,2,1)], order=c(0,1,1,0), titanic, weight="Freq", text.angle=0) + 
+    scale_fill_manual(values=cols, guide="none") +
+    scale_colour_manual(values=cols, guide="none") + coord_flip() + theme_bw()
+ggsave("ca-titanic.pdf", width=6, height=6)
+
+ggparallel(names(titanic)[c(1,4,2,1)], order=c(0,1,1,0), method='adj.angle', text.angle=0, weight="Freq", titanic, ratio=0.035) + 
+    scale_fill_manual(values=cols, guide="none") +
+    scale_colour_manual(values=cols, guide="none") + coord_flip() + theme_bw() + 
+  theme(axis.ticks = element_blank(), axis.text.x = element_blank(), axis.title.x=element_blank())
+ggsave("adj-angle.pdf", width=6, height=6)
