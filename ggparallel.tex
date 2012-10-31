@@ -412,7 +412,10 @@ $\mu$ & 1.72 & 0.24 & 7.04 & 0.00 & ***\\ [5pt]
   \hline
  & common & hammock & parallel \\ 
   \hline
- A1 & 86.0 & 76.5 & 81.2 \\   A2 & 63.2 & {\bf 5.9} & {\bf 12.5} \\   A3 & 73.7 & {\bf 17.6} & {\bf 25.0} \\   B1 & 93.8 & 83.3 & 82.2 \\ 
+ A1 & 86.0 & 76.5 & 81.2 \\ 
+  A2 & 63.2 & {\bf 5.9} & {\bf 12.5} \\ 
+  A3 & 73.7 & {\bf 17.6} & {\bf 25.0} \\ 
+  B1 & 93.8 & 83.3 & 82.2 \\ 
   B2 & 68.8 & 68.8 & {\bf 6.7} \\ 
   B3 & 75.0 & 87.5 & {\bf 53.3} \\
    \hline
@@ -454,7 +457,12 @@ Design\\
   $d_P$ & -0.57 & 0.86 & -0.66 & 0.51 \\ [5pt]
 Questions\\
   $q_{A1}$ & 0.00 & -- & -- & -- \\ 
-  $q_{A2}$  & -1.85 & 0.74 & -2.50 & 0.01 &* \\   $q_{A3}$  & -1.11 & 0.77 & -1.44 & 0.15 \\   $q_{B1}$ & 0.55 & 0.96 & 0.58 & 0.56 \\   $q_{B2}$  & -1.69 & 0.88 & -1.91 & 0.06 &. \\   $q_{B3}$  & -1.31 & 0.92 & -1.43 & 0.15 \\ [5pt] 
+  $q_{A2}$  & -1.85 & 0.74 & -2.50 & 0.01 &* \\ 
+  $q_{A3}$  & -1.11 & 0.77 & -1.44 & 0.15 \\ 
+  $q_{B1}$ & 0.55 & 0.96 & 0.58 & 0.56 \\ 
+  $q_{B2}$  & -1.69 & 0.88 & -1.91 & 0.06 &. \\ 
+  $q_{B3}$  & -1.31 & 0.92 & -1.43 & 0.15 \\ [5pt]
+ 
 Interaction \\
 $p_{H, A1}$ &  0.00 & -- & -- & -- \\
 $p_{P,A1}$ &  0.00 & -- & -- & -- \\
@@ -578,24 +586,29 @@ Table \ref{tab:b1} shows a summary to the  three questions of $B.1$ with possibl
 The first two questions are  examples, where the line width illusion, and its reverse will lead to answers that differ from the correct answer. Parallel sets  are susceptible to the line width illusion, while hammock plots suffer from the reverse. The data shows that in about 50\% of the responses we can see this difference. 7 out of 14 answers for the parallel sets plots in question 1 deviate from the correct answer, and 7 out of 16 responses corresponding to hammock plots in question 2 show the wrong answer.
 
 
-\subsubsection{Opinion on CAs}
-XXX which chart did you like better?
+\subsubsection{Opinion on common angle plots}
+Answers to the question of `which chart did you like better?' are shown in table \ref{tab:prefer}. There is a pretty clar endorsement in favor of common angle charts versus the other two types of charts.
+Asked for a reason for their preference over parallel sets, 8 participants cited a facilitated comparison of width, area or ``size", 3 saw the common angle as preferable, and the remaining answers related to a 'more logical' structure or generally 'easier' choice.
+Reasons for not preferring common angles all boiled down to a preference for straight lines. This purely aesthetic preference is deeply rooted and in our opinion the biggest challenge for common angle plots.
+% latex table generated in R 2.15.1 by xtable 1.7-0 package% Wed Oct 31 10:28:55 2012\begin{table}[ht]\begin{center}\begin{tabular}{cccrrr}  \hline
+&\multicolumn{5}{r}{Which chart did you like better?}\\&&& Chart 1 &  Chart 2 \\   \hline  PS &vs&  {\bf CA} & 2 & \bf 6 \\  {\bf  CA} & vs &  PS & \bf 4 & 2 \\   H & vs &   {\bf  CA} & 3 & \bf 5 \\    {\bf  CA} & vs &  H & \bf 8 & 2 \\   H & vs &  PS & 3 & 5 \\   PS & vs &  H & 1 & 5 \\    \hline\end{tabular}
+\caption{\label{tab:prefer} Preferences for first or second chart across all six combinations of questions and chart types. }\end{center}\end{table}
 
-XXX breakdown of qualitative feedback
+%XXX breakdown of qualitative feedback
+%
+%Out of the 14 cases where respondents saw both parallel sets and common angle plots....
+%
+%8* (57\%) cited comparison of width, area or "size"
+%3* (21\%) cited the angle of incidence
+%2 (14\%) cited the underlying data structure  - fewer variables, "logical"
+%1 (7\%) said choice was "easier"
+%1 (7\%) gave other responses - asked for clarification of the plot type,
 
-Out of the 14 cases where respondents saw both parallel sets and common angle plots....
 
-8* (57\%) cited comparison of width, area or "size"
-3* (21\%) cited the angle of incidence
-2 (14\%) cited the underlying data structure  - fewer variables, "logical"
-1 (7\%) said choice was "easier"
-1 (7\%) gave other responses - asked for clarification of the plot type,
-
-
-*one person cited both area and angle of incidence
-
-12 people preferred common angles
-
+%*one person cited both area and angle of incidence
+%
+%12 people preferred common angles
+%
 
 \section{Implementation}\label{sec:implementation}
 
@@ -710,9 +723,14 @@ All students, staff and faculty from Iowa State University programs in Statistic
 Out of the remaining 51 participants, 46  individuals submitted responses for all questions and 5 gave responses to the first block of questions.
 
 Participants used their own personal computing devices to access the survey, 
+a majority of participants used Intel Mac OS X (versions ranging from 10.6.8 to 10.8.2), with the next most common operating system WoW64 (Windows 32-bit or Windows 64-bit). The preferred choice of browser was  Firefox, followed by Chrome. For two participants, the Qualtrics survey software was unable to capture operating system or browser information.
 
-XXX Add breakdown of operating system
-
+%22 users were operating on a Mac OS X system (versions ranging from 10.6.8 to 10.8.2)
+%20 on Windows (NT 5.1, 6.0, 6.1, WOW64)
+%5 Linux (Ubuntu, Linux x86_64)
+%2 rv:15.0
+%2 unknown
+                           
 
 % use section* for acknowledgement
 \ifCLASSOPTIONcompsoc
@@ -792,8 +810,8 @@ The survey for this study was carried out with approval from  IRB-ID 12-204.
 is associate professor of Statistics at Iowa State University. She is a member of the inter-disciplinary Human Computer Interaction program at Iowa State and serves as faculty member for the Bioinformatics and Computational Biology program. Her research interests are the visual exploration of high-dimensional and large data. Her research group has been the recipient of several awards for their data detective and visualization skills.  
 \end{IEEEbiographynophoto}
 
-\begin{IEEEbiography}{Marie Vendettuoli}
-Biography text here.
+\begin{IEEEbiographynophoto}{Marie Vendettuoli}
+
 \end{IEEEbiography}
 
 % if you will not have a photo at all:
