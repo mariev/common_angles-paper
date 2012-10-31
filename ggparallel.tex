@@ -58,7 +58,7 @@ spenke:2003, schonlau:2003} and other, frequency-based, methods to display categ
 We will first show how the line width illusion affects  parallel coordinates for categorical data, and in a second step introduce the {\it common-angle plot} as an alternative  method for displaying categorical data in a manner that minimizes the effect from perceptual illusions.
 The display preserves properties of parallel coordinates, such as the potential to visualize a large number of dimensions simultaneously, but also presents frequency information. 
  
-Finally, we present results from user studies as evidence that common angle charts resolve the problem of the line width illusion. 
+Finally, we present results from user studies as evidence that common angle plots resolve the problem of the line width illusion. 
 
 
 \section{Illusions and Displays}
@@ -205,7 +205,7 @@ As the adjustment of line widths is made with respect to the angle $\theta$, whi
 
 Another problem that arises in evaluating hammock plots is that if an observer focuses on horizontal line width  the plots suffer from a {\it reverse line width illusion}:  judging the number of survivors by class in figure \ref{hammock} based on horizontal line width  results in an ordering of (largest to smallest) Crew, 3rd, 1st, and 2nd -- which is not correct either. Using horizontal width is inviting, since the lines are centered around the middle of a level, facilitating this  comparison. 
 
-In this paper, we propose a new approach to visualizing relationships between categorical variables in a parallel coordinates setting, called the {\it common angle} display. 
+In this paper, we propose a new approach to visualizing relationships between categorical variables in a parallel coordinates setting, called the {\it common angle} plot. 
 
 
 \section{ Common angle plots}
@@ -232,7 +232,7 @@ The pre-specified angle $\theta$ (between the line and the vertical band) is giv
 This makes the width of ribbons  comparable without being affected by the distortion, as all ribbons are sharing at least one segment under the same angle. 
 
 \subsection{Origins}
-Historically, the common angle diagram has its roots in Sankey diagrams \citep{sankey:1898}. Sankey diagrams have their origin and main use of application in the area of industrial engineering. They are often used to show flows,  particularly, in the framework of energy consumption and losses within systems.
+Historically, the common angle plot has its roots in Sankey diagrams \citep{sankey:1898}. Sankey diagrams have their origin and main use of application in the area of industrial engineering. They are often used to show flows,  particularly, in the framework of energy consumption and losses within systems.
 One of the most famous charts that can be classified as a Sankey diagram is Minard's map of Napoleon's march on Moscow \citep{minard:1812}. This map  shows the size of the army as a flow chart from West to East and the subsequent retreat. Usually, Sankey diagrams do not show a geographic co-variate, though. Modern uses of Sankey diagrams are discussed in  detail in \citep{schmidt:2008};  they can also be found in charts designed by Jen Christiansen, such as in \cite{jen3} and \cite{jen2}.
 
 A very recent example of related work can be found in \citep{bostock:2012}; the chart is an interactive d3 display that shows political shifts of states and corresponding electoral votes in a mixture of a parallel coordinates of state-based votes and a Sankey-type overlay to connect states across past elections.
@@ -255,7 +255,7 @@ In the original paper, parallel sets have been introduced to reflect a hierarchy
 However, it is possible, to show hierarchies in all of the types of displays by using a color coding introducing a hierarchical structure to the data. 
 
 Figure \ref{tit-hierarchy}
-shows a common-angle plot  with a hierarchy: survivors of the disaster are marked in blue, non-survivors by orange. From top to bottom of the plot a hierarchy is drawn, considering first, survival, then gender, followed by age and finally, class membership. The coloring helps to keep track of survival status throughout the hierarchy, the common angle layout makes comparisons valid across all levels. This is of particular importance in hierarchical displays, as these displays, by definition, have a larger number of smaller groups than displays without a hierarchy exacerbating problems induced by the line width illusion.
+shows a common-angle plot  with a hierarchy: survivors of the disaster are marked in blue, non-survivors by orange. From top to bottom of the plot a hierarchy is drawn, considering first, survival, then gender, followed by age and finally, class membership. The coloring helps to keep track of survival status throughout the hierarchy, the layout in a common angle plot makes comparisons valid across all levels. This is of particular importance in hierarchical displays, as these displays, by definition, have a larger number of smaller groups than displays without a hierarchy exacerbating problems induced by the line width illusion.
 
 \begin{figure}[hbtp]
 %titanic$SS <- with(titanic, interaction(Survived, Sex))
@@ -310,7 +310,7 @@ shows a common-angle plot  with a hierarchy: survivors of the disaster are marke
 \section{Evaluation}
 \subsection{Survey Design}
 % description of general design
-To determine the effectiveness of the common angle display, we conducted a user experiment in form of a survey asking participants to provide responses regarding the structure in two data sets with predominantly categorical variables.
+To determine the effectiveness of the common angle plot, we conducted a user experiment in form of a survey asking participants to provide responses regarding the structure in two data sets with predominantly categorical variables.
 
  All individuals were presented with the same six questions, in two blocks of three questions each. The first block of questions investigated structures in the Titanic data set, including a follow-up of the survival-class ordering issue discussed earlier. Participants were exposed to one of the three types of displays discussed: a parallel sets plot, the hammock plot of figure \ref{hammock}, or the common angle plot of  figure \ref{fig:ca-titanic}.
  
@@ -376,9 +376,9 @@ $d_{j(i)}$ is the parameter measuring the effect of design $j$ ($j = C, H, P$ fo
 $\varepsilon_i$ is, similarly to a regular linear model, assumed to be independently distributed according to a normal distribution with mean of zero and variance $\sigma^2$.
 
 All models are fit in the {\tt lme4} package \citep{lmer} within the software frame work of {\tt R} 2.15.1 \citep{R}.
-Table \ref{coef1} gives an overview of the model coefficients and their estimates. The effect of the common angle design is used as a baseline, i.e all the effects shown are differences with respect to the performance of common angle plots. Both hammock plots and parallel sets  have negative effects on the correctness of the response. This indicates a significantly worse performance of these designs than under the common angle design.
+Table \ref{coef1} gives an overview of the model coefficients and their estimates. The effect of the common angle plot is used as a baseline, i.e all the effects shown are differences with respect to the performance of common angle plots. Both hammock plots and parallel sets  have negative effects on the correctness of the response. This indicates a significantly worse performance of these designs than under the common angle plot.
 
-Table \ref{raw} shows percentages of correctness for each design and each question. Bold numbers indicate significantly different (worse) performance of a design compared to the common angle design. Note that question A.2 overall had the worst performance, parallel sets  exhibit significantly worse performance in four out of the six questions, hammock plots are inferior to the common angle plot in two out the six questions. Note that in the last question hammock plots have the best performance -- but this is does not  constitute a significant difference to the performance of the common angle design.
+Table \ref{raw} shows percentages of correctness for each design and each question. Bold numbers indicate significantly different (worse) performance of a design compared to the common angle plot. Note that question A.2 overall had the worst performance, parallel sets  exhibit significantly worse performance in four out of the six questions, hammock plots are inferior to the common angle plot in two out the six questions. Note that in the last question hammock plots have the best performance -- but this is does not  constitute a significant difference to the performance of the common angle plot.
 Also note, that the table shows raw percentages, i.e. these performance rates are not adjusted for skills of individuals. 
 
 %xtable(summary(m1)@coefs)
@@ -398,7 +398,7 @@ $\mu$ & 1.72 & 0.24 & 7.04 & 0.00 & ***\\ [5pt]
 \multicolumn{5}{l}{Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 }
 \end{tabular}
 \end{center}
-\caption{\label{coef1} Model fit for $M1$ measuring correctness of answers in the survey. The common angle design is used as baseline -- both hammock plots and, to a larger degree, parallel sets, show a significantly worse performance. }
+\caption{\label{coef1} Model fit for $M1$ measuring correctness of answers in the survey. The common angle plot is used as baseline -- both hammock plots and, to a larger degree, parallel sets, show a significantly worse performance. }
 \end{table}
 
 
@@ -420,7 +420,7 @@ $\mu$ & 1.72 & 0.24 & 7.04 & 0.00 & ***\\ [5pt]
    \hline
 \end{tabular}
 \end{center}
-\caption{\label{raw} Raw percentages of correctness of responses for each question and design. Bold numbers indicate significant difference from common angle performances. }
+\caption{\label{raw} Raw percentages of correctness of responses for each question and design. Bold numbers indicate significant difference from common angle plot performance. }
 \end{table}
 
 Model $M2$ extends the first model by including both  effects for individual questions and the interaction effects with each design in the following form:
@@ -479,7 +479,7 @@ $p_{P,B3}$ & -0.62 & 1.26 & -0.50 & 0.62 \\
 \multicolumn{6}{l}{Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 }
 \end{tabular}
 \end{center}
-\caption{\label{model2} Model fit for $M2$ measuring correctness of answers in the survey, detailing performance of designs on each question. All design comparisons are with respect to the common angle design. }
+\caption{\label{model2} Model fit for $M2$ measuring correctness of answers in the survey, detailing performance of designs on each question. All design comparisons are with respect to the common angle plot. }
 \end{table}
 
 
@@ -505,7 +505,7 @@ Figure \ref{cubes} shows an overview of the permutation space together with an o
 The colored dots on top of the graph correspond to the responses from the survey - the size of the dots is proportional to the number of observers choosing this particular ordering. It becomes obvious from the three graphs in figure \ref{cubes} that
 the answers to different designs occupy quite different regions, while answers based  on the same design are quite close --  usually separated by only one edge. 
 
-The correct ordering, as well as the orderings assuming the line width illusion and its reverse are marked with symbols. Answers for the common angle design are centered around the correct answer, while responses to parallel sets are cluster around the response corresponding to the line width illusion. Due to the small number of responses to the hammock design a clear clustering of the answers is not recognizable, but the answer for the inverse line width illusion is among the responses. Table \ref{a2} gives an overview of all responses to question $A.2$. 
+The correct ordering, as well as the orderings assuming the line width illusion and its reverse are marked with symbols. Answers for the common angle plot are centered around the correct answer, while responses to parallel sets are cluster around the response corresponding to the line width illusion. Due to the small number of responses to the hammock design a clear clustering of the answers is not recognizable, but the answer for the inverse line width illusion is among the responses. Table \ref{a2} gives an overview of all responses to question $A.2$. 
 
 \begin{table}[ht]
 \begin{center}
@@ -533,7 +533,7 @@ Order  & CA & H & PS\\
 \end{table}
 
 %
-Common angle displays show the best performance in terms of correctness (66.7\% on 18 responses), compared to a correctness of 11.8\% for parallel sets plots on 16 responses, indicating a significantly better performance of common angle plots at a level of 0.0027, based on a Mantel-Haenszel test (the difference in performance to hammock plots is also significant at a level of 0.0006; but there is no significant difference in correctness between hammock plots and parallel sets.).
+Common angle plots show the best performance in terms of correctness (66.7\% on 18 responses), compared to a correctness of 11.8\% for parallel sets plots on 16 responses, indicating a significantly better performance of common angle plots at a level of 0.0027, based on a Mantel-Haenszel test (the difference in performance to hammock plots is also significant at a level of 0.0006; but there is no significant difference in correctness between hammock plots and parallel sets.).
 While the intuitive assessment of lines by their width orthogonal to their direction is well known, it is surprising to see its strength: in this particular setting, it is strong enough to `shrink' the horizontally widest line for 6 out of 16 participants by at least  44\%, from 212 to below 118, and a further 3 participants perceived the shrinking to below 178, which constitutes a distortion of at least 16\%.
 
 \begin{figure*}
@@ -589,9 +589,9 @@ The first two questions are  examples, where the line width illusion, and its re
 
 
 \subsubsection{Opinion on common angle plots}
-Answers to the question of `which chart did you like better?' are shown in table \ref{tab:prefer}. There is a pretty clear endorsement in favor of common angle charts versus the other two types of charts.
-Asked for a reason for their preference over parallel sets, 8 participants cited a facilitated comparison of width, area or ``size", 3 saw the common angle as preferable, and the remaining answers related to a 'more logical' structure or generally 'easier' choice.
-Reasons for not preferring common angles all boiled down to a preference for straight lines. This purely aesthetic preference is deeply rooted and in our opinion the biggest challenge for common angle plots.
+Answers to the question of `which chart did you like better?' are shown in table \ref{tab:prefer}. There is a pretty clear endorsement in favor of common angle plots versus the other two types of displays.
+Asked for a reason for their preference over parallel sets, 8 participants cited a facilitated comparison of width, area or ``size", 3 saw the common angle plots as preferable, and the remaining answers related to a 'more logical' structure or generally 'easier' choice.
+Reasons for not preferring common angle plots boiled down to a preference for straight lines. This purely aesthetic preference is deeply rooted and in our opinion the biggest challenge for common angle plots.
 % latex table generated in R 2.15.1 by xtable 1.7-0 package
 % Wed Oct 31 10:28:55 2012
 \begin{table}[ht]
@@ -642,7 +642,7 @@ We have been investigating different types of plots used for visualizing structu
 We have presented strong evidence that hammock plots and parallel sets suffer from a type of M\"uller-Lyer illusion, which we have coined the line width illusion and its reverse. 
 We have introduced common angle plots as a measure to avoid the line width illusions and found strong evidence that  the performance of the common angle plot is not affected by these line width illusions and significantly better in these situations.
 
-We have presented overwhelming evidence in the `case against straight lines', in particular when line width is encoding quantitative information. Even though straight lines are the simple and mathematically perfect solution to represent  connections  between levels of two variables, they are far from optimal for the peruser of the chart in two ways: firstly by the line width illusion in parallel sets, and secondly by the reverse of the line width illusion after the adjustment in hammock plots.   Parallel sets are affected by the line width illusion, which is a clash between need and nature -- mathematics tells us that we  need to assess line widths in a vertical or horizontal fashion to get a correct evaluation of the encoded information. This clashes with a strong innate tendency to evaluate  widths of lines orthogonally to their  direction. Hammock plots are adjusting for the line width illusion by changing the  width corresponding to the slope of the line segment. However, this makes either end of the segments susceptible to the reverse line width illusion. We found strong support in the survey we conducted for the existence of both the line width illusion in common angle plots and the reverse in hammock plot. By giving up on the paradigm of straight lines for drawing connections between levels in the common angle display, we are able to circumnavigate both illusions, and present an illusion-free alternative that encodes the same information as the widely used parallel sets  or the hammock plots.
+We have presented overwhelming evidence in the `case against straight lines', in particular when line width is encoding quantitative information. Even though straight lines are the simple and mathematically perfect solution to represent  connections  between levels of two variables, they are far from optimal for the peruser of the chart in two ways: firstly by the line width illusion in parallel sets, and secondly by the reverse of the line width illusion after the adjustment in hammock plots.   Parallel sets are affected by the line width illusion, which is a clash between need and nature -- mathematics tells us that we  need to assess line widths in a vertical or horizontal fashion to get a correct evaluation of the encoded information. This clashes with a strong innate tendency to evaluate  widths of lines orthogonally to their  direction. Hammock plots are adjusting for the line width illusion by changing the  width corresponding to the slope of the line segment. However, this makes either end of the segments susceptible to the reverse line width illusion. We found strong support in the survey we conducted for the existence of both the line width illusion in common angle plots and the reverse in hammock plot. By giving up on the paradigm of straight lines for drawing connections between levels in the common angle plot, we are able to circumnavigate both illusions, and present an illusion-free alternative that encodes the same information as the widely used parallel sets  or the hammock plots.
 
 
 
