@@ -43,7 +43,7 @@ As designers of charts we have to be aware of the innate or culturally imposed p
 Since we cannot measure effects from illusions directly, we have to employ usability studies to provide empirical evidence in support of underlying metaphorical models or for identification of unexpected or unpredicted effects from perceptual illusions.
 
 
-In this paper we discuss the effect and strength of the {\it line-width illusion}  on designs related to displaying associations between categorical variables. We will focus specifically on the use of parallel coordinate plots \citep{pcp:1885, inselberg:1985, wegman:1990} for categorical data and the perceptual implications this has.
+In this paper we discuss the effect and strength of the {\it line width illusion}  on designs related to displaying associations between categorical variables. We will focus specifically on the use of parallel coordinate plots \citep{pcp:1885, inselberg:1985, wegman:1990} for categorical data and the perceptual implications this has.
 
 \begin{figure}
 \includegraphics[width=.9\linewidth]{playfair_east_indies_gross}
@@ -55,15 +55,15 @@ Parallel coordinates were introduced to visualize large numbers of numeric varia
 Recent adaptations of parallel coordinates  \citep{ kosara:2006, bendix:2005, leblanc:1990, 
 spenke:2003, schonlau:2003} and other, frequency-based, methods to display categorical data, such as mosaic plots  \citep{hartigan:1981, friendly:1992, hofmann:2000, theus:1997},  have addressed perceptual constraints \citep{cleveland:1984} at a theoretical level, but lack reporting of human subjects testing as validation. 
 
-We will first show how the line-width illusion affects  parallel coordinate plots for categorical data, and in a second step introduce the {\it common-angle plot} as an alternative  method for displaying categorical data in a manner that minimizes the effect from perceptual illusions.
+We will first show how the line width illusion affects  parallel coordinate plots for categorical data, and in a second step introduce the {\it common-angle plot} as an alternative  method for displaying categorical data in a manner that minimizes the effect from perceptual illusions.
 The display preserves properties of parallel coordinate plots, such as the potential to visualize a large number of dimensions simultaneously, but also presents frequency information. 
  
-Finally, we present results from user studies as evidence that common angle charts resolve the problem of the line-width illusion. 
+Finally, we present results from user studies as evidence that common angle charts resolve the problem of the line width illusion. 
 
 
 \section{Illusions and Displays}
 \subsection{Line width illusion}
-An example of the  {\it line-width illusion} is displayed in  figure  \ref{playfair}. 
+An example of the  {\it line width illusion} is displayed in  figure  \ref{playfair}. 
 
 
 This chart displays the balance of trade between England and the East Indies as shown by William Playfair in his Commercial and Political Atlas, 1786 \cite{playfair, playfair2}.  One purpose of this chart is to demonstrate the difference between imports and exports in a particular year and its pattern over that time frame. The difference in exports and imports is encoded as the vertical difference between the lines. When observers are asked to sketch out the difference between exports and imports  \citep{cleveland:1984}, they very often  miss the steep rise in the difference between the lines in the years between about 1755 and 1765. Figure \ref{playfair2} shows the  actual difference between imports and exports. 
@@ -590,9 +590,26 @@ The first two questions are  examples, where the line width illusion, and its re
 Answers to the question of `which chart did you like better?' are shown in table \ref{tab:prefer}. There is a pretty clar endorsement in favor of common angle charts versus the other two types of charts.
 Asked for a reason for their preference over parallel sets, 8 participants cited a facilitated comparison of width, area or ``size", 3 saw the common angle as preferable, and the remaining answers related to a 'more logical' structure or generally 'easier' choice.
 Reasons for not preferring common angles all boiled down to a preference for straight lines. This purely aesthetic preference is deeply rooted and in our opinion the biggest challenge for common angle plots.
-% latex table generated in R 2.15.1 by xtable 1.7-0 package% Wed Oct 31 10:28:55 2012\begin{table}[ht]\begin{center}\begin{tabular}{cccrrr}  \hline
-&\multicolumn{5}{r}{Which chart did you like better?}\\&&& Chart 1 &  Chart 2 \\   \hline  PS &vs&  {\bf CA} & 2 & \bf 6 \\  {\bf  CA} & vs &  PS & \bf 4 & 2 \\   H & vs &   {\bf  CA} & 3 & \bf 5 \\    {\bf  CA} & vs &  H & \bf 8 & 2 \\   H & vs &  PS & 3 & 5 \\   PS & vs &  H & 1 & 5 \\    \hline\end{tabular}
-\caption{\label{tab:prefer} Preferences for first or second chart across all six combinations of questions and chart types. }\end{center}\end{table}
+% latex table generated in R 2.15.1 by xtable 1.7-0 package
+% Wed Oct 31 10:28:55 2012
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{cccrrr}
+  \hline
+&\multicolumn{5}{r}{Which chart did you like better?}\\
+&&& Chart 1 &  Chart 2 \\ 
+  \hline
+  PS &vs&  {\bf CA} & 2 & \bf 6 \\ 
+ {\bf  CA} & vs &  PS & \bf 4 & 2 \\ 
+  H & vs &   {\bf  CA} & 3 & \bf 5 \\ 
+   {\bf  CA} & vs &  H & \bf 8 & 2 \\ 
+  H & vs &  PS & 3 & 5 \\ 
+  PS & vs &  H & 1 & 5 \\ 
+   \hline
+\end{tabular}
+\caption{\label{tab:prefer} Preferences for first or second chart across all six combinations of questions and chart types. }
+\end{center}
+\end{table}
 
 %XXX breakdown of qualitative feedback
 %
