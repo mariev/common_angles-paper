@@ -43,7 +43,7 @@ As designers of charts we have to be aware of the innate or culturally imposed p
 Since we cannot measure effects from illusions directly, we have to employ usability studies to provide empirical evidence in support of underlying metaphorical models or for identification of unexpected or unpredicted effects from perceptual illusions.
 
 
-In this paper we discuss the effect and strength of the {\it line width illusion}  on designs related to displaying associations between categorical variables. We will focus specifically on the use of parallel coordinate plots \citep{pcp:1885, inselberg:1985, wegman:1990} for categorical data and the perceptual implications this has.
+In this paper we discuss the effect and strength of the {\it line width illusion}  on designs related to displaying associations between categorical variables. We will focus specifically on the use of parallel coordinates \citep{pcp:1885, inselberg:1985, wegman:1990} for categorical data and the perceptual implications this has.
 
 \begin{figure}
 \includegraphics[width=.9\linewidth]{playfair_east_indies_gross}
@@ -55,8 +55,8 @@ Parallel coordinates were introduced to visualize large numbers of numeric varia
 Recent adaptations of parallel coordinates  \citep{ kosara:2006, bendix:2005, leblanc:1990, 
 spenke:2003, schonlau:2003} and other, frequency-based, methods to display categorical data, such as mosaic plots  \citep{hartigan:1981, friendly:1992, hofmann:2000, theus:1997},  have addressed perceptual constraints \citep{cleveland:1984} at a theoretical level, but lack reporting of human subjects testing as validation. 
 
-We will first show how the line width illusion affects  parallel coordinate plots for categorical data, and in a second step introduce the {\it common-angle plot} as an alternative  method for displaying categorical data in a manner that minimizes the effect from perceptual illusions.
-The display preserves properties of parallel coordinate plots, such as the potential to visualize a large number of dimensions simultaneously, but also presents frequency information. 
+We will first show how the line width illusion affects  parallel coordinates for categorical data, and in a second step introduce the {\it common-angle plot} as an alternative  method for displaying categorical data in a manner that minimizes the effect from perceptual illusions.
+The display preserves properties of parallel coordinates, such as the potential to visualize a large number of dimensions simultaneously, but also presents frequency information. 
  
 Finally, we present results from user studies as evidence that common angle charts resolve the problem of the line width illusion. 
 
@@ -205,7 +205,7 @@ As the adjustment of line widths is made with respect to the angle $\theta$, whi
 
 Another problem that arises in evaluating hammock plots is that if an observer focuses on horizontal line width  the plots suffer from a {\it reverse line width illusion}:  judging the number of survivors by class in figure \ref{hammock} based on horizontal line width  results in an ordering of (largest to smallest) Crew, 3rd, 1st, and 2nd -- which is not correct either. Using horizontal width is inviting, since the lines are centered around the middle of a level, facilitating this  comparison. 
 
-In this paper, we propose a new approach to visualizing relationships between categorical variables in a parallel coordinate plot setting, called the {\it common angle} display. 
+In this paper, we propose a new approach to visualizing relationships between categorical variables in a parallel coordinates setting, called the {\it common angle} display. 
 
 
 \section{ Common angle plots}
@@ -235,7 +235,7 @@ This makes the width of ribbons  comparable without being affected by the distor
 Historically, the common angle diagram has its roots in Sankey diagrams \citep{sankey:1898}. Sankey diagrams have their origin and main use of application in the area of industrial engineering. They are often used to show flows,  particularly, in the framework of energy consumption and losses within systems.
 One of the most famous charts that can be classified as a Sankey diagram is Minard's map of Napoleon's march on Moscow \citep{minard:1812}. This map  shows the size of the army as a flow chart from West to East and the subsequent retreat. Usually, Sankey diagrams do not show a geographic co-variate, though. Modern uses of Sankey diagrams are discussed in  detail in \citep{schmidt:2008};  they can also be found in charts designed by Jen Christiansen, such as in \cite{jen3} and \cite{jen2}.
 
-A very recent example of related work can be found in \citep{bostock:2012}; the chart is an interactive d3 display that shows political shifts of states and corresponding electoral votes in a mixture of a parallel coordinate plot of state-based votes and a Sankey-type overlay to connect states across past elections.
+A very recent example of related work can be found in \citep{bostock:2012}; the chart is an interactive d3 display that shows political shifts of states and corresponding electoral votes in a mixture of a parallel coordinates of state-based votes and a Sankey-type overlay to connect states across past elections.
 
 
 \subsection{Extensions}
@@ -629,7 +629,7 @@ Reasons for not preferring common angles all boiled down to a preference for str
 
 \section{Implementation}\label{sec:implementation}
 
-All  of the discussed variants of parallel coordinate plots for categorical data are implemented as part of the package {\tt ggparallel} based on the {\tt ggplot2} \cite{ggplot2} plotting framework in the software {\tt R} 2.15.1 \citep{R}. The  {\tt ggparallel} package is freely available from CRAN (\url{http://www.r-project.org/}).
+All  of the discussed variants of parallel coordinates for categorical data are implemented as part of the package {\tt ggparallel} based on the {\tt ggplot2} \cite{ggplot2} plotting framework in the software {\tt R} 2.15.1 \citep{R}. The  {\tt ggparallel} package is freely available from CRAN (\url{http://www.r-project.org/}).
 The colors for the plots have been chosen using color schemes from the ColorBrewer project  \cite{colorbrewer} , as implemented in the R package {\tt RColorBrewer}  \cite{RColorBrewer} .
 
 
