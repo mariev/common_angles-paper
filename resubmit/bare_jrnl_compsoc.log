@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.12.7)  21 MAR 2013 18:35
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.12.7)  21 MAR 2013 18:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -276,34 +276,34 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <12> not available
 (Font)              Font shape `OT1/phv/b/sc' tried instead on input line 3.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 42.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 43.
 
 <images/playfair_east_indies_gross.png, id=1, 1036.87375pt x 650.43pt>
 File: images/playfair_east_indies_gross.png Graphic file (type png)
 
 <use images/playfair_east_indies_gross.png>
 Package pdftex.def Info: images/playfair_east_indies_gross.png used on input li
-ne 48.
+ne 49.
 (pdftex.def)             Requested size: 226.79846pt x 142.27129pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 54.
+ [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-<images/playfair_differenz_cleveland.png, id=2, 1034.86626pt x 687.56876pt>
+
+ <./images/playfair_east_indies_gross.png>] <images/playfair_differenz_clevelan
+d.png, id=14, 1034.86626pt x 687.56876pt>
 File: images/playfair_differenz_cleveland.png Graphic file (type png)
 
 <use images/playfair_differenz_cleveland.png>
 Package pdftex.def Info: images/playfair_differenz_cleveland.png used on input 
-line 58.
+line 59.
 (pdftex.def)             Requested size: 201.60072pt x 100.79126pt.
 
 
-LaTeX Warning: Reference `fig:linewidth' on page 1 undefined on input line 64.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 65.
-[1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+LaTeX Warning: Reference `fig:linewidth' on page 2 undefined on input line 65.
 
 
- <./images/playfair_east_indies_gross.png>]
-Underfull \hbox (badness 2269) in paragraph at lines 67--68
+Underfull \hbox (badness 2269) in paragraph at lines 68--69
 []\OT1/ppl/m/n/10 In the per-cep-tion lit-er-a-ture, this phe-nomenon is
  []
 
@@ -322,7 +322,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  2747 strings out of 493488
  42500 string characters out of 3141326
- 101205 words of memory out of 3000000
+ 102205 words of memory out of 3000000
  6015 multiletter control sequences out of 15000+200000
  48148 words of font info for 96 fonts, out of 3000000 for 9000
  960 hyphenation exceptions out of 8191
@@ -336,7 +336,7 @@ f-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2012/texmf-dist
 type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/u
 rw/palatino/uplri8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/zap
 fding/uzdr.pfb>
-Output written on bare_jrnl_compsoc.pdf (2 pages, 248339 bytes).
+Output written on bare_jrnl_compsoc.pdf (2 pages, 248674 bytes).
 PDF statistics:
  46 PDF objects out of 1000 (max. 8388607)
  31 compressed objects within 1 object stream
