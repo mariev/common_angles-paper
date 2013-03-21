@@ -451,14 +451,30 @@
 % journal papers have the author affiliations above the "Manuscript
 % received ..."  text while in non-compsoc journals this is reversed. Sigh.
 
+%
+%\author{Heike~Hofmann,~\IEEEmembership{Member,~IEEE,}
+%        and~Marie~Vendettuoli% <-this % stops a space
+%\thanks{H. Hofmann, faculty member in the Department
+%of Statistics, Iowa State University, Ames,
+%IA, 50014 USA e-mail: hofmann@iastate.edu.}% <-this % stops a space
+%\thanks{M. Vendettuoli, Graduate Student in the HCI and BCB programs at Iowa State University and member of the Statistics Section of USDA APHIS Center for Veterinary Biologics in Ames, IA 50014.}% <-this % stops a space
+%\thanks{Manuscript received Nov 1, 2012; revised Mar , 2013}}
 
 \author{Heike~Hofmann,~\IEEEmembership{Member,~IEEE,}
-        and~Marie~Vendettuoli% <-this % stops a space
-\thanks{H. Hofmann, faculty member in the Department
-of Statistics, Iowa State University, Ames,
-IA, 50014 USA e-mail: hofmann@iastate.edu.}% <-this % stops a space
-\thanks{M. Vendettuoli, Graduate Student in the HCI and BCB programs at Iowa State University and member of the Statistics Section of USDA APHIS Center for Veterinary Biologics in Ames, IA 50014.}% <-this % stops a space
-\thanks{Manuscript received Nov 1, 2012; revised Mar , 2013}}
+        and~Marie~Vendettuoli%
+%,~\IEEEmembership{Fellow,~OSA,}
+%        and~Jane~Doe,~\IEEEmembership{Life~Fellow,~IEEE}% <-this % stops a space
+\IEEEcompsocitemizethanks{\IEEEcompsocthanksitem H. Hofmann is faculty with the Department
+of Statistics, \protect\\
+Iowa State University, Ames,
+IA, 50014.\protect\\
+% note need leading \protect in front of \\ to get a newline within \thanks as
+% \\ is fragile and will error, could use \hfil\break instead.
+E-mail: hofmann@iastate.edu
+\IEEEcompsocthanksitem M. Vendettuoli is graduate student \protect\\ HCI and BCB programs, 
+ Iowa State University \protect\\
+and member of the Statistics Section, USDA APHIS CVB \protect\\ Ames, IA 50014}% <-this % stops a space
+\thanks{}}
 
 % note the % following the last \IEEEmembership and also \thanks - 
 % these prevent an unwanted space from occurring between the last author name

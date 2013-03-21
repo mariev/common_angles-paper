@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.12.7)  21 MAR 2013 18:12
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.12.7)  21 MAR 2013 18:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -238,31 +238,38 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-** ATTENTION: \IEEEcompsoctitleabstractindextext is deprecated (line 516). Use 
+** ATTENTION: \IEEEcompsoctitleabstractindextext is deprecated (line 532). Use 
 \IEEEtitleabstractindextext instead.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 539.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 555.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <11> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 539.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 555.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 539.
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 539.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 555.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 555.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <11> on input line 539.
+(Font)              <11> on input line 555.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7.69997> on input line 539.
+(Font)              <7.69997> on input line 555.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.5> on input line 539.
-LaTeX Font Info:    Try loading font information for U+pzd on input line 539.
+(Font)              <5.5> on input line 555.
+LaTeX Font Info:    Try loading font information for U+pzd on input line 555.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/upzd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 555.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 555.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 555.
+
 ** ATTENTION: \IEEEdisplaynotcompsoctitleabstractindextext is deprecated (line 
-549). Use \IEEEdisplaynontitleabstractindextext instead.
+565). Use \IEEEdisplaynontitleabstractindextext instead.
 (./ggparallel2.tex
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 3.
@@ -292,8 +299,6 @@ LaTeX Warning: Reference `fig:linewidth' on page 1 undefined on input line 64.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 65.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 65.
 [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
@@ -315,25 +320,26 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2739 strings out of 493488
- 42417 string characters out of 3141326
+ 2747 strings out of 493488
+ 42500 string characters out of 3141326
  101205 words of memory out of 3000000
- 6010 multiletter control sequences out of 15000+200000
- 47237 words of font info for 93 fonts, out of 3000000 for 9000
+ 6015 multiletter control sequences out of 15000+200000
+ 48148 words of font info for 96 fonts, out of 3000000 for 9000
  960 hyphenation exceptions out of 8191
  38i,7n,24p,783b,304s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/
-2012/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2012/te
-xmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2012/texmf-di
-st/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2012/texmf-dist/font
-s/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1
-/urw/palatino/uplri8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/z
-apfding/uzdr.pfb>
-Output written on bare_jrnl_compsoc.pdf (2 pages, 241888 bytes).
+exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
+live/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/20
+12/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2012/texm
+f-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2012/texmf-dist
+/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/
+type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/u
+rw/palatino/uplri8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/zap
+fding/uzdr.pfb>
+Output written on bare_jrnl_compsoc.pdf (2 pages, 248339 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 46 PDF objects out of 1000 (max. 8388607)
+ 31 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
