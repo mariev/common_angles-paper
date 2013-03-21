@@ -16,25 +16,64 @@
 % 
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
-\IEEEPARstart{T}{his} demo file is intended to serve as a ``starter file''
-for IEEE journal papers produced under \LaTeX\ using
-IEEEtran.cls version 1.8 and later.
+\IEEEPARstart{A}{ well-designed} graph is a powerful tool 
+that transends barriers of language to
+communicate complex concepts from author to audience. It becomes a 
+problem if readers are unable to easily extract the main message, especially
+when distortion is encoded. The source of a distortion may be due to 
+intrinsic deformities in the graph or simply the perceptual limitations of
+the audience. Examples include Tufte's \emph{Lie-Factor} \citep[p. 57--69]{tufte} in which the proportion of the physical space occupied by the graphic is 
+inconsistent with underlying data; calculated ratio (of proportions) less than one indicate 
+underrepresentation. Another example is the M\"{u}ller-Lyer family of illusions such as the sine wave, where viewers perceive extents at the curves to be of different height than in the straight regions even though all regions were of the same height \citep{day:1991}.
+
+Regardless of the cause of distortion, the graph author has a duty to create visualizations that
+ allows readers to extract an accurate interpretation of the underlying data. The \emph{Lie-Factor}
+provides a quantitative method to evaluate distortion due to graph deformities. In order to ascertain the
+impact of distortion due to perceptual limits, usability studies provide empirical evidence supporting 
+underlying metaphorical models both known and unpredicted.
+
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
-I wish you the best of success.
 
-\hfill mds
- 
-\hfill December 27, 2012
+\section{Related Work}
+This section describes a selection of related work as context for the contributions 
+presented here.
 
-\subsection{Subsection Heading Here}
-Subsection text here.
+\subsection{Playfair}
 
-% needed in second column of first page if using \IEEEpubid
-%\IEEEpubidadjcol
+An example of the  {\it line width illusion} is displayed in  figure  \ref{playfair}. 
 
-\subsubsection{Subsubsection Heading Here}
-Subsubsection text here.
+
+\begin{figure}
+\includegraphics[width=.9\linewidth]{images/playfair_east_indies_gross}
+\caption{\label{playfair}
+Playfair's chart from the Commercial and Political Atlas (1786) showing the balance of trade between England and the East Indies.  In which years was the difference between imports and exports the highest? }
+\end{figure}
+This chart displays the balance of trade between England and the East Indies as shown by William Playfair in his Commercial and Political Atlas, 1786 \cite{playfair, playfair2}.  One purpose of this chart is to demonstrate the difference between imports and exports in a particular year and its pattern over that time frame. The difference in exports and imports is encoded as the vertical difference between the lines. When observers are asked to sketch out the difference between exports and imports  \citep{cleveland:1984}, they very often  miss the steep rise in the difference between the lines in the years between about 1755 and 1765. Figure \ref{playfair2} shows the  actual difference between imports and exports. 
+
+
+
+\begin{figure}
+\centering
+\includegraphics[width=.8\linewidth, height=.4\linewidth]{images/playfair_differenz_cleveland}
+\caption{\label{playfair2}
+Difference between exports and imports from England to and from the East Indies in the 18th century -- the steep rise in the difference around 1760  comes as a surprise to many viewers of the raw data in figure \ref{playfair}.  }
+\end{figure}
+
+
+This phenomenon  is known and widely discussed in statistical graphics literature \citep{cleveland:1984, tufte, wainer:2000, robbins:2005}. It  is due to our  tendency to assess distance between curves as the minimal (orthogonal) distance rather than the  vertical distance -- see sketch \ref{fig:linewidth} for a visual representation of both.
+
+
+In the perception literature, this phenomenon is known as part of a group of geometrical optical misperceptions of a context-sensitive nature classified as M\"uller-Lyer illusions \citep{day:1991}. Interestingly, there seems to be a general agreement that this illusion exists, but a quantification of it is curiously absent from the literature. 
+
+While we see the type of chart as shown in figure~\ref{playfair} proposed by Playfair quite commonly, particular in election years -- where these kind of charts are used to enable comparisons of support for several candidates, the recommendation from the literature is to avoid charts in which the audience is asked to do visual subtractions, and show these differences directly.
+
+However, the line width illusion is not restricted to this situation only. We next discuss how other charts, such as the parallel sets plots \citep{kosara:2006}, are affected by it.
+
+
+\subsection{Hammock plots}
+\subsection{Strength of the line width illusion}
+\subsection{Parallel sets}
 
 
 % An example of a floating figure using the graphicx package.
@@ -145,13 +184,13 @@ The conclusion goes here.
 
 
 \appendices
-\section{Proof of the First Zonklar Equation}
-Appendix one text goes here.
-
-% you can choose not to have a title for an appendix
-% if you want by leaving the argument blank
-\section{}
-Appendix two text goes here.
+%\section{Proof of the First Zonklar Equation}
+%Appendix one text goes here.
+%
+%% you can choose not to have a title for an appendix
+%% if you want by leaving the argument blank
+%\section{}
+%Appendix two text goes here.
 
 
 % use section* for acknowledgement
@@ -176,60 +215,3 @@ The survey for this study was carried out with approval from  IRB-ID 12-204.
 %\IEEEtriggeratref{8}
 % The "triggered" command can be changed if desired:
 %\IEEEtriggercmd{\enlargethispage{-5in}}
-
-% references section
-
-% can use a bibliography generated by BibTeX as a .bbl file
-% BibTeX documentation can be easily obtained at:
-% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
-% The IEEEtran BibTeX style support page is at:
-% http://www.michaelshell.org/tex/ieeetran/bibtex/
-\bibliographystyle{IEEEtran}
-% argument is your BibTeX string definitions and bibliography database(s)
-\bibliography{IEEEtran, references}
-%
-% <OR> manually copy in the resultant .bbl file
-% set second argument of \begin to the number of references
-% (used to reserve space for the reference number labels box)
-%\begin{thebibliography}{1}
-%
-%\bibitem{IEEEhowto:kopka}
-%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-%
-%\end{thebibliography}
-
-% biography section
-% 
-% If you have an EPS/PDF photo (graphicx package needed) extra braces are
-% needed around the contents of the optional argument to biography to prevent
-% the LaTeX parser from getting confused when it sees the complicated
-% \includegraphics command within an optional argument. (You could create
-% your own custom macro containing the \includegraphics command to make things
-% simpler here.)
-%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
-% or if you just want to reserve a space for a photo:
-
-\vspace{-.15in}
-\begin{IEEEbiographynophoto}{Heike Hofmann}
-is associate professor of Statistics at Iowa State University. She is a member of the inter-disciplinary Human Computer Interaction program at Iowa State and serves as faculty member for the Bioinformatics and Computational Biology program. Her research interests are the visual exploration of high-dimensional and large data. Her research group has been the recipient of several awards for their data detective and visualization skills.  
-\end{IEEEbiographynophoto}
-\vspace{-.25in}
-\begin{IEEEbiographynophoto}{Marie Vendettuoli}
-is a graduate student at Iowa State University, with majors in Human Computer Interaction and Bioinfomatics \& Computational Biology. She is a past IGERT Fellow and currently interns with the Statistics section at USDA. Her research interests involve the use of interactive visualizations in exploratory data analysis.
-\end{IEEEbiographynophoto}
-% You can push biographies down or up by placing
-% a \vfill before or after them. The appropriate
-% use of \vfill depends on what kind of text is
-% on the last page and whether or not the columns
-% are being equalized.
-
-%\vfill
-
-% Can be used to pull up biographies so that the bottom of the last one
-% is flush with the other column.
-%\enlargethispage{-5in}
-
-
-
-% that's all folks
