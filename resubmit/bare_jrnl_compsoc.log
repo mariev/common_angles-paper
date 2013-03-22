@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.12.7)  21 MAR 2013 18:52
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.12.7)  22 MAR 2013 12:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -138,32 +138,11 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-(/usr/local/texlive/2012/texmf-dist/tex/latex/natbib/natbib.sty
-Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip44
-\bibsep=\skip45
-LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count93
-)
 
 LaTeX Warning: Unused global option(s):
     [cspaper].
 
-(./bare_jrnl_compsoc.aux
-
-! Package natbib Error: Bibliography not compatible with author-year citations.
-
-(natbib)                Press <return> to continue in numerical citation style.
-
-
-See the natbib package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.24 ...mand\NAT@force@numbers{}\NAT@force@numbers
-                                                  
-? 
-)
+(./bare_jrnl_compsoc.aux)
 \openout1 = `bare_jrnl_compsoc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 426.
@@ -178,18 +157,19 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 426.
 LaTeX Font Info:    ... okay on input line 426.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 426.
 LaTeX Font Info:    ... okay on input line 426.
- (/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count94
+\scratchcounter=\count93
 \scratchdimen=\dimen119
 \scratchbox=\box27
-\nofMPsegments=\count95
-\nofMParguments=\count96
+\nofMPsegments=\count94
+\nofMParguments=\count95
 \everyMPshowfont=\toks16
-\MPscratchCnt=\count97
+\MPscratchCnt=\count96
 \MPscratchDim=\dimen120
-\MPnumerator=\count98
-\makeMPintoPDFobject=\count99
+\MPnumerator=\count97
+\makeMPintoPDFobject=\count98
 \everyMPtoPDFconversion=\toks17
 ) (/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -276,57 +256,59 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <12> not available
 (Font)              Font shape `OT1/phv/b/sc' tried instead on input line 3.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 43.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 46.
 
 <images/playfair_east_indies_gross.png, id=1, 1036.87375pt x 650.43pt>
 File: images/playfair_east_indies_gross.png Graphic file (type png)
 
 <use images/playfair_east_indies_gross.png>
 Package pdftex.def Info: images/playfair_east_indies_gross.png used on input li
-ne 49.
+ne 52.
 (pdftex.def)             Requested size: 226.79846pt x 142.27129pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 54.
- [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-
- <./images/playfair_east_indies_gross.png>] <images/playfair_differenz_clevelan
-d.png, id=14, 1034.86626pt x 687.56876pt>
+<images/playfair_differenz_cleveland.png, id=2, 1034.86626pt x 687.56876pt>
 File: images/playfair_differenz_cleveland.png Graphic file (type png)
 
 <use images/playfair_differenz_cleveland.png>
 Package pdftex.def Info: images/playfair_differenz_cleveland.png used on input 
-line 59.
+line 62.
 (pdftex.def)             Requested size: 201.60072pt x 100.79126pt.
 
 
-LaTeX Warning: Reference `fig:linewidth' on page 2 undefined on input line 65.
+LaTeX Warning: Reference `fig:linewidth' on page 1 undefined on input line 68.
 
 
-Underfull \hbox (badness 2269) in paragraph at lines 68--69
+Underfull \hbox (badness 2269) in paragraph at lines 71--72
 []\OT1/ppl/m/n/10 In the per-cep-tion lit-er-a-ture, this phe-nomenon is
  []
 
-) (./bare_jrnl_compsoc.bbl
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 72.
+[1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+])
+(./bare_jrnl_compsoc.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
-) [2 <./images/playfair_differenz_cleveland.png>] (./bare_jrnl_compsoc.aux)
+) [2 <./images/playfair_east_indies_gross.png> <./images/playfair_differenz_cle
+veland.png>] (./bare_jrnl_compsoc.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2747 strings out of 493488
- 42500 string characters out of 3141326
- 102205 words of memory out of 3000000
- 6015 multiletter control sequences out of 15000+200000
+ 2397 strings out of 493488
+ 38202 string characters out of 3141326
+ 97405 words of memory out of 3000000
+ 5669 multiletter control sequences out of 15000+200000
  48148 words of font info for 96 fonts, out of 3000000 for 9000
  960 hyphenation exceptions out of 8191
- 38i,7n,24p,783b,304s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,7n,23p,868b,292s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
 live/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/20
@@ -336,7 +318,7 @@ f-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2012/texmf-dist
 type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/u
 rw/palatino/uplri8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/zap
 fding/uzdr.pfb>
-Output written on bare_jrnl_compsoc.pdf (2 pages, 248674 bytes).
+Output written on bare_jrnl_compsoc.pdf (2 pages, 248678 bytes).
 PDF statistics:
  46 PDF objects out of 1000 (max. 8388607)
  31 compressed objects within 1 object stream
