@@ -14,45 +14,45 @@ Database file #1: references.bib
 Warning--missing publisher in playfair
 
 Done.
-You've used 8 entries,
+You've used 25 entries,
             4039 wiz_defined-function locations,
-            862 strings with 8347 characters,
-and the built_in function-call counts, 4779 in all, are:
-= -- 375
-> -- 87
-< -- 35
-+ -- 44
-- -- 14
-* -- 233
-:= -- 762
-add.period$ -- 15
-call.type$ -- 8
-change.case$ -- 4
-chr.to.int$ -- 81
-cite$ -- 9
-duplicate$ -- 343
-empty$ -- 433
-format.name$ -- 18
-if$ -- 1085
+            954 strings with 10659 characters,
+and the built_in function-call counts, 12762 in all, are:
+= -- 997
+> -- 233
+< -- 53
++ -- 118
+- -- 45
+* -- 562
+:= -- 2133
+add.period$ -- 50
+call.type$ -- 25
+change.case$ -- 19
+chr.to.int$ -- 123
+cite$ -- 26
+duplicate$ -- 998
+empty$ -- 1253
+format.name$ -- 57
+if$ -- 2887
 int.to.chr$ -- 0
-int.to.str$ -- 8
-missing$ -- 54
-newline$ -- 51
-num.names$ -- 8
-pop$ -- 135
+int.to.str$ -- 25
+missing$ -- 185
+newline$ -- 116
+num.names$ -- 25
+pop$ -- 491
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 378
+skip$ -- 1020
 stack$ -- 0
-substring$ -- 188
-swap$ -- 262
-text.length$ -- 8
+substring$ -- 301
+swap$ -- 651
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 8
+type$ -- 25
 warning$ -- 1
-while$ -- 20
-width$ -- 9
-write$ -- 95
+while$ -- 43
+width$ -- 27
+write$ -- 253
 (There was 1 warning)

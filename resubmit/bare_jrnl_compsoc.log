@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.12.7)  22 MAR 2013 12:56
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.12.7)  22 MAR 2013 13:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -274,10 +274,6 @@ Package pdftex.def Info: images/playfair_differenz_cleveland.png used on input
 line 62.
 (pdftex.def)             Requested size: 201.60072pt x 100.79126pt.
 
-
-LaTeX Warning: Reference `fig:linewidth' on page 1 undefined on input line 68.
-
-
 Underfull \hbox (badness 2269) in paragraph at lines 71--72
 []\OT1/ppl/m/n/10 In the per-cep-tion lit-er-a-ture, this phe-nomenon is
  []
@@ -287,7 +283,50 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-])
+]
+<images/parset-titanic.pdf, id=15, 578.16pt x 271.0125pt>
+File: images/parset-titanic.pdf Graphic file (type pdf)
+
+<use images/parset-titanic.pdf>
+Package pdftex.def Info: images/parset-titanic.pdf used on input line 87.
+(pdftex.def)             Requested size: 226.79846pt x 106.31061pt.
+
+<images/linewidth.pdf, id=16, 245.84845pt x 133.03201pt>
+File: images/linewidth.pdf Graphic file (type pdf)
+
+<use images/linewidth.pdf>
+Package pdftex.def Info: images/linewidth.pdf used on input line 117.
+(pdftex.def)             Requested size: 151.20154pt x 81.81723pt.
+
+
+LaTeX Warning: Reference `results' on page 2 undefined on input line 119.
+
+
+LaTeX Warning: Reference `results' on page 2 undefined on input line 119.
+
+<images/aspect31-titanic.pdf, id=17, 650.43pt x 216.81pt>
+File: images/aspect31-titanic.pdf Graphic file (type pdf)
+
+<use images/aspect31-titanic.pdf>
+Package pdftex.def Info: images/aspect31-titanic.pdf used on input line 129.
+(pdftex.def)             Requested size: 325.2142pt x 108.405pt.
+
+<images/aspect33-titanic.pdf, id=18, 216.81pt x 216.81pt>
+File: images/aspect33-titanic.pdf Graphic file (type pdf)
+
+<use images/aspect33-titanic.pdf>
+Package pdftex.def Info: images/aspect33-titanic.pdf used on input line 130.
+(pdftex.def)             Requested size: 108.40472pt x 108.405pt.
+ [2 <./images/playfair_east_indies_gross.png> <./images/playfair_differenz_clev
+eland.png> <./images/parset-titanic.pdf>]
+<images/hammock-titanic.pdf, id=33, 433.62pt x 433.62pt>
+File: images/hammock-titanic.pdf Graphic file (type pdf)
+
+<use images/hammock-titanic.pdf>
+Package pdftex.def Info: images/hammock-titanic.pdf used on input line 159.
+(pdftex.def)             Requested size: 252.0pt x 252.00262pt.
+ [3 <./images/aspect31-titanic.pdf> <./images/aspect33-titanic.pdf> <./images/l
+inewidth.pdf> <./images/hammock-titanic.pdf>])
 (./bare_jrnl_compsoc.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
@@ -295,33 +334,37 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
-) [2 <./images/playfair_east_indies_gross.png> <./images/playfair_differenz_cle
-veland.png>] (./bare_jrnl_compsoc.aux)
+) [4] [5
+
+] (./bare_jrnl_compsoc.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2397 strings out of 493488
- 38202 string characters out of 3141326
- 97405 words of memory out of 3000000
- 5669 multiletter control sequences out of 15000+200000
+ 2445 strings out of 493488
+ 39156 string characters out of 3141326
+ 100522 words of memory out of 3000000
+ 5713 multiletter control sequences out of 15000+200000
  48148 words of font info for 96 fonts, out of 3000000 for 9000
  960 hyphenation exceptions out of 8191
- 37i,7n,23p,868b,292s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,7n,23p,903b,304s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
-live/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/20
-12/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2012/texm
-f-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2012/texmf-dist
-/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/
-type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/u
-rw/palatino/uplri8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/zap
-fding/uzdr.pfb>
-Output written on bare_jrnl_compsoc.pdf (2 pages, 248678 bytes).
+exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texl
+ive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
+e/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
+2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2012/te
+xmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2012/texmf-dis
+t/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2012/texmf-dist/font
+s/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1
+/urw/palatino/uplr8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/pa
+latino/uplri8a.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/zapfding
+/uzdr.pfb>
+Output written on bare_jrnl_compsoc.pdf (5 pages, 372389 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 130 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
