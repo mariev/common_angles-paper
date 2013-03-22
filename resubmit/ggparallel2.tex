@@ -22,17 +22,20 @@ communicate complex concepts from author to audience. It becomes a
 problem if readers are unable to easily extract the main message, especially
 when distortion is encoded. The source of a distortion may be due to 
 intrinsic deformities in the graph or simply the perceptual limitations of
-the audience. Examples include Tufte's \emph{Lie-Factor} \citep[p. 57--69]{tufte} in which the proportion of the physical space occupied by the graphic is 
+the audience. Examples include Tufte's \emph{Lie-Factor} \cite[p. 57--69]{tufte} in which the proportion of the physical space occupied by the graphic is 
 inconsistent with underlying data; calculated ratio (of proportions) less than one indicate 
-underrepresentation. Another example is the M\"{u}ller-Lyer family of illusions such as the sine wave, where viewers perceive extents at the curves to be of different height than in the straight regions even though all regions were of the same height \citep{day:1991}.
+underrepresentation. Another example is the M\"{u}ller-Lyer family of illusions such as the sine wave, where viewers perceive extents at the curves to be of different height than in the straight regions even though all regions were of the same height \cite{day:1991}.
 
 Regardless of the cause of distortion, the graph author has a duty to create visualizations that
  allows readers to extract an accurate interpretation of the underlying data. The \emph{Lie-Factor}
 provides a quantitative method to evaluate distortion due to graph deformities. In order to ascertain the
 impact of distortion due to perceptual limits, usability studies provide empirical evidence supporting 
-underlying metaphorical models both known and unpredicted. We describe how a routine user study 
+underlying metaphorical models both known and unpredicted.  This paper presents a method for developing new statistical visualization which incoporates usablity testing, a technique borrowed from 
+the field of user centered design. It is our belief that the results of such testing allows a graph author
+to make design choices to reduce distortion due to perceptual limits. We describe how a routine user study 
 during development of parallel coordinates for categorical data led to the unexpected and unpredicted discovery of the \emph{line-width} illusion. We introduce the {\it common-angle plot} as an alternative  method for displaying categorical data in a manner that minimizes the effect from perceptual illusions.
-The display preserves properties of parallel coordinates, such as the potential to visualize a large number of dimensions simultaneously, but also presents frequency information. Finally, we present results from user studies as evidence that common angle plots resolve the problem of the line width illusion. 
+The display preserves properties of parallel coordinates, such as the potential to visualize a large number of dimensions simultaneously, but also presents frequency information. 
+Finally, we present results from user studies as evidence that common angle plots resolve the problem of the line width illusion. 
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
 
@@ -42,7 +45,7 @@ presented here.
 
 \subsection{Line width illusion}
 
-An example of the  {\it line width illusion} is displayed in  figure  \ref{playfair}. 
+
 
 
 \begin{figure}
@@ -50,7 +53,7 @@ An example of the  {\it line width illusion} is displayed in  figure  \ref{playf
 \caption{\label{playfair}
 Playfair's chart from the Commercial and Political Atlas (1786) showing the balance of trade between England and the East Indies.  In which years was the difference between imports and exports the highest? }
 \end{figure}
-This chart displays the balance of trade between England and the East Indies as shown by William Playfair in his Commercial and Political Atlas, 1786 \cite{playfair, playfair2}.  One purpose of this chart is to demonstrate the difference between imports and exports in a particular year and its pattern over that time frame. The difference in exports and imports is encoded as the vertical difference between the lines. When observers are asked to sketch out the difference between exports and imports  \citep{cleveland:1984}, they very often  miss the steep rise in the difference between the lines in the years between about 1755 and 1765. Figure \ref{playfair2} shows the  actual difference between imports and exports. 
+An example of the  {\it line width illusion} is displayed in  figure  \ref{playfair}. This chart displays the balance of trade between England and the East Indies as shown by William Playfair in his Commercial and Political Atlas, 1786 \cite{playfair, playfair2}.  One purpose of this chart is to demonstrate the difference between imports and exports in a particular year and its pattern over that time frame. The difference in exports and imports is encoded as the vertical difference between the lines. When observers are asked to sketch out the difference between exports and imports  \cite{cleveland:1984}, they very often  miss the steep rise in the difference between the lines in the years between about 1755 and 1765. Figure \ref{playfair2} shows the  actual difference between imports and exports. 
 
 
 
@@ -62,14 +65,14 @@ Difference between exports and imports from England to and from the East Indies 
 \end{figure}
 
 
-This phenomenon  is known and widely discussed in statistical graphics literature \citep{cleveland:1984, tufte, wainer:2000, robbins:2005}. It  is due to our  tendency to assess distance between curves as the minimal (orthogonal) distance rather than the  vertical distance -- see sketch \ref{fig:linewidth} for a visual representation of both.
+This phenomenon  is known and widely discussed in statistical graphics literature \cite{cleveland:1984, tufte, wainer:2000, robbins:2005}. It  is due to our  tendency to assess distance between curves as the minimal (orthogonal) distance rather than the  vertical distance -- see sketch \ref{fig:linewidth} for a visual representation of both.
 
 
-In the perception literature, this phenomenon is known as part of a group of geometrical optical misperceptions of a context-sensitive nature classified as M\"uller-Lyer illusions \citep{day:1991}. Interestingly, there seems to be a general agreement that this illusion exists, but a quantification of it is curiously absent from the literature. 
+In the perception literature, this phenomenon is known as part of a group of geometrical optical misperceptions of a context-sensitive nature classified as M\"uller-Lyer illusions \cite{day:1991}. Interestingly, there seems to be a general agreement that this illusion exists, but a quantification of it is curiously absent from the literature. 
 
 While we see the type of chart as shown in figure~\ref{playfair} proposed by Playfair quite commonly, particular in election years -- where these kind of charts are used to enable comparisons of support for several candidates, the recommendation from the literature is to avoid charts in which the audience is asked to do visual subtractions, and show these differences directly.
 
-However, the line width illusion is not restricted to this situation only. We next discuss how other charts, such as the parallel sets plots \citep{kosara:2006}, are affected by it.
+However, the line width illusion is not restricted to this situation only. We next discuss how other charts, such as the parallel sets plots \cite{kosara:2006}, are affected by it.
 
 
 \subsection{Hammock plots}
