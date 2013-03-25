@@ -30,20 +30,49 @@ Regardless of the cause of distortion, the graph author has a duty to create vis
  allows readers to extract an accurate interpretation of the underlying data. The \emph{Lie-Factor}
 provides a quantitative method to evaluate distortion due to graph deformities. In order to ascertain the
 impact of distortion due to perceptual limits, usability studies provide empirical evidence supporting 
-underlying metaphorical models both known and unpredicted.  This paper presents a method for developing new statistical visualization which incoporates usablity testing, a technique borrowed from 
-the field of user centered design. It is our belief that the results of such testing allows a graph author
-to make design choices to reduce distortion due to perceptual limits. We describe how a routine user study 
-during development of parallel coordinates for categorical data led to the unexpected and unpredicted discovery of the \emph{line-width} illusion. We introduce the {\it common-angle plot} as an alternative  method for displaying categorical data in a manner that minimizes the effect from perceptual illusions.
-The display preserves properties of parallel coordinates, such as the potential to visualize a large number of dimensions simultaneously, but also presents frequency information. 
-Finally, we present results from user studies as evidence that common angle plots resolve the problem of the line width illusion. 
+underlying metaphorical models, both known and unpredicted.  
+
+
+
+
+Parallel sets (parsets)  \cite{kosara:2006}, a graphical method  for visualizing multivariate categorical data, presents a case of unspecified distortion due to perceptual limits . Since initial publication, parsets have spread to mass media outlets  \cite{eagereyes, bostock:2012, bbc:2009}, multiple technical implementations \cite{eagereyes, d3, davies} and is a reputable resource for further academic work (\cite{kosara:2006} has 70 citations per Google scholar). While retaining the %independent 
+ability to visualize a large number of dimensions simultaneously that is the parallel coordinates' hallmark trade, parsets introduce the frequency scale that is a well-known feature of other categorical displays such as barcharts or mosaic plots \cite{hartigan:1981, friendly:1992, hofmann:2000, theus:1997}.
+% Initially, frequencies of categories  were displayed as stacked boxes; in  later versions of parallel sets the boxes are reduced to simple lines \cite{parsetredesign}. Various implementations of parallel sets exist besides the original Java version of Eagereyes \cite{eagereyes}, e.g.  J Davies introduced a d3 \cite{d3} version in  \cite{davies}.  
+
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=.9\linewidth]{images/parset-titanic}
+\caption{\label{question1a} Parallel sets plot showing the relationship between survival of the sinking of the HMS Titanic and class membership. }
+\end{figure}
+%XXX Description of parallel sets - and example
+
+
+%%XXX PS and line-width illusion
+Figure \ref{question1a} gives an example for a two dimensional parallel sets plot investigating the relationship between class status and survival on board the HMS Titanic  \cite{dawson:1995}. Class status is recorded as either crew member or passengers in  first, second, or third class.  The top bar in figure \ref{question1a} shows the  variable Class. The bottom bar shows survival  as yes and no. Between the bars lines are drawn to visualize the relationship between class membership and  survival. 
+  Based on the number of survivor and non survivors
+  these bands are drawn from each class, and their (horizontal) width is proportional to the number of people they represent. A reasonable task would be to order levels of the variable `class' by number of survivors. However, when study participants were asked to perform this task, only $12.5\%$ respondants 
+selected the correct order \ref{raw}.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{rrrrr}
+& Crew & 1st & 2nd & 3rd \\ \hline
+Survivors & 212 & 203 & 118 & 178\\
+Non-Survivors & 673 & 122 & 167 &  528  
+\end{tabular}
+\caption{Correct ordering of variable Class is: crew, first class, third class, followed by second class. }
+\end{center}
+\end{table}
+We believe that readers view parsets they are subject to the \emph{line width illusion}, a perceptual distortion that we describe and quantify in this paper. We also propose and test \emph{common angle plots}, an alternative graphing method for visualizing multivariate categorical is not subject to the \emph{line width illusion}.
+%XXX PS and line-width illusion
+
+
+%
 % You must have at least 2 lines in the paragraph with the drop letter
 % (should never be an issue)
 
-\section{Related Work}
-This section describes a selection of related work as context for the contributions 
-presented here.
-
-\subsection{Line width illusion}
+\section{Line width illusion}
 
 
 
@@ -72,34 +101,6 @@ In the perception literature, this phenomenon is known as part of a group of geo
 
 The type of chart as shown in figure~\ref{playfair} proposed by Playfair is shown quite commonly, particular in election years -- where these kind of charts are used to enable comparisons of support for several candidates, the recommendation from literature is to avoid charts in which the audience is asked to do visual subtractions, and show these differences directly.
 
-\subsection{Parallel sets}
-
-Parallel sets (parsets) have been introduced by R Kosara \cite{kosara:2006} as one way to visualize multivariate categorical data. Since their initial publication, they have spread to mass media outlets: see e.g. 
-``How to understand risk in 13 clicks," BBC \cite{bbc:2009}.
-
-  While retaining the %independent 
-ability to visualize a large number of dimensions simultaneously that is the parallel coordinates' hallmark trade, parallel sets introduce the frequency scale that is a well-known feature of other categorical displays such as barcharts or mosaic plots \cite{hartigan:1981, friendly:1992, hofmann:2000, theus:1997}.
- Initially, frequencies of categories  were displayed as stacked boxes; in  later versions of parallel sets the boxes are reduced to simple lines \cite{parsetredesign}. Various implementations of parallel sets exist besides the original Java version of Eagereyes \cite{eagereyes}, e.g.  J Davies introduced a d3 \cite{d3} version in  \cite{davies}.  
-
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[width=.9\linewidth]{images/parset-titanic}
-\caption{\label{question1a} Parallel sets plot showing the relationship between survival of the sinking of the HMS Titanic and class membership. }
-\end{figure}
-%XXX Description of parallel sets - and example
-
-
-%%XXX PS and line-width illusion
-Figure \ref{question1a} gives an example for a two dimensional parallel sets plot investigating the relationship between class status and survival on board the HMS Titanic  \cite{dawson:1995}. Class status is recorded as either crew member or passengers in  first, second, or third class. 
-
- The top bar in figure \ref{question1a} shows the  variable Class. The bottom bar shows survival  as yes and no. Between the bars lines are drawn to visualize the relationship between class membership and  survival. 
-  Based on the number of survivor and non survivors
-  these bands are drawn from each class, and their (horizontal) width is proportional to the number of people they represent. 
-%XXX PS and line-width illusion
-
-
-%
 \subsection{Strength of  line width illusion}\label{distortion}
 
 %The difference between perceived and actual line width 
@@ -144,7 +145,7 @@ This incorrect perception and comparison of areas distorts the message readers d
 
 % needed in second column of first page if using \IEEEpubid
 %\IEEEpubidadjcol
-\subsection{Hammock plots}
+\section{Related work}
 %XXX Description of hammock plots and example
 
 Hammock plots, introduced by M Schonlau in \cite{schonlau:2003}, provide an alternative to parallel sets that is adjusted for the line width illusion. This is done by  adjusting the --horizontal-- line width by  a factor of $\sin \theta$, as discussed in equation (\ref{adjust}). This adjustment makes the perceived --orthogonal-- line width to be proportional to the number of observations it represents. 
@@ -166,23 +167,47 @@ The graph shows that barely any women were in the crew, while male crew members 
 
 As the adjustment of line widths is made with respect to the angle $\theta$, which itself depends on the aspect ratio of a plot, we need complete control over these properties of the plotting device when constructing hammock plots  -- in our implementation (see below for details) we have dealt with this issue by fixing the aspect ratio. This is problematic in some situations, where the rendering has to be done without knowledge of the plotting device. 
 
-Another problem that arises in evaluating hammock plots is that if an observer focuses on horizontal line width  the plots suffer from a {\it reverse line width illusion}:  judging the number of survivors by class in figure \ref{hammock} based on horizontal line width  results in an ordering of (largest to smallest) Crew, 3rd, 1st, and 2nd -- which is not correct either. Using horizontal width is inviting, since the lines are centered around the middle of a level, facilitating this  comparison. 
+\subsection{Reverse linewidth}
+A problem that arises in evaluating hammock plots is that if an observer focuses on horizontal line width  the plots suffer from a {\it reverse line width illusion}:  judging the number of survivors by class in figure \ref{hammock} based on horizontal line width  results in an ordering of (largest to smallest) Crew, 3rd, 1st, and 2nd -- which is not correct either. %Using horizontal width is inviting, since the lines are centered around the middle of a level, im
+Because the lines are centered around the middle of each level, a contextual coordinate system is imposed that encourages comparisons of horizontal width. However, horizontal width alone is not proportional to underlying data. 
 
-\section{Overview}
-From previous work \cite{cleveland:1984, tufte, wainer:2000, robbins:2005, heer:2010, kong:2010}, we may conclude that numerically accurate representations of data
-are subject to distortion due to perceptual limitations. In particular,
-the width of a single line of some thickness or the distance between two lines of minimal thickness is 
-subject to the \emph{line width illusion} even though the depiction is numerically sound.
- Furthermore, design choices during implementation \cite{schonlau:2003} may
-reduce the impact of such limitations.
-
-Before describing our method for identifying and resolving perceptual limitations during the 
-design phase of creating a new data chart, we review the design goal: extending parallel coordinates 
-for application to categorical data. Parallel coordinates were introduced to visualize large numbers of numeric variables. 
-Recent adaptations of parallel coordinates  \cite{ kosara:2006, bendix:2005, leblanc:1990, 
-spenke:2003, schonlau:2003} and other, frequency-based, methods to display categorical data, such as mosaic plots  \cite{hartigan:1981, friendly:1992, hofmann:2000, theus:1997},  have addressed perceptual constraints \cite{cleveland:1984} at a theoretical level, but lack reporting of human subjects testing as validation. 
+[[ If only h-width is considered, the graph has a lie factor; can we quantify this amount in terms of theta? ]]
+%
+%\section{Overview}
+%From previous work \cite{cleveland:1984, tufte, wainer:2000, robbins:2005, heer:2010, kong:2010}, we may conclude that numerically accurate representations of data
+%are subject to distortion due to perceptual limitations. In particular,
+%the width of a single line of some thickness or the distance between two lines of minimal thickness is 
+%subject to the \emph{line width illusion} even though the depiction is numerically sound.
+% Furthermore, design choices during implementation \cite{schonlau:2003} may
+%reduce the impact of such limitations.
+%%
 
 \section{Common angles}
+
+
+\subsection{Construction}
+
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+%ggparallel(names(titanic)[c(1,4,2,1)], order=c(0,1,1,0), titanic, weight="Freq", text.angle=0) + 
+%  scale_fill_manual(values=cols, guide="none") +
+%  scale_colour_manual(values=cols, guide="none") + coord_flip() 
+%ggsave("ca-titanic.pdf", width=6, height=6)
+   \centering
+   \includegraphics[width=\linewidth]{images/ca-titanic} 
+   \caption{ \label{fig:ca-titanic} Common angle plot of the Titanic data. }
+  \end{figure}
+
+Figure \ref{fig:ca-titanic} shows a common angle plot of the same data as the hammock plot.
+
+As in the previously discussed display types ribbons are drawn between categories with widths  that are proportional to  the number of records they represent.
+
+In order to ensure that  widths of all bands are  comparable without any distortion, their slopes  are artificially made the same in the following manner: 
+assuming a vertical display as shown in figure \ref{fig:ca-titanic}, we modify  the connecting bands between  categories from a straight band  to a combination of a vertical  segment, a  segment under a pre-specified angle $\theta$, followed by another vertical  segment.  
+The pre-specified angle $\theta$ (between the line and the vertical band) is given as --at most-- the angle of the longest connecting line between two categories of neighboring variables. 
+This makes the width of ribbons  comparable without being affected by the distortion, as all ribbons are sharing at least one segment under the same angle. 
+
+
 \section{Usability Testing}
 \subsection{Test}
 \subsection{Results}
