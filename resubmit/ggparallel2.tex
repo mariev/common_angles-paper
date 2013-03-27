@@ -1,3 +1,4 @@
+% !TEX root = bare_jrnl_compsoc.tex
 
 
 \section{Introduction}
@@ -210,92 +211,296 @@ This makes the width of ribbons  comparable without being affected by the distor
 
 \section{Usability Testing}
 \subsection{Test}
+
+To determine the effectiveness of the common angle plot, we conducted a user experiment in form of a survey asking participants to provide responses regarding the structure in two data sets with predominantly categorical variables.
+For each data set, participants were asked to provide responses for three tasks:
+
+Task I: simple comparison task, chosen to be unaffected by any illusion. Performance on this task should be comparable across the designs
+Task II: comparison, affected by the line width illusion or its reverse. 
+Task II: ordering task comprised of multiple comparisons, some of which are affected by either illusion.
+  
+Each participant was exposed to two of the three types of displays, one for all three tasks related to the same data set.
+ 
+This resulted in six different survey administrations, with a crossover design as shown in Table \ref{tab:designs} that allows us to compare designs across different questions and data sets, and  simultaneously adjust for individuals' different skill sets.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{rrrrrrr}
+Titanic Data & PS & CA & Ham & PS & CA & Ham \\ 
+Pathway & CA & PS & PS & Ham & Ham & CA \\ \hline
+\#responses &  8 (9) &  6 (7) &  8 (9) &  6 (7) & 10 (11) & 8 (8)\\ 
+\end{tabular}
+\caption{\label{tab:designs} Overview of study design and participation numbers. The number in parenthesis indicates the number of participants completing the first block, but not the second.}
+\end{table}
+
+
 \subsection{Results}
 
-% An example of a floating figure using the graphicx package.
-% Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
-% Note that IEEEtran v1.7 and later has special internal code that
-% is designed to preserve the operation of \label within \caption
-% even when the captionsoff option is in effect. However, because
-% of issues like this, it may be the safest practice to put all your
-% \label just after \caption rather than within \caption{}.
-%
-% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
-% option should be used if it is desired that the figures are to be
-% displayed while in draft mode.
-%
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex, 
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation Results.}
-%\label{fig_sim}
-%\end{figure}
+Answers for each question on the survey were assessed for correctness, and coded in binary variables of 1s and 0s, which we use to investigate performance of different designs. 
 
-% Note that IEEE typically puts floats only at the top, even when this
-% results in a large percentage of a column being occupied by floats.
+%In a first model, $M1$, we are only interested in the overall difference in performance between designs. We can express this as a model of the form
+%\begin{equation}\label{model1}[M1]
+%\quad\quad g(P(y_i=1)) = \mu + d_{j(i)} + u_{k(i)} + \varepsilon_i \quad\quad
+%\end{equation}
+%where $P(y_i=1)$ is the probability that the $i$th response is correct, for $i = 1, ..., n$. $g(.)$ is the transformation (link function) of the response. Here, we make use of the logit link, i.e.
+%\begin{eqnarray*}
+%g(P(y_i=1)) &=& \text{logit } P(y_i=1) = \\
+%&=& \log P(y_i=1) - \log P(y_i=0).
+%\end{eqnarray*}
+%$d_{j(i)}$ is the parameter measuring the effect of design $j$ ($j = C, H, P$ for \underline{C}ommon Angle, \underline{H}ammock plot, and \underline{P}arallel sets plot), $u_{k(i)}$ is the effect of participant's $k$ individual skills in evaluating these plots, $k \in \{1, ..., 52\}$. The assumption is that skills are independent and normally distributed with an expected value of zero and a variance of $\sigma_u^2$.
+%$\varepsilon_i$ is, similarly to a regular linear model, assumed to be independently distributed according to a normal distribution with mean of zero and variance $\sigma^2$.
 
 
-% An example of a double column floating figure using two subfigures.
-% (The subfig.sty package must be loaded for this to work.)
-% The subfigure \label commands are set within each subfloat command,
-% and the \label for the overall figure must come after \caption.
-% \hfil is used as a separator to get equal spacing.
-% Watch out that the combined width of all the subfigures on a 
-% line do not exceed the text width or a line break will occur.
-%
-%\begin{figure*}[!t]
-%\centering
-%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
-%\label{fig_first_case}}
-%\hfil
-%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
-%\label{fig_second_case}}
-%\caption{Simulation results.}
-%\label{fig_sim}
-%\end{figure*}
-%
-% Note that often IEEE papers with subfigures do not employ subfigure
-% captions (using the optional argument to \subfloat[]), but instead will
-% reference/describe all of them (a), (b), etc., within the main caption.
+
+%Table \ref{coef1} gives an overview of the model coefficients and their estimates. The effect of the common angle plot is used as a baseline, i.e all the effects shown are differences with respect to the performance of common angle plots. Both hammock plots and parallel sets  have negative effects on the correctness of the response. This indicates a significantly worse performance of these designs than under the common angle plot.
+
+Table \ref{raw} shows percentages of correctness for each design and each question. Bold numbers indicate significantly different (worse) performance of a design compared to the common angle plot based on an anova model adjusted for multiple testing and individual's abilities. 
 
 
-% An example of a floating table. Note that, for IEEE style tables, the 
-% \caption command should come BEFORE the table. Table text will default to
-% \footnotesize as IEEE normally uses this smaller font for tables.
-% The \label must come after \caption as always.
-%
-%\begin{table}[!t]
-%% increase table row spacing, adjust to taste
-%\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-%\caption{An Example of a Table}
-%\label{table_example}
-%\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
+All models are fit in the {\tt lme4} package \citep{lmer} within the software frame work of {\tt R} 2.15.1 \citep{R}.
+
+
+The observed results are in line with our expectations:
+as we aimed for, task I does not show any significant differences between the designs and has overall the highest percentage of correctness reflecting its low difficulty level.
+Parsets were affected the most by the line width illusion and show significantly worse performance for tasks II and III in both data sets. 
+Hammock plots led to significantly worse performance than common angle plots in the two questions that were affected by the inverse line width illusion, while they show equal performance as common angle plots for the other questions. For task III in the pathway data,  hammock plots showed the best performance  across designs-- but this  does not  constitute a significant difference to the performance of the common angle plot.
+
+%%xtable(summary(m1)@coefs)
+%% latex table generated in R 2.15.1 by xtable 1.7-0 package
+%% Fri Oct 12 09:08:11 2012
+%\begin{table}[ht]
+%\begin{center}
+%\begin{tabular}{lrrrrl}
+%  \hline
+% & Estimate & Std. Error & z value & Pr($>$$|$z$|$) & \\ 
+%  \hline
+%$\mu$ & 1.72 & 0.24 & 7.04 & 0.00 & ***\\ [5pt]
+%  $d_C$& 0.00 & -- & -- & -- \\ 
+%  $d_H$ & -0.86 & 0.32 & -2.65 & 0.01 & ** \\ 
+%  $d_P$ & -1.31 & 0.32 & -4.07 & 0.00 & ***\\ 
+%   \hline
+%\multicolumn{5}{l}{Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 }
 %\end{tabular}
+%\end{center}
+%\caption{\label{coef1} Model fit for $M1$ measuring correctness of answers in the survey. The common angle plot is used as baseline -- both hammock plots and, to a larger degree, parallel sets, show a significantly worse performance. }
 %\end{table}
+%
+
+%xtable(round(acast(survey, qu~design, fun=mean, value.var="correct")*100,3), digits=1)
+% latex table generated in R 2.15.1 by xtable 1.7-0 package
+% Fri Oct 12 11:21:19 2012
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{llrrrr}
+  \hline
+Task & Data & \multicolumn{3}{l}{Design} \\
+& & common & hammock & parset \\ 
+  \hline
+ I & Titanic & 86.0 & 76.5 & 81.2 \\ 
+ & Pathway & 93.8 & 83.3 & 82.2 \\ [3pt]
+ II & Titanic  & 63.2 & {\bf 5.9} & {\bf 12.5} \\ 
+ & Pathway  & 68.8 & 68.8 & {\bf 6.7} \\ [3pt]
+ III & Titanic  & 73.7 & {\bf 17.6} & {\bf 25.0} \\ 
+ & Pathway  & 75.0 & 87.5 & {\bf 53.3} \\
+   \hline
+\end{tabular}
+\end{center}
+\caption{\label{raw} Raw percentages of correctness of responses for each question and design. Bold numbers indicate significant difference from common angle plot performance. }
+\end{table}
+
+%Model $M2$ extends the first model by including both  effects for individual questions and the interaction effects with each design in the following form:
+%\begin{eqnarray}\nonumber
+%[M2]  \ \ \qquad g(P(y_i=1)) =  \qquad\qquad\qquad\qquad\qquad&&\\ \label{m2}
+%\mu + d_{j(i)}  + q_{q(i)} + p_{j(i),q(i)} + u_{k(i)} + \varepsilon_i 
+%\end{eqnarray}
+%$d_{j(i)}$ is the parameter measuring the effect of design $j$ ($j = C, H, P$ for \underline{C}ommon Angle, \underline{H}ammock plot, and \underline{P}arallel sets plot), $u_{k(i)}$ is the effect of participant's $k$ individual skills in evaluating these plots, $k \in \{1, ..., 52\}$. The assumption is that skills are independent and normally distributed with an expected value of zero and a variance of $\sigma_u^2$.
+%$\varepsilon_i$ is, similarly to a regular linear model, assumed to be independently distributed according to a normal distribution with mean of zero and variance $\sigma^2$.
+%$q$ indicates the effects on performance for  each question, where $q(i)$ describes one of the questions $\{A1, A2, A3, B1, B2, B3\}$. $p$ is the parameter for the interaction effect of design and question, its index is a tuple consisting of a combination of a question and design. 
+%
+%%Figure \ref{fitted.m2} gives an overview of the goodness of fit of model $M2$ -- histograms of fitted values are drawn facetted by levels of the dependent variable. For correct responses fitted values are highly left skewed, with most values  above 0.5. For wrong answers we see a symmetric, if not quite as clear-cut picture: fitted values are skewed right. 
+%%Overall, Model $M2$ is a significant improvement over model $M1$ (a corresponding log-likelihood ratio test is significant at a level of $<\!\!\!< 10^{-8}$).
+%%Table \ref{model2} shows an overview of the  parameters and their estimates for model $M2$. After adjusting for individuals' skills parallel sets performs significantly worse than common angle plots in three of the six questions. 
+%%
+%%\begin{figure}
+%%\includegraphics[width=\linewidth]{fitted-m2}
+%%\caption{\label{fitted.m2} Histograms of fitted values under model $M2$, facetted by actual performance of participants. On the left, correct responses are shown. The histogram of fitted values is skewed to the right, with most values above 0.5. The histogram on the right corresponds to wrong answers. There are fewer wrong answers, and they tend to have low fitted values, but there are more false positives among them than false negatives for correct answers. }
+%%\end{figure}
+%
+%% xtable(summary(m4)@coefs)
+%% latex table generated in R 2.15.1 by xtable 1.7-0 package
+%% Fri Oct 12 09:12:32 2012
+%\begin{table}[ht]
+%\begin{center}
+%\begin{tabular}{rrrrrl}
+%  \hline
+% & Estimate & Std. Error & z value & Pr($>$$|$z$|$) & \\ 
+%  \hline  
+%$\mu$ & 2.68 & 0.61 & 4.35 & 0.00  & ***\\ [5pt]
+%Design\\
+%  $d_C$ & 0.00 & -- & -- & -- \\ 
+%  $d_H$ & -1.06 & 0.83 & -1.28 & 0.20  \\ 
+%  $d_P$ & -0.57 & 0.86 & -0.66 & 0.51 \\ [5pt]
+%Questions\\
+%  $q_{A1}$ & 0.00 & -- & -- & -- \\ 
+%  $q_{A2}$  & -1.85 & 0.74 & -2.50 & 0.01 &* \\ 
+%  $q_{A3}$  & -1.11 & 0.77 & -1.44 & 0.15 \\ 
+%  $q_{B1}$ & 0.55 & 0.96 & 0.58 & 0.56 \\ 
+%  $q_{B2}$  & -1.69 & 0.88 & -1.91 & 0.06 &. \\ 
+%  $q_{B3}$  & -1.31 & 0.92 & -1.43 & 0.15 \\ [5pt]
+% 
+%Interaction \\
+%$p_{H, A1}$ &  0.00 & -- & -- & -- \\
+%$p_{P,A1}$ &  0.00 & -- & -- & -- \\
+%$p_{H, A2}$ &  -3.29 & 1.55 & -2.13 & 0.03 & *\\ 
+%$p_{P,A2}$ & -3.03 & 1.33 & -2.28 & 0.02 &*\\ 
+%$p_{H,A3}$ &-2.61 & 1.17 & -2.24 & 0.03  & * \\ 
+%$p_{P,A3}$ & -2.60 & 1.16 & -2.23 & 0.03 &*\\ 
+%$p_{H,B1}$ &-0.26 & 1.21 & -0.22 & 0.83 \\ 
+%$p_{P,B1}$ &-0.81 & 1.24 & -0.65 & 0.51 \\ 
+%$p_{H,B2}$ & 1.03 & 1.22 & 0.85 & 0.40 \\ 
+%$p_{P,B2}$  & -3.48 & 1.63 & -2.14 & 0.03 &*\\ 
+%$p_{H,B3}$ & 1.97 & 1.37 & 1.44 & 0.15 \\ 
+%$p_{P,B3}$ & -0.62 & 1.26 & -0.50 & 0.62 \\   
+%   \hline
+%\multicolumn{6}{l}{Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 }
+%\end{tabular}
+%\end{center}
+%\caption{\label{model2} Model fit for $M2$ measuring correctness of answers in the survey, detailing performance of designs on each question. All design comparisons are with respect to the common angle plot. }
+%\end{table}
+%
+
+\begin{figure}
+\centering \includegraphics[width=.7\linewidth]{hist-skills}
+\caption{\label{skills}Histogram of the predictions of subject-specific skills. }
+\vspace{-0.2in}
+\end{figure}	
+Figure \ref{skills} shows an overview of the predicted skill for each participant under model $M2$. Skills are quite varied between  -1.52 and  1.34, but
+a Kolmogorov-Smirnov test  does not show significant deviation from a normal assumption ($p$-value = 0.089).
+On the scale of the dependent variable the range in individuals' skills translates to a $17.5 = e^{1.34 - (-1.52)}$ fold increase in the probability of answering a question on the survey correctly between participants with the best skill set and the worst.
+
+In the next section we will investigate the results from the survey in further detail for some questions, and highlight the link to the line width illusion and its inverse.
+
+\subsubsection{Evidence for line width illusions}
+
+Question $A2$ asked participants to order  class levels  according to the number of survivors, fewest to highest. There are 4! = 24 distinct orderings of the levels, corresponding to all permutations of length 4. Some orderings are closer to one another than other orderings.  To quantify distance between each pair of permutations, the Cayley distance is defined as the minimal number of transpositions (i.e. swaps of two elements) necessary to transform one permutation into another.
+
+%The Cayley distance defines a way to quantify the distance between  each pair of permutations; the Cayley distance is defined as the minimal number of transpositions, i.e. swaps of two elements,  necessary to transform one permutation into the other.
+This distance is used to define a graph on the space of all permutations: let all permutations be nodes of the graph; for each two permutations with a Cayley distance of one, we add an edge between these nodes to the graph. The resultant regular graph of degree six, i.e. each  node is connected to six other nodes. Between any two nodes, the Cayley distance is then given as length of shortest connecting path shown on the graph.
+%The Cayley distance between any two nodes is then given as the length of the shortest connecting path between these two nodes through the graph.
+Figure \ref{cubes} shows an overview of the permutation space together with an overview of the survey results. Each permutation is represent by one dot. 
+
+The colored dots on top of the graph correspond to the responses from the survey - the size of the dots is proportional to the number of observers choosing this particular ordering. It becomes obvious from the three graphs in figure \ref{cubes} that
+the answers to different designs occupy quite different regions, while answers based  on the same design are quite close --  usually separated by only one edge. 
+
+The correct ordering, as well as the orderings assuming the line width illusion and its reverse are marked with symbols. Answers for the common angle plot are centered around the correct answer, while responses to parallel sets are cluster around the response corresponding to the line width illusion. Due to the small number of responses to the hammock design a clear clustering of the answers is not recognizable, but the answer for the inverse line width illusion is among the responses. Table \ref{a2} gives an overview of all responses to question $A.2$. 
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{rrrrl}
+Order  & CA & H & PS\\
+  \hline
+  Crew, 1st, 3rd, 2nd &  &  2 &  \\ 
+  2nd, 1st, 3rd, Crew &  &  6 &  & inverse illusion \\ 
+   Crew, 3rd, 1st, 2nd &  &  1 &  1 \\ 
+  2nd, 3rd, 1st, Crew & 1 & 7 & 1 \\ 
+  2nd, 3rd, Crew, 1st & 12 &  1 &  2 & correct\\ 
+  Crew, 3rd, 2nd, 1st &  2 &  &  \\ 
+  3rd, 2nd, Crew, 1st &  1 &  &  \\ 
+  1st, 2nd, 3rd, Crew &  1 &  &   \\ 
+  1st, 3rd, Crew, 2nd &  1 &  &  2 \\ 
+  Crew, 2nd, 3rd, 1st &  &  & 6 &  line width illusion\\  
+  1st, 3rd, 2nd, Crew &  &  &  2 \\ 
+  2nd, Crew, 3rd, 1st &  &  &  3 \\ 
+   \hline
+  Total & 18 & 17 & 16 \\ 
+   \hline
+\end{tabular}
+\end{center}
+\caption{\label{a2} Responses to question $A.2$: order levels of Class by the number of survivors (smallest to largest). }
+\end{table}
+
+%
+Common angle plots show the best performance in terms of correctness (66.7\% on 18 responses), compared to a correctness of 11.8\% for parallel sets plots on 16 responses, indicating a significantly better performance of common angle plots at a level of 0.0027, based on a Mantel-Haenszel test (the difference in performance to hammock plots is also significant at a level of 0.0006; but there is no significant difference in correctness between hammock plots and parallel sets.).
+While the intuitive assessment of lines by their width orthogonal to their direction is well known, it is surprising to see its strength: in this particular setting, it is strong enough to `shrink' the horizontally widest line for 6 out of 16 participants by at least  44\%, from 212 to below 118, and a further 3 participants perceived the shrinking to below 178, which constitutes a distortion of at least 16\%.
+
+\begin{figure*}
+\includegraphics[width=\linewidth]{cubes}
+\caption{Answers to question A.2 -- each node corresponds to a single ordering of the levels in variable 'Class'. Lines are drawn between orderings that are only one swap of levels apart. The colored dots show responses from the survey, their sizes depend on the number of responses for each ordering. }
+\label{cubes}
+\end{figure*}
+
+Responses to question A.3 exhibit a similar pattern, see table \ref{a3}.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{rrrrl}
+Order & CA & H & PS\\
+  \hline
+c, b, a &  &  2 &  \\
+a, b, c &  1 &  12 &  & inverse illusion\\ 
+a, c, b & 13 &  3 &  4 & correct\\ 
+b, c, a &  2 &  &  1 \\ 
+c, a, b &  2 &  & 9 & line width illusion\\ 
+b, a, c &  &  &  2 \\ 
+ \hline
+  Total & 18 &  17 & 16 \\ 
+   \hline
+\end{tabular}
+\end{center}
+\caption{\label{a3}Responses to question A.3: order combinations from smallest to largest, where 'a' is first class female, 'b' are male survivors, and 'c' are crew survivors. }
+\end{table}
+  
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{clrrrl}
+  Qu & Design & \rotatebox{90}{Correct} & \rotatebox{90}{Incorrect} & \rotatebox{90}{No Answer}   & Reason\\ \hline
+  \hline
+1 & common &   14 &  2 &   0 \\ 
+   & hammock &   15 &  0 &   1 \\ 
+ & parallel &   7 &   7 &   0 & line width illusion\\ \hline
+2 & common &  16 &   0 &   0 \\ 
+& hammock &   9 &   7 &   0 & inverse illusion\\ 
+& parallel &  14 &   0 &   0 \\ \hline
+3& common &  15 &   1 &   0 \\ 
+& hammock &  16 &   0 &   0 \\ 
+& parallel &  14 &   0 &   0 \\ 
+   \hline
+\end{tabular}
+\end{center}
+\caption{\label{tab:b1}Responses to question set B.1 }
+\vspace{-0.25in}
+\end{table}
 
 
-% Note that IEEE does not put floats in the very first column - or typically
-% anywhere on the first page for that matter. Also, in-text middle ("here")
-% positioning is not used. Most IEEE journals use top floats exclusively.
-% Note that, LaTeX2e, unlike IEEE journals, places footnotes above bottom
-% floats. This can be corrected via the \fnbelowfloat command of the
-% stfloats package.
+Table \ref{tab:b1} shows a summary to the  three questions of $B.1$ with possible answers ``agree", ``disagree", and ``don't know".
+The first two questions are  examples, where the line width illusion, and its reverse will lead to answers that differ from the correct answer. Parallel sets  are susceptible to the line width illusion, while hammock plots suffer from the reverse. The data shows that in about 50\% of the responses we can see this difference. 7 out of 14 answers for the parallel sets plots in question 1 deviate from the correct answer, and 7 out of 16 responses corresponding to hammock plots in question 2 show the wrong answer.
 
 
+\subsubsection{Opinion on common angle plots}
+Answers to the question of `which chart did you like better?' are shown in table \ref{tab:prefer}. There is a pretty clear endorsement in favor of common angle plots versus the other two types of displays.
+Asked for a reason for their preference over parallel sets, 8 participants cited a facilitated comparison of width, area or ``size", 3 saw the common angle plots as preferable, and the remaining answers related to a 'more logical' structure or generally 'easier' choice.
+Reasons for not preferring common angle plots boiled down to a preference for straight lines. This purely aesthetic preference is deeply rooted and in our opinion the biggest challenge for common angle plots.
+% latex table generated in R 2.15.1 by xtable 1.7-0 package
+% Wed Oct 31 10:28:55 2012
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{cccrrr}
+  \hline
+&\multicolumn{5}{r}{Which chart did you like better?}\\
+&&& Chart 1 &  Chart 2 \\ 
+  \hline
+  PS &vs&  {\bf CA} & 2 & \bf 6 \\ 
+ {\bf  CA} & vs &  PS & \bf 4 & 2 \\ 
+  H & vs &   {\bf  CA} & 3 & \bf 5 \\ 
+   {\bf  CA} & vs &  H & \bf 8 & 2 \\ 
+  H & vs &  PS & 3 & 5 \\ 
+  PS & vs &  H & 1 & 5 \\ 
+   \hline
+\end{tabular}
+\caption{\label{tab:prefer} Preferences for first or second chart across all six combinations of questions and chart types. }
+\vspace{-0.3in}
+\end{center}
+\end{table}
 
 \section{Conclusion}
 The conclusion goes here.
