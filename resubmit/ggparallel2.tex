@@ -216,18 +216,19 @@ To determine the effectiveness of the common angle plot, we conducted a user exp
 For each data set, participants were asked to provide responses for three tasks:
 
 Task I: simple comparison task, chosen to be unaffected by any illusion. Performance on this task should be comparable across the designs
-Task II: comparison, affected by the line width illusion or its reverse. 
+
+Task II: simple comparisons, affected by the line width illusion or its reverse. 
+
 Task II: ordering task comprised of multiple comparisons, some of which are affected by either illusion.
   
 Each participant was exposed to two of the three types of displays, one for all three tasks related to the same data set.
- 
-This resulted in six different survey administrations, with a crossover design as shown in Table \ref{tab:designs} that allows us to compare designs across different questions and data sets, and  simultaneously adjust for individuals' different skill sets.
+This resulted in a crossover design as shown in Table \ref{tab:designs} allowing for comparisons of designs and tasks while  simultaneously adjusting for individuals' different skill sets.
 
 \begin{table}[htbp]
 \centering
 \begin{tabular}{rrrrrrr}
-Titanic Data & PS & CA & Ham & PS & CA & Ham \\ 
-Pathway & CA & PS & PS & Ham & Ham & CA \\ \hline
+Titanic Data & PS & CA & H & PS & CA & H \\ 
+Pathway & CA & PS & PS & H& H & CA \\ \hline
 \#responses &  8 (9) &  6 (7) &  8 (9) &  6 (7) & 10 (11) & 8 (8)\\ 
 \end{tabular}
 \caption{\label{tab:designs} Overview of study design and participation numbers. The number in parenthesis indicates the number of participants completing the first block, but not the second.}
@@ -235,7 +236,8 @@ Pathway & CA & PS & PS & Ham & Ham & CA \\ \hline
 
 
 \subsection{Results}
-
+The result section is looking at three different aspects of the experiment: we are first assessing general performance on the tasks according to percentage of correct responses, we then investigate the extent of variability due to subject-specific abilities, and finally we explore the space of answers for the more complex ordering task III.
+\subsubsection*{Correctness of Answers}
 Answers for each question on the survey were assessed for correctness, and coded in binary variables of 1s and 0s, which we use to investigate performance of different designs. 
 
 %In a first model, $M1$, we are only interested in the overall difference in performance between designs. We can express this as a model of the form
@@ -254,14 +256,16 @@ Answers for each question on the survey were assessed for correctness, and coded
 
 %Table \ref{coef1} gives an overview of the model coefficients and their estimates. The effect of the common angle plot is used as a baseline, i.e all the effects shown are differences with respect to the performance of common angle plots. Both hammock plots and parallel sets  have negative effects on the correctness of the response. This indicates a significantly worse performance of these designs than under the common angle plot.
 
-Table \ref{raw} shows percentages of correctness for each design and each question. Bold numbers indicate significantly different (worse) performance of a design compared to the common angle plot based on an anova model adjusted for multiple testing and individual's abilities. 
+Table \ref{raw} shows percentages of correctness for each design and each question. Bold numbers indicate significantly different (worse) performance of a design compared to the common angle plot based on a generalized linear model with random effects to adjust for individuals' abilities.
 
 
-All models are fit in the {\tt lme4} package \citep{lmer} within the software frame work of {\tt R} 2.15.1 \citep{R}.
+All models are fit in the {\tt lme4} package \cite{lmer} within the software frame work of {\tt R} 2.15.1 \cite{R}.
 
+XXX needs more details
 
 The observed results are in line with our expectations:
-as we aimed for, task I does not show any significant differences between the designs and has overall the highest percentage of correctness reflecting its low difficulty level.
+as we aimed for, task I does not show any significant differences between the designs and has overall the highest percentage of correctness reflecting its low difficulty level. Generally, difficult levels seem to increase with complexity of the tasks.
+
 Parsets were affected the most by the line width illusion and show significantly worse performance for tasks II and III in both data sets. 
 Hammock plots led to significantly worse performance than common angle plots in the two questions that were affected by the inverse line width illusion, while they show equal performance as common angle plots for the other questions. For task III in the pathway data,  hammock plots showed the best performance  across designs-- but this  does not  constitute a significant difference to the performance of the common angle plot.
 
@@ -298,10 +302,10 @@ Task & Data & \multicolumn{3}{l}{Design} \\
   \hline
  I & Titanic & 86.0 & 76.5 & 81.2 \\ 
  & Pathway & 93.8 & 83.3 & 82.2 \\ [3pt]
- II & Titanic  & 63.2 & {\bf 5.9} & {\bf 12.5} \\ 
- & Pathway  & 68.8 & 68.8 & {\bf 6.7} \\ [3pt]
- III & Titanic  & 73.7 & {\bf 17.6} & {\bf 25.0} \\ 
+ II & Titanic  & 73.7 & {\bf 17.6} & {\bf 25.0} \\ 
  & Pathway  & 75.0 & 87.5 & {\bf 53.3} \\
+ III & Titanic  & 63.2 & {\bf 5.9} & {\bf 12.5} \\ 
+ & Pathway  & 68.8 & 68.8 & {\bf 6.7} \\ [3pt]
    \hline
 \end{tabular}
 \end{center}
@@ -368,7 +372,7 @@ Task & Data & \multicolumn{3}{l}{Design} \\
 %\caption{\label{model2} Model fit for $M2$ measuring correctness of answers in the survey, detailing performance of designs on each question. All design comparisons are with respect to the common angle plot. }
 %\end{table}
 %
-
+\subsubsection*{Individuals' skill levels}
 \begin{figure}
 \centering \includegraphics[width=.7\linewidth]{hist-skills}
 \caption{\label{skills}Histogram of the predictions of subject-specific skills. }
@@ -378,21 +382,21 @@ Figure \ref{skills} shows an overview of the predicted skill for each participan
 a Kolmogorov-Smirnov test  does not show significant deviation from a normal assumption ($p$-value = 0.089).
 On the scale of the dependent variable the range in individuals' skills translates to a $17.5 = e^{1.34 - (-1.52)}$ fold increase in the probability of answering a question on the survey correctly between participants with the best skill set and the worst.
 
-In the next section we will investigate the results from the survey in further detail for some questions, and highlight the link to the line width illusion and its inverse.
+%In the next section we will investigate the results from the survey in further detail for some questions, and highlight the link to the line width illusion and its inverse.
 
-\subsubsection{Evidence for line width illusions}
+\subsubsection*{Evidence for line width illusions}
 
-Question $A2$ asked participants to order  class levels  according to the number of survivors, fewest to highest. There are 4! = 24 distinct orderings of the levels, corresponding to all permutations of length 4. Some orderings are closer to one another than other orderings.  To quantify distance between each pair of permutations, the Cayley distance is defined as the minimal number of transpositions (i.e. swaps of two elements) necessary to transform one permutation into another.
+Task III for the Titanic data asked participants to order  class levels  according to the number of survivors, fewest to highest. There are 4! = 24 distinct orderings of the levels, corresponding to all permutations of length 4. Some orderings are closer to one another than other orderings.  
+%To quantify distance between each pair of permutations, the Cayley distance is used.The  Cayley  distance is defined as the minimal number of transpositions (i.e. swaps of two elements) necessary to transform one permutation into another.
+The Cayley distance defines a way to quantify the distance between  each pair of permutations; the Cayley distance is defined as the minimal number of transpositions, i.e. swaps of two elements,  necessary to transform one permutation into the other.
 
-%The Cayley distance defines a way to quantify the distance between  each pair of permutations; the Cayley distance is defined as the minimal number of transpositions, i.e. swaps of two elements,  necessary to transform one permutation into the other.
-This distance is used to define a graph on the space of all permutations: let all permutations be nodes of the graph; for each two permutations with a Cayley distance of one, we add an edge between these nodes to the graph. The resultant regular graph of degree six, i.e. each  node is connected to six other nodes. Between any two nodes, the Cayley distance is then given as length of shortest connecting path shown on the graph.
-%The Cayley distance between any two nodes is then given as the length of the shortest connecting path between these two nodes through the graph.
+This distance is used to define a graph on the space of all permutations: let all permutations be nodes of the graph; for each two permutations with a Cayley distance of one, we add an edge between these nodes to the graph. The resultant regular graph of degree six, i.e. each  node is connected to six other nodes. Between any two nodes, we can find the Cayley distance on the graph as the length of the shortest connecting path between the two nodes.
 Figure \ref{cubes} shows an overview of the permutation space together with an overview of the survey results. Each permutation is represent by one dot. 
 
 The colored dots on top of the graph correspond to the responses from the survey - the size of the dots is proportional to the number of observers choosing this particular ordering. It becomes obvious from the three graphs in figure \ref{cubes} that
 the answers to different designs occupy quite different regions, while answers based  on the same design are quite close --  usually separated by only one edge. 
 
-The correct ordering, as well as the orderings assuming the line width illusion and its reverse are marked with symbols. Answers for the common angle plot are centered around the correct answer, while responses to parallel sets are cluster around the response corresponding to the line width illusion. Due to the small number of responses to the hammock design a clear clustering of the answers is not recognizable, but the answer for the inverse line width illusion is among the responses. Table \ref{a2} gives an overview of all responses to question $A.2$. 
+The correct ordering, as well as the orderings assuming the line width illusion and its reverse are marked by symbols. Answers for the common angle plot are centered around the correct answer, while responses to parallel sets  cluster around the response corresponding to the line width illusion. Due to the small number of responses to the hammock design a clear clustering of the answers is not recognizable, but the answer for the inverse line width illusion is among the responses. Table \ref{a2} gives an overview of all responses to task II for the Titanic data.
 
 \begin{table}[ht]
 \begin{center}
@@ -416,7 +420,7 @@ Order  & CA & H & PS\\
    \hline
 \end{tabular}
 \end{center}
-\caption{\label{a2} Responses to question $A.2$: order levels of Class by the number of survivors (smallest to largest). }
+\caption{\label{a2} Responses to task II in the Titanic data: order levels of Class by the number of survivors (smallest to largest). }
 \end{table}
 
 %
