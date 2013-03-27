@@ -298,7 +298,7 @@ Hammock plots led to significantly worse performance than common angle plots in 
 \begin{tabular}{llrrrr}
   \hline
 Task & Data & \multicolumn{3}{l}{Design} \\
-& & common & hammock & parset \\ 
+& & CA & H & PS \\ 
   \hline
  I & Titanic & 86.0 & 76.5 & 81.2 \\ 
  & Pathway & 93.8 & 83.3 & 82.2 \\ [3pt]
@@ -309,7 +309,7 @@ Task & Data & \multicolumn{3}{l}{Design} \\
    \hline
 \end{tabular}
 \end{center}
-\caption{\label{raw} Raw percentages of correctness of responses for each question and design. Bold numbers indicate significant difference from common angle plot performance. }
+\caption{\label{raw} Raw percentages of correctness of responses for each question and design. Bold numbers indicate significant difference from common angle plot performance. XXX Add variances }
 \end{table}
 
 %Model $M2$ extends the first model by including both  effects for individual questions and the interaction effects with each design in the following form:
@@ -412,10 +412,9 @@ Order  & CA & H & PS\\
   2nd, 3rd, Crew, 1st & 12 &  1 &  2 & correct\\ 
   Crew, 3rd, 2nd, 1st &  2 &  &  \\ 
   3rd, 2nd, Crew, 1st &  1 &  &  \\ 
-  1st, 2nd, 3rd, Crew &  1 &  &   \\ 
+  1st, 2nd, 3rd, Crew &  1 &  &  1 \\ 
   1st, 3rd, Crew, 2nd &  1 &  &  2 \\ 
   Crew, 2nd, 3rd, 1st &  &  & 6 &  line width illusion\\  
-  1st, 3rd, 2nd, Crew &  &  &  2 \\ 
   2nd, Crew, 3rd, 1st &  &  &  3 \\ 
    \hline
   Total & 18 & 17 & 16 \\ 
