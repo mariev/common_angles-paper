@@ -136,6 +136,18 @@ M.~Schonlau, ``Visualizing categorical data arising in the health sciences
   Graphics}, RAND Corporation.\hskip 1em plus 0.5em minus 0.4em\relax American
   Statistical Association, 2003.
 
+\bibitem{titanic}
+\BIBentryALTinterwordspacing
+R.~J.~M. Dawson, \emph{Journal of Statistics Education}, vol.~3, 1995.
+  [Online]. Available:
+  \url{http://www.amstat.org/publications/jse/v3n3/datasets.dawson.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ucsc:2002}
+W.~Kent, C.~Sugnet, T.~Furey, K.~Roskin, T.~Pringle, A.~Zahler, and
+  D.~Haussler, ``The human genome browser at {UCSC},'' \emph{Genome Research},
+  vol.~12, no.~6, pp. 996--1006, June 2002.
+
 \bibitem{lmer}
 \BIBentryALTinterwordspacing
 D.~Bates, M.~Maechler, and B.~Bolker, \emph{lme4: Linear mixed-effects models
