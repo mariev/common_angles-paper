@@ -507,7 +507,8 @@ Reasons for not preferring common angle plots boiled down to a preference for st
 We have proposed a new chart type for visualizing multivariate categorical data, common angle plots, 
 and tested its usability compared to existing charts that perform a similar function. Results from user testing
 indicate
-that common angle plots effectively communicate underlying data without encouraging perceptual distortion.
+that common angle plots effectively communicate underlying data without encouraging perceptual distortion of the 
+\emph{line width} illusion.
 Two other chart types which address visualization of multivariate categorical: parallel sets and hammock plots, 
 are subject to the line width illusions due to 
 contextual framework. Audiences perceive parallel sets with distortion due to a natural tendency to 
@@ -515,9 +516,45 @@ evaluate line width in the orthogonal direction while data is mapped to the hori
 For hammock plots a correction is made to map data to the orthogonal width, however the centered line 
 intersection with axes creates a strong contextual encourage evaluation of line width using the
 horizontal measure (\emph{reverse line width illusion}). Common angles avoids the perceptual distortion 
-associated with either version of the illusion.
+associated with either version of the illusion regardless of the underlying data set.
 
-\subsection{Extention}
+XX todo: drawbacks of basic common angle plot? number of crossings, what is and isn't proportional to 
+underlying data. area?
+
+One opportunity for improvement lies in the algorithm to determine thickness of the connecting line. In the
+tested version of common angle plots, the line width was not explictly defined - the line width is an byproduct of 
+specified $\theta$ for a band that connects marginal bars. Using equation \ref{adjust} to determine the band thickness
+while keeping $\theta$ consistent across all bands is a common angle-hammock plot hybrid that bears further investigation.
+A drawback of this approach is that ribbons will no longer match widths of marginal bars. While this is helpful 
+in alleviating overplotting, there may be a processing burden placed on the audience to map the relationship between 
+band width and the with of marginal bars.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[\linewidth]{images/}
+\caption{Common angle plot of Titanic data using hammock correction.}
+\end{figure}
+
+
+In the original
+paper, parallel sets have been introduced to reflect a
+hierarchy of variables. In this paper, we have only used
+sets of two-dimensional plots to focus on the association
+between pairs of variables. However, it is possible, to show
+hierarchies in all of the types of displays by using a color
+coding introducing a hierarchical structure to the data.
+Figure \ref{} shows a common-angle plot with a hierarchy:
+survivors of the disaster are marked in blue, non-survivors
+by orange. From top to bottom of the plot a hierarchy
+is drawn, considering first, survival, then gender, followed
+by age and finally, class membership. The coloring helps
+to keep track of survival status throughout the hierarchy,
+the layout in a common angle plot makes comparisons
+valid across all levels. This is of particular importance in
+hierarchical displays, as these displays, by definition, have
+a larger number of smaller groups than displays without a
+hierarchy exacerbating problems induced by the line width
+illusion
 
 
 
