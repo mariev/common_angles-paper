@@ -388,7 +388,7 @@ Task III for the Titanic data required participants to order  class levels  acco
 
 
 
-There are 4! = 24 distinct orderings of the levels, corresponding to all permutations of length 4. Some orderings are closer to one another than other orderings. Using the Cayley distance to define a graph on the space of all permutations: let all permutations be nodes of the graph; for each two permutations with a Cayley distance of one, we add an edge between these nodes to the graph. The resultant regular graph of degree six, i.e. each  node is connected to six other nodes. Between any two nodes, we can find the Cayley distance on the graph as the length of the shortest connecting path between the two nodes.
+There are 4! = 24 distinct orderings of the levels, corresponding to all permutations of length 4. Some orderings are closer to one another than other orderings. Using the Cayley distance to define a graph on the space of all permutations: let all permutations be nodes of the graph; for each two permutations with a Cayley distance of one, add an edge between these nodes to the graph. The resultant regular graph of degree six, i.e. each  node is connected to six other nodes. Between any two nodes, the Cayley distance on the graph is the length of the shortest connecting path between the two nodes.
 Figure \ref{cubes} shows an overview of the permutation space together with an overview of the survey results. Each permutation is represent by one dot. 
 
 The colored dots on top of the graph correspond to the responses from the survey - the size of the dots is proportional to the number of observers choosing this particular ordering. It becomes obvious from the three graphs in figure \ref{cubes} that
@@ -503,6 +503,10 @@ Reasons for not preferring common angle plots boiled down to a preference for st
 \end{center}
 \end{table}
 
+\subsection{Implementation}
+
+XXX talk about R code and packages here
+
 \section{Conclusion}
 We have proposed a new chart type for visualizing multivariate categorical data, common angle plots, 
 and tested its usability compared to existing charts that perform a similar function. Results from user testing
@@ -537,16 +541,14 @@ band width and the with of marginal bars.
 In the original paper, parallel sets have been introduced to reflect a hierarchy of variables. 
 Prior examples in this paper show sets of two-dimensional plots to focus on the association between 
 pairs of variables. 
-However, it is possible to show hierarchies in all of the types of displays by using color coding to
-introduce a hierarchical structure to the data. 
-
+With color coding, it is possible to show hierarchies in all of the types of displays.
 Figure \ref{tit-hierarchy}
 shows a common-angle plot  with a hierarchy: survivors of the disaster are marked in blue, 
-non-survivors by orange. From top to bottom of the plot a hierarchy is drawn, considering first, 
-survival, then gender, followed by age and finally, class membership. The coloring helps to keep 
-track of survival status throughout the hierarchy, the layout in a common angle plot makes comparisons 
-valid across all levels. This is of particular importance in hierarchical displays, as these displays,
-by definition, have a larger number of smaller groups than displays without a hierarchy exacerbating 
+non-survivors by orange. From top to bottom of the plot a hierarchy is drawn, considering first 
+survival, then gender, followed by age and finally class membership. The coloring tracks 
+survival status throughout the hierarchy, the layout in a common angle plot makes comparisons 
+valid across all levels. This is of particular importance in hierarchical displays, which
+by definition have a larger number of smaller groups than displays without a hierarchy exacerbating 
 problems induced by the line width illusion.
 
 
@@ -557,12 +559,14 @@ problems induced by the line width illusion.
 
 
 Another opportunity for extending common angle plots is to add interactivity. It is important to note that
-any additions to functionality due to interactivity should not come at the expense of developing distortion-free
+any additions of functionality via interactivity should not come at the expense of developing distortion-free
 displays. Simply augmenting a plot that has distortion of the \emph{line width illusion} variety does not eliminate
 the presence of that illusion, rather it obfuscates the message of the display. A display with visual cues in conflict
 with the interactive feedback introduces cognitive load by asking the audience to decide which source is correct.
 In the case where interactive feedback (e.g. summary data on mouse hover) is accurate when the visual cues
-suggest alternate interpretation, a mistrust of the graphical presentation may develop.
+suggest alternate interpretation, a mistrust of the graphical presentation may develop. In an extreme case,
+the user may develop a mistrust of their own perception, which would reduce effectiveness of all data displays, 
+regardless of the presence of any perceptual distortion.
 
 
 % if have a single appendix:
