@@ -537,8 +537,8 @@ band width and the with of marginal bars.
 In the original paper, parallel sets have been introduced to reflect a hierarchy of variables. 
 Prior examples in this paper show sets of two-dimensional plots to focus on the association between 
 pairs of variables. 
-However, it is possible, to show hierarchies in all of the types of displays by using a color coding
-introducing a hierarchical structure to the data. 
+However, it is possible to show hierarchies in all of the types of displays by using color coding to
+introduce a hierarchical structure to the data. 
 
 Figure \ref{tit-hierarchy}
 shows a common-angle plot  with a hierarchy: survivors of the disaster are marked in blue, 
@@ -556,7 +556,13 @@ problems induced by the line width illusion.
 \end{figure}
 
 
-
+Another opportunity for extending common angle plots is to add interactivity. It is important to note that
+any additions to functionality due to interactivity should not come at the expense of developing distortion-free
+displays. Simply augmenting a plot that has distortion of the \emph{line width illusion} variety does not eliminate
+the presence of that illusion, rather it obfuscates the message of the display. A display with visual cues in conflict
+with the interactive feedback introduces cognitive load by asking the audience to decide which source is correct.
+In the case where interactive feedback (e.g. summary data on mouse hover) is accurate when the visual cues
+suggest alternate interpretation, a mistrust of the graphical presentation may develop.
 
 
 % if have a single appendix:
