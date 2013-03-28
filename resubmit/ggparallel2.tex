@@ -169,10 +169,18 @@ The graph shows that barely any women were in the crew, while male crew members 
 As the adjustment of line widths is made with respect to the angle $\theta$, which itself depends on the aspect ratio of a plot, we need complete control over these properties of the plotting device when constructing hammock plots  -- in our implementation (see below for details) we have dealt with this issue by fixing the aspect ratio. This is problematic in some situations, where the rendering has to be done without knowledge of the plotting device. 
 
 \subsection{Reverse linewidth}
-A problem that arises in evaluating hammock plots is that if an observer focuses on horizontal line width  the plots suffer from a {\it reverse line width illusion}:  judging the number of survivors by class in figure \ref{hammock} based on horizontal line width  results in an ordering of (largest to smallest) Crew, 3rd, 1st, and 2nd -- which is not correct either. %Using horizontal width is inviting, since the lines are centered around the middle of a level, im
-Because the lines are centered around the middle of each level, a contextual coordinate system is imposed that encourages comparisons of horizontal width. However, horizontal width alone is not proportional to underlying data. 
+A problem that arises in evaluating hammock plots is that if an observer focuses on horizontal line width  the plots suffer from a {\it reverse line width illusion}:  judging the number of survivors by class in figures \ref{hammock}, \ref{hammock_zoom} based on horizontal line width  results in an ordering of (largest to smallest) Crew, 3rd, 1st, and 2nd -- which is not correct either. %Using horizontal width is inviting, since the lines are centered around the middle of a level, im
+Because the lines are centered around the middle of each level, a contextual coordinate system is imposed that encourages comparisons of horizontal width. However, horizontal width is no longer proportional to underlying data, because of the line width adjustment. Rearranging equation \ref{adjust}, 
+\begin{equation}\label{rev}
+w_h = w_o \csc \theta,
+\end{equation}
+ where $w_o$ is proportional to observations and $\theta$ is the angle of the line with respect to the horizontal line.
 
-[[ If only h-width is considered, the graph has a lie factor; can we quantify this amount in terms of theta? ]]
+\begin{figure}[htbp]
+\centering
+\includegraphics[width = .75\linewidth]{images/zoom_hammock}
+\caption{Lines in hammock plot of Titanic data for survival variable, level yes. Comparing horizontal widths suggests that a greater number of survivors were from third class instead of first, which is inconsistent with underlying data.}
+\end{figure}
 %
 %\section{Overview}
 %From previous work \cite{cleveland:1984, tufte, wainer:2000, robbins:2005, heer:2010, kong:2010}, we may conclude that numerically accurate representations of data
@@ -236,7 +244,7 @@ Pathway & CA & PS & PS & H& H & CA \\ \hline
 
 
 \subsection{Results}
-The result section is looking at three different aspects of the experiment: we are first assessing general performance on the tasks according to percentage of correct responses, we then investigate the extent of variability due to subject-specific abilities, and finally we explore the space of answers for the more complex ordering task III.
+The result section looks at three different aspects of the experiment: first,  assessing general performance on the tasks according to percentage of correct responses, second, investigate the extent of variability due to subject-specific abilities, and finally exploration of the space of answers for the more complex ordering Task III.
 \subsubsection*{Correctness of Answers}
 Answers for each question on the survey were assessed for correctness, and coded in binary variables of 1s and 0s, which we use to investigate performance of different designs. 
 
