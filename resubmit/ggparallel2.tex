@@ -216,6 +216,9 @@ assuming a vertical display as shown in figure \ref{fig:ca-titanic},  connecting
 The pre-specified angle $\theta$ (between the line and the vertical band) is given as --at most-- the angle of the longest connecting line between two categories of neighboring variables. 
 This makes the width of ribbons  comparable without being affected by the distortion, as all ribbons are sharing at least one segment under the same angle. 
 
+\subsection{Implementation}
+
+XX ggparallel package
 
 \section{Usability Testing}
 \subsection{Test}
@@ -503,27 +506,14 @@ Reasons for not preferring common angle plots boiled down to a preference for st
 \end{center}
 \end{table}
 
-\subsection{Implementation}
+\subsection{Methods}
+XX talk about lme and qualtrics here
 
-XXX talk about R code and packages here
+\section{Discussion}
 
-\section{Conclusion}
-We have proposed a new chart type for visualizing multivariate categorical data, common angle plots, 
-and tested its usability compared to existing charts that perform a similar function. Results from user testing
-indicate
-that common angle plots effectively communicate underlying data without encouraging perceptual distortion of the 
-\emph{line width} illusion.
-Two other chart types which address visualization of multivariate categorical: parallel sets and hammock plots, 
-are subject to the line width illusions due to 
-contextual framework. Audiences perceive parallel sets with distortion due to a natural tendency to 
-evaluate line width in the orthogonal direction while data is mapped to the horizontal width.
-For hammock plots a correction is made to map data to the orthogonal width, however the centered line 
-intersection with axes creates a strong contextual encourage evaluation of line width using the
-horizontal measure (\emph{reverse line width illusion}). Common angles avoids the perceptual distortion 
-associated with either version of the illusion regardless of the underlying data set.
+XX limits of basic common angles: line crossings, large number of colors/levels, area is related to $\theta$
+XX what happens if someone uses the plot for different tasks? extreme
 
-XX todo: drawbacks of basic common angle plot? number of crossings, what is and isn't proportional to 
-underlying data. area?
 
 One opportunity for improvement lies in the algorithm to determine thickness of the connecting line. In the
 tested version of common angle plots, the line width was not explictly defined - the line width is an byproduct of 
@@ -568,6 +558,21 @@ suggest alternate interpretation, a mistrust of the graphical presentation may d
 the user may develop a mistrust of their own perception, which would reduce effectiveness of all data displays, 
 regardless of the presence of any perceptual distortion.
 
+
+\section{Conclusion}
+We have proposed a new chart type for visualizing multivariate categorical data, common angle plots, 
+and tested its usability compared to existing charts that perform a similar function. Results from user testing
+indicate
+that common angle plots effectively communicate underlying data without encouraging perceptual distortion of the 
+\emph{line width} illusion.
+Two other chart types which address visualization of multivariate categorical: parallel sets and hammock plots, 
+are subject to the line width illusions due to 
+contextual framework. Audiences perceive parallel sets with distortion due to a natural tendency to 
+evaluate line width in the orthogonal direction while data is mapped to the horizontal width.
+For hammock plots a correction is made to map data to the orthogonal width, however the centered line 
+intersection with axes creates a strong contextual encourage evaluation of line width using the
+horizontal measure (\emph{reverse line width illusion}). Common angles avoids the perceptual distortion 
+associated with either version of the illusion regardless of the underlying data set.
 
 % if have a single appendix:
 %\appendix[Proof of the Zonklar Equations]
