@@ -136,27 +136,18 @@ M.~Schonlau, ``Visualizing categorical data arising in the health sciences
   Graphics}, RAND Corporation.\hskip 1em plus 0.5em minus 0.4em\relax American
   Statistical Association, 2003.
 
-\bibitem{sankey:1898}
-H.~R. Sankey, ``Introductory note on the thermal efficiency of steam-engines,''
-  Report of the Committee appointed on the 31st March, 1896, to Consider and
-  Report to the Council upon the Subject of the Definition of a Standard or
-  Standards of Thermal Efficiency for Steam-Engines: with an Introductory Note.
-  Minutes of Proceedings of The Institution of Civil Engineers, pp. 278--283,
-  1898.
+\bibitem{lmer}
+\BIBentryALTinterwordspacing
+D.~Bates, M.~Maechler, and B.~Bolker, \emph{lme4: Linear mixed-effects models
+  using S4 classes}, 2012, {R} package version 0.999999-0. [Online]. Available:
+  \url{http://CRAN.R-project.org/package=lme4}
+\BIBentrySTDinterwordspacing
 
-\bibitem{minard:1812}
-C.~Minard, ``Carte figurative des pertes successives en hommes de l'{A}rm\'ee
-  {F}ran\c{c}aise dans la campagne de {R}ussie 1812-1813,'' 1869.
-
-\bibitem{schmidt:2008}
-M.~Schmidt, ``The {S}ankey diagram in energy and material flow management,''
-  \emph{Journal of Industrial Ecology}, no.~12, pp. 173--185, 2008.
-
-\bibitem{jen3}
-L.~L. {National Laboratory and the U.S. Department of Energy}, ``The efficiency
-  solution,'' \emph{Scientific American}, June 2009.
-
-\bibitem{jen2}
-M.~Fischetti, ``Water in, water out,'' \emph{Scientific American}, June 2012.
+\bibitem{R}
+\BIBentryALTinterwordspacing
+{R Core Team}, \emph{R: A Language and Environment for Statistical Computing},
+  R Foundation for Statistical Computing, Vienna, Austria, 2012, {ISBN}
+  3-900051-07-0. [Online]. Available: \url{http://www.R-project.org/}
+\BIBentrySTDinterwordspacing
 
 \end{thebibliography}
