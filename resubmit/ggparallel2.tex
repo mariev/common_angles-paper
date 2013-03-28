@@ -220,8 +220,8 @@ This makes the width of ribbons  comparable without being affected by the distor
 \section{Usability Testing}
 \subsection{Test}
 
-To determine the effectiveness of the common angle plot, we conducted a user experiment in form of a survey asking participants to provide responses regarding the structure in two data sets with predominantly categorical variables. The Titanic data set includes class, sex, age, and survival status for each person on board of the Titanic \cite{titanic}. The gene data set was retieved from the UCSC Genome Browser \cite{ucsc:2002} and includes chromosome location for genes involved in one of three metabolism pathways: sterioid biosynthesis, cafeine metabolism and drug metabolism.
-For each data set, participants were asked to provide responses for three tasks:
+To determine the effectiveness of the common angle plot, we conducted a user study in form of a survey asking participants to provide responses regarding the structure in two data sets with predominantly categorical variables. The Titanic data set includes class, sex, age, and survival status for each person on board of the Titanic \cite{titanic}. The gene data set was retrieved from the UCSC Genome Browser \cite{ucsc:2002} and includes chromosome location for genes involved in one of three metabolism pathways: sterioid biosynthesis, cafeine metabolism and drug metabolism.
+For each data set, participants were asked to provide responses for three tasks that anaysts routinely perform as part of exploratory data analysis:
 
 Task I: simple comparison task, chosen to be unaffected by any illusion. Performance on this task should be comparable across designs.
 
@@ -229,7 +229,7 @@ Task II: simple ordering, involving three pairwise comparisons, some of which ar
 
 Task III: more complex ordering task with at least six pairwise comparisons, some of which are affected by either illusion.
   
-Each participant was presented with two of the three types of displays. For each display, the participant was asked to complete each of the three tasks for each data set. All participants were evaluated using the same set of questions with multiple choice options as detailed in Appendix \ref{questions}, regardless of display type or order. Participants were all shown the Titanic data set first, then the gene data set.  %one for all three tasks related to the same data set.
+Each participant was presented with two of the three types of displays. For each display, the participant was asked to complete each of the three tasks for each data set. All participants were evaluated using the same set of questions with multiple choice options as detailed in Appendix \ref{app2}, regardless of display type or order. Participants were all shown the Titanic data set first, then the gene data set.  %one for all three tasks related to the same data set.
 This resulted in a crossover design as shown in Table \ref{tab:designs} allowing for comparisons of display types and tasks while  simultaneously adjusting for individuals' different skill sets and learning effect.
 
 \begin{table}[htbp]
@@ -241,6 +241,7 @@ Pathway & CA & PS & PS & H& H & CA \\ \hline
 \end{tabular}
 \caption{\label{tab:designs} Overview of study design and participation numbers. The number in parenthesis indicates the number of participants completing the first block, but not the second.}
 \end{table}
+
 
 
 \subsection{Results}
@@ -503,7 +504,10 @@ Reasons for not preferring common angle plots boiled down to a preference for st
 \end{table}
 
 \section{Conclusion}
-The conclusion goes here.
+We have proposed a new chart type for visualizing multivariate categorical data, common angle plots, and tested its usability compared to existing charts that perform a similar function. Results indicate that common angle plots effectively communicate underlying data without encouraging perceptual distortion. The other two charts: parallel sets and hammock plots, are subject to the line width illusions due to contextual framework. Audiences perceive parallel sets with distortion due to a natural tendency to evaluate line width in the orthogonal direction while data is mapped to the horizontal width. For hammock plots a correction is made to map data to the orthogonal width, however the centered line impingement on axes creates a strong contextual encourage evaluation of line width using the horizontal measure (\emph{reverse line width illusion}). Common angles avoids the perceptual distortion associated with either version of the illusion.
+
+\subsection{Extention}
+
 
 
 
