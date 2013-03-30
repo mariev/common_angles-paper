@@ -181,16 +181,4 @@ D.~Bates, M.~Maechler, and B.~Bolker, \emph{lme4: Linear mixed-effects models
   \url{http://CRAN.R-project.org/package=lme4}
 \BIBentrySTDinterwordspacing
 
-\bibitem{multcomp}
-T.~Hothorn, F.~Bretz, and P.~Westfall, ``Simultaneous inference in general
-  parametric models,'' \emph{Biometrical Journal}, vol.~50, no.~3, pp.
-  346--363, 2008.
-
-\bibitem{effects}
-\BIBentryALTinterwordspacing
-J.~Fox, ``Effect displays in r for generalised linear models,'' \emph{Journal
-  of Statistical Software}, vol.~8, no.~15, pp. 1--27, 2003. [Online].
-  Available: \url{http://www.jstatsoft.org/v08/i15/}
-\BIBentrySTDinterwordspacing
-
 \end{thebibliography}
