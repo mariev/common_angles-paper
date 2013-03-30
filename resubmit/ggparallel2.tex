@@ -1,7 +1,6 @@
-% !TEX root = bare_jrnl_compsoc.tex
+% !TEX root = common-angle-infovis.tex
 
 
-\section{Introduction}
 % The very first letter is a 2 line initial drop letter followed
 % by the rest of the first word in caps.
 % 
@@ -17,7 +16,7 @@
 % 
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
-\IEEEPARstart{A}{ well-designed} graph is a powerful tool 
+A well-designed graph is a powerful tool 
 that transcends barriers of language to
 communicate complex concepts from author to audience. It becomes a 
 problem if readers are unable to easily extract the main message, especially
@@ -231,13 +230,13 @@ Common angles, plus the related methods of hammock plots and parallel sets are i
 
 To determine the effectiveness of the common angle plot, we conducted a user study in form of a survey asking participants to provide responses regarding the structure in two data sets with predominantly categorical variables. The Titanic data  includes class, sex, age, and survival status for each person on board of the Titanic \cite{titanic}. The gene data  was retrieved from the UCSC Genome Browser \cite{ucsc:2002} and includes chromosome location for genes involved in one of three metabolism pathways: steroid biosynthesis, caffeine metabolism and drug metabolism.
 For each data set, participants were asked to provide responses for three tasks that analysts routinely perform as part of exploratory data analysis:
+\begin{description}
+\item[{\bf Task I}:] simple comparison task, chosen to be unaffected by any illusion. Performance on this task should be comparable across designs.
+\item[{\bf Task II}:] simple ordering, involving three pairwise comparisons, some of which are affected by the line width illusion or its reverse. 
 
-Task I: simple comparison task, chosen to be unaffected by any illusion. Performance on this task should be comparable across designs.
-
-Task II: simple ordering, involving three pairwise comparisons, some of which are affected by the line width illusion or its reverse. 
-
-Task III: more complex ordering task with at least six pairwise comparisons, some of which are affected by either illusion.
-  
+\item[{\bf Task III}:] more complex ordering task with at least six pairwise comparisons, some of which are affected by either illusion.
+ \end{description}
+ 
 Each participant was presented with two of the three types of displays. For each display, the participant was asked to complete each of the three tasks for each data set. All participants were evaluated using the same set of questions with multiple choice options as detailed in Appendix \ref{app2}, regardless of display type or order. Participants were all shown the Titanic data first, then the gene data.  %one for all three tasks related to the same data set.
 This resulted in a crossover design as shown in Table \ref{tab:designs} allowing for comparisons of display types and tasks while  simultaneously adjusting for individuals' different skill sets and learning effect.
 
@@ -446,27 +445,26 @@ The only consistent complaint against common angle was a preference for straight
 
 \subsection{Methods}
 
-The survey was created using the Qualtrics Labs, Inc software (www.qualtrics.com). For survey contents, see Apendix \ref{app2}. Study design is presented in section \ref{test}. All models are fit in the {\tt lme4} package \cite{lmer} within the software frame work of {\tt R} 2.15.1 \cite{R}. Comparisons are adjusted for multiple testing using the {\tt multcomp} package \cite{multcomp} and evaluated for pairwise significances using the {\tt effects} package \cite{effects}.
+The survey was created using the Qualtrics Labs, Inc software (www.qualtrics.com). For survey contents, see Appendix \ref{app2}. The study design is presented in section \ref{test}. All models are fit in the {\tt lme4} package \cite{lmer} within the software frame work of {\tt R} 2.15.1 \cite{R}. Comparisons are adjusted for multiple testing using the {\tt multcomp} package \cite{multcomp} and evaluated for pairwise significances using the {\tt effects} package \cite{effects}.
 
 
 \section{Discussion}
 
-For data with a large number of variable levels, common angle plots may introduce more line crossings than with hammock plots (number of crossings is the same between parallel sets and common angles), 
-which may affect the effectiveness of the overall display. Use of color may also be problematic with many variable levels, as readers may have difficulty resolving a palette of colors separated by small intervals. Certainly, resolving many colors is difficult for audience with a history of color blindness and may be 
+For data with a large number of variable levels, common angle plots may introduce more line crossings than  hammock plots, while the number of crossings is the same between parallel sets and common angles. This  may affect the effectiveness of the overall display. Use of color may also be problematic with many variable levels, as readers may have difficulty resolving a palette of colors separated by small intervals. Certainly, resolving many colors is difficult for audience with a history of color blindness and may be 
 technically limited in print applications. The issue of color is consistent regardless of display choice 
-between parallel sets, hammock plots or common angles. Futher study is necessary to resolve the potential 
+between parallel sets, hammock plots or common angles. Further study is necessary to resolve the potential 
 for distortion in different application, especially the impact of bands displayed with extreme values for 
 $\theta$, a known source of perceptual inaccuracy \cite{heer:2010}.
 
 One opportunity for improvement lies in the algorithm to determine thickness of the connecting line. In the
-tested version of common angle plots, the line width was not explictly defined - the line width is an byproduct of 
+tested version of common angle plots, the line width was not explicitly defined - the line width is a byproduct of 
 specified $\theta$ for a band that connects marginal bars. Using equation \ref{adjust} to determine the band thickness
 while keeping $\theta$ consistent across all bands is a common angle-hammock plot hybrid that bears further investigation.
 A drawback of this approach is that sum of ribbon $w_h$ will no longer match widths of marginal bars. 
 This may create a additional processing burden placed on the audience to map the relationship between 
 band width and the with of marginal bars. 
 Both hammock plots and  this modification of common angles face  
-the issue of band \emph{area} as context to support reader interpretation of $w_o$ . Since the band
+the issue of band \emph{area} as context to support reader interpretation of $w_o$. Since the band
 area is now related to the incident angle $\theta$, changes in the display aspect ratio may have a distortion 
 effect. In the study described in this paper, this effect was not evaluated and aspect ratio was kept constant.
 
@@ -545,56 +543,56 @@ associated with either version of the illusion regardless of the underlying data
 
 At the survey start, participants were presented a brief tutorial regarding the different plot types. The tutorial can be found at \url{http://mariev.net/tutorial.html}
 
-The survey consists of two blocks of questions each pertaining to one data set (Titanic data or gene data). Each block was presented with a single plot  to use as reference when responding. Two different plot types were shown for the two different blocks, yielding a total of six unique orderings of plot types (CA-PS, PS-CA, CA-H, H-CA, H-PS, and PS-H). 
+The survey consists of two blocks of questions each pertaining to one data set (Titanic data or gene data). Each block was presented with a single plot  to use as reference when responding. Two different plot types were shown for the two different blocks, yielding a total of six unique orderings of plot types as shown in table~\ref{tab:designs}.
 
-Participants were randomly assigned to one of these six combinations, each of approximately equal size.  This study design structure was imposed, in part,  to encourage participation by reducing the amount of time for survey completion. Completion of all survey questions was anticipated to take 10 - 15 minutes.
+Participants were randomly assigned to one of these six combinations.  This study design structure was imposed, in part,  to encourage participation by reducing the amount of time for survey completion. Completion of all survey questions was anticipated to take 10 - 15 minutes.
 No personally identifiable information was collected, nor was any compensation offered.   
 
-The questions pertaining to the Titanic data were: 
-\begin{itemize}
-\item[Task 1]\emph{Agree, Disagree or Don't Know/Can't Determine with the following statements:}
+\noindent The questions pertaining to the Titanic data were: 
+\begin{description}
+\item[\bf Task 1: ]\emph{ Agree, Disagree or Don't Know/Can't Determine with the following statements:}
 \begin{itemize}
 \item There were an approximately equal number of Male and Female Survivors
 \item The group with largest number of travelers was Female Survivors
 \item There were more Male Non-Survivors than number of males in First and Second Class Combined
 \end{itemize}
 
-\item[Task 2]\emph{Order the following groups by number, fewest to most}
+\item[\bf Task 2: ]\emph{ Order the following groups by number, fewest to most}
 \begin{itemize}
 \item 1st Class female passengers
 \item Male Survivors
 \item Crew Survivors
 \end{itemize}
 
-\item[Task 3]\emph{Order the categories of Class by number Survived, fewest to most.} 
+\item[\bf Task 3: ]\emph{ Order the categories of Class by number Survived, fewest to most.} 
 \begin{itemize}
 \item 1st
 \item 2nd 
 \item 3rd
 \item Crew
 \end{itemize}
-\end{itemize}
+\end{description}
 
 
-\noindent \\  The questions pertaining to the gene data were: 
+\noindent The questions pertaining to the gene data were: 
 
 
-\begin{itemize}
-\item[Task 1]\emph{Agree, Disagree or Don't Know/Can't Determine with the following statements:}
+\begin{description}
+\item[\bf Task I:]\emph{ Agree, Disagree or Don't Know/Can't Determine with the following statements:}
 \begin{itemize}
 \item There are about the same number of genes in the group "steroid biosynthesis:chromosome 1" as in the group "caffeine metabolism: chromosome 8"
 \item The group with the greatest number of genes is "drug metabolism:chromosome 4"
 \item there are more genes involved in the group "drug metabolism: chromosome 1" than all genes involved in the caffeine metabolism pathway
 \end{itemize}
 
-\item[Task 2]\emph{Order the following chromosomes by number of genes involved, fewest to most.}
+\item[\bf Task 2: \ ]\emph{ Order the following chromosomes by number of genes involved, fewest to most.}
 \begin{itemize}
 \item steroid biosynthesis :: chromosome X
 \item steroid biosynthesis :: chromosome 4
 \item drug metabolism :: chromosome X
 \end{itemize} 
 
-\item[Task 3]\emph{Order the following chromosomes by number of genes involved in steroid biosynthesis pathway, fewest to most.}
+\item[\bf Task 3: \ ] \emph{ Order the following chromosomes by number of genes involved in steroid biosynthesis pathway, fewest to most.}
 \begin{itemize}
 \item chromosome 1
 \item chromosome 4
@@ -602,7 +600,7 @@ The questions pertaining to the Titanic data were:
 \item chromosome X
 \end{itemize}
 
-\end{itemize} 
+\end{description} 
 
 
 %Appendix one text goes here.
@@ -612,58 +610,58 @@ The questions pertaining to the Titanic data were:
 \section{Participants' demographics}
 All students, staff and faculty from Iowa State University programs in Statistics, Bioinformatics and Computational Biology and Human Computer Interaction were invited to participate by email. 93 individuals accessed the survey;
 86 participants gave consent, 15  of those dropped out right after, 20 went to the training site and did not return.
-Out of the remaining 51 participants, 46  individuals submitted responses for all questions and 5 gave responses to the first block of questions.
+Out of the remaining 51 participants, 46  individuals submitted responses for all questions and five gave responses to the first block of questions.
 
 Participants used their own personal computing devices to access the survey, 
 a majority of participants used Intel Mac OS X (versions ranging from 10.6.8 to 10.8.2), while WIndows was the next most common operating system. The preferred choice of browser was  Firefox, followed by Chrome. For two participants, the Qualtrics survey software was unable to capture operating system or browser information. 
 %Appendix two text goes here.
 
-\section{Selected survey results}
-Responses to task II, Titanic data are shown in table \ref{a3}. Results are clearly showing clustering depending on the designs. Answers based on parallel sets cluster around the solution correspding to the line-width illusion, while the hammock plot leads to solutions around the reverse illusion.
-
-\begin{table}[ht]
-\begin{center}
-\begin{tabular}{rrrrl}
-Order & CA & H & PS\\
-  \hline
-c, b, a &  &  2 &  \\
-a, b, c &  1 &  12 &  & inverse illusion\\ 
-a, c, b & 13 &  3 &  4 & correct\\ 
-b, c, a &  2 &  &  1 \\ 
-c, a, b &  2 &  & 9 & line width illusion\\ 
-b, a, c &  &  &  2 \\ 
- \hline
-  Total & 18 &  17 & 16 \\ 
-   \hline
-\end{tabular}
-\end{center}
-\caption{\label{a3}Responses to task II, Titanic data: order combinations from smallest to largest, where 'a' is first class female, 'b' are male survivors, and 'c' are crew survivors. }
-\end{table}
-  
-\begin{table}[ht]
-\begin{center}
-\begin{tabular}{clrrrl}
-  Qu & Design & \rotatebox{90}{Correct} & \rotatebox{90}{Incorrect} & \rotatebox{90}{No Answer}   & Reason\\ \hline
-  \hline
-1 & common &   14 &  2 &   0 \\ 
-   & hammock &   15 &  0 &   1 \\ 
- & parallel &   7 &   7 &   0 & line width illusion\\ \hline
-2 & common &  16 &   0 &   0 \\ 
-& hammock &   9 &   7 &   0 & inverse illusion\\ 
-& parallel &  14 &   0 &   0 \\ \hline
-3& common &  15 &   1 &   0 \\ 
-& hammock &  16 &   0 &   0 \\ 
-& parallel &  14 &   0 &   0 \\ 
-   \hline
-\end{tabular}
-\end{center}
-\caption{\label{tab:b1}Responses to task I, gene data}
-\vspace{-0.25in}
-\end{table}
-
-
-Table \ref{tab:b1} shows a summary responses for Task I, gene data with possible answers ``agree", ``disagree", and ``don't know".
-The first two questions are  examples, where the line width illusion, and its reverse will lead to answers that differ from the correct answer. Parallel sets  are susceptible to the line width illusion, while hammock plots suffer from the reverse. The data shows that in about 50\% of the responses we can see this difference. Seven out of 14 answers for the parallel sets plots in question 1 deviate from the correct answer, and seven out of 16 responses corresponding to hammock plots in question 2 show the wrong answer.
+%\section{Selected survey results}
+%Responses to task II, Titanic data are shown in table \ref{a3}. Results are clearly showing clustering depending on the designs. Answers based on parallel sets cluster around the solution corresponding to the line-width illusion, while the hammock plot leads to solutions around the reverse illusion.
+%
+%\begin{table}[ht]
+%\begin{center}
+%\begin{tabular}{rrrrl}
+%Order & CA & H & PS\\
+%  \hline
+%c, b, a &  &  2 &  \\
+%a, b, c &  1 &  12 &  & inverse illusion\\ 
+%a, c, b & 13 &  3 &  4 & correct\\ 
+%b, c, a &  2 &  &  1 \\ 
+%c, a, b &  2 &  & 9 & line width illusion\\ 
+%b, a, c &  &  &  2 \\ 
+% \hline
+%  Total & 18 &  17 & 16 \\ 
+%   \hline
+%\end{tabular}
+%\end{center}
+%\caption{\label{a3}Responses to task II, Titanic data: order combinations from smallest to largest, where 'a' is first class female, 'b' are male survivors, and 'c' are crew survivors. }
+%\end{table}
+%  
+%\begin{table}[ht]
+%\begin{center}
+%\begin{tabular}{clrrrl}
+%  Qu & Design & \rotatebox{90}{Correct} & \rotatebox{90}{Incorrect} & \rotatebox{90}{No Answer}   & Reason\\ \hline
+%  \hline
+%1 & common &   14 &  2 &   0 \\ 
+%   & hammock &   15 &  0 &   1 \\ 
+% & parallel &   7 &   7 &   0 & line width illusion\\ \hline
+%2 & common &  16 &   0 &   0 \\ 
+%& hammock &   9 &   7 &   0 & inverse illusion\\ 
+%& parallel &  14 &   0 &   0 \\ \hline
+%3& common &  15 &   1 &   0 \\ 
+%& hammock &  16 &   0 &   0 \\ 
+%& parallel &  14 &   0 &   0 \\ 
+%   \hline
+%\end{tabular}
+%\end{center}
+%\caption{\label{tab:b1}Responses to task I, gene data}
+%\vspace{-0.25in}
+%\end{table}
+%
+%
+%Table \ref{tab:b1} shows a summary responses for Task I, gene data with possible answers ``agree", ``disagree", and ``don't know".
+%The first two questions are  examples, where the line width illusion, and its reverse will lead to answers that differ from the correct answer. Parallel sets  are susceptible to the line width illusion, while hammock plots suffer from the reverse. The data shows that in about 50\% of the responses we can see this difference. Seven out of 14 answers for the parallel sets plots in question 1 deviate from the correct answer, and seven out of 16 responses corresponding to hammock plots in question 2 show the wrong answer.
 
 %\section{Model results}
 %
@@ -710,25 +708,4 @@ The first two questions are  examples, where the line width illusion, and its re
 %\end{table}
 
 
-% use section* for acknowledgement
-\section*{Acknowledgment}
 
-
-The survey for this study was carried out with approval from  IRB-ID 12-204.
- 
-
-% Can use something like this to put references on a page
-% by themselves when using endfloat and the captionsoff option.
-\ifCLASSOPTIONcaptionsoff
-  \newpage
-\fi
-
-
-
-% trigger a \newpage just before the given reference
-% number - used to balance the columns on the last page
-% adjust value as needed - may need to be readjusted if
-% the document is modified later
-%\IEEEtriggeratref{8}
-% The "triggered" command can be changed if desired:
-%\IEEEtriggercmd{\enlargethispage{-5in}}
