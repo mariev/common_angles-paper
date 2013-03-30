@@ -249,10 +249,10 @@ Pathway & CA & PS & PS & H& H & CA \\ \hline
 
 
 
-\subsection{Results}
-The result section looks at three different aspects of the experiment: first,  assessing general performance on the tasks according to percentage of correct responses, second, investigate the extent of variability due to subject-specific abilities, and finally exploration of the space of answers for the more complex ordering Task III.
+\subsection{Results}\label{results}
+We are investigating three different aspects  of the experiment in this section: first,  assessing general performance on the tasks according to percentage of correct responses, second, investigate the extent of variability due to subject-specific abilities, and finally exploration of the space of answers for the more complex ordering Task III.
 \subsubsection*{Correctness of Answers}
-Answers for each question on the survey were assessed for correctness, and coded in binary variables of 1s and 0s, which we use to investigate performance of different designs. 
+Answers for each survey question  were recoded in binary form according to correctness (with 1 for correct answers, and 0 otherwise). This forms the basis for the evaluation of performance of the different designs.
 
 %In a first model, $M1$, we are only interested in the overall difference in performance between designs. We can express this as a model of the form
 %\begin{equation}\label{model1}[M1]
@@ -270,10 +270,25 @@ Answers for each question on the survey were assessed for correctness, and coded
 
 %Table \ref{coef1} gives an overview of the model coefficients and their estimates. The effect of the common angle plot is used as a baseline, i.e all the effects shown are differences with respect to the performance of common angle plots. Both hammock plots and parallel sets  have negative effects on the correctness of the response. This indicates a significantly worse performance of these designs than under the common angle plot.
 
-Table \ref{raw} shows percentages of correctness for each design and each question. Bold numbers indicate significantly different (worse) performance of a design compared to the common angle plot based on a generalized linear model with random effects to adjust for individuals' abilities.
+Table \ref{raw} shows percentages of correct answers for each question under each design. Bold numbers indicate significantly different (worse) performance of a design compared to the common angle plot based on a generalized linear model with random effects to adjust for individuals' abilities.
 
+%The model used is a logistic regression estimating the odds of a correct answer for a specific task and design, while allowing for differences in subject-specific ability:
+%%Model $M2$ extends the first model by including both  effects for individual questions and the interaction effects with each design in the following form:
+%\begin{eqnarray}\nonumber
+%  \ \ \qquad \text{logit}(P(y_i=1)) =  \qquad\qquad\qquad\qquad\qquad&&\\ \label{m2}
+%\mu + d_{j(i)}  + q_{q(i)} + p_{j(i),q(i)} + u_{k(i)} + \varepsilon_i 
+%\end{eqnarray}
+%
+%$\mu$ is the baseline 
+%$d_{j(i)}$ is the parameter measuring the effect of design $j$ ($j = C, H, P$ for \underline{C}ommon Angle, \underline{H}ammock plot, and \underline{P}arallel sets plot), $u_{k(i)}$ is the effect of participant's $k$ individual skills in evaluating these plots, $k \in \{1, ..., 52\}$. The assumption is that skills are independent and normally distributed with an expected value of zero and a variance of $\sigma_u^2$.
+%$\varepsilon_i$ is, similarly to a regular linear model, assumed to be independently distributed according to a normal distribution with mean of zero and variance $\sigma^2$.
+%$q$ indicates the effects on performance for  each question, where $q(i)$ describes one of the questions $\{A1, A2, A3, B1, B2, B3\}$. $p$ is the parameter for the interaction effect of design and question, its index is a tuple consisting of a combination of a question and design. 
+%
 
-
+\begin{figure*}
+\centering
+\includegraphics[width=\textwidth]{model-summary.pdf}
+\end{figure*}
 XXX needs more details
 
 The observed results are in line with our expectations:
@@ -328,48 +343,6 @@ III & Titanic & 66.7 (2.69) & {\bf  5.9} (1.43) & {\bf 12.5} (2.13) \\
 %%\includegraphics[width=\linewidth]{fitted-m2}
 %%\caption{\label{fitted.m2} Histograms of fitted values under model $M2$, facetted by actual performance of participants. On the left, correct responses are shown. The histogram of fitted values is skewed to the right, with most values above 0.5. The histogram on the right corresponds to wrong answers. There are fewer wrong answers, and they tend to have low fitted values, but there are more false positives among them than false negatives for correct answers. }
 %%\end{figure}
-%
-%% xtable(summary(m4)@coefs)
-%% latex table generated in R 2.15.1 by xtable 1.7-0 package
-%% Fri Oct 12 09:12:32 2012
-%\begin{table}[ht]
-%\begin{center}
-%\begin{tabular}{rrrrrl}
-%  \hline
-% & Estimate & Std. Error & z value & Pr($>$$|$z$|$) & \\ 
-%  \hline  
-%$\mu$ & 2.68 & 0.61 & 4.35 & 0.00  & ***\\ [5pt]
-%Design\\
-%  $d_C$ & 0.00 & -- & -- & -- \\ 
-%  $d_H$ & -1.06 & 0.83 & -1.28 & 0.20  \\ 
-%  $d_P$ & -0.57 & 0.86 & -0.66 & 0.51 \\ [5pt]
-%Questions\\
-%  $q_{A1}$ & 0.00 & -- & -- & -- \\ 
-%  $q_{A2}$  & -1.85 & 0.74 & -2.50 & 0.01 &* \\ 
-%  $q_{A3}$  & -1.11 & 0.77 & -1.44 & 0.15 \\ 
-%  $q_{B1}$ & 0.55 & 0.96 & 0.58 & 0.56 \\ 
-%  $q_{B2}$  & -1.69 & 0.88 & -1.91 & 0.06 &. \\ 
-%  $q_{B3}$  & -1.31 & 0.92 & -1.43 & 0.15 \\ [5pt]
-% 
-%Interaction \\
-%$p_{H, A1}$ &  0.00 & -- & -- & -- \\
-%$p_{P,A1}$ &  0.00 & -- & -- & -- \\
-%$p_{H, A2}$ &  -3.29 & 1.55 & -2.13 & 0.03 & *\\ 
-%$p_{P,A2}$ & -3.03 & 1.33 & -2.28 & 0.02 &*\\ 
-%$p_{H,A3}$ &-2.61 & 1.17 & -2.24 & 0.03  & * \\ 
-%$p_{P,A3}$ & -2.60 & 1.16 & -2.23 & 0.03 &*\\ 
-%$p_{H,B1}$ &-0.26 & 1.21 & -0.22 & 0.83 \\ 
-%$p_{P,B1}$ &-0.81 & 1.24 & -0.65 & 0.51 \\ 
-%$p_{H,B2}$ & 1.03 & 1.22 & 0.85 & 0.40 \\ 
-%$p_{P,B2}$  & -3.48 & 1.63 & -2.14 & 0.03 &*\\ 
-%$p_{H,B3}$ & 1.97 & 1.37 & 1.44 & 0.15 \\ 
-%$p_{P,B3}$ & -0.62 & 1.26 & -0.50 & 0.62 \\   
-%   \hline
-%\multicolumn{6}{l}{Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 }
-%\end{tabular}
-%\end{center}
-%\caption{\label{model2} Model fit for $M2$ measuring correctness of answers in the survey, detailing performance of designs on each question. All design comparisons are with respect to the common angle plot. }
-%\end{table}
 %
 \subsubsection*{Individuals' skill levels}
 \begin{figure}
@@ -669,8 +642,52 @@ All students, staff and faculty from Iowa State University programs in Statistic
 Out of the remaining 51 participants, 46  individuals submitted responses for all questions and 5 gave responses to the first block of questions.
 
 Participants used their own personal computing devices to access the survey, 
-a majority of participants used Intel Mac OS X (versions ranging from 10.6.8 to 10.8.2), with the next most common operating system WoW64 (Windows 32-bit or Windows 64-bit). The preferred choice of browser was  Firefox, followed by Chrome. For two participants, the Qualtrics survey software was unable to capture operating system or browser information. 
+a majority of participants used Intel Mac OS X (versions ranging from 10.6.8 to 10.8.2), while WIndows was the next most common operating system. The preferred choice of browser was  Firefox, followed by Chrome. For two participants, the Qualtrics survey software was unable to capture operating system or browser information. 
 %Appendix two text goes here.
+
+%\section{Model results}
+%
+%% xtable(summary(m4)@coefs)
+%% latex table generated in R 2.15.1 by xtable 1.7-0 package
+%% Fri Oct 12 09:12:32 2012
+%\begin{table}[ht]
+%\begin{center}
+%\begin{tabular}{rrrrrl}
+%  \hline
+% & Estimate & Std. Error & $z$ value & Pr($>$$|$z$|$) & \\ 
+%  \hline  
+%$\mu$ & 2.68 & 0.61 & 4.35 & 0.00  & ***\\ [5pt]
+%Design\\
+%  $d_C$ & 0.00 & -- & -- & -- \\ 
+%  $d_H$ & -1.06 & 0.83 & -1.28 & 0.20  \\ 
+%  $d_P$ & -0.57 & 0.86 & -0.66 & 0.51 \\ [5pt]
+%Questions\\
+%  $q_{A1}$ & 0.00 & -- & -- & -- \\ 
+%  $q_{A2}$  & -1.85 & 0.74 & -2.50 & 0.01 &* \\ 
+%  $q_{A3}$  & -1.11 & 0.77 & -1.44 & 0.15 \\ 
+%  $q_{B1}$ & 0.55 & 0.96 & 0.58 & 0.56 \\ 
+%  $q_{B2}$  & -1.69 & 0.88 & -1.91 & 0.06 &. \\ 
+%  $q_{B3}$  & -1.31 & 0.92 & -1.43 & 0.15 \\ [5pt]
+% 
+%Interaction \\
+%$p_{H, A1}$ &  0.00 & -- & -- & -- \\
+%$p_{P,A1}$ &  0.00 & -- & -- & -- \\
+%$p_{H, A2}$ &  -3.29 & 1.55 & -2.13 & 0.03 & *\\ 
+%$p_{P,A2}$ & -3.03 & 1.33 & -2.28 & 0.02 &*\\ 
+%$p_{H,A3}$ &-2.61 & 1.17 & -2.24 & 0.03  & * \\ 
+%$p_{P,A3}$ & -2.60 & 1.16 & -2.23 & 0.03 &*\\ 
+%$p_{H,B1}$ &-0.26 & 1.21 & -0.22 & 0.83 \\ 
+%$p_{P,B1}$ &-0.81 & 1.24 & -0.65 & 0.51 \\ 
+%$p_{H,B2}$ & 1.03 & 1.22 & 0.85 & 0.40 \\ 
+%$p_{P,B2}$  & -3.48 & 1.63 & -2.14 & 0.03 &*\\ 
+%$p_{H,B3}$ & 1.97 & 1.37 & 1.44 & 0.15 \\ 
+%$p_{P,B3}$ & -0.62 & 1.26 & -0.50 & 0.62 \\   
+%   \hline
+%\multicolumn{6}{l}{Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 }
+%\end{tabular}
+%\end{center}
+%\caption{\label{model2} Model fit for measuring correctness of answers in the survey, detailing performance of designs on each question. All design comparisons are with respect to the common angle plot. }
+%\end{table}
 
 
 % use section* for acknowledgement
