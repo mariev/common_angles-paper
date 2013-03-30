@@ -136,6 +136,32 @@ M.~Schonlau, ``Visualizing categorical data arising in the health sciences
   Graphics}, RAND Corporation.\hskip 1em plus 0.5em minus 0.4em\relax American
   Statistical Association, 2003.
 
+\bibitem{ggplot2}
+\BIBentryALTinterwordspacing
+H.~Wickham, \emph{ggplot2: elegant graphics for data analysis}.\hskip 1em plus
+  0.5em minus 0.4em\relax Springer New York, 2009. [Online]. Available:
+  \url{http://had.co.nz/ggplot2/book}
+\BIBentrySTDinterwordspacing
+
+\bibitem{R}
+\BIBentryALTinterwordspacing
+{R Core Team}, \emph{R: A Language and Environment for Statistical Computing},
+  R Foundation for Statistical Computing, Vienna, Austria, 2012, {ISBN}
+  3-900051-07-0. [Online]. Available: \url{http://www.R-project.org/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{colorbrewer}
+M.~A. Harrower and C.~A. Brewer, ``{ColorBrewer.org: An Online Tool for
+  Selecting Color Schemes for Maps},'' \emph{{The Cartographic Journal}},
+  vol.~40, no.~1, pp. 27--37, 2003.
+
+\bibitem{RColorBrewer}
+\BIBentryALTinterwordspacing
+E.~Neuwirth, \emph{{RC}olor{B}rewer: {C}olor{B}rewer palettes}, 2011, {R}
+  package version 1.0-5. [Online]. Available:
+  \url{http://CRAN.R-project.org/package=RColorBrewer}
+\BIBentrySTDinterwordspacing
+
 \bibitem{titanic}
 \BIBentryALTinterwordspacing
 R.~J.~M. Dawson, \emph{Journal of Statistics Education}, vol.~3, 1995.
@@ -153,13 +179,6 @@ W.~Kent, C.~Sugnet, T.~Furey, K.~Roskin, T.~Pringle, A.~Zahler, and
 D.~Bates, M.~Maechler, and B.~Bolker, \emph{lme4: Linear mixed-effects models
   using S4 classes}, 2012, {R} package version 0.999999-0. [Online]. Available:
   \url{http://CRAN.R-project.org/package=lme4}
-\BIBentrySTDinterwordspacing
-
-\bibitem{R}
-\BIBentryALTinterwordspacing
-{R Core Team}, \emph{R: A Language and Environment for Statistical Computing},
-  R Foundation for Statistical Computing, Vienna, Austria, 2012, {ISBN}
-  3-900051-07-0. [Online]. Available: \url{http://www.R-project.org/}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}

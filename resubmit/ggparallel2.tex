@@ -147,7 +147,7 @@ This incorrect perception and comparison of areas distorts the message readers d
 % needed in second column of first page if using \IEEEpubid
 %\IEEEpubidadjcol
 \section{Related work}
-%XXX Description of hammock plots and example
+
 
 Hammock plots, introduced by M Schonlau in \cite{schonlau:2003}, provide an alternative to parallel sets that is adjusted for the line width illusion. This is done by  adjusting the --horizontal-- line width by  a factor of $\sin \theta$, as discussed in equation (\ref{adjust}). This adjustment makes the perceived --orthogonal-- line width to be proportional to the number of observations it represents. 
  Figure \ref{hammock} shows an example of a four dimensional hammock plot of the Titanic data. From top to bottom Class, Gender, Survival, and again Class are shown. 
@@ -162,17 +162,17 @@ Hammock plots, introduced by M Schonlau in \cite{schonlau:2003}, provide an alte
 \caption{\label{hammock} Hammock plot of the relationship between Class and Survival on the Titanic. }
 \end{figure}
 
-Similarly to the parallel sets plot, the bars are divided according to class membership numbers.  Lines connect categories between neighboring variables, orthogonal line widths are representing the number of individuals in each combination. Unlike the parallel sets, the lines start from the middle of the bin and connect to the middle of the other variable's bins. 
+Similarly to the parallel sets plot, the bars are divided according to class membership numbers.  Lines connect categories between neighboring variables, orthogonal line widths are representing the number of individuals in each combination. Unlike the parallel sets, the lines start from the middle of the bin and connect to the middle of the other variable's bins. This convention is in part due to the fact that the sum of  horizontal widths ($w_h$) after adjustment is greater than the width of marginal bars.
 
-The graph shows that barely any women were in the crew, while male crew members make up the second largest contingent overall. Overall a few more men survived than women. Proportionally the situation is much different -- a much higher percentage of women survived than men. While more first class passengers survived than not, the  survival chances of second class passengers were about fifty-fifty. For third class passengers and crew members fewer members did  survive than not. 
+The graph shows that barely any women were in the crew, while male crew members make up the second largest contingent overall. While overall a few more men survived than women, proportionally the situation is much different -- a much higher percentage of women survived than men. While more first class passengers survived than not, the  survival chances of second class passengers were evenly divided. For third class passengers and crew members fewer members did  survive than not. 
 
 As the adjustment of line widths is made with respect to the angle $\theta$, which itself depends on the aspect ratio of a plot, we need complete control over these properties of the plotting device when constructing hammock plots  -- in our implementation (see below for details) we have dealt with this issue by fixing the aspect ratio. This is problematic in some situations, where the rendering has to be done without knowledge of the plotting device. 
 
-XXX add discussion re: sum($w_h) >1 $
+
 
 \subsection{Reverse linewidth}
 A problem that arises in evaluating hammock plots is that if an observer focuses on horizontal line width  the plots suffer from a {\it reverse line width illusion}:  judging the number of survivors by class in figures \ref{hammock} and \ref{hammock_zoom} based on horizontal line width  results in an ordering of (largest to smallest) Crew, 3rd, 1st, and 2nd -- which is not correct either. %Using horizontal width is inviting, since the lines are centered around the middle of a level, im
-Because the lines are centered around the middle of each level, a contextual coordinate system is imposed that encourages comparisons of horizontal width. However, horizontal width is no longer proportional to underlying data, because of the line width adjustment. Rearranging equation \ref{adjust}, 
+Because the lines are centered around the middle of each level, a contextual coordinate system is imposed that encourages comparisons of horizontal width. However, horizontal width is no longer proportional to underlying data, because of the line width adjustment.  Rearranging equation \ref{adjust}, 
 \begin{equation}\label{rev}
 w_h = w_o \csc \theta,
 \end{equation}
@@ -183,6 +183,11 @@ w_h = w_o \csc \theta,
 \includegraphics[width = .75\linewidth]{images/zoom_hammock}
 \caption{\label{hammock_zoom}Lines in hammock plot of Titanic data for survival variable, level yes. Comparing horizontal widths suggests that a greater number of survivors were from third class instead of first, which is inconsistent with underlying data.}
 \end{figure}
+
+Further supporting the poor context is the issue that the bands (unlike parallel sets) are no long proportional in area to the underlying data. Previous work \cite{heer:2010, kong:2010} has shown that 
+audiences experience perceptual distortion when comparing (1) extreme aspect ratios of the rectangular shape and (2) when comparing rectangles rotated relative to each other, both of which apply to hammock 
+plots.
+
 %
 %\section{Overview}
 %From previous work \cite{cleveland:1984, tufte, wainer:2000, robbins:2005, heer:2010, kong:2010}, we may conclude that numerically accurate representations of data
@@ -219,11 +224,10 @@ The pre-specified angle $\theta$ (between the line and the vertical band) is giv
 This makes the width of ribbons  comparable without being affected by the distortion, as all ribbons are sharing at least one segment under the same angle. 
 
 
-
-XX ggparallel package
+Common angles, plus the related methods of hammock plots and parallel sets are implemented in the  package \texttt{ggparallel} based on the \texttt{ggplot2} \cite{ggplot2} plotting framework in the software R 2.15.1 \cite{R}. The ggparallel package is freely available from CRAN (http://www. r-project.org/). The colors for the plots have been chosen using color schemes from the ColorBrewer project \cite{colorbrewer}, as implemented in the R package RColorBrewer \cite{RColorBrewer}.
 
 \section{Usability Testing}
-\subsection{Test}
+\subsection{Test} \label{test}
 
 To determine the effectiveness of the common angle plot, we conducted a user study in form of a survey asking participants to provide responses regarding the structure in two data sets with predominantly categorical variables. The Titanic data  includes class, sex, age, and survival status for each person on board of the Titanic \cite{titanic}. The gene data  was retrieved from the UCSC Genome Browser \cite{ucsc:2002} and includes chromosome location for genes involved in one of three metabolism pathways: steroid biosynthesis, caffeine metabolism and drug metabolism.
 For each data set, participants were asked to provide responses for three tasks that analysts routinely perform as part of exploratory data analysis:
@@ -508,32 +512,37 @@ Reasons for not preferring common angle plots boiled down to a preference for st
 \end{table}
 
 \subsection{Methods}
-XX talk about lme and qualtrics here
-
-All models are fit in the {\tt lme4} package \cite{lmer} within the software frame work of {\tt R} 2.15.1 \cite{R}.
+The survey was created using the Qualtrics Labs, Inc software (www.qualtrics.com). For survey contents, see Apendix \ref{app2}. Study design is presented in section \ref{test}. All models are fit in the {\tt lme4} package \cite{lmer} within the software frame work of {\tt R} 2.15.1 \cite{R}.
 
 \section{Discussion}
 
-XX limits of basic common angles: line crossings, large number of colors/levels, area is related to $\theta$
-XX what happens if someone uses the plot for different tasks? extreme
-
+For data with a large number of variable levels, common angle plots may introduce more line crossings than with hammock plots (number of crossings is the same between parallel sets and common angles), 
+which may affect the effectiveness of the overall display. Use of color may also be problematic with many variable levels, as readers may have difficulty resolving a palette of colors separated by small intervals. Certainly, resolving many colors is difficult for audience with a history of color blindness and may be 
+technically limited in print applications. The issue of color is consistent regardless of display choice 
+between parsets, hammock plots or common angles. Futher study is necessary to resolve the potential 
+for distortion in different application, especially the impact of bands displayed with extreme values for 
+$\theta$, a known source of perceptual inaccuracy \cite{heer:2010}.
 
 One opportunity for improvement lies in the algorithm to determine thickness of the connecting line. In the
 tested version of common angle plots, the line width was not explictly defined - the line width is an byproduct of 
 specified $\theta$ for a band that connects marginal bars. Using equation \ref{adjust} to determine the band thickness
 while keeping $\theta$ consistent across all bands is a common angle-hammock plot hybrid that bears further investigation.
-A drawback of this approach is that ribbons will no longer match widths of marginal bars. While this is helpful 
-in alleviating overplotting, there may be a processing burden placed on the audience to map the relationship between 
-band width and the with of marginal bars.
+A drawback of this approach is that sum of ribbon $w_h$ will no longer match widths of marginal bars. 
+This may create a additional processing burden placed on the audience to map the relationship between 
+band width and the with of marginal bars. 
+Both hammock plots and  this modification of common angles face  
+the issue of band \emph{area} as context to support reader interpretation of $w_o$ . Since the band
+area is now related to the incident angle $\theta$, changes in the display aspect ratio may have a distortion 
+effect. In the study described in this paper, this effect was not evaluated and aspect ratio was kept constant.
 
-XXX mention $sum(w_h)$ issue here
+
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{images/adj-angle}
 \caption{\label{adj.angle}Common angle plot of Titanic data using hammock correction.}
 \end{figure}
-In the original paper, parallel sets have been introduced to reflect a hierarchy of variables. 
+In the original paper, parallel sets were introduced to reflect a hierarchy of variables. 
 Prior examples in this paper show sets of two-dimensional plots to focus on the association between 
 pairs of variables. 
 With color coding, it is possible to show hierarchies in all of the types of displays.
@@ -561,7 +570,9 @@ with the interactive feedback introduces cognitive load by asking the audience t
 In the case where interactive feedback (e.g. summary data on mouse hover) is accurate when the visual cues
 suggest alternate interpretation, a mistrust of the graphical presentation may develop. In an extreme case,
 the user may develop a mistrust of their own perception, which would reduce effectiveness of all data displays, 
-regardless of the presence of any perceptual distortion.
+regardless of the presence of any perceptual distortion. In the alternate case, where audience chooses to
+rely on perception over interactive feedback, it is possible that distortions in displays that are part of 
+initial exploratory analysis may lead to research choices that are unsupported by data. This is both a waste of resources and, when human or animal subjects are involved, may lead to ethical violations.
 
 
 \section{Conclusion}
@@ -596,7 +607,7 @@ associated with either version of the illusion regardless of the underlying data
 
 \appendices
 \section{Survey }\label{app2}
-The survey was created using the  Qualtrics Labs, Inc software (\url{www.qualtrics.com}). 
+
 At the survey start, participants were presented a brief tutorial regarding the different plot types. The tutorial can be found at \url{http://mariev.net/tutorial.html}
 
 The survey consists of two blocks of questions each pertaining to one data set (Titanic data or gene data). Each block was presented with a single plot  to use as reference when responding. Two different plot types were shown for the two different blocks, yielding a total of six unique orderings of plot types (CA-PS, PS-CA, CA-H, H-CA, H-PS, and PS-H). 
