@@ -245,7 +245,7 @@ This resulted in a crossover design as shown in Table \ref{tab:designs} allowing
 \centering
 \begin{tabular}{rrrrrrr}
 Titanic Data & PS & CA & H & PS & CA & H \\ 
-Pathway & CA & PS & PS & H& H & CA \\ \hline
+Genes Data & CA & PS & PS & H& H & CA \\ \hline
 \#responses &  8 (9) &  6 (7) &  8 (9) &  6 (7) & 10 (11) & 8 (8)\\ 
 \end{tabular}
 \caption{\label{tab:designs} Overview of study design and participation numbers. The number in parenthesis indicates the number of participants completing the first block, but not the second.}
@@ -253,10 +253,10 @@ Pathway & CA & PS & PS & H& H & CA \\ \hline
 
 
 
-\subsection{Results}
-The result section looks at three different aspects of the experiment: first,  assessing general performance on the tasks according to percentage of correct responses, second, investigate the extent of variability due to subject-specific abilities, and finally exploration of the space of answers for the more complex ordering Task III.
+\subsection{Results}\label{results}
+We are investigating three different aspects  of the experiment in this section: first,  assessing general performance on the tasks according to percentage of correct responses, second, investigate the extent of variability due to subject-specific abilities, and finally exploration of the space of answers for the more complex ordering Task III.
 \subsubsection*{Correctness of Answers}
-Answers for each question on the survey were assessed for correctness, and coded in binary variables of 1s and 0s, which we use to investigate performance of different designs. 
+Answers for each survey question  were recoded in binary form according to correctness (with 1 for correct answers, and 0 otherwise). This forms the basis for the evaluation of performance of the different designs.
 
 %In a first model, $M1$, we are only interested in the overall difference in performance between designs. We can express this as a model of the form
 %\begin{equation}\label{model1}[M1]
@@ -274,17 +274,32 @@ Answers for each question on the survey were assessed for correctness, and coded
 
 %Table \ref{coef1} gives an overview of the model coefficients and their estimates. The effect of the common angle plot is used as a baseline, i.e all the effects shown are differences with respect to the performance of common angle plots. Both hammock plots and parallel sets  have negative effects on the correctness of the response. This indicates a significantly worse performance of these designs than under the common angle plot.
 
-Table \ref{raw} shows percentages of correctness for each design and each question. Bold numbers indicate significantly different (worse) performance of a design compared to the common angle plot based on a generalized linear model with random effects to adjust for individuals' abilities.
+Table \ref{raw} shows percentages of correct answers for each question under each design. Bold numbers indicate significantly different (worse) performance of a design compared to the common angle plot based on a generalized linear model with random effects to adjust for individuals' abilities. The model explains 69.5\% of the total variability, corresponding to a highly significant deviance of 435.8 ($p$-value $<\!\!\!< 0.0001$).
 
+%The model used is a logistic regression estimating the odds of a correct answer for a specific task and design, while allowing for differences in subject-specific ability:
+%%Model $M2$ extends the first model by including both  effects for individual questions and the interaction effects with each design in the following form:
+%\begin{eqnarray}\nonumber
+%  \ \ \qquad \text{logit}(P(y_i=1)) =  \qquad\qquad\qquad\qquad\qquad&&\\ \label{m2}
+%\mu + d_{j(i)}  + q_{q(i)} + p_{j(i),q(i)} + u_{k(i)} + \varepsilon_i 
+%\end{eqnarray}
+%
+%$\mu$ is the baseline 
+%$d_{j(i)}$ is the parameter measuring the effect of design $j$ ($j = C, H, P$ for \underline{C}ommon Angle, \underline{H}ammock plot, and \underline{P}arallel sets plot), $u_{k(i)}$ is the effect of participant's $k$ individual skills in evaluating these plots, $k \in \{1, ..., 52\}$. The assumption is that skills are independent and normally distributed with an expected value of zero and a variance of $\sigma_u^2$.
+%$\varepsilon_i$ is, similarly to a regular linear model, assumed to be independently distributed according to a normal distribution with mean of zero and variance $\sigma^2$.
+%$q$ indicates the effects on performance for  each question, where $q(i)$ describes one of the questions $\{A1, A2, A3, B1, B2, B3\}$. $p$ is the parameter for the interaction effect of design and question, its index is a tuple consisting of a combination of a question and design. 
+%
 
-
-XXX needs more details
+\begin{figure*}
+\centering
+\includegraphics[width=\textwidth]{model-summary.pdf}
+\caption{\label{fig:model-summary}Overview of performance across tasks and designs. Points show average performance of subjects on each of the tasks, lines represent 95\% confidence intervals adjusted for multiple comparisons. The letter at the front of each panel allow for an evaluation of significance of pairwise comparisons: if two averages do not share a letter, they are significantly different at a level of 0.05.}
+\end{figure*}
 
 The observed results are in line with our expectations:
 as we aimed for, task I does not show any significant differences between the designs and has overall the highest percentage of correctness reflecting its low difficulty level. Generally, difficult levels seem to increase with complexity of the tasks.
 
-Parsets were affected the most by the line width illusion and show significantly worse performance for tasks II and III in both data sets. 
-Hammock plots led to significantly worse performance than common angle plots in the two questions that were affected by the inverse line width illusion, while they show equal performance as common angle plots for the other questions. For task III in the pathway data,  hammock plots showed the best performance  across designs-- but this  does not  constitute a significant difference to the performance of the common angle plot.
+Parsets were affected the most by the line width illusion and show significantly worse performance for tasks II and III in the Titanic data, and for task III in the genes data. The performance on task II in the genes data is borderline non-significant, but shows a negative trend.
+Hammock plots led to significantly worse performance than common angle plots in the two questions that were affected by the inverse line width illusion, while they show equal performance as common angle plots for the other questions. For task III in the genes data,  hammock plots have the overall best performance  across designs-- but this  does not  constitute a significant improvement over the performance of the common angle plot. Figure~\ref{fig:model-summary} gives an overview of  performance of each design on all tasks. 
 
 
 
@@ -305,14 +320,14 @@ Task & Data & \multicolumn{3}{l}{Design} \\
 & & \multicolumn{1}{l}{CA} & \multicolumn{1}{l}{H}  & \multicolumn{1}{l}{PS}  \\ 
   \hline
  I & Titanic & 85.2 (0.66) & 76.5 (0.84) & 68.8 (0.98) \\ 
-& Pathway & 93.8 (0.51) & 83.3 (0.78) & 83.3 (0.90) \\ [3pt]
+& Genes & 93.8 (0.51) & 83.3 (0.78) & 83.3 (0.90) \\ [3pt]
  II& Titanic & 72.2 (2.56) & {\bf 17.6} (2.31) & {\bf 25.0} (2.80) \\ 
-& Pathway & 75.0 (2.80) & 87.5 (2.13) & {\bf 57.1} (3.67) \\ [3pt]
+& Genes & 75.0 (2.80) & 87.5 (2.13) & {\bf 57.1} (3.67) \\ [3pt]
 III & Titanic & 66.7 (2.69) & {\bf  5.9} (1.43) & {\bf 12.5} (2.13) \\ 
-& Pathway & 68.8 (2.99) & 68.8 (2.99) & {\bf 7.1} (1.91) \\ \hline
+& Genes & 68.8 (2.99) & 68.8 (2.99) & {\bf 7.1} (1.91) \\ \hline
 \end{tabular}
 \end{center}
-\caption{\label{raw} Raw percentages (standard deviation) of correctness of responses for each question and design. Bold numbers indicate significant difference from common angle plot performance.  }
+\caption{\label{raw} Percentages (standard deviation) of correct responses for each task and design. Bold numbers indicate significant difference from common angle plot performance.  }
 \end{table}
 
 %Model $M2$ extends the first model by including both  effects for individual questions and the interaction effects with each design in the following form:
@@ -333,55 +348,13 @@ III & Titanic & 66.7 (2.69) & {\bf  5.9} (1.43) & {\bf 12.5} (2.13) \\
 %%\caption{\label{fitted.m2} Histograms of fitted values under model $M2$, facetted by actual performance of participants. On the left, correct responses are shown. The histogram of fitted values is skewed to the right, with most values above 0.5. The histogram on the right corresponds to wrong answers. There are fewer wrong answers, and they tend to have low fitted values, but there are more false positives among them than false negatives for correct answers. }
 %%\end{figure}
 %
-%% xtable(summary(m4)@coefs)
-%% latex table generated in R 2.15.1 by xtable 1.7-0 package
-%% Fri Oct 12 09:12:32 2012
-%\begin{table}[ht]
-%\begin{center}
-%\begin{tabular}{rrrrrl}
-%  \hline
-% & Estimate & Std. Error & z value & Pr($>$$|$z$|$) & \\ 
-%  \hline  
-%$\mu$ & 2.68 & 0.61 & 4.35 & 0.00  & ***\\ [5pt]
-%Design\\
-%  $d_C$ & 0.00 & -- & -- & -- \\ 
-%  $d_H$ & -1.06 & 0.83 & -1.28 & 0.20  \\ 
-%  $d_P$ & -0.57 & 0.86 & -0.66 & 0.51 \\ [5pt]
-%Questions\\
-%  $q_{A1}$ & 0.00 & -- & -- & -- \\ 
-%  $q_{A2}$  & -1.85 & 0.74 & -2.50 & 0.01 &* \\ 
-%  $q_{A3}$  & -1.11 & 0.77 & -1.44 & 0.15 \\ 
-%  $q_{B1}$ & 0.55 & 0.96 & 0.58 & 0.56 \\ 
-%  $q_{B2}$  & -1.69 & 0.88 & -1.91 & 0.06 &. \\ 
-%  $q_{B3}$  & -1.31 & 0.92 & -1.43 & 0.15 \\ [5pt]
-% 
-%Interaction \\
-%$p_{H, A1}$ &  0.00 & -- & -- & -- \\
-%$p_{P,A1}$ &  0.00 & -- & -- & -- \\
-%$p_{H, A2}$ &  -3.29 & 1.55 & -2.13 & 0.03 & *\\ 
-%$p_{P,A2}$ & -3.03 & 1.33 & -2.28 & 0.02 &*\\ 
-%$p_{H,A3}$ &-2.61 & 1.17 & -2.24 & 0.03  & * \\ 
-%$p_{P,A3}$ & -2.60 & 1.16 & -2.23 & 0.03 &*\\ 
-%$p_{H,B1}$ &-0.26 & 1.21 & -0.22 & 0.83 \\ 
-%$p_{P,B1}$ &-0.81 & 1.24 & -0.65 & 0.51 \\ 
-%$p_{H,B2}$ & 1.03 & 1.22 & 0.85 & 0.40 \\ 
-%$p_{P,B2}$  & -3.48 & 1.63 & -2.14 & 0.03 &*\\ 
-%$p_{H,B3}$ & 1.97 & 1.37 & 1.44 & 0.15 \\ 
-%$p_{P,B3}$ & -0.62 & 1.26 & -0.50 & 0.62 \\   
-%   \hline
-%\multicolumn{6}{l}{Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 }
-%\end{tabular}
-%\end{center}
-%\caption{\label{model2} Model fit for $M2$ measuring correctness of answers in the survey, detailing performance of designs on each question. All design comparisons are with respect to the common angle plot. }
-%\end{table}
-%
 \subsubsection*{Individuals' skill levels}
 \begin{figure}
 \centering \includegraphics[width=.7\linewidth]{hist-skills}
 \caption{\label{skills}Histogram of the predictions of subject-specific skills. }
 \vspace{-0.2in}
 \end{figure}	
-Figure \ref{skills} shows an overview of the predicted skill for each participant under model $M2$. Skills are quite varied between  -1.52 and  1.34, but
+Figure \ref{skills} shows an overview of the predicted skill for each participant under the model . Skills are quite varied between  -1.52 and  1.34, but
 a Kolmogorov-Smirnov test  does not show significant deviation from a normal assumption ($p$-value = 0.089).
 On the scale of the dependent variable the range in individuals' skills translates to a $17.5 = e^{1.34 - (-1.52)}$ fold increase in the probability of answering a question on the survey correctly between participants with the best skill set and the worst.
 
@@ -396,13 +369,15 @@ Task III for the Titanic data required participants to order  class levels  acco
 
 
 
-There are 4! = 24 distinct orderings of the levels, corresponding to all permutations of length 4. Some orderings are closer to one another than other orderings. Using the Cayley distance to define a graph on the space of all permutations: let all permutations be nodes of the graph; for each two permutations with a Cayley distance of one, add an edge between these nodes to the graph. The resultant regular graph of degree six, i.e. each  node is connected to six other nodes. Between any two nodes, the Cayley distance on the graph is the length of the shortest connecting path between the two nodes.
-Figure \ref{cubes} shows an overview of the permutation space together with an overview of the survey results. Each permutation is represent by one dot. 
+There are 4! = 24 distinct orderings of the levels, corresponding to all permutations of length four. Some orderings are closer to one another than other orderings. 
+The Cayley distance allows us to quantify this distance: the Cayley distance between two orderings is defined as the smallest number of switches necessary to get from one ordering to the other. Visually, this corresponds to a graph: each node represents one ordering, and two nodes are connected by an edge, if only a single switch is necessary to move from one ordering to the other, i.e. if the Cayley distance between these nodes is one.
+This results  in a  regular graph of degree six, i.e. each  node is connected to six other nodes. Between any two nodes, the Cayley distance on the graph is equivalent to the length of the shortest connecting path between the two nodes.
+Figure \ref{cubes} shows an overview of the permutation space together with an overview of the survey results. 
 
-The colored dots on top of the graph correspond to the responses from the survey - the size of the dots is proportional to the number of observers choosing this particular ordering. It becomes obvious from the three graphs in figure \ref{cubes} that
+The colored dots on top of the graph correspond to the responses from the survey. The size of these dots is proportional to the number of observers choosing this particular ordering. It becomes obvious from the three graphs in figure \ref{cubes} that
 the answers to different designs occupy quite different regions, while answers based  on the same design are quite close --  usually separated by only one edge. 
 
-The correct ordering, as well as the orderings assuming the line width illusion and its reverse are marked by symbols. Answers for the common angle plot are centered around the correct answer, while responses to parallel sets  cluster around the response corresponding to the line width illusion. Due to the small number of responses to the hammock design a clear clustering of the answers is not recognizable, but the answer for the inverse line width illusion is among the responses. Table \ref{a2} gives an overview of all responses to task III for the Titanic data.
+The correct ordering, as well as the orderings assuming the line width illusion and its reverse are marked by symbols. Answers for the common angle plot are centered around the correct answer, while responses to parallel sets  cluster around the response corresponding to the line width illusion. Due to the smaller number of responses to the hammock design a clear clustering of the answers is not recognizable, but the answer for the inverse line width illusion is among the responses. Table \ref{a2} gives an overview of all responses to task III for the Titanic data.
 
 \begin{table}[ht]
 \begin{center}
@@ -429,8 +404,8 @@ Order  & CA & H & PS\\
 \end{table}
 
 %
-Common angle plots show the best performance in terms of correctness (66.7\% on 18 responses), compared to a correctness of 12.5\% for parallel sets plots on 16 responses, indicating a significantly better performance of common angle plots at a level of 0.0027, based on a Mantel-Haenszel test (the difference in performance to hammock plots is also significant at a level of 0.0006; but there is no significant difference in correctness between hammock plots and parallel sets.).
-While the intuitive assessment of lines by their width orthogonal to their direction is well known, it is surprising to see its strength: in this particular setting, it is strong enough to `shrink' the horizontally widest line for 6 out of 16 participants by at least  44\%, from 212 to below 118, and a further 3 participants perceived the shrinking to below 178, which constitutes a distortion of at least 16\%.
+Common angle plots show the best performance in terms of correctness (66.7\% on 18 responses), compared to a correctness of 12.5\% for parallel sets plots on 16 responses, constituting a significantly better performance of common angle plots at a level of 0.0027, based on a Mantel-Haenszel test (the difference in performance to hammock plots is also significant at a level of 0.0006; but there is no significant difference in correctness between hammock plots and parallel sets.).
+While the intuitive assessment of lines by their width orthogonal to their direction is well known, it is surprising to see its strength: in this particular setting, it is strong enough to `shrink' the horizontally widest line for six out of 16 participants by at least  44\%, from 212 to below 118, and a further three participants perceived a  shrinkage to below 178,  a distortion factor of at least 16\%.
 
 \begin{figure*}
 \includegraphics[width=\linewidth]{cubes}
@@ -438,57 +413,15 @@ While the intuitive assessment of lines by their width orthogonal to their direc
 \label{cubes}
 \end{figure*}
 
-Responses to task III, Titanic data exhibit a similar pattern, see table \ref{a3}.
-
-\begin{table}[ht]
-\begin{center}
-\begin{tabular}{rrrrl}
-Order & CA & H & PS\\
-  \hline
-c, b, a &  &  2 &  \\
-a, b, c &  1 &  12 &  & inverse illusion\\ 
-a, c, b & 13 &  3 &  4 & correct\\ 
-b, c, a &  2 &  &  1 \\ 
-c, a, b &  2 &  & 9 & line width illusion\\ 
-b, a, c &  &  &  2 \\ 
- \hline
-  Total & 18 &  17 & 16 \\ 
-   \hline
-\end{tabular}
-\end{center}
-\caption{\label{a3}Responses to task II, Titanic data: order combinations from smallest to largest, where 'a' is first class female, 'b' are male survivors, and 'c' are crew survivors. }
-\end{table}
-  
-\begin{table}[ht]
-\begin{center}
-\begin{tabular}{clrrrl}
-  Qu & Design & \rotatebox{90}{Correct} & \rotatebox{90}{Incorrect} & \rotatebox{90}{No Answer}   & Reason\\ \hline
-  \hline
-1 & common &   14 &  2 &   0 \\ 
-   & hammock &   15 &  0 &   1 \\ 
- & parallel &   7 &   7 &   0 & line width illusion\\ \hline
-2 & common &  16 &   0 &   0 \\ 
-& hammock &   9 &   7 &   0 & inverse illusion\\ 
-& parallel &  14 &   0 &   0 \\ \hline
-3& common &  15 &   1 &   0 \\ 
-& hammock &  16 &   0 &   0 \\ 
-& parallel &  14 &   0 &   0 \\ 
-   \hline
-\end{tabular}
-\end{center}
-\caption{\label{tab:b1}Responses to task I, gene data}
-\vspace{-0.25in}
-\end{table}
-
-
-Table \ref{tab:b1} shows a summary responses for Task I, gene data with possible answers ``agree", ``disagree", and ``don't know".
-The first two questions are  examples, where the line width illusion, and its reverse will lead to answers that differ from the correct answer. Parallel sets  are susceptible to the line width illusion, while hammock plots suffer from the reverse. The data shows that in about 50\% of the responses we can see this difference. 7 out of 14 answers for the parallel sets plots in question 1 deviate from the correct answer, and 7 out of 16 responses corresponding to hammock plots in question 2 show the wrong answer.
 
 
 \subsubsection{Opinion on common angle plots}
 Answers to the question of `which chart did you like better?' are shown in table \ref{tab:prefer}. There is a  clear endorsement in favor of common angle plots versus the other two types of displays.
-Asked for a reason for their preference over parallel sets, 8 participants cited a facilitated comparison of width, area or ``size", 3 saw the common angle plots as preferable, and the remaining answers related to a 'more logical' structure or generally 'easier' choice.
-Reasons for not preferring common angle plots boiled down to a preference for straight lines. This purely aesthetic preference is deeply rooted and in our opinion the biggest challenge for common angle plots.
+The most common reason cited for the choice was a facilitated comparison of width, area or ``size", 
+%3 saw the common angle plots as preferable, and the remaining answers related to a 'more logical' structure or generally 'easier' choice.
+The only consistent complaint against common angle was a preference for straight lines.
+%Reasons for not preferring common angle plots boiled down to a preference for straight lines.
+ This purely aesthetic preference is deeply rooted and in our opinion the biggest challenge for common angle plots.
 % latex table generated in R 2.15.1 by xtable 1.7-0 package
 % Wed Oct 31 10:28:55 2012
 \begin{table}[ht]
@@ -512,7 +445,9 @@ Reasons for not preferring common angle plots boiled down to a preference for st
 \end{table}
 
 \subsection{Methods}
-The survey was created using the Qualtrics Labs, Inc software (www.qualtrics.com). For survey contents, see Apendix \ref{app2}. Study design is presented in section \ref{test}. All models are fit in the {\tt lme4} package \cite{lmer} within the software frame work of {\tt R} 2.15.1 \cite{R}.
+
+The survey was created using the Qualtrics Labs, Inc software (www.qualtrics.com). For survey contents, see Apendix \ref{app2}. Study design is presented in section \ref{test}. All models are fit in the {\tt lme4} package \cite{lmer} within the software frame work of {\tt R} 2.15.1 \cite{R}. Comparisons are adjusted for multiple testing using the {\tt multcomp} package \cite{multcomp} and evaluated for pairwise significances using the {\tt effects} package \cite{effects}.
+
 
 \section{Discussion}
 
@@ -680,8 +615,99 @@ All students, staff and faculty from Iowa State University programs in Statistic
 Out of the remaining 51 participants, 46  individuals submitted responses for all questions and 5 gave responses to the first block of questions.
 
 Participants used their own personal computing devices to access the survey, 
-a majority of participants used Intel Mac OS X (versions ranging from 10.6.8 to 10.8.2), with the next most common operating system WoW64 (Windows 32-bit or Windows 64-bit). The preferred choice of browser was  Firefox, followed by Chrome. For two participants, the Qualtrics survey software was unable to capture operating system or browser information. 
+a majority of participants used Intel Mac OS X (versions ranging from 10.6.8 to 10.8.2), while WIndows was the next most common operating system. The preferred choice of browser was  Firefox, followed by Chrome. For two participants, the Qualtrics survey software was unable to capture operating system or browser information. 
 %Appendix two text goes here.
+
+\section{Selected survey results}
+Responses to task II, Titanic data are shown in table \ref{a3}. Results are clearly showing clustering depending on the designs. Answers based on parsets cluster around the solution correspding to the line-width illusion, while the hammock plot leads to solutions around the reverse illusion.
+
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{rrrrl}
+Order & CA & H & PS\\
+  \hline
+c, b, a &  &  2 &  \\
+a, b, c &  1 &  12 &  & inverse illusion\\ 
+a, c, b & 13 &  3 &  4 & correct\\ 
+b, c, a &  2 &  &  1 \\ 
+c, a, b &  2 &  & 9 & line width illusion\\ 
+b, a, c &  &  &  2 \\ 
+ \hline
+  Total & 18 &  17 & 16 \\ 
+   \hline
+\end{tabular}
+\end{center}
+\caption{\label{a3}Responses to task II, Titanic data: order combinations from smallest to largest, where 'a' is first class female, 'b' are male survivors, and 'c' are crew survivors. }
+\end{table}
+  
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{clrrrl}
+  Qu & Design & \rotatebox{90}{Correct} & \rotatebox{90}{Incorrect} & \rotatebox{90}{No Answer}   & Reason\\ \hline
+  \hline
+1 & common &   14 &  2 &   0 \\ 
+   & hammock &   15 &  0 &   1 \\ 
+ & parallel &   7 &   7 &   0 & line width illusion\\ \hline
+2 & common &  16 &   0 &   0 \\ 
+& hammock &   9 &   7 &   0 & inverse illusion\\ 
+& parallel &  14 &   0 &   0 \\ \hline
+3& common &  15 &   1 &   0 \\ 
+& hammock &  16 &   0 &   0 \\ 
+& parallel &  14 &   0 &   0 \\ 
+   \hline
+\end{tabular}
+\end{center}
+\caption{\label{tab:b1}Responses to task I, gene data}
+\vspace{-0.25in}
+\end{table}
+
+
+Table \ref{tab:b1} shows a summary responses for Task I, gene data with possible answers ``agree", ``disagree", and ``don't know".
+The first two questions are  examples, where the line width illusion, and its reverse will lead to answers that differ from the correct answer. Parallel sets  are susceptible to the line width illusion, while hammock plots suffer from the reverse. The data shows that in about 50\% of the responses we can see this difference. Seven out of 14 answers for the parallel sets plots in question 1 deviate from the correct answer, and seven out of 16 responses corresponding to hammock plots in question 2 show the wrong answer.
+
+%\section{Model results}
+%
+%% xtable(summary(m4)@coefs)
+%% latex table generated in R 2.15.1 by xtable 1.7-0 package
+%% Fri Oct 12 09:12:32 2012
+%\begin{table}[ht]
+%\begin{center}
+%\begin{tabular}{rrrrrl}
+%  \hline
+% & Estimate & Std. Error & $z$ value & Pr($>$$|$z$|$) & \\ 
+%  \hline  
+%$\mu$ & 2.68 & 0.61 & 4.35 & 0.00  & ***\\ [5pt]
+%Design\\
+%  $d_C$ & 0.00 & -- & -- & -- \\ 
+%  $d_H$ & -1.06 & 0.83 & -1.28 & 0.20  \\ 
+%  $d_P$ & -0.57 & 0.86 & -0.66 & 0.51 \\ [5pt]
+%Questions\\
+%  $q_{A1}$ & 0.00 & -- & -- & -- \\ 
+%  $q_{A2}$  & -1.85 & 0.74 & -2.50 & 0.01 &* \\ 
+%  $q_{A3}$  & -1.11 & 0.77 & -1.44 & 0.15 \\ 
+%  $q_{B1}$ & 0.55 & 0.96 & 0.58 & 0.56 \\ 
+%  $q_{B2}$  & -1.69 & 0.88 & -1.91 & 0.06 &. \\ 
+%  $q_{B3}$  & -1.31 & 0.92 & -1.43 & 0.15 \\ [5pt]
+% 
+%Interaction \\
+%$p_{H, A1}$ &  0.00 & -- & -- & -- \\
+%$p_{P,A1}$ &  0.00 & -- & -- & -- \\
+%$p_{H, A2}$ &  -3.29 & 1.55 & -2.13 & 0.03 & *\\ 
+%$p_{P,A2}$ & -3.03 & 1.33 & -2.28 & 0.02 &*\\ 
+%$p_{H,A3}$ &-2.61 & 1.17 & -2.24 & 0.03  & * \\ 
+%$p_{P,A3}$ & -2.60 & 1.16 & -2.23 & 0.03 &*\\ 
+%$p_{H,B1}$ &-0.26 & 1.21 & -0.22 & 0.83 \\ 
+%$p_{P,B1}$ &-0.81 & 1.24 & -0.65 & 0.51 \\ 
+%$p_{H,B2}$ & 1.03 & 1.22 & 0.85 & 0.40 \\ 
+%$p_{P,B2}$  & -3.48 & 1.63 & -2.14 & 0.03 &*\\ 
+%$p_{H,B3}$ & 1.97 & 1.37 & 1.44 & 0.15 \\ 
+%$p_{P,B3}$ & -0.62 & 1.26 & -0.50 & 0.62 \\   
+%   \hline
+%\multicolumn{6}{l}{Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 }
+%\end{tabular}
+%\end{center}
+%\caption{\label{model2} Model fit for measuring correctness of answers in the survey, detailing performance of designs on each question. All design comparisons are with respect to the common angle plot. }
+%\end{table}
 
 
 % use section* for acknowledgement
