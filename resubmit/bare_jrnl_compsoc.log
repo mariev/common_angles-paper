@@ -1,0 +1,489 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.12.7)  30 MAR 2013 16:03
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**bare_jrnl_compsoc.tex
+(./bare_jrnl_compsoc.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
+ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
+rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
+kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
+ polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
+lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
+welsh, loaded.
+(./IEEEtran.cls
+Document Class: IEEEtran 2012/12/27 V1.8 by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmptoksA=\toks14
+-- Using IEEE Computer Society mode.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 368.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen104
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen105
+\CLASSINFOnormalsizeunitybaselineskip=\dimen106
+\IEEEnormaljot=\dimen107
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+\IEEEilabelindentA=\dimen108
+\IEEEilabelindentB=\dimen109
+\IEEEilabelindent=\dimen110
+\IEEEelabelindent=\dimen111
+\IEEEdlabelindent=\dimen112
+\IEEElabelindent=\dimen113
+\IEEEiednormlabelsep=\dimen114
+\IEEEiedmathlabelsep=\dimen115
+\IEEEiedtopsep=\skip41
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@IEEEsubequation=\count85
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count86
+\c@table=\count87
+\@IEEEeqnnumcols=\count88
+\@IEEEeqncolcnt=\count89
+\@IEEEsubeqnnumrollback=\count90
+\@IEEEtmpitemindent=\dimen116
+\c@IEEEbiography=\count91
+\@IEEEtranrubishbin=\box26
+) (/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count92
+))
+\Gin@req@height=\dimen117
+\Gin@req@width=\dimen118
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip44
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen119
+))
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen120
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count93
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count94
+\leftroot@=\count95
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count96
+\DOTSCASE@=\count97
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen121
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count98
+\c@MaxMatrixCols=\count99
+\dotsspace@=\muskip10
+\c@parentequation=\count100
+\dspbrk@lvl=\count101
+\tag@help=\toks17
+\row@=\count102
+\column@=\count103
+\maxfields@=\count104
+\andhelp@=\toks18
+\eqnshift@=\dimen122
+\alignsep@=\dimen123
+\tagshift@=\dimen124
+\tagwidth@=\dimen125
+\totwidth@=\dimen126
+\lineht@=\dimen127
+\@envbody=\toks19
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+
+LaTeX Warning: Unused global option(s):
+    [cspaper].
+
+(./bare_jrnl_compsoc.aux)
+\openout1 = `bare_jrnl_compsoc.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 426.
+LaTeX Font Info:    ... okay on input line 426.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 426.
+LaTeX Font Info:    ... okay on input line 426.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 426.
+LaTeX Font Info:    ... okay on input line 426.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 426.
+LaTeX Font Info:    ... okay on input line 426.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 426.
+LaTeX Font Info:    ... okay on input line 426.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 426.
+LaTeX Font Info:    ... okay on input line 426.
+
+(/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count105
+\scratchdimen=\dimen128
+\scratchbox=\box29
+\nofMPsegments=\count106
+\nofMParguments=\count107
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count108
+\MPscratchDim=\dimen129
+\MPnumerator=\count109
+\makeMPintoPDFobject=\count110
+\everyMPtoPDFconversion=\toks22
+) (/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.jpeg,.png,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+** ATTENTION: \IEEEcompsoctitleabstractindextext is deprecated (line 532). Use 
+\IEEEtitleabstractindextext instead.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 555.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <11> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 555.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 555.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 555.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <11> on input line 555.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7.69997> on input line 555.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5.5> on input line 555.
+LaTeX Font Info:    Try loading font information for U+pzd on input line 555.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 555.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 555.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 555.
+
+** ATTENTION: \IEEEdisplaynotcompsoctitleabstractindextext is deprecated (line 
+565). Use \IEEEdisplaynontitleabstractindextext instead.
+(./ggparallel2.tex
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 4.
+LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <12> not available
+(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 4.
+ <images/parset-titanic.pdf, id=1, 578.16pt x 271.0125pt>
+File: images/parset-titanic.pdf Graphic file (type pdf)
+
+<use images/parset-titanic.pdf>
+Package pdftex.def Info: images/parset-titanic.pdf used on input line 46.
+(pdftex.def)             Requested size: 226.79846pt x 106.31061pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 55.
+ [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+ <./images/parset-titanic.pdf>]
+<images/playfair_east_indies_gross.png, id=22, 1036.87375pt x 650.43pt>
+File: images/playfair_east_indies_gross.png Graphic file (type png)
+
+<use images/playfair_east_indies_gross.png>
+Package pdftex.def Info: images/playfair_east_indies_gross.png used on input li
+ne 82.
+(pdftex.def)             Requested size: 226.79846pt x 142.27129pt.
+
+<images/playfair_differenz_cleveland.png, id=23, 1034.86626pt x 687.56876pt>
+File: images/playfair_differenz_cleveland.png Graphic file (type png)
+
+<use images/playfair_differenz_cleveland.png>
+Package pdftex.def Info: images/playfair_differenz_cleveland.png used on input 
+line 92.
+(pdftex.def)             Requested size: 201.60072pt x 100.79126pt.
+
+Underfull \hbox (badness 2269) in paragraph at lines 101--102
+[]\OT1/ppl/m/n/10 In the per-cep-tion lit-er-a-ture, this phe-nomenon is
+ []
+
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 105.
+<images/linewidth.pdf, id=24, 245.84845pt x 133.03201pt>
+File: images/linewidth.pdf Graphic file (type pdf)
+
+<use images/linewidth.pdf>
+Package pdftex.def Info: images/linewidth.pdf used on input line 119.
+(pdftex.def)             Requested size: 151.20154pt x 81.81723pt.
+
+<images/aspect31-titanic.pdf, id=25, 650.43pt x 216.81pt>
+File: images/aspect31-titanic.pdf Graphic file (type pdf)
+
+<use images/aspect31-titanic.pdf>
+Package pdftex.def Info: images/aspect31-titanic.pdf used on input line 131.
+(pdftex.def)             Requested size: 325.2142pt x 108.405pt.
+
+<images/aspect33-titanic.pdf, id=26, 216.81pt x 216.81pt>
+File: images/aspect33-titanic.pdf Graphic file (type pdf)
+
+<use images/aspect33-titanic.pdf>
+Package pdftex.def Info: images/aspect33-titanic.pdf used on input line 132.
+(pdftex.def)             Requested size: 108.40472pt x 108.405pt.
+ [2 <./images/playfair_east_indies_gross.png> <./images/playfair_differenz_clev
+eland.png> <./images/linewidth.pdf>]
+<images/hammock-titanic.pdf, id=59, 433.62pt x 433.62pt>
+File: images/hammock-titanic.pdf Graphic file (type pdf)
+
+<use images/hammock-titanic.pdf>
+Package pdftex.def Info: images/hammock-titanic.pdf used on input line 161.
+(pdftex.def)             Requested size: 252.0pt x 252.00262pt.
+ [3 <./images/aspect31-titanic.pdf> <./images/aspect33-titanic.pdf> <./images/h
+ammock-titanic.pdf>]
+<images/zoom_hammock.png, id=87, 125.7498pt x 54.4434pt>
+File: images/zoom_hammock.png Graphic file (type png)
+
+<use images/zoom_hammock.png>
+Package pdftex.def Info: images/zoom_hammock.png used on input line 183.
+(pdftex.def)             Requested size: 189.0pt x 81.83684pt.
+
+<images/ca-titanic.pdf, id=89, 433.62pt x 433.62pt>
+File: images/ca-titanic.pdf Graphic file (type pdf)
+
+<use images/ca-titanic.pdf>
+Package pdftex.def Info: images/ca-titanic.pdf used on input line 213.
+(pdftex.def)             Requested size: 252.0pt x 252.00262pt.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 227.
+
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 1389) in paragraph at lines 227--228
+\OT1/ppl/m/n/10 ting frame-work in the soft-ware R 2.15.1 [[]]. The
+ []
+
+
+Underfull \hbox (badness 2635) in paragraph at lines 227--228
+\OT1/ppl/m/n/10 gg-par-al-lel pack-age is freely avail-able from CRAN
+ []
+
+[4 <./images/zoom_hammock.png> <./images/ca-titanic.pdf>]
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 258.
+
+<images/model-summary.pdf, id=103, 722.7pt x 289.08pt>
+File: images/model-summary.pdf Graphic file (type pdf)
+
+<use images/model-summary.pdf>
+Package pdftex.def Info: images/model-summary.pdf used on input line 294.
+(pdftex.def)             Requested size: 516.0pt x 206.39949pt.
+
+<images/hist-skills.pdf, id=104, 252.945pt x 144.54pt>
+File: images/hist-skills.pdf Graphic file (type pdf)
+
+<use images/hist-skills.pdf>
+Package pdftex.def Info: images/hist-skills.pdf used on input line 353.
+(pdftex.def)             Requested size: 176.39923pt x 100.80016pt.
+ [5 <./images/hist-skills.pdf>] [6 <./images/model-summary.pdf>] <images/cubes.
+pdf, id=125, 722.7pt x 234.8775pt>
+File: images/cubes.pdf Graphic file (type pdf)
+
+<use images/cubes.pdf>
+Package pdftex.def Info: images/cubes.pdf used on input line 411.
+(pdftex.def)             Requested size: 516.0pt x 167.69958pt.
+ <images/adj-angle.pdf, id=126, 433.62pt x 433.62pt>
+File: images/adj-angle.pdf Graphic file (type pdf)
+
+<use images/adj-angle.pdf>
+Package pdftex.def Info: images/adj-angle.pdf used on input line 477.
+(pdftex.def)             Requested size: 252.0pt x 252.00262pt.
+ [7 <./images/adj-angle.pdf>]
+<images/ca-hierarchy.pdf, id=139, 433.62pt x 505.89pt>
+File: images/ca-hierarchy.pdf Graphic file (type pdf)
+
+<use images/ca-hierarchy.pdf>
+Package pdftex.def Info: images/ca-hierarchy.pdf used on input line 495.
+(pdftex.def)             Requested size: 252.0pt x 294.00305pt.
+ [8 <./images/cubes.pdf> <./images/ca-hierarchy.pdf>]
+Underfull \hbox (badness 1377) in paragraph at lines 559--560
+[]\OT1/ppl/m/n/10 There were more Male Non-Survivors than
+ []
+
+[9]) (./bare_jrnl_compsoc.bbl
+Missing character: There is no Õ in font pplr7t!
+
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `English'. Using the pattern for
+** the default language instead.
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `English'. Using the pattern for
+** the default language instead.
+) [10] (./bare_jrnl_compsoc.aux) ) 
+Here is how much of TeX's memory you used:
+ 3138 strings out of 493488
+ 47453 string characters out of 3141326
+ 115029 words of memory out of 3000000
+ 6375 multiletter control sequences out of 15000+200000
+ 51585 words of font info for 102 fonts, out of 3000000 for 9000
+ 960 hyphenation exceptions out of 8191
+ 38i,9n,24p,903b,344s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/local/texlive/2012/texmf-dist/fonts/enc
+/dvips/base/8r.enc}</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy7.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><
+/usr/local/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/lo
+cal/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/tex
+live/2012/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2
+012/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2012/tex
+mf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2012/texmf-dist
+/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2012/texmf-dist/fonts
+/type1/urw/zapfding/uzdr.pfb>
+Output written on bare_jrnl_compsoc.pdf (10 pages, 471146 bytes).
+PDF statistics:
+ 214 PDF objects out of 1000 (max. 8388607)
+ 156 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+
