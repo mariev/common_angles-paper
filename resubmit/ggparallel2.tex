@@ -21,11 +21,11 @@ that transcends barriers of language to
 communicate complex concepts from author to audience. 
 Problems arise, when readers are unable to easily extract a chart's main message or are led to wrong conclusions due to distortions.
 This endangers the trust between readers and creators of charts, which is based on the main premise that
-graphics have to be true to the data \citep[see e.g.][]{tufte, wainer:2000, robbins:2005}.
-There is a lot of discussion on keeping true to the data in the framework of (ab)using three dimensional effects in graphics. Tufte \citep{tufte} goes as far as defining a {\it lie-factor} -- the ratio of the size of an effect in the data compared to the size of an effect shown. Any large deviation of this factor from one indicates a misuse of graphical techniques. Computational tools help us ensure technical trueness -- but this brings up the additional question of how we deal with situations that involve innate inability or trigger learned misperceptions.
+graphics have to be true to the data~\citep[see e.g.][]{tufte, wainer:2000, robbins:2005}.
+There is a lot of discussion on keeping true to the data in the framework of (ab)using three dimensional effects in graphics. Tufte~\citep{tufte} goes as far as defining a {\it lie-factor} -- the ratio of the size of an effect in the data compared to the size of an effect shown. Any large deviation of this factor from one indicates a misuse of graphical techniques. Computational tools help us ensure technical trueness -- but this brings up the additional question of how we deal with situations that involve innate inability or trigger learned misperceptions.
 One example of distortions of this kind is the 
  M\"{u}ller-Lyer family of illusions, which include contextual illusions,  such as differently perceived lengths of line segments depending on the orientation of arrow heads  
- or the sine illusion \cite{day:1991}.
+ or the sine illusion~\cite{day:1991}.
 
 Regardless of the cause of distortion, it is the responsibility of the  author of a chart to create visualizations that
  allows readers to extract an accurate interpretation of the underlying data.  In order to gauge the
@@ -270,7 +270,7 @@ Answers for each survey question  were recoded in binary form according to corre
 
 %Table \ref{coef1} gives an overview of the model coefficients and their estimates. The effect of the common angle plot is used as a baseline, i.e all the effects shown are differences with respect to the performance of common angle plots. Both hammock plots and parallel sets  have negative effects on the correctness of the response. This indicates a significantly worse performance of these designs than under the common angle plot.
 
-Table \ref{raw} shows percentages of correct answers for each question under each design. Bold numbers indicate significantly different (worse) performance of a design compared to the common angle plot based on a generalized linear model with random effects to adjust for individuals' abilities. The model explains 69.5\% of the total variability, corresponding to a highly significant deviance of 435.8 ($p$-value $<\!\!\!< 0.0001$).
+Table \ref{raw} shows percentages of correct answers for each question under each design. Bold numbers indicate significantly different (worse) performance of a design compared to the common angle plot based on a generalized linear model with random effects to adjust for individuals' abilities. The model explains 69.5\% of the total variability, corresponding to a highly significant deviance of 435.8 ($p$-value~$<\!\!\!< 0.0001$).
 
 %The model used is a logistic regression estimating the odds of a correct answer for a specific task and design, while allowing for differences in subject-specific ability:
 %%Model $M2$ extends the first model by including both  effects for individual questions and the interaction effects with each design in the following form:
@@ -350,8 +350,8 @@ III & Titanic & 66.7 (2.69) & {\bf  5.9} (1.43) & {\bf 12.5} (2.13) \\
 \caption{\label{skills}Histogram of the predictions of subject-specific skills. }
 \vspace{-0.2in}
 \end{figure}	
-Figure \ref{skills} shows an overview of the predicted skill for each participant under the model . Skills are quite varied between  -1.52 and  1.34, but
-a Kolmogorov-Smirnov test  does not show significant deviation from a normal assumption ($p$-value = 0.089).
+Figure \ref{skills} shows an overview of the predicted skill for each participant under the model. Skills are quite varied between  -1.52 and  1.34, but
+a Kolmogorov-Smirnov test  does not show significant deviation from a normal assumption ($p$-value 0.089).
 On the scale of the dependent variable the range in individuals' skills translates to a $17.5 = e^{1.34 - (-1.52)}$ fold increase in the probability of answering a question on the survey correctly between participants with the best skill set and the worst.
 
 %In the next section we will investigate the results from the survey in further detail for some questions, and highlight the link to the line width illusion and its inverse.
@@ -377,18 +377,18 @@ The correct ordering, as well as the orderings assuming the line width illusion 
 
 \begin{table}[ht]
 \begin{center}
-\begin{tabular}{rrrrl}
+\begin{tabular}{rrrrl}\hline
 Order  & CA & H & PS\\
   \hline
-  Crew, 1st, 3rd, 2nd &  &  2 &  \\ 
+  Crew, 1st, 3rd, 2nd &  &  2 &  \\ \rowcolor{LightGrey}
   2nd, 1st, 3rd, Crew &  &  6 &  & inverse illusion \\ 
-   Crew, 3rd, 1st, 2nd &  &  1 &  1 \\ 
-  2nd, 3rd, 1st, Crew & 1 & 7 & 1 \\ 
-  2nd, 3rd, Crew, 1st & 12 &  1 &  2 & correct\\ 
+   Crew, 3rd, 1st, 2nd &  &  1 &  1 \\ \rowcolor{LightGrey}
+  2nd, 3rd, 1st, Crew & 12 & 7 & 1 & correct\\  
+  2nd, 3rd, Crew, 1st & 1 &  1 &  2 \\
   Crew, 3rd, 2nd, 1st &  2 &  &  \\ 
   3rd, 2nd, Crew, 1st &  1 &  &  \\ 
   1st, 2nd, 3rd, Crew &  1 &  &  1 \\ 
-  1st, 3rd, Crew, 2nd &  1 &  &  2 \\ 
+  1st, 3rd, Crew, 2nd &  1 &  &  2 \\ \rowcolor{LightGrey}
   Crew, 2nd, 3rd, 1st &  &  & 6 &  line width illusion\\  
   2nd, Crew, 3rd, 1st &  &  &  3 \\ 
    \hline
@@ -411,7 +411,7 @@ While the intuitive assessment of lines by their width orthogonal to their direc
 
 
 
-\subsubsection{Opinion on common angle plots}
+\subsubsection*{Opinion on common angle plots}
 Answers to the question of `which chart did you like better?' are shown in table \ref{tab:prefer}. There is a  clear endorsement in favor of common angle plots versus the other two types of displays.
 The most common reason cited for the choice was a facilitated comparison of width, area or ``size", 
 %3 saw the common angle plots as preferable, and the remaining answers related to a 'more logical' structure or generally 'easier' choice.
@@ -442,7 +442,7 @@ The only consistent complaint against common angle was a preference for straight
 
 \subsection{Methods}
 
-The survey was created using the Qualtrics Labs, Inc software (www.qualtrics.com). For survey contents, see Appendix \ref{app2}. The study design is presented in section \ref{test}. All models are fit in the {\tt lme4} package \cite{lmer} within the software frame work of {\tt R} 2.15.1 \cite{R}. Comparisons are adjusted for multiple testing using the {\tt multcomp} package \cite{multcomp} and evaluated for pairwise significances using the {\tt effects} package \cite{effects}.
+The survey was created using the Qualtrics Labs, Inc software (www.qualtrics.com). For survey contents, see Appendix~\ref{app2}. The study design is presented in section \ref{test}. All models are fit in the {\tt lme4} package~\cite{lmer} within the software frame work of {\tt R} 2.15.1 \cite{R}. Comparisons are adjusted for multiple testing using the {\tt multcomp} package~\cite{multcomp} and evaluated for pairwise significances using the {\tt effects} package~\cite{effects}.
 
 
 \section{Discussion}
@@ -451,7 +451,7 @@ For data with a large number of variable levels, common angle plots may introduc
 technically limited in print applications. The issue of color is consistent regardless of display choice 
 between parallel sets, hammock plots or common angles. Further study is necessary to resolve the potential 
 for distortion in different application, especially the impact of bands displayed with extreme values for 
-$\theta$, a known source of perceptual inaccuracy \cite{heer:2010}.
+$\theta$, a known source of perceptual inaccuracy~\cite{heer:2010}.
 
 One opportunity for improvement lies in the algorithm to determine thickness of the connecting line. In the
 tested version of common angle plots, the line width was not explicitly defined - the line width is a byproduct of 
