@@ -116,16 +116,19 @@
    %\ExecuteOptions{tvcgpapersize}
 }
 
-%% the following code has partly been adapted from egpubl.cls
-\newif\ifpdf  % determine if we are running PDFLaTeX or not
-\ifx\pdfoutput\undefined \pdffalse % we are not running PDFLaTeX 
-\else 
- %\pdfoutput=1 % we are running PDFLaTeX 
- \pdftrue 
-\fi 
+
+
+%%% the following code has partly been adapted from egpubl.cls
+%\newif\ifpdf  % determine if we are running PDFLaTeX or not
+%\ifx\pdfoutput\undefined \pdffalse % we are not running PDFLaTeX 
+%\else 
+% %\pdfoutput=1 % we are running PDFLaTeX 
+% \pdftrue 
+%\fi 
 
 \newcommand{\vgtcinsertpkg}{}
 \DeclareOption{electronic}{%
+\RequirePackage{ifpdf}
 \ifpdf 
  \renewcommand{\vgtcinsertpkg}{%
   \usepackage[pdftex,
@@ -248,14 +251,15 @@
 %COMPUTER GRAPHICS, VOL. 12, NO. 5, SEPTEMBER/OCTOBER 2006}
 %\newcommand{\journalid}[1]{\renewcommand{\journalidtxt}{#1}}
 
-%%MEGHAN Comment from here
+%%Comment from here
 \newcommand{\manuscriptnotetxt}{
-Manuscript received 31 March 2011; accepted 1 August 2011; posted online 23 October 2011; mailed on 14 October 2011.\par
-For information on obtaining reprints of this article, please send email~to:~tvcg@computer.org.
+Manuscript received 31 March 2013; accepted 1 August 2013; posted online 13 October 2013; mailed on 27 September 2013.\par
+For information on obtaining reprints of this article, please send \par
+e-mail to: tvcg@computer.org.
 }
 %% to here to not use the blank
 
-%% MEGHAN NOTE FOR BLANK SPACING
+%% NOTE FOR BLANK SPACING
 %% uncomment from here
 %\newcommand{\manuscriptnotetxt}{\vspace{.25in}}
 %%  to here
@@ -614,7 +618,7 @@ For information on obtaining reprints of this article, please send email~to:~tvc
 %%              \endgroup\par%
 %%          \fi%
         }%
-	\begin{center}\includegraphics{diamondrule-eps-converted-to.pdf}\end{center}
+	%\begin{center}\includegraphics{diamondrule.eps}\end{center}
        %\vspace{\abstxtspace}%
 	\ifx\firstsectiontxt\vgtc@empty \else
 	  \section{\firstsectiontxt}
