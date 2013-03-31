@@ -35,24 +35,21 @@ underlying metaphorical models, both in known and in unpredicted situations.
 
 
 
-Parallel sets (parsets)  \cite{kosara:2006}, a graphical method  for visualizing multivariate categorical data, presents a case of unspecified distortion due to perceptual limits . Since initial publication, parallel sets have spread to mass media outlets  \cite{eagereyes, bostock:2012, bbc:2009}, multiple technical implementations \cite{eagereyes, d3, davies} and is a reputable resource for further academic work (\cite{kosara:2006} has 70 citations per Google scholar). While retaining the %independent 
-ability to visualize a large number of dimensions simultaneously that is the parallel coordinates' hallmark trade, parallel sets introduce the frequency scale that is a well-known feature of other categorical displays such as barcharts or mosaic plots \cite{hartigan:1981, friendly:1992, hofmann:2000, theus:1997}.
-% Initially, frequencies of categories  were displayed as stacked boxes; in  later versions of parallel sets the boxes are reduced to simple lines \cite{parsetredesign}. Various implementations of parallel sets exist besides the original Java version of Eagereyes \cite{eagereyes}, e.g.  J Davies introduced a d3 \cite{d3} version in  \cite{davies}.  
-
-
+Parallel sets (parsets)  \cite{kosara:2006} are a graphical method  for visualizing multivariate categorical data. Since their initial publication, parallel sets have spread to mass media outlets  \cite{eagereyes, bostock:2012, bbc:2009}, have been implemented in various languages \cite{eagereyes, d3, davies} and are a reputable resource for further academic work (\cite{kosara:2006} has 70 citations per Google scholar). While retaining the %independent 
+ability to visualize a large number of dimensions simultaneously that is the parallel coordinates' hallmark trade, parallel sets combine with it a frequency scale that is a well-known feature of other categorical displays such as barcharts or mosaic plots \cite{hartigan:1981, friendly:1992, hofmann:2000, theus:1997}.
+Unfortunately, parallel sets are a victim to distortion due to a contextual illusion: consider the parset plot of Figure \ref{question1a}.
+%
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=.9\linewidth]{images/parset-titanic}
 \caption{\label{question1a} Parallel sets plot showing the relationship between survival of the sinking of the HMS Titanic and class membership. }
 \end{figure}
-%XXX Description of parallel sets - and example
-
-
+%
 %%XXX PS and line-width illusion
-Figure \ref{question1a} gives an example for a two dimensional parallel sets plot investigating the relationship between class status and survival on board the HMS Titanic  \cite{dawson:1995}. Class status is recorded as either crew member or passengers in  first, second, or third class.  The top bar in figure \ref{question1a} shows the  variable Class. The bottom bar shows survival  as yes and no. Between the bars lines are drawn to visualize the relationship between class membership and  survival. 
-  Based on the number of survivor and non survivors
-  these bands are drawn from each class, and their (horizontal) width is proportional to the number of people they represent. A reasonable task would be to order levels of the variable `class' by number of survivors. However, when study participants were asked to perform this task, only $12.5\%$ respondants 
-selected the correct order \ref{raw}.
+This plot shows the relationship between class status and survival on board the HMS Titanic  \cite{dawson:1995}. Class status is recorded as either crew member or passengers in  first, second, or third class.  The top bar in figure \ref{question1a} shows the  variable Class. The bottom bar shows survival  as yes and no.
+ Lines are drawn between top and bottom bar -- the  (horizontal) width is proportional to the number of survivor and non-survivor they represent. 
+ A reasonable task based on this chart is to order levels of the variable `class' by number of survivors. However, when study participants were asked to perform this task, only $12.5\%$ respondents 
+selected the correct order, see table~\ref{raw}.
 
 \begin{table}
 \begin{center}
