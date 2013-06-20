@@ -1,3 +1,108 @@
+\documentclass[journal]{vgtc}                % final (journal style)
+%\documentclass[review,journal]{vgtc}         % review (journal style)
+
+\usepackage{natbib}
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{multirow}
+%\usepackage{knitr}
+\usepackage{url}
+\usepackage[table]{xcolor}
+
+\renewcommand\floatpagefraction{1}
+
+%% We encourage the use of mathptmx for consistent usage of times font
+%% throughout the proceedings. However, if you encounter conflicts
+%% with other math-related packages, you may want to disable it.
+
+%% If you are submitting a paper to a conference for review with a double
+%% blind reviewing process, please replace the value ``0'' below with your
+%% OnlineID. Otherwise, you may safely leave it at ``0''.
+\onlineid{224}
+
+%% declare the category of your paper, only shown in review mode
+\vgtccategory{Research}
+
+%% allow for this line if you want the electronic option to work properly
+\vgtcinsertpkg
+
+%% In preprint mode you may define your own headline.
+%\preprinttext{To appear in an IEEE VGTC sponsored conference.}
+
+%% Paper title.
+
+\title{Common Angle Plots as perception-true visualizations of categorical associations}
+
+%% This is how authors are specified in the journal style
+
+%% indicate IEEE Member or Student Member in form indicated below
+\author{Heike Hofmann, Marie Vendettuoli}
+\authorfooter{
+%% insert punctuation at end of each item
+\item
+ Heike Hofmann is a professor in Statistics and faculty member in the Human Computer Interaction program at Iowa State University, E-mail: hofmann@iastate.edu.
+\item
+Marie Vendettuoli is a graduate student at Iowa State University, with majors in Human Computer Interaction and Bioinfomatics \& Computational Biology. She is a past IGERT Fellow and currently interns with the Statistics section at USDA.  E-mail: mariev@iastate.edu.
+}
+
+%other entries to be set up for journal
+\shortauthortitle{Hofmann \MakeLowercase{\textit{et al.}}: Common Angle Plots}
+%\shortauthortitle{Firstauthor \MakeLowercase{\textit{et al.}}: Paper Title}
+
+%% Abstract section.
+\abstract{
+Visualizations are great tools of communications - they summarize findings and quickly convey main messages to our audience. As designers of charts we have to make sure that information is shown with a minimum of distortion. We have to also consider illusions and other perceptual  limitations of our audience. In this paper we discuss  the effect and strength of the  line width illusion,  a M\"uller-Lyer type illusion, on designs related to displaying associations between categorical variables. Parallel sets and hammock plots are both affected by line width illusions. We  introduce the common-angle plot as an alternative method for displaying categorical data in a manner that minimizes the effect from perceptual illusions. Results from user studies both highlight the need for addressing  line-width illusions in displays and provide evidence that common angle charts successfully resolve this issue.
+} % end of abstract
+
+%% Keywords that describe your work. Will show as 'Index Terms' in journal
+%% please capitalize first letter and insert punctuation after last keyword
+\keywords{Linewidth illusion, Data Visualization, High-dimensional Displays, Parallel Sets, Hammock Plots, M\"uller-Lyer Illusion.}
+
+%% ACM Computing Classification System (CCS). 
+%% See <http://www.acm.org/class/1998/> for details.
+%% The ``\CCScat'' command takes four arguments.
+
+\CCScatlist{ % not used in journal version
+  \category{H.5.2}{Information Interfaces and Presentation}{ User Interfaces --- Graphical user interfaces (GUI), Interaction styles, Screen design, Evaluation/methodology}
+  \CCScat{I.6.8}{Computing Methodologies}%
+  {Simulation and Modeling}{Visual Simulation};
+}
+
+\graphicspath{{images/}}
+\definecolor{LightGrey}{gray}{0.9}
+
+%% Uncomment below to include a teaser figure.
+\teaser{
+\centering
+\includegraphics[height=1.5in]{ca-titanic-teaser.pdf}\hspace{0.01\linewidth}
+\includegraphics[height=1.5in]{cubes.pdf}
+%\includegraphics[width=16cm]{CypressView.eps}
+\caption{Who survived on the Titanic? Common Angle plot of survival by class (left). On the right, graphs showing survey results with answers.}
+}
+
+%% Uncomment below to disable the manuscript note
+%\renewcommand{\manuscriptnotetxt}{}
+
+%% Copyright space is enabled by default as required by guidelines.
+%% It is disabled by the 'review' option or via the following command:
+% \nocopyrightspace
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% START OF THE PAPER %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%% The ``\maketitle'' command must be the first command after the
+%% ``\begin{document}'' command. It prepares and prints the title block.
+
+%% the only exception to this rule is the \firstsection command
+\firstsection{Introduction}
+
+\maketitle
+
 % !TEX root = common-angle-infovis.tex
 
 
@@ -39,11 +144,29 @@ Parallel sets (parsets)~\cite{kosara:2006} are a graphical method  for visualizi
 ability to visualize a large number of dimensions simultaneously that is the parallel coordinates' hallmark trade, parallel sets combine with it a frequency scale that is a well-known feature of other categorical displays such as barcharts or mosaic plots~\cite{hartigan:1981, friendly:1992, hofmann:2000, theus:1997}.
 Unfortunately, the parallel set plot is a victim to distortion due to a contextual illusion: consider the parset plot of Figure~\ref{question1a}.
 %
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+options(width=32)
+opts_chunk$set(fig.path='images/', cache.path='cache/', fig.align='center',  fig.width=5, fig.height=5, cache=TRUE)
+@
+%
+%
 \begin{figure}[hbtp]
 \centering
 %\includegraphics[width=.9\linewidth]{images/parset-titanic}
-<<parset-titanic, out.width=.9\\linewidth>>
+<<parset-titanic-col, results='asis', echo=FALSE, out.width='.9\\linewidth', fig.width=8, fig.height=3.75>>=
 library(ggparallel)
+library(RColorBrewer)
+titanic <- as.data.frame(Titanic)
+
+cols <- c(brewer.pal(name="Blues", 6)[-c(1,2)], rev(brewer.pal(name="Oranges", 3)[-1]))
+ggparallel(list("Survived", "Class"), weight="Freq", data=titanic, text.angle=0,col=NA, 
+           order=c(1,0), method="parset", color="red") + coord_flip() + theme(legend.position="none") +    scale_fill_manual(values=rep("grey30",6)) + 
+  scale_colour_manual(values=rep("grey70",6))
+
+
+ggsave("images/aspect31-titanic.pdf", width=9, height=3)
+ggsave("images/aspect33-titanic.pdf", width=3, height=3)
 @
 \caption{\label{question1a} Parallel sets plot showing the relationship between survival of the sinking of the HMS Titanic and class membership. }
 \end{figure}
@@ -226,7 +349,7 @@ Common angles, plus the related methods of hammock plots and parallel sets are i
 \section{Usability Testing}
 \subsection{Test} \label{test}
 
-To determine the effectiveness of the common angle plot, we conducted a user study in form of a survey asking participants to provide responses regarding the structure in two data sets with predominantly categorical variables. The Titanic data  includes class, sex, age, and survival status for each person on board of the Titanic \cite{titanic}. The gene data  was retrieved from the UCSC Genome Browser \cite{ucsc:2002} and includes chromosome location for genes involved in one of three metabolism pathways: steroid biosynthesis, caffeine metabolism and drug metabolism.
+To determine the effectiveness of the common angle plot, we conducted a user study in form of a survey asking participants to provide responses regarding the structure in two data sets with predominantly categorical variables. The Titanic data  includes class, sex, age, and survival status for each person on board of the Titanic \cite{dawson:1995}. The gene data  was retrieved from the UCSC Genome Browser \cite{ucsc:2002} and includes chromosome location for genes involved in one of three metabolism pathways: steroid biosynthesis, caffeine metabolism and drug metabolism.
 For each data set, participants were asked to provide responses for three tasks that analysts routinely perform as part of exploratory data analysis:
 \begin{description}
 \item[{\bf Task I}:] simple comparison task, chosen to be unaffected by any illusion. Performance on this task should be comparable across designs.
@@ -350,7 +473,7 @@ III & Titanic & 66.7 (2.69) & {\bf 41.2} (2.98) & {\bf 6.2} (1.56) \\
 \centering \includegraphics[width=.7\linewidth]{hist-skills}
 \caption{\label{skills}Histogram of the predictions of subject-specific skills. }
 \vspace{-0.2in}
-\end{figure}	
+\end{figure}  
 Figure \ref{skills} shows an overview of the predicted skill for each participant under the model. Skills are quite varied between  -1.52 and  1.34, but
 a Kolmogorov-Smirnov test  does not show significant deviation from a normal assumption ($p$-value 0.089).
 On the scale of the dependent variable the range in individuals' skills translates to a $17.5 = e^{1.34 - (-1.52)}$ fold increase in the probability of answering a question on the survey correctly between participants with the best skill set and the worst.
@@ -716,3 +839,14 @@ a majority of participants used Intel Mac OS X (versions ranging from 10.6.8 to 
 
 
 
+
+%% if specified like this the section will be ommitted in review mode
+\acknowledgments{
+The survey for this study was carried out with approval from  IRB-ID 12-204. 
+}
+
+\bibliographystyle{abbrv}
+%%use following if all content of bibtex file should be shown
+%\nocite{*}
+\bibliography{references}
+\end{document}
