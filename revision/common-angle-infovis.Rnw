@@ -362,8 +362,12 @@ For each data set, participants were asked to provide responses for three tasks 
 \item[{\bf Task III}:] more complex ordering task with at least six pairwise comparisons, some of which are affected by either illusion.
  \end{description}
  
-Each participant was presented with two of the three types of displays. For each display, the participant was asked to complete each of the three tasks for each data set. All participants were evaluated using the same set of questions with multiple choice options as detailed in Appendix \ref{app2}, regardless of display type or order. Participants were all shown the Titanic data first, then the gene data.  %one for all three tasks related to the same data set.
-This resulted in a crossover design as shown in Table \ref{tab:designs} allowing for comparisons of display types and tasks while  simultaneously adjusting for individuals' different skill sets and learning effect.
+Each participant was presented with two of the three types of displays. 
+For each display, the participant was asked to complete each of the three tasks for each data set. All participants were evaluated using the same set of questions with multiple choice options as detailed in Appendix \ref{app2}, regardless of display type or order. Participants were all shown the Titanic data first, then the gene data.  %one for all three tasks related to the same data set.
+This resulted in a crossover design of  a total of six unique combinations of data and display as shown in Table \ref{tab:designs} allowing for comparisons of display types and tasks while  simultaneously adjusting for individuals' different skill sets and learning effect.
+
+The choice to show only two of the three possible types of displays to a participant was made to encourage  participation by reducing the amount of time needed for its completion. 
+
 
 \begin{table}[htbp]
 \centering
@@ -420,7 +424,7 @@ Table \ref{raw} shows percentages of correct answers for each question under eac
 \end{figure*}
 
 The observed results are in line with our expectations:
-as we aimed for, task I does not show any significant differences between the designs and has overall the highest percentage of correctness reflecting its low difficulty level. Generally, difficult levels seem to increase with complexity of the tasks.
+as we aimed for, task I does not show any significant differences between the designs and has overall the highest percentage of correctness reflecting its low difficulty level. Generally, difficulty of levels seems to increase with complexity of the tasks.
 
 Parallel sets were affected the most by the line width illusion and show significantly worse performance for tasks II and III in the Titanic data, and for task III in the genes data. The performance on task II in the genes data is borderline non-significant, but shows a negative trend.
 Hammock plots led to significantly worse performance than common angle plots in the two questions that were affected by the reverse line width illusion, while they show equal performance as common angle plots for the other questions. For task II in the genes data,  hammock plots have the overall best performance  across designs-- but this  does not  constitute a significant improvement over the performance of the common angle plot. Figure~\ref{fig:model-summary} gives an overview of  performance of each design on all tasks. 
@@ -570,7 +574,7 @@ The only consistent complaint against common angle was a preference for straight
 
 \subsection{Methods}
 
-The survey was created using the Qualtrics Labs, Inc software (www.qualtrics.com). For survey contents, see Appendix~\ref{app2}. The study design is presented in section \ref{test}. All models are fit in the {\tt lme4} package~\citep{lmer} within the software frame work of {\tt R} 2.15.1 \citep{R}. Comparisons are adjusted for multiple testing using the {\tt multcomp} package~\citep{multcomp} and evaluated for pairwise significances using the {\tt effects} package~\citep{effects}.
+The survey was created using the Qualtrics Labs, Inc software (www.qualtrics.com). For survey contents, see Appendix~\ref{app2}. The study design is presented in section \ref{test}. All models are fit in the {\tt lme4} package~\citep{lmer} within the software framework of {\tt R} 2.15.1 \citep{R}. Comparisons are adjusted for multiple testing using the {\tt multcomp} package~\citep{multcomp} and evaluated for pairwise significances using the {\tt effects} package~\citep{effects}.
 
 
 \section{Discussion}
@@ -681,9 +685,7 @@ The survey for this study was carried out with approval from  IRB-ID 12-204.
 
 At the survey start, participants were presented a brief tutorial regarding the different plot types. The tutorial can be found at \url{http://mariev.net/tutorial.html}
 
-The survey consists of two blocks of questions each pertaining to one data set (Titanic data or gene data). Each block was presented with a single plot  to use as reference when responding. Two different plot types were shown for the two different blocks, yielding a total of six unique orderings of plot types as shown in table~\ref{tab:designs}.
-
-Participants were randomly assigned to one of these six combinations.  This study design structure was imposed, in part,  to encourage participation by reducing the amount of time for survey completion. Completion of all survey questions was anticipated to take 10 - 15 minutes.
+Completion of all survey questions was anticipated to take 10 - 15 minutes.
 No personally identifiable information was collected, nor was any compensation offered.   
 
 \noindent The questions pertaining to the Titanic data were: 
