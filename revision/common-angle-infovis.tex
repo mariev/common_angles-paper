@@ -181,9 +181,9 @@ A well-designed graph is a powerful tool
 that transcends barriers of language to
 communicate complex concepts from author to audience. 
 Problems arise when readers are unable to easily extract a chart's main message or are led to wrong conclusions due to distortions.
-This endangers the trust between readers and creators of charts, which is based on the main premise that
+Distortions endanger the trust between readers and creators of charts. This trust is based on the  premise that
 graphics have to be true to the data \citep{tufte, wainer:2000, robbins:2005}.
-There is a lot of discussion on keeping true to the data in the framework of (ab)using three dimensional effects in graphics. Tufte~\citep{tufte} goes as far as defining a {\it lie-factor} -- the ratio of the size of an effect in the data compared to the size of an effect shown. Any large deviation of this factor from one indicates a misuse of graphical techniques. Computational tools help us ensure technical trueness -- but this brings up the additional question of how we deal with situations that involve innate inability or trigger learned misperceptions.
+There is a lot of discussion on keeping true to the data in the framework of (ab)using three dimensional effects in graphics. \citet{tufte} goes as far as defining the {\it lie-factor} -- the ratio of the size of an effect in the data compared to the size of an effect shown in the chart. Any large deviation of this factor from one indicates a misuse of graphical techniques. Computational tools help us ensure technical trueness -- but this brings up the additional question of how we deal with situations that involve innate inability or trigger learned misperceptions.
 One example of distortions of this kind is the 
  M\"{u}ller-Lyer family of illusions, which include contextual illusions,  such as differently perceived lengths of line segments depending on the orientation of arrow heads  
  or the sine illusion~\citep{day:1991}.
@@ -196,9 +196,14 @@ underlying cognitive models or previously unknown or not anticipated illusions.
 
 
 
-Parallel sets (parsets)~\citep{kosara:2006} are a graphical method  for visualizing multivariate categorical data. Since their initial publication, parallel sets have spread to mass media outlets ~\citep{eagereyes, bostock:2012, bbc:2009}, have been implemented in various languages~\citep{eagereyes, d3, davies} and are a reputable resource for further academic work (\citep{kosara:2006} has 70 citations per Google scholar). While retaining the %independent 
-ability to visualize a large number of dimensions simultaneously that is the parallel coordinates' hallmark trade, parallel sets combine with it a frequency scale that is a well-known feature of other categorical displays such as barcharts or mosaic plots~\citep{hartigan:1981, friendly:1992, hofmann:2000, theus:1997}.
-Unfortunately, the parallel set plot is a victim of distortion due to a contextual illusion: consider the parset plot of Figure~\ref{question1a}.
+Parallel sets (parsets)~\citep{kosara:2006} are a graphical method  for visualizing multivariate categorical data. Since their initial publication, parallel sets have spread to mass media outlets ~\citep{eagereyes, bostock:2012, bbc:2009}, have been implemented in various languages~\citep{eagereyes, d3, davies} and are a reputable resource for further academic work \citep[][has 70 citations according to Google scholar]{kosara:2006}. While retaining the %independent 
+ability to visualize a large number of dimensions simultaneously that is the parallel coordinates' hallmark trade \cite{inselberg:1985, wegman:1990}, parallel sets combine with it a frequency scale that is a well-known feature of other categorical displays such as barcharts or mosaic plots~\citep{hartigan:1981, friendly:1992, hofmann:2000, theus:1997}. 
+
+Another aspect that parsets allow is the visualization of hierarchies \citep{slingsby:2009, stasko:2000}. They share this ability with mosaicplots and their more general relatives, the treemaps~\citep{shneiderman:1992}, and treemap variants  \citep{bruls:1999, kong:2010, balzer:2005}.
+
+
+All of these properties make parsets a powerful visualization  in our toolkit, but 
+unfortunately, the parallel set plot is a victim of distortion due to a contextual illusion: consider the parset plot of Figure~\ref{question1a}.
 %
 
 
@@ -209,21 +214,21 @@ Unfortunately, the parallel set plot is a victim of distortion due to a contextu
 %\includegraphics[width=.9\linewidth]{images/parset-titanic}
 
 
-{\centering \includegraphics[width=.9\linewidth]{images/parset-titanic-col} 
+{\centering \includegraphics[width=.85\linewidth]{images/parset-titanic-col} 
 
 }
 
 
 
 
-\caption{\label{question1a} Parallel sets plot showing the relationship between survival of the sinking of the HMS Titanic and class membership. }
+\caption{\label{question1a} Parallel sets plot showing the relationship between survival of the sinking of the HMS Titanic and class membership. Class membership and survival are clearly related, but which class had the largest number of survivors? }
 \end{figure}
 %
 %%XXX PS and line-width illusion
-This plot shows the relationship between class status and survival on board the HMS Titanic  \citep{dawson:1995}. Class status is recorded as either crew member or passengers in  first, second, or third class.  The top bar in figure \ref{question1a} shows the  variable Class. The bottom bar shows survival  as yes and no.
- Lines are drawn between top and bottom bar -- the  (horizontal) width is proportional to the number of survivor and non-survivor they represent. 
- A reasonable task based on this chart is to order levels of the variable `class' by number of survivors. However, when study participants were asked to perform this task, only $6.2\%$ respondents 
-selected the correct order, see table~\ref{raw}.
+This plot shows the relationship between class status and survival on board the HMS Titanic  \citep{dawson:1995}.  The top bar in figure \ref{question1a} shows the  variable Class, recorded as either crew member or passenger in  first, second, or third class. The bottom bar shows survival  as yes and no.
+ Lines are drawn between top and bottom bar -- the  (horizontal) width is proportional to the number of survivors and non-survivors they represent. 
+ A reasonable task based on this chart is to ask the reader to order class levels according to their number of survivors. However, when study participants were asked to perform this task, only $6.2\%$ of all respondents 
+selected the correct order, see table~\ref{raw}, while 37.5\% of all participants agreed on another, incorrect, ordering.
 
 \begin{table}
 \begin{center}
@@ -232,20 +237,18 @@ selected the correct order, see table~\ref{raw}.
 Survivors & 212 & 203 & 118 & 178\\
 Non-Survivors & 673 & 122 & 167 &  528  
 \end{tabular}
-\caption{Correct ordering of variable Class is: crew, first class, third class, followed by second class. }
+\caption{Survival status and class membership of all persons on board the HMS Titanic. 
+Most survivors were among  crew members, followed by first, third, and, lastly, second class passengers.  }
 \end{center}
 \end{table}
-The \emph{line width illusion} provides an explanation for this phenomenon.The line-width illusion is a contextual illusion that leads to perceptual distortion in evaluating parallel sets plots. In this paper, we first describe and then quantify this illusion. We also propose and test \emph{common angle plots} as an alternative graphing method for visualizing multivariate categorical data that helps the audience avoid the distortional effects of the line width illusion.
+This phenomenon can be explained by the \emph{line width illusion}. The line-width illusion is a contextual illusion that leads to perceptual distortion in evaluating parallel sets plots. In this paper, we first describe and then quantify this illusion. We also propose and test \emph{common angle plots} as an alternative  method for visualizing multivariate categorical data that helps the audience to avoid the distortional effects of the line width illusion.
 %XXX PS and line-width illusion
 
-
-%
-% You must have at least 2 lines in the paragraph with the drop letter
-% (should never be an issue)
 
 \section{Line width illusion}
 
 
+The  phenomenon of the line width illusion  is known and widely discussed in statistical graphics literature \citep{cleveland:1984, tufte, wainer:2000, robbins:2005}. It  is due to our  tendency to assess distance between curves as the minimal (orthogonal) distance rather than the  vertical distance -- see sketch \ref{fig:linewidth} for a visual representation of both.
 
 
 \begin{figure}
@@ -253,7 +256,7 @@ The \emph{line width illusion} provides an explanation for this phenomenon.The l
 \caption{\label{playfair}
 Playfair's chart from the Commercial and Political Atlas (1786) showing the balance of trade between England and the East Indies.  In which years was the difference between imports and exports the highest? }
 \end{figure}
-An example of the  {\it line width illusion} is displayed in  figure~\ref{playfair}. This chart displays the balance of trade between England and the East Indies as shown by William Playfair in his Commercial and Political Atlas, 1786~\citep{playfair, playfair2}.  One purpose of this chart is to demonstrate the difference between imports and exports in a particular year and its pattern over that time frame. The difference in exports and imports is encoded as the vertical difference between the lines. When observers are asked to sketch out the difference between exports and imports  \citep{cleveland:1984}, they very often  miss the steep rise in the difference between the lines in the years between about 1755 and 1765. Figure \ref{playfair2} shows the  actual difference between imports and exports. 
+On of the earliest examples of the line width illusion is shown in  figure~\ref{playfair}. This chart displays the balance of trade between England and the East Indies as demonstrated by William Playfair in his Commercial and Political Atlas, 1786~\citep{playfair, playfair2}.  One purpose of this chart is to highlight the difference between imports and exports in a particular year and the pattern of these differences over  time. The difference in exports and imports is encoded as the vertical difference between the lines. When observers are asked to sketch out the difference between exports and imports  \citep{cleveland:1984}, they very often  miss the steep rise in the difference between the lines in the years between about 1755 and 1765. Figure \ref{playfair2} shows the  actual difference between imports and exports. 
 
 
 
@@ -265,18 +268,17 @@ Difference between exports and imports from England to and from the East Indies 
 \end{figure}
 
 
-This phenomenon  is known and widely discussed in statistical graphics literature \citep{cleveland:1984, tufte, wainer:2000, robbins:2005}. It  is due to our  tendency to assess distance between curves as the minimal (orthogonal) distance rather than the  vertical distance -- see sketch \ref{fig:linewidth} for a visual representation of both.
 
 
-In the perception literature, this phenomenon is known as part of a group of geometrical optical misperceptions of a context-sensitive nature classified as M\"uller-Lyer illusions \citep{day:1991}. Interestingly, there seems to be a general agreement that this illusion exists, but a quantification of it is curiously absent from literature. 
+In the perception literature, this phenomenon is known as part of a group of geometrical optical misperceptions of a context-sensitive nature classified as M\"uller-Lyer illusions \citep{day:1991, goldstein}. Interestingly, there seems to be a general agreement that this illusion exists, but a quantification of it is curiously absent from literature. 
 
-The type of chart as shown in figure~\ref{playfair} proposed by Playfair is shown quite commonly, particular in election years -- where these kind of charts are used to enable comparisons of support for several candidates, the recommendation from literature is to avoid charts in which the audience is asked to do visual subtractions, and show these differences directly.
+The type of chart as shown in figure~\ref{playfair} proposed by Playfair is a quite common occurrence, particular in election years -- where these kind of charts are used to enable comparisons of support for different candidates. The recommendation from literature is to avoid charts in which the audience is asked to do visual subtractions, and show these differences directly \citep{cleveland:1984, wainer:2000, tufte}.
 
 \subsection{Strength of  line width illusion}\label{distortion}
 
 %The difference between perceived and actual line width 
-When visually evaluating lines of thickness greater than one, the line width illusion applies, only now the {\it edges} of a single line  take on the role of the separate curves. %in the parallel sets 
-As above, there is a strong preference of evaluating the width of lines orthogonal to their slopes as opposed to horizontally (see figure \ref{fig:linewidth})  needed for a correct  evaluation of parallel sets-style displays.
+When visually evaluating lines of thickness greater than one, the line width illusion applies. %, only now the {\it edges} of a single line  take on the role of the separate curves. %in the parallel sets 
+As above, there is a strong preference of evaluating the width of lines orthogonal to their slopes as opposed to horizontally (see figure \ref{fig:linewidth}), which would lead us to a correct  evaluation of parallel sets-style displays.
 
 Orthogonal $w_o$ and horizontal $w_h$ line widths are related -- the orthogonal line width depends on the angle (or, equivalently, the slope) of the line:
 \begin{equation}\label{adjust}
@@ -288,7 +290,7 @@ where $\theta$ is the angle of the line with respect to the horizontal line.
 \begin{center}
 \includegraphics[width=0.6\linewidth]{images/linewidth}
 \end{center}
-\caption{\label{fig:linewidth}Sketch of line width assessments: (a) is showing  horizontal width, (b) shows  width orthogonal to the slope. Survey results in section \ref{results}  indicate that observers associate line width more with  orthogonal width (b) than horizontal width (a).}
+\caption{\label{fig:linewidth}Sketch of line width assessments: (a) is showing  horizontal width, (b) shows  width orthogonal to the slope. Survey results in section \ref{results}  indicate that observers associate line width more with  orthogonal width $w_o$ (b) than horizontal width $w_h$ (a).}
 \end{figure}
 
 
@@ -306,20 +308,18 @@ where $\theta$ is the angle of the line with respect to the horizontal line.
 
 
 
-The perceived slope of a line very much depends on the aspect ratio of the corresponding plot -- changing the height to width ratio of a display  will change our perception of the corresponding line widths, if they are not adjusted for the slope \citep{cleveland:1984}. This finding is not new, but its strength on our perception is surprising, as can be seen in the example of  figure \ref{fig:aspect}.  Again, survival and class membership on the Titanic is shown; the same parallel sets plot is shown twice in this figure, but with very different aspect ratios: in the  plot on the left the number of surviving 3rd class passengers seems to be about twice as big as the number of survivors among crew members, whereas in the plot on the right the lines have about equal (orthogonal) width. Obviously, this is not due to a change in numbers.
+The perceived slope of a line depends on the aspect ratio of the corresponding plot -- changing the height to width ratio of a display  will change our perception of the corresponding line widths, if they are not adjusted for the slope \citep{cleveland:1984}. This finding is not new, but its strength on our perception is surprising, as can be seen in the example of  figure \ref{fig:aspect}.  Again, survival and class membership on the Titanic is shown; the same parallel sets plot is shown twice in this figure, but with very different aspect ratios: in the  plot on the left the number of surviving 3rd class passengers seems to be about twice as big as the number of survivors among crew members, whereas in the plot on the right the lines have about equal (orthogonal) width. The numbers underlying the figures are identical. Any perceived change is purely due to the different  aspect ratios. 
 
-For parallel sets-style displays, the audience has the {\it area of the line segment} as an alternate visual cue when evaluating frequencies. Because height (or width for a rotated display) of  line segments is constant across the display, the width of a particular  segment is proportional to its area. We can therefore employ area comparisons as a proxy or to augment line width evaluations. 
-However, existing literature suggests that this method of comparison is particularly  prone to errors in two scenarios commonly seen in parallel sets: (1) extreme aspect ratios of the rectangular shape \citep{heer:2010} %occupied by thick line segments 
+For parallel sets-style displays, the audience has the {\it area of the line segment} as an alternate visual cue when evaluating frequencies. Because height (or width for a rotated display) of  line segments is constant across the display, the width of a particular  segment is proportional to its area. We could therefore employ area comparisons as a proxy or to augment line width evaluations. 
+However, existing literature suggests that this method of comparison is particularly  prone to errors in two scenarios commonly seen in parallel sets: (1) for extreme aspect ratios of the rectangular shape \citep{heer:2010} %occupied by thick line segments 
 and (2) when comparing rectangles rotated relative to each other \citep{kong:2010}. 
 This incorrect perception and comparison of areas distorts the message readers discern from the graph. %additional contextual evidence that reinforce and strengthen distortion introduced by the line width illusion.
 
 
-% needed in second column of first page if using \IEEEpubid
-%\IEEEpubidadjcol
-\section{Related work}
+\subsection{Hammock Plots}
 
 
-Hammock plots, introduced by M Schonlau in \citep{schonlau:2003}, provide an alternative to parallel sets that is adjusted for the line width illusion. This is done by  adjusting the { \emph horizontal} line width by  a factor of $\sin \theta$, as discussed in equation (\ref{adjust}). This adjustment makes the perceived {\emph orthogonal} line width to be proportional to the number of observations it represents. 
+Hammock plots, introduced by M Schonlau in \citep{schonlau:2003}, provide an alternative to parallel sets that is adjusted for the line width illusion. This is done by  adjusting the { \it horizontal} line width by  a factor of $\sin \theta$, as discussed in equation (\ref{adjust}). This adjustment makes the perceived {\it orthogonal} line width to be proportional to the number of observations it represents. 
  Figure \ref{hammock} shows an example of a four dimensional hammock plot of the Titanic data. From top to bottom Class, Gender, Survival, and again Class are shown. 
 \begin{figure}
 % cols <- c(brewer.pal(name="Blues", 6)[-c(1,2)],  rev(brewer.pal(name="Greens",3)[-1]), rev(brewer.pal(name="Oranges", 3)[-1]))
