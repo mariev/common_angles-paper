@@ -1,3 +1,4 @@
+\RequirePackage{ifpdf}
 \documentclass[journal]{vgtc}                % final (journal style)
 %\documentclass[review,journal]{vgtc}         % review (journal style)
 
@@ -42,7 +43,7 @@
 \authorfooter{
 %% insert punctuation at end of each item
 \item
- Heike Hofmann is a professor in Statistics and faculty member in the Human Computer Interaction program at Iowa State University, E-mail: hofmann@iastate.edu.
+ Heike Hofmann is  Professor of Statistics and faculty member in the Human Computer Interaction program at Iowa State University, E-mail: hofmann@iastate.edu.
 \item
 Marie Vendettuoli is a graduate student at Iowa State University, with majors in Human Computer Interaction and Bioinfomatics \& Computational Biology. She is a past IGERT Fellow and currently interns with the Statistics section at USDA.  E-mail: mariev@iastate.edu.
 }
@@ -126,11 +127,11 @@ that transcends barriers of language to
 communicate complex concepts from author to audience. 
 Problems arise when readers are unable to easily extract a chart's main message or are led to wrong conclusions due to distortions.
 This endangers the trust between readers and creators of charts, which is based on the main premise that
-graphics have to be true to the data \cite{tufte, wainer:2000, robbins:2005}.
-There is a lot of discussion on keeping true to the data in the framework of (ab)using three dimensional effects in graphics. Tufte~\cite{tufte} goes as far as defining a {\it lie-factor} -- the ratio of the size of an effect in the data compared to the size of an effect shown. Any large deviation of this factor from one indicates a misuse of graphical techniques. Computational tools help us ensure technical trueness -- but this brings up the additional question of how we deal with situations that involve innate inability or trigger learned misperceptions.
+graphics have to be true to the data \citep{tufte, wainer:2000, robbins:2005}.
+There is a lot of discussion on keeping true to the data in the framework of (ab)using three dimensional effects in graphics. Tufte~\citep{tufte} goes as far as defining a {\it lie-factor} -- the ratio of the size of an effect in the data compared to the size of an effect shown. Any large deviation of this factor from one indicates a misuse of graphical techniques. Computational tools help us ensure technical trueness -- but this brings up the additional question of how we deal with situations that involve innate inability or trigger learned misperceptions.
 One example of distortions of this kind is the 
  M\"{u}ller-Lyer family of illusions, which include contextual illusions,  such as differently perceived lengths of line segments depending on the orientation of arrow heads  
- or the sine illusion~\cite{day:1991}.
+ or the sine illusion~\citep{day:1991}.
 
 Regardless of the cause of distortion, it is the responsibility of the  author of a chart to create visualizations that
  allows readers to extract an accurate interpretation of the underlying data.  In order to gauge the
@@ -140,9 +141,9 @@ underlying cognitive models or previously unknown or not anticipated illusions.
 
 
 
-Parallel sets (parsets)~\cite{kosara:2006} are a graphical method  for visualizing multivariate categorical data. Since their initial publication, parallel sets have spread to mass media outlets ~\cite{eagereyes, bostock:2012, bbc:2009}, have been implemented in various languages~\cite{eagereyes, d3, davies} and are a reputable resource for further academic work (\cite{kosara:2006} has 70 citations per Google scholar). While retaining the %independent 
-ability to visualize a large number of dimensions simultaneously that is the parallel coordinates' hallmark trade, parallel sets combine with it a frequency scale that is a well-known feature of other categorical displays such as barcharts or mosaic plots~\cite{hartigan:1981, friendly:1992, hofmann:2000, theus:1997}.
-Unfortunately, the parallel set plot is a victim to distortion due to a contextual illusion: consider the parset plot of Figure~\ref{question1a}.
+Parallel sets (parsets)~\citep{kosara:2006} are a graphical method  for visualizing multivariate categorical data. Since their initial publication, parallel sets have spread to mass media outlets ~\citep{eagereyes, bostock:2012, bbc:2009}, have been implemented in various languages~\citep{eagereyes, d3, davies} and are a reputable resource for further academic work (\citep{kosara:2006} has 70 citations per Google scholar). While retaining the %independent 
+ability to visualize a large number of dimensions simultaneously that is the parallel coordinates' hallmark trade, parallel sets combine with it a frequency scale that is a well-known feature of other categorical displays such as barcharts or mosaic plots~\citep{hartigan:1981, friendly:1992, hofmann:2000, theus:1997}.
+Unfortunately, the parallel set plot is a victim of distortion due to a contextual illusion: consider the parset plot of Figure~\ref{question1a}.
 %
 <<setup, include=FALSE, cache=FALSE>>=
 library(knitr)
@@ -172,7 +173,7 @@ ggsave("images/aspect33-titanic.pdf", width=3, height=3)
 \end{figure}
 %
 %%XXX PS and line-width illusion
-This plot shows the relationship between class status and survival on board the HMS Titanic  \cite{dawson:1995}. Class status is recorded as either crew member or passengers in  first, second, or third class.  The top bar in figure \ref{question1a} shows the  variable Class. The bottom bar shows survival  as yes and no.
+This plot shows the relationship between class status and survival on board the HMS Titanic  \citep{dawson:1995}. Class status is recorded as either crew member or passengers in  first, second, or third class.  The top bar in figure \ref{question1a} shows the  variable Class. The bottom bar shows survival  as yes and no.
  Lines are drawn between top and bottom bar -- the  (horizontal) width is proportional to the number of survivor and non-survivor they represent. 
  A reasonable task based on this chart is to order levels of the variable `class' by number of survivors. However, when study participants were asked to perform this task, only $6.2\%$ respondents 
 selected the correct order, see table~\ref{raw}.
@@ -205,7 +206,7 @@ The \emph{line width illusion} provides an explanation for this phenomenon.The l
 \caption{\label{playfair}
 Playfair's chart from the Commercial and Political Atlas (1786) showing the balance of trade between England and the East Indies.  In which years was the difference between imports and exports the highest? }
 \end{figure}
-An example of the  {\it line width illusion} is displayed in  figure~\ref{playfair}. This chart displays the balance of trade between England and the East Indies as shown by William Playfair in his Commercial and Political Atlas, 1786~\cite{playfair, playfair2}.  One purpose of this chart is to demonstrate the difference between imports and exports in a particular year and its pattern over that time frame. The difference in exports and imports is encoded as the vertical difference between the lines. When observers are asked to sketch out the difference between exports and imports  \cite{cleveland:1984}, they very often  miss the steep rise in the difference between the lines in the years between about 1755 and 1765. Figure \ref{playfair2} shows the  actual difference between imports and exports. 
+An example of the  {\it line width illusion} is displayed in  figure~\ref{playfair}. This chart displays the balance of trade between England and the East Indies as shown by William Playfair in his Commercial and Political Atlas, 1786~\citep{playfair, playfair2}.  One purpose of this chart is to demonstrate the difference between imports and exports in a particular year and its pattern over that time frame. The difference in exports and imports is encoded as the vertical difference between the lines. When observers are asked to sketch out the difference between exports and imports  \citep{cleveland:1984}, they very often  miss the steep rise in the difference between the lines in the years between about 1755 and 1765. Figure \ref{playfair2} shows the  actual difference between imports and exports. 
 
 
 
@@ -217,10 +218,10 @@ Difference between exports and imports from England to and from the East Indies 
 \end{figure}
 
 
-This phenomenon  is known and widely discussed in statistical graphics literature \cite{cleveland:1984, tufte, wainer:2000, robbins:2005}. It  is due to our  tendency to assess distance between curves as the minimal (orthogonal) distance rather than the  vertical distance -- see sketch \ref{fig:linewidth} for a visual representation of both.
+This phenomenon  is known and widely discussed in statistical graphics literature \citep{cleveland:1984, tufte, wainer:2000, robbins:2005}. It  is due to our  tendency to assess distance between curves as the minimal (orthogonal) distance rather than the  vertical distance -- see sketch \ref{fig:linewidth} for a visual representation of both.
 
 
-In the perception literature, this phenomenon is known as part of a group of geometrical optical misperceptions of a context-sensitive nature classified as M\"uller-Lyer illusions \cite{day:1991}. Interestingly, there seems to be a general agreement that this illusion exists, but a quantification of it is curiously absent from literature. 
+In the perception literature, this phenomenon is known as part of a group of geometrical optical misperceptions of a context-sensitive nature classified as M\"uller-Lyer illusions \citep{day:1991}. Interestingly, there seems to be a general agreement that this illusion exists, but a quantification of it is curiously absent from literature. 
 
 The type of chart as shown in figure~\ref{playfair} proposed by Playfair is shown quite commonly, particular in election years -- where these kind of charts are used to enable comparisons of support for several candidates, the recommendation from literature is to avoid charts in which the audience is asked to do visual subtractions, and show these differences directly.
 
@@ -258,11 +259,11 @@ where $\theta$ is the angle of the line with respect to the horizontal line.
 
 
 
-The perceived slope of a line very much depends on the aspect ratio of the corresponding plot -- changing the height to width ratio of a display  will change our perception of the corresponding line widths, if they are not adjusted for the slope \cite{cleveland:1984}. This finding is not new, but its strength on our perception is surprising, as can be seen in the example of  figure \ref{fig:aspect}.  Again, survival and class membership on the Titanic is shown; the same parallel sets plot is shown twice in this figure, but with very different aspect ratios: in the  plot on the left the number of surviving 3rd class passengers seems to be about twice as big as the number of survivors among crew members, whereas in the plot on the right the lines have about equal (orthogonal) width. Obviously, this is not due to a change in numbers.
+The perceived slope of a line very much depends on the aspect ratio of the corresponding plot -- changing the height to width ratio of a display  will change our perception of the corresponding line widths, if they are not adjusted for the slope \citep{cleveland:1984}. This finding is not new, but its strength on our perception is surprising, as can be seen in the example of  figure \ref{fig:aspect}.  Again, survival and class membership on the Titanic is shown; the same parallel sets plot is shown twice in this figure, but with very different aspect ratios: in the  plot on the left the number of surviving 3rd class passengers seems to be about twice as big as the number of survivors among crew members, whereas in the plot on the right the lines have about equal (orthogonal) width. Obviously, this is not due to a change in numbers.
 
-For parallel sets-style displays, the audience has {\it area of the line segment} an alternate visual cue when evaluating frequencies. Because height (or width for a rotated display) of  line segments is constant across the display, the width of a particular  segment is proportional to its area. We can therefore employ area comparisons as a proxy or to augment line width evaluations. 
-However, existing literature suggests that this method of comparison is particularly  prone to errors in two scenarios commonly seen in parallel sets: (1) extreme aspect ratios of the rectangular shape \cite{heer:2010} %occupied by thick line segments 
-and (2) when comparing rectangles rotated relative to each other \cite{kong:2010}. 
+For parallel sets-style displays, the audience has the {\it area of the line segment} as an alternate visual cue when evaluating frequencies. Because height (or width for a rotated display) of  line segments is constant across the display, the width of a particular  segment is proportional to its area. We can therefore employ area comparisons as a proxy or to augment line width evaluations. 
+However, existing literature suggests that this method of comparison is particularly  prone to errors in two scenarios commonly seen in parallel sets: (1) extreme aspect ratios of the rectangular shape \citep{heer:2010} %occupied by thick line segments 
+and (2) when comparing rectangles rotated relative to each other \citep{kong:2010}. 
 This incorrect perception and comparison of areas distorts the message readers discern from the graph. %additional contextual evidence that reinforce and strengthen distortion introduced by the line width illusion.
 
 
@@ -271,20 +272,20 @@ This incorrect perception and comparison of areas distorts the message readers d
 \section{Related work}
 
 
-Hammock plots, introduced by M Schonlau in \cite{schonlau:2003}, provide an alternative to parallel sets that is adjusted for the line width illusion. This is done by  adjusting the { \emph horizontal} line width by  a factor of $\sin \theta$, as discussed in equation (\ref{adjust}). This adjustment makes the perceived {\emph orthogonal} line width to be proportional to the number of observations it represents. 
+Hammock plots, introduced by M Schonlau in \citep{schonlau:2003}, provide an alternative to parallel sets that is adjusted for the line width illusion. This is done by  adjusting the { \emph horizontal} line width by  a factor of $\sin \theta$, as discussed in equation (\ref{adjust}). This adjustment makes the perceived {\emph orthogonal} line width to be proportional to the number of observations it represents. 
  Figure \ref{hammock} shows an example of a four dimensional hammock plot of the Titanic data. From top to bottom Class, Gender, Survival, and again Class are shown. 
 \begin{figure}
-%cols <- c(brewer.pal(name="Blues", 6)[-c(1,2)], rev(brewer.pal(name="Oranges", 3)[-1]), rev(brewer.pal(name="Greens",3)[-1]))
-%ggparallel(names(titanic)[c(1,4,2,1)], order=c(0,1,1,0), method="hammock", ratio=.25, text.angle=0, titanic, weight="Freq") +
+% cols <- c(brewer.pal(name="Blues", 6)[-c(1,2)],  rev(brewer.pal(name="Greens",3)[-1]), rev(brewer.pal(name="Oranges", 3)[-1]))
+% ggparallel(names(titanic)[c(1,4,2,1)], order=c(0,1,1,0), method="hammock", ratio=.25, text.angle=0, titanic, weight="Freq") +
 %  scale_fill_manual(values=cols, guide="none") +
-%  scale_colour_manual(values=cols, guide="none") + coord_flip() 
+%  scale_colour_manual(values=cols, guide="none") + coord_flip() + theme_bw()
 %ggsave("hammock-titanic.pdf", width=6, height=8)
 \centering
 \includegraphics[width=\linewidth]{images/hammock-titanic}
 \caption{\label{hammock} Hammock plot of the relationship between Class and Survival on the Titanic. }
 \end{figure}
 
-Similarly to the parallel sets plot, the bars are divided according to class membership numbers.  Lines connect categories between neighboring variables, orthogonal line widths are representing the number of individuals in each combination. Unlike the parallel sets, the lines start from the middle of the bin and connect to the middle of the other variable's bins. This convention is in part due to the fact that the sum of  horizontal widths ($w_h$) after adjustment is greater than the width of marginal bars.
+Similarly to the parallel sets plot, the bars are divided according to class membership numbers.  Lines connect categories between neighboring variables, orthogonal line widths  represent the number of individuals in each combination. Unlike the parallel sets, the lines start from the middle of the bin and connect to the middle of the other variable's bins. This convention is in part due to the fact that the sum of  horizontal widths ($w_h$) after adjustment is greater than the width of marginal bars.
 
 The graph shows that barely any women were in the crew, while male crew members make up the second largest contingent overall. While overall a few more men survived than women, proportionally the situation is much different -- a much higher percentage of women survived than men. While more first class passengers survived than not, the  survival chances of second class passengers were evenly divided. For third class passengers and crew members fewer members did  survive than not. 
 
@@ -310,11 +311,11 @@ w_h = w_o \csc \theta,
 
 %
 %\section{Overview}
-%From previous work~\cite{cleveland:1984, tufte, wainer:2000, robbins:2005, heer:2010, kong:2010}, we may conclude that numerically accurate representations of data
+%From previous work~\citep{cleveland:1984, tufte, wainer:2000, robbins:2005, heer:2010, kong:2010}, we may conclude that numerically accurate representations of data
 %are subject to distortion due to perceptual limitations. In particular,
 %the width of a single line of some thickness or the distance between two lines of minimal thickness is 
 %subject to the \emph{line width illusion} even though the depiction is numerically sound.
-% Furthermore, design choices during implementation \cite{schonlau:2003} may
+% Furthermore, design choices during implementation \citep{schonlau:2003} may
 %reduce the impact of such limitations.
 %%
 
@@ -325,12 +326,15 @@ w_h = w_o \csc \theta,
 
 
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
-%ggparallel(names(titanic)[c(1,4,2,1)], order=c(0,1,1,0), titanic, weight="Freq", text.angle=0) + 
-%  scale_fill_manual(values=cols, guide="none") +
-%  scale_colour_manual(values=cols, guide="none") + coord_flip() 
-%ggsave("ca-titanic.pdf", width=6, height=6)
-   \centering
-   \includegraphics[width=\linewidth]{images/ca-titanic} 
+<<caplot, echo=FALSE, out.width='\\linewidth', fig.width=6, fig.height=6>>=
+cols <- c(brewer.pal(name="Blues", 6)[-c(1,2)],  rev(brewer.pal(name="Greens",3)[-1]), (brewer.pal(name="Oranges", 3)[-1]))
+ggparallel(names(titanic)[c(1,4,2,1)], order=c(0,1,1,0), titanic, weight="Freq", text.angle=0) + 
+ scale_fill_manual(values=cols, guide="none") +
+ scale_colour_manual(values=cols, guide="none") + coord_flip() + theme_bw()
+#ggsave("images/ca-titanic.pdf", width=6, height=6)
+@
+%   \centering
+%   \includegraphics[width=\linewidth]{images/ca-titanic} 
    \caption{ \label{fig:ca-titanic} Common angle plot of the Titanic data. }
   \end{figure}
 
@@ -344,12 +348,12 @@ The pre-specified angle $\theta$ (between the line and the vertical band) is giv
 This makes the width of ribbons  comparable without being affected by the distortion, as all ribbons are sharing at least one segment under the same angle. 
 
 
-Common angles, plus the related methods of hammock plots and parallel sets are implemented in the  package \texttt{ggparallel} based on the \texttt{ggplot2} \cite{ggplot2} plotting framework in the software R 2.15.1 \cite{R}. The ggparallel package is freely available from CRAN (http://www. r-project.org/). The colors for the plots have been chosen using color schemes from the ColorBrewer project \cite{colorbrewer}, as implemented in the R package RColorBrewer \cite{RColorBrewer}.
+Common angles, plus the related methods of hammock plots and parallel sets are implemented in the  package \texttt{ggparallel} based on the \texttt{ggplot2} \citep{ggplot2} plotting framework in the software R 2.15.1 \citep{R}. The ggparallel package is freely available from CRAN (http://www. r-project.org/). The colors for the plots have been chosen using color schemes suggested by the ColorBrewer project \citep{colorbrewer}, as implemented in the R package RColorBrewer \citep{RColorBrewer}.
 
 \section{Usability Testing}
 \subsection{Test} \label{test}
 
-To determine the effectiveness of the common angle plot, we conducted a user study in form of a survey asking participants to provide responses regarding the structure in two data sets with predominantly categorical variables. The Titanic data  includes class, sex, age, and survival status for each person on board of the Titanic \cite{dawson:1995}. The gene data  was retrieved from the UCSC Genome Browser \cite{ucsc:2002} and includes chromosome location for genes involved in one of three metabolism pathways: steroid biosynthesis, caffeine metabolism and drug metabolism.
+To determine the effectiveness of the common angle plot, we conducted a user study in the form of a survey asking participants to provide responses regarding the structure in two data sets with predominantly categorical variables. The Titanic data  includes class, sex, age, and survival status for each person on board of the Titanic \citep{dawson:1995}. The gene data  was retrieved from the UCSC Genome Browser \citep{ucsc:2002} and includes chromosome location for genes involved in one of three metabolism pathways: steroid biosynthesis, caffeine metabolism and drug metabolism.
 For each data set, participants were asked to provide responses for three tasks that analysts routinely perform as part of exploratory data analysis:
 \begin{description}
 \item[{\bf Task I}:] simple comparison task, chosen to be unaffected by any illusion. Performance on this task should be comparable across designs.
@@ -374,7 +378,7 @@ Genes Data & CA & PS & PS & H& H & CA \\ \hline
 
 
 \subsection{Results}\label{results}
-We are investigating three different aspects  of the experiment in this section: first,  assessing general performance on the tasks according to percentage of correct responses, second, investigate the extent of variability due to subject-specific abilities, and finally exploration of the space of answers for the more complex ordering Task III.
+We are investigating three different aspects  of the experiment in this section: first,  assessing general performance on the tasks according to percentage of correct responses, second, investigating the extent of variability due to subject-specific abilities, and finally exploring of the space of answers for the more complex ordering Task III.
 \subsubsection*{Correctness of Answers}
 Answers for each survey question  were recoded in binary form according to correctness (with 1 for correct answers, and 0 otherwise). This forms the basis for the evaluation of performance of the different designs.
 
@@ -418,8 +422,8 @@ Table \ref{raw} shows percentages of correct answers for each question under eac
 The observed results are in line with our expectations:
 as we aimed for, task I does not show any significant differences between the designs and has overall the highest percentage of correctness reflecting its low difficulty level. Generally, difficult levels seem to increase with complexity of the tasks.
 
-parallel sets were affected the most by the line width illusion and show significantly worse performance for tasks II and III in the Titanic data, and for task III in the genes data. The performance on task II in the genes data is borderline non-significant, but shows a negative trend.
-Hammock plots led to significantly worse performance than common angle plots in the two questions that were affected by the reverse line width illusion, while they show equal performance as common angle plots for the other questions. For task III in the genes data,  hammock plots have the overall best performance  across designs-- but this  does not  constitute a significant improvement over the performance of the common angle plot. Figure~\ref{fig:model-summary} gives an overview of  performance of each design on all tasks. 
+Parallel sets were affected the most by the line width illusion and show significantly worse performance for tasks II and III in the Titanic data, and for task III in the genes data. The performance on task II in the genes data is borderline non-significant, but shows a negative trend.
+Hammock plots led to significantly worse performance than common angle plots in the two questions that were affected by the reverse line width illusion, while they show equal performance as common angle plots for the other questions. For task II in the genes data,  hammock plots have the overall best performance  across designs-- but this  does not  constitute a significant improvement over the performance of the common angle plot. Figure~\ref{fig:model-summary} gives an overview of  performance of each design on all tasks. 
 
 
 
@@ -490,7 +494,7 @@ Task III for the Titanic data required participants to order  class levels  acco
 
 
 There are 4! = 24 distinct orderings of the levels, corresponding to all permutations of length four. Some orderings are closer to one another than other orderings. 
-The Cayley distance allows us to quantify this distance: the Cayley distance between two orderings is defined as the smallest number of switches necessary to get from one ordering to the other. Visually, this corresponds to a graph: each node represents one ordering, and two nodes are connected by an edge, if only a single switch is necessary to move from one ordering to the other, i.e. if the Cayley distance between these nodes is one.
+The Cayley distance allows us to quantify this distance; the Cayley distance between two orderings is defined as the smallest number of switches necessary to get from one ordering to the other. Visually, this corresponds to a graph; each node represents one ordering, and two nodes are connected by an edge, if only a single switch is necessary to move from one ordering to the other, i.e. if the Cayley distance between these nodes is one.
 This results  in a  regular graph of degree six, i.e. each  node is connected to six other nodes. Between any two nodes, the Cayley distance on the graph is equivalent to the length of the shortest connecting path between the two nodes.
 Figure \ref{cubes} shows an overview of the permutation space together with an overview of the survey results. 
 
@@ -566,12 +570,12 @@ The only consistent complaint against common angle was a preference for straight
 
 \subsection{Methods}
 
-The survey was created using the Qualtrics Labs, Inc software (www.qualtrics.com). For survey contents, see Appendix~\ref{app2}. The study design is presented in section \ref{test}. All models are fit in the {\tt lme4} package~\cite{lmer} within the software frame work of {\tt R} 2.15.1 \cite{R}. Comparisons are adjusted for multiple testing using the {\tt multcomp} package~\cite{multcomp} and evaluated for pairwise significances using the {\tt effects} package~\cite{effects}.
+The survey was created using the Qualtrics Labs, Inc software (www.qualtrics.com). For survey contents, see Appendix~\ref{app2}. The study design is presented in section \ref{test}. All models are fit in the {\tt lme4} package~\citep{lmer} within the software frame work of {\tt R} 2.15.1 \citep{R}. Comparisons are adjusted for multiple testing using the {\tt multcomp} package~\citep{multcomp} and evaluated for pairwise significances using the {\tt effects} package~\citep{effects}.
 
 
 \section{Discussion}
 There is strong support from the user study that common angle plots help the reader to overcome issues arising from the line-width illusion and its reverse. This might come as a surprise, in particular, as common angle plots break one of the nice mathematical properties that parallel sets have:
-the area of a connecting line in parallel sets has a constant  overall area  independently of the angle under which it is drawn. Both hammock plots and common angle plots break this property. It does not seem, however, that the audience picks up on area as the main property of the displays. This might be also influenced by the relative high difficulty of the task of comparing areas \cite{heer:2010, kong:2010}, in particular, if they suffer from  (1) extreme aspect ratios of the rectangular shape or (2) are drawn under different orientations, both of which applies to parallel sets. 
+the area of a connecting line in parallel sets has a constant  overall area  independent of the angle under which it is drawn. Both hammock plots and common angle plots break this property. It does not seem, however, that the audience picks up on area as the main property of the displays. This might be also influenced by the relative high difficulty of the task of comparing areas \citep{heer:2010, kong:2010}, in particular, if they suffer from  (1) extreme aspect ratios of the rectangular shape or (2) are drawn under different orientations, both of which apply to parallel sets. 
 
 There are several other issues that common angle plots do not address in the visualization of categorical data, that should be noted at this point: \begin{itemize}
 \item Large number of levels in a variable introduce a lot of line crossings, which affects the overall effectiveness of the display. The number of line crossings is the same in parallel sets plots, but hammock plots reduce the number of crossings by centering all lines.
@@ -584,13 +588,13 @@ There are several other issues that common angle plots do not address in the vis
 %between parallel sets, hammock plots or common angles. 
 %Further study is necessary to resolve the potential 
 %for distortion in different application, especially the impact of bands displayed with extreme values for 
-%$\theta$, a known source of perceptual inaccuracy~\cite{heer:2010}.
+%$\theta$, a known source of perceptual inaccuracy~\citep{heer:2010}.
 
 Apart from these problems that will have to be solved in a different framework of plots, there are several opportunities for extending common angle plots.
 One opportunity for extension lies in the algorithm to determine the thickness of the connecting line. In the
 tested version of common angle plots, the line width was not explicitly defined - the line width is a byproduct of 
 specified $\theta$ for a band that connects marginal bars. Using an additional hammock adjustment as given in equation \ref{adjust} in the slanted section of the line segment, we can keep the bandwidth constant, resulting in a  common angle-hammock plot hybrid that bears further investigation.
-A drawback of this approach is that sum of the bandwidths $w_h$ will no longer match widths of marginal bars. 
+A drawback of this approach is that the sum of the bandwidths $w_h$ will no longer match the widths of the marginal bars. 
 This may create a additional processing burden placed on the audience to map the relationship between 
 band width and the with of marginal bars. 
 Both hammock plots and  this modification of common angles face  
@@ -621,7 +625,7 @@ problems induced by the line width illusion.
 
 \begin{figure}[hbtp]
 \includegraphics[width=\linewidth]{ca-hierarchy}
-\caption{\label{tit-hierarchy} Common angle plot of the Titanic data using a hierarchical structure in the variable (cf. to parallel sets chart in \cite{davies}). }
+\caption{\label{tit-hierarchy} Common angle plot of the Titanic data using a hierarchical structure in the variable (cf. to parallel sets chart in \citep{davies}). }
 \end{figure}
 
 
@@ -633,9 +637,9 @@ with the interactive feedback introduces a higher cognitive load by asking the a
 In the case where interactive feedback (e.g. summary data on mouse hover) is accurate when the visual cues
 suggest alternate interpretation, a mistrust of the graphical presentation may develop. In an extreme case,
 the user may develop a mistrust of their own perception, which would reduce effectiveness of all data displays, 
-regardless of the presence of any perceptual distortion. In the alternate case, where audience chooses to
+regardless of the presence of any perceptual distortion. In the alternate case, where the audience chooses to
 rely on perception over interactive feedback, it is possible that distortions in displays that are part of 
-initial exploratory analysis may lead to research choices that are unsupported by data. This is both a waste of resources and, when human or animal subjects are involved, may lead to ethical violations.
+the initial exploratory analysis may lead to research choices that are unsupported by data. This is both a waste of resources and, when human or animal subjects are involved, may lead to ethical violations.
 
 
 \section{Conclusion}
@@ -644,14 +648,18 @@ and tested its usability compared to existing charts that perform a similar func
 indicate
 that common angle plots effectively communicate underlying data without encouraging perceptual distortion of the 
 \emph{line width} illusion.
-Two other chart types which address visualization of multivariate categorical: parallel sets and hammock plots, 
+Two other chart types which address visualization of multivariate categorical data: parallel sets and hammock plots, 
 are subject to the line width illusions due to 
 contextual framework. Audiences perceive parallel sets with distortion due to a natural tendency to 
 evaluate line width in the orthogonal direction while data is mapped to the horizontal width.
-For hammock plots a correction is made to map data to the orthogonal width, however the centered line 
-intersection with axes creates a strong contextual encourage evaluation of line width using the
-horizontal measure (\emph{reverse line width illusion}). Common angles avoids the perceptual distortion 
+For hammock plots a correction is made to map data to the orthogonal width, however the centering of the lines creates a strong contextual cue that encourages an evaluation of line widths using the
+horizontal measure, leading to a (\emph{reverse line width illusion}). Common angles avoids the perceptual distortion 
 associated with either version of the illusion regardless of the underlying data set.
+
+%% if specified like this the section will be ommitted in review mode
+\acknowledgments{
+The survey for this study was carried out with approval from  IRB-ID 12-204. 
+}
 
 % if have a single appendix:
 %\appendix[Proof of the Zonklar Equations]
@@ -668,7 +676,7 @@ associated with either version of the illusion regardless of the underlying data
 %
 
 
-\appendices
+\begin{appendix}%\appendices
 \section{Survey }\label{app2}
 
 At the survey start, participants were presented a brief tutorial regarding the different plot types. The tutorial can be found at \url{http://mariev.net/tutorial.html}
@@ -839,13 +847,10 @@ a majority of participants used Intel Mac OS X (versions ranging from 10.6.8 to 
 
 
 
-
-%% if specified like this the section will be ommitted in review mode
-\acknowledgments{
-The survey for this study was carried out with approval from  IRB-ID 12-204. 
-}
+\end{appendix}
 
 \bibliographystyle{apalike}
+%\bibliographystyle{plain}
 %%use following if all content of bibtex file should be shown
 %\nocite{*}
 \bibliography{references}
