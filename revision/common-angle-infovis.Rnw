@@ -243,7 +243,7 @@ where $\theta$ is the angle of the line with respect to the horizontal line.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=0.6\linewidth]{images/linewidth}
+\includegraphics[width=0.5\linewidth]{images/linewidth}
 \end{center}
 \caption{\label{fig:linewidth}Sketch of line width assessments: (a) is showing  horizontal width, (b) shows  width orthogonal to the slope. Survey results in section \ref{results}  indicate that observers associate line width more with  orthogonal width $w_o$ (b) than horizontal width $w_h$ (a).}
 \end{figure}
@@ -273,31 +273,37 @@ This incorrect perception and comparison of areas distorts the message readers d
 
 \subsection{Hammock Plots}
 
-Hammock plots, introduced by  in \citet{schonlau:2003}, provide an alternative to parallel sets that is adjusted for the line width illusion. This is done by  adjusting the { \it horizontal} line width by  a factor of $\sin \theta$, as discussed in equation (\ref{adjust}). This adjustment makes the perceived {\it orthogonal} line width to be proportional to the number of observations it represents. 
- Figure \ref{hammock} shows an example of a four dimensional hammock plot of the Titanic data. From top to bottom Class, Gender, Survival, and again Class are shown. 
+Hammock plots, introduced by  in \citet{schonlau:2003}, provide an alternative to parallel sets that is adjusted for the line width illusion. This is done by  adjusting the { \it horizontal} line width by  a factor of $\sin \theta$, as discussed in equation (\ref{adjust}). This adjustment makes the perceived {\it orthogonal} line width proportional to the number of observations it represents. 
+ Figure \ref{hammock} shows an example of a hammock plot of the Titanic data. From top to bottom Class, Gender, Survival, and, again, Class are shown, capturing all two-way relationships of these variables. 
 \begin{figure}
-% cols <- c(brewer.pal(name="Blues", 6)[-c(1,2)],  rev(brewer.pal(name="Greens",3)[-1]), rev(brewer.pal(name="Oranges", 3)[-1]))
+% <<hammocktitanic, fig.width=6, fig.height=8, out.width='\\linewidth', results='asis', echo=FALSE>>=
+% cols <- c(brewer.pal(name="Blues", 6)[-c(1,2)],  rev(brewer.pal(name="Greens",3)[-1]), brewer.pal(name="Oranges", 3)[-1])
 % ggparallel(names(titanic)[c(1,4,2,1)], order=c(0,1,1,0), method="hammock", ratio=.25, text.angle=0, titanic, weight="Freq") +
-%  scale_fill_manual(values=cols, guide="none") +
-%  scale_colour_manual(values=cols, guide="none") + coord_flip() + theme_bw()
-%ggsave("hammock-titanic.pdf", width=6, height=8)
+%   scale_fill_manual(values=cols, guide="none") +
+%   scale_colour_manual(values=cols, guide="none") + coord_flip() + theme_bw() + theme(plot.margin=unit(rep(0,4), units="cm"))
+% ggsave("revision/images/hammock-titanic.pdf", width=6, height=6)
+% @
 \centering
 \includegraphics[width=\linewidth]{images/hammock-titanic}
 \caption{\label{hammock} Hammock plot of the relationship between Class and Survival on the Titanic. }
 \end{figure}
 
-Similarly to the parallel sets plot, the bars are divided according to class membership numbers.  Lines connect categories between neighboring variables, orthogonal line widths  represent the number of individuals in each combination. Unlike the parallel sets, the lines start from the middle of the bin and connect to the middle of the other variable's bins. This convention is in part due to the fact that the sum of  horizontal widths ($w_h$) after adjustment is greater than the width of marginal bars.
+The structure of a hammock plot is the same as that of a parallel sets plot; 
+ bars are divided according to class membership numbers, and  lines connect categories between neighboring variables. Unlike the parallel sets, it is now {\emph orthogonal} line widths that represent the number of individuals in each combination. Additionally, the lines start from the middle of the bin and connect to the middle of the other variable's bins. This convention is in part due to the fact that the sum of  horizontal widths ($w_h$) after adjustment is greater than the width of marginal bars.
 
-The graph shows that barely any women were in the crew, while male crew members make up the second largest contingent overall. While overall a few more men survived than women, proportionally the situation is much different -- a much higher percentage of women survived than men. While more first class passengers survived than not, the  survival chances of second class passengers were evenly divided. For third class passengers and crew members fewer members did  survive than not. 
+The graph of figure~\ref{hammock} shows that barely any women were in the crew, while male crew members make up the second largest contingent overall. A few more men survived than women, but proportionally the situation is very different -- a much higher percentage of women survived than men. While more first class passengers survived than not, the  survival chances of second class passengers were evenly divided. More members of the third class and the crew perished than survived.
 
-As the adjustment of line widths is made with respect to the angle $\theta$, which itself depends on the aspect ratio of a plot, we need complete control over these properties of the plotting device when constructing hammock plots  -- in our implementation (see below for details) we have dealt with this issue by fixing the aspect ratio. This is problematic in some situations, where the rendering has to be done without knowledge of the plotting device. 
+One problem that arises when dealing with hammock plots, is that the adjustment of lines depends on the knowledge of the angle $\theta$ under which each line is drawn. This depends on the aspect ratio of the plot. Any changes to the aspect ratio, such as a non-proportional resizing of a figure results in a change of the angle and results in a re-introduction of the linewidth illusion. 
 
+% As the adjustment of line widths is made with respect to the angle $\theta$, which itself depends on the aspect ratio of a plot, we need complete control over these properties of the plotting device when constructing hammock plots  -- in our implementation (see below for details) we have dealt with this issue by fixing the aspect ratio. This is problematic in some situations, where the rendering has to be done without knowledge of the plotting device. 
+% 
+% 
 
-
-\subsection{Reverse linewidth}
-A problem that arises in evaluating hammock plots is that if an observer focuses on horizontal line width  the plots suffer from a {\it reverse line width illusion}:  judging the number of survivors by class in figures \ref{hammock} and \ref{hammock_zoom} based on horizontal line width  results in an ordering of (largest to smallest) Crew, 3rd, 1st, and 2nd -- which is not correct either. %Using horizontal width is inviting, since the lines are centered around the middle of a level, im
-Because the lines are centered around the middle of each level, a contextual coordinate system is imposed that encourages comparisons of horizontal width. However, horizontal width is no longer proportional to underlying data, because of the line width adjustment.  
-The amount of distortion perceived can be quantified by rearranging equation \ref{adjust}:
+\subsection{Reverse linewidth illusion}
+A problem that arises in evaluating hammock plots is that if an observer focuses on horizontal line width  the plots suffer from a {\it reverse} of the {\it line width illusion}:  judging the number of survivors by class in figures \ref{hammock} and \ref{hammock_zoom} based on horizontal line width  results in an ordering of (largest to smallest) Crew, 3rd, 1st, and 2nd -- which is not the correct ordering: there were actually  more survivors in the 1st class than in the 3rd class. %Using horizontal width is inviting, since the lines are centered around the middle of a level, im
+Unfortunately, the problem of the reverse linewidth illusion is exacerbated in hammock plots due to their construction:
+the centering of lines around the middle of each level introduces a contextual coordinate system  that encourages comparisons of horizontal line widths, which are due to the adjustment no longer proportional to the number of records they represent.
+The amount of the perceived distortion  can be quantified by rearranging equation~\ref{adjust} as:
 \begin{equation}\label{rev}
 w_h = w_o \csc \theta,
 \end{equation}
@@ -305,7 +311,7 @@ w_h = w_o \csc \theta,
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width = .75\linewidth]{images/grid-hammock-zoom}
+\includegraphics[width = .65\linewidth]{images/grid-hammock-zoom}
 \caption{\label{hammock_zoom}Lines in hammock plot of Titanic data for survival variable, level yes. Comparing horizontal widths suggests that a greater number of survivors were from third class instead of first, which is inconsistent with underlying data.}
 \end{figure}
 
@@ -321,35 +327,40 @@ w_h = w_o \csc \theta,
 %%
 
 \section{Common angles}
-
-
-
-
+The idea behind the common angles plot is to construct a plot that is safe from both the line width illusion and its reverse, while keeping the basic structure of parallel sets plots and hammock plots.
+The line width illusion  is triggered by differences in angles under which lines are drawn, so the basic idea is to draw all lines in a plot under the same angle. As this is not generally possible, a solution is to give up on the idea of straight lines between variable bars and think of ribbons instead, that are constructed from connecting line segments. We  can then ensure that all of these ribbons have at least one  line segment that is drawn under the same angle. Assuming vertical bars for the variables, connecting bands between  categories  are drawn as a combination of a vertical  segment, a  segment under a pre-specified angle $\theta$, followed by another vertical  segment as sketched out in figure~\ref{segments}
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+\centering
+\includegraphics[width=0.8\linewidth]{images/segments} 
+\caption{ \label{segments} Sketch of ribbons under three different angles (from left to right). All ribbons form a connection between points $A$ and $B$. }
+  \end{figure}
 
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
-<<caplot, echo=FALSE, out.width='\\linewidth', fig.width=6, fig.height=6>>=
+<<caplot, echo=FALSE, out.width='0.9\\linewidth', fig.width=6, fig.height=6>>=
 cols <- c(brewer.pal(name="Blues", 6)[-c(1,2)],  rev(brewer.pal(name="Greens",3)[-1]), (brewer.pal(name="Oranges", 3)[-1]))
+library(grid)
 ggparallel(names(titanic)[c(1,4,2,1)], order=c(0,1,1,0), titanic, weight="Freq", text.angle=0) + 
  scale_fill_manual(values=cols, guide="none") +
- scale_colour_manual(values=cols, guide="none") + coord_flip() + theme_bw()
+ scale_colour_manual(values=cols, guide="none") + coord_flip() + theme_bw() + theme(plot.margin=unit(rep(0,4), units="cm"))
 #ggsave("images/ca-titanic.pdf", width=6, height=6)
 @
 %   \centering
-%   \includegraphics[width=\linewidth]{images/ca-titanic} 
+%  \includegraphics[width=\linewidth]{images/ca-titanic} 
    \caption{ \label{fig:ca-titanic} Common angle plot of the Titanic data. }
   \end{figure}
 
-Figure \ref{fig:ca-titanic} shows a common angle plot of the same data as the hammock plot.
-
-As in the previously discussed display types ribbons are drawn between categories with widths  that are proportional to  the number of records they represent.
-
-In order to ensure that  widths of all bands are  comparable without any distortion, their slopes  are artificially made the same in the following manner: 
-assuming a vertical display as shown in figure \ref{fig:ca-titanic},  connecting bands between  categories  are a combination of a vertical  segment, a  segment under a pre-specified angle $\theta$, followed by another vertical  segment.  
+%In order to ensure that  widths of all bands are  comparable without any distortion, their slopes  are artificially made the same
 The pre-specified angle $\theta$ (between the line and the vertical band) is given as --at most-- the angle of the longest connecting line between two categories of neighboring variables. 
 This makes the width of ribbons  comparable without being affected by the distortion, as all ribbons are sharing at least one segment under the same angle. 
 
+Figure \ref{fig:ca-titanic} shows a common angle plot of the same data as the hammock plot.
 
-Common angles, plus the related methods of hammock plots and parallel sets are implemented in the  package \texttt{ggparallel} based on the \texttt{ggplot2} \citep{ggplot2} plotting framework in the software R 2.15.1 \citep{R}. The ggparallel package is freely available from CRAN (http://www. r-project.org/). The colors for the plots have been chosen using color schemes suggested by the ColorBrewer project \citep{colorbrewer}, as implemented in the R package RColorBrewer \citep{RColorBrewer}.
+%As in the previously discussed display types ribbons are drawn between categories with widths  that are proportional to  the number of records they represent.
+
+
+
+
+Common angles, as well as all of the related methods of hammock plots and parallel sets are implemented in the  package \texttt{ggparallel} based on the \texttt{ggplot2} \citep{ggplot2} plotting framework in the software R 2.15.1 \citep{R}. The ggparallel package is freely available from CRAN (http://www. r-project.org/). The colors for the plots have been chosen using color schemes suggested by the ColorBrewer project \citep{colorbrewer}, as implemented in the R package RColorBrewer \citep{RColorBrewer}.
 
 \section{Usability Testing}
 \subsection{Test} \label{test}
