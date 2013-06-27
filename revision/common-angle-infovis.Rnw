@@ -1,8 +1,11 @@
-\RequirePackage{ifpdf}
+%\RequirePackage{ifpdf}
 \documentclass[journal]{vgtc}                % final (journal style)
 %\documentclass[review,journal]{vgtc}         % review (journal style)
 
 \usepackage{natbib}
+%\usepackage[compress,square,comma,numbers]{natbib}
+\DeclareRobustCommand{\citeext}[1]{\citeauthor{#1}~\cite{#1}}
+
 \usepackage{mathptmx}
 \usepackage{graphicx}
 \usepackage{times}
@@ -289,7 +292,7 @@ Hammock plots, introduced by  in \citet{schonlau:2003}, provide an alternative t
 \end{figure}
 
 The structure of a hammock plot is the same as that of a parallel sets plot; 
- bars are divided according to class membership numbers, and  lines connect categories between neighboring variables. Unlike the parallel sets, it is now {\emph orthogonal} line widths that represent the number of individuals in each combination. Additionally, the lines start from the middle of the bin and connect to the middle of the other variable's bins. This convention is in part due to the fact that the sum of  horizontal widths ($w_h$) after adjustment is greater than the width of marginal bars.
+ bars are divided according to class membership numbers, and  lines connect categories between neighboring variables. Unlike the parallel sets, it is now \emph{orthogonal} line widths that represent the number of individuals in each combination. Additionally, the lines start from the middle of the bin and connect to the middle of the other variable's bins. This convention is in part due to the fact that the sum of  horizontal widths ($w_h$) after adjustment is greater than the width of marginal bars.
 
 The graph of figure~\ref{hammock} shows that barely any women were in the crew, while male crew members make up the second largest contingent overall. A few more men survived than women, but proportionally the situation is very different -- a much higher percentage of women survived than men. While more first class passengers survived than not, the  survival chances of second class passengers were evenly divided. More members of the third class and the crew perished than survived.
 
@@ -353,7 +356,7 @@ ggparallel(names(titanic)[c(1,4,2,1)], order=c(0,1,1,0), titanic, weight="Freq",
 The pre-specified angle $\theta$ (between the line and the vertical band) is given as --at most-- the angle of the longest connecting line between two categories of neighboring variables. 
 This makes the width of ribbons  comparable without being affected by the distortion, as all ribbons are sharing at least one segment under the same angle. 
 
-Figure \ref{fig:ca-titanic} shows a common angle plot of the same data as the hammock plot.
+Figure \ref{fig:ca-titanic} shows a common angle plot of the same data as the hammock plot. Now, tasks such as ordering levels according to the numbers they represent are not affected by either line width illusion and 13 out of 18 participants in the survey gave a correct assessment of the number of survivors by class (more details to follow in the next section).
 
 %As in the previously discussed display types ribbons are drawn between categories with widths  that are proportional to  the number of records they represent.
 
@@ -373,12 +376,23 @@ For each data set, participants were asked to provide responses for three tasks 
 
 \item[{\bf Task III}:] more complex ordering task with at least six pairwise comparisons, some of which are affected by either illusion.
  \end{description}
- 
-Each participant was presented with two of the three types of displays. 
-For each display, the participant was asked to complete each of the three tasks for each data set. All participants were evaluated using the same set of questions with multiple choice options as detailed in Appendix \ref{app2}, regardless of display type or order. Participants were all shown the Titanic data first, then the gene data.  %one for all three tasks related to the same data set.
-This resulted in a crossover design of  a total of six unique combinations of data and display as shown in Table \ref{tab:designs} allowing for comparisons of display types and tasks while  simultaneously adjusting for individuals' different skill sets and learning effect.
+
+The study was conducted in form of a crossover design (see Table~\ref{tab:designs}): each participant was presented with two out of the three display types, where the first display showed the Titanic data, and the second display showed the gene data set. All participants were asked to answer the same set of questions (see Appendix~\ref{app2}) covering tasks I through III for each data set. 
+% Each participant was presented with two of the three types of displays.
+% For each display,  participants were asked to complete all of the three tasks.  % for each data set. 
+% All participants were evaluated using the same set of questions with multiple choice options as detailed in Appendix \ref{app2}, regardless of display type or order. Participants were all shown the Titanic data first, then the gene data.  %one for all three tasks related to the same data set.
+% This resulted in a crossover design consisting of  a total of six unique combinations of data and display as shown in Table \ref{tab:designs}. 
+This design allows for comparisons of display types and tasks while it is possible to simultaneously adjust for individuals' different skill sets and learning effects.
+
+
+At the start of the survey, participants were given a link to a brief tutorial regarding the different plot types. Not all of the participants followed this link.
+The decision to not require participants to go through a thorough training beforehand was conscious. The main goal of our study was to assess performance of the plots  based on intuitive evaluation. We therefore refrained from any coaching on  how to evaluate plots in the training material and restricted ourselves to an explanation of the construction. XXX 
+
 
 The choice to show only two of the three possible types of displays to a participant was made to encourage  participation by reducing the amount of time needed for its completion. 
+On average, participants needed 18 minutes to complete the survey. We did not find any significant differences between the amount of time needed between the first and the second block of questions ($F_{1, 95} = 0.0556$ for a $p$-value of 0.8142), nor were there significant differences in the length of time taken between the three designs ($F_{2, 94} = 0.1909$ for a $p$-value of 0.8265).
+
+No personally identifiable information was collected, nor did we offer any compensation for participation in the survey.   
 
 
 \begin{table}[htbp]
@@ -394,7 +408,12 @@ Genes Data & CA & PS & PS & H& H & CA \\ \hline
 
 
 \subsection{Results}\label{results}
-We are investigating three different aspects  of the experiment in this section: first,  assessing general performance on the tasks according to percentage of correct responses, second, investigating the extent of variability due to subject-specific abilities, and finally exploring of the space of answers for the more complex ordering Task III.
+We are investigating four  aspects  of the experiment in this section: 
+{\bf(i)}~participants' performance on each task according to the percentage of correct responses,
+{\bf(ii)}~extent of variability due to subject-specific abilities,
+{\bf(iii)}~space of answers for the more complex ordering task III, and
+{\bf(iv)}~participants' preferences after completing tasks on two designs.
+%first,  assessing general performance on the tasks according to percentage of correct responses, second, investigating the extent of variability due to subject-specific abilities, and finally exploring of the space of answers for the more complex ordering Task III.
 \subsubsection*{Correctness of Answers}
 Answers for each survey question  were recoded in binary form according to correctness (with 1 for correct answers, and 0 otherwise). This forms the basis for the evaluation of performance of the different designs.
 
@@ -414,7 +433,7 @@ Answers for each survey question  were recoded in binary form according to corre
 
 %Table \ref{coef1} gives an overview of the model coefficients and their estimates. The effect of the common angle plot is used as a baseline, i.e all the effects shown are differences with respect to the performance of common angle plots. Both hammock plots and parallel sets  have negative effects on the correctness of the response. This indicates a significantly worse performance of these designs than under the common angle plot.
 
-Table \ref{raw} shows percentages of correct answers for each question under each design. Bold numbers indicate significantly different (worse) performance of a design compared to the common angle plot based on a generalized linear model with random effects to adjust for individuals' abilities. The model explains 77.4\% of the total variability, corresponding to a highly significant deviance of 452.7 ($p$-value~$<\!\!\!< 0.0001$).
+Table \ref{raw} shows percentages of correct answers for each question under each design. Bold numbers indicate significantly different (worse) performance of a design compared to the common angle plot based on a generalized linear model with random effects to adjust for individuals' abilities. The model explains 77.4\% of the total variability, corresponding to a highly significant statistic of 452.7 ($p$-value~$<\!\!\!< 0.0001$).
 
 %The model used is a logistic regression estimating the odds of a correct answer for a specific task and design, while allowing for differences in subject-specific ability:
 %%Model $M2$ extends the first model by including both  effects for individual questions and the interaction effects with each design in the following form:
@@ -435,15 +454,23 @@ Table \ref{raw} shows percentages of correct answers for each question under eac
 \caption{\label{fig:model-summary}Overview of performance across tasks and designs. Points show average performance of subjects on each of the tasks, lines represent 95\% confidence intervals adjusted for multiple comparisons. The letter at the front of each panel allow for an evaluation of significance of pairwise comparisons: if two averages do not share a letter, they are significantly different at a level of 0.05.}
 \end{figure*}
 
-The observed results are in line with our expectations:
-as we aimed for, task I does not show any significant differences between the designs and has overall the highest percentage of correctness reflecting its low difficulty level. Generally, difficulty of levels seems to increase with complexity of the tasks.
+The observed results match our expectations:
+as we aimed for, task I does not show any significant differences between the designs and has overall the highest percentage of correctness reflecting its low difficulty level. Generally, the percentage of correct responses for a task  decreases with an increase of its complexity.
 
-Parallel sets were affected the most by the line width illusion and show significantly worse performance for tasks II and III in the Titanic data, and for task III in the genes data. The performance on task II in the genes data is borderline non-significant, but shows a negative trend.
-Hammock plots led to significantly worse performance than common angle plots in the two questions that were affected by the reverse line width illusion, while they show equal performance as common angle plots for the other questions. For task II in the genes data,  hammock plots have the overall best performance  across designs-- but this  does not  constitute a significant improvement over the performance of the common angle plot. Figure~\ref{fig:model-summary} gives an overview of  performance of each design on all tasks. 
+Parallel sets were affected the most by the line width illusion and show significantly worse performance for tasks II and III in both the Titanic and the genes data.
 
+Hammock plots led to significantly worse performance than common angle plots in the two questions that were affected by the reverse line width illusion, while they show equal performance as common angle plots for the other questions. For task II in the genes data,  hammock plots have the overall best performance  across designs-- but this  does not  constitute a significant improvement over the performance of the common angle plot. Only for a sample size of over 150 participants would this difference be significant (for a power of  50\% to detect this difference).
+The pathway-chromosome relationship is shown in a common angle plot in figure \ref{fig:caffeine}. The top bar identifies chromosome location, the bottom pathways. Ribbon widths  visualize the number of genes on a  chromosome that are active in a particular pathway. Task III for the genes data asked for a ordering of the chromosomes involved into the  pathway of steroid steroid.  
 
+Figure~\ref{fig:model-summary} gives an overview of the performance of each design on all tasks. 
 
-%long <- ddply(survey, .(qu, design), summarize,
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=\linewidth]{caffeine-ca} 
+   \caption{\label{fig:caffeine}Common angle plot of the genes data. The top bar shows chromosome, the bottom the pathway. Width of lines corresponds to the number of genes pathways and chromosomes have in common. Both drug metabolism (hsa00982) and caffeine metabolism (hsa00232) make use of genes on chromosome 2. Task III of the survey asked for the order of the chromosomes involved into the steroid biosynthesis pathway from fewest number of genes to highest.}
+\end{figure}
+
+ %long <- ddply(survey, .(qu, design), summarize,
 %              n=length(qu),
 %              mean=mean(correct),
 %              sd=sd(correct))
@@ -511,11 +538,11 @@ Task III for the Titanic data required participants to order  class levels  acco
 
 There are 4! = 24 distinct orderings of the levels, corresponding to all permutations of length four. Some orderings are closer to one another than other orderings. 
 The Cayley distance allows us to quantify this distance; the Cayley distance between two orderings is defined as the smallest number of switches necessary to get from one ordering to the other. Visually, this corresponds to a graph; each node represents one ordering, and two nodes are connected by an edge, if only a single switch is necessary to move from one ordering to the other, i.e. if the Cayley distance between these nodes is one.
-This results  in a  regular graph of degree six, i.e. each  node is connected to six other nodes. Between any two nodes, the Cayley distance on the graph is equivalent to the length of the shortest connecting path between the two nodes.
+This results  in a  regular graph of degree six, where each  node is connected to six other nodes. Between any two nodes, the Cayley distance on the graph is equivalent to the length of the shortest connecting path between the two nodes.
 Figure \ref{cubes} shows an overview of the permutation space together with an overview of the survey results. 
 
 The colored dots on top of the graph correspond to the responses from the survey. The size of these dots is proportional to the number of observers choosing this particular ordering. It becomes obvious from the three graphs in figure \ref{cubes} that
-the answers to different designs occupy quite different regions, while answers based  on the same design are quite close --  usually separated by only one edge. 
+the answers to different designs occupy quite different regions, while answers based  on the same design are quite close and  usually separated by only one edge. 
 
 The correct ordering, as well as the orderings assuming the line width illusion and its reverse are marked by symbols. Answers for the common angle plot are centered around the correct answer, while responses to parallel sets  cluster around the response corresponding to the line width illusion. Answers based on the hammock design are split evenly between the correct answer and the answer corresponding to the  inverse line width illusion. Table \ref{a2} gives an overview of all responses to task III for the Titanic data.
 
@@ -591,7 +618,8 @@ The survey was created using the Qualtrics Labs, Inc software (www.qualtrics.com
 
 \section{Discussion}
 There is strong support from the user study that common angle plots help the reader to overcome issues arising from the line-width illusion and its reverse. This might come as a surprise, in particular, as common angle plots break one of the nice mathematical properties that parallel sets have:
-the area of a connecting line in parallel sets has a constant  overall area  independent of the angle under which it is drawn. Both hammock plots and common angle plots break this property. It does not seem, however, that the audience picks up on area as the main property of the displays. This might be also influenced by the relative high difficulty of the task of comparing areas \citep{heer:2010, kong:2010}, in particular, if they suffer from  (1) extreme aspect ratios of the rectangular shape or (2) are drawn under different orientations, both of which apply to parallel sets. 
+the area of a connecting line in parallel sets has a constant  overall area  independent of the angle under which it is drawn. Both hammock plots and common angle plots break this property. It does not seem, however, that the audience picks up on area as the main property of the displays. 
+%This might be also influenced by the relative high difficulty of the task of comparing areas \citep{heer:2010, kong:2010}, in particular, if they suffer from  (1) extreme aspect ratios of the rectangular shape or (2) are drawn under different orientations, both of which apply to parallel sets. 
 
 There are several other issues that common angle plots do not address in the visualization of categorical data, that should be noted at this point: \begin{itemize}
 \item Large number of levels in a variable introduce a lot of line crossings, which affects the overall effectiveness of the display. The number of line crossings is the same in parallel sets plots, but hammock plots reduce the number of crossings by centering all lines.
@@ -610,9 +638,8 @@ Apart from these problems that will have to be solved in a different framework o
 One opportunity for extension lies in the algorithm to determine the thickness of the connecting line. In the
 tested version of common angle plots, the line width was not explicitly defined - the line width is a byproduct of 
 specified $\theta$ for a band that connects marginal bars. Using an additional hammock adjustment as given in equation \ref{adjust} in the slanted section of the line segment, we can keep the bandwidth constant, resulting in a  common angle-hammock plot hybrid that bears further investigation.
-A drawback of this approach is that the sum of the bandwidths $w_h$ will no longer match the widths of the marginal bars. 
-This may create a additional processing burden placed on the audience to map the relationship between 
-band width and the with of marginal bars. 
+A drawback of this approach is that the sum of the bandwidths $w_h$ will no longer match the widths of the marginal bars, which might create an additional processing burden for the audience in mapping the relationship between 
+band width and the width of marginal bars. 
 Both hammock plots and  this modification of common angles face  
 the issue of band \emph{area} as context to support reader interpretation of $w_o$. Since the band
 area is now related to the incident angle $\theta$, changes in the display aspect ratio may have a distortion 
@@ -621,8 +648,14 @@ effect. In the study described in this paper, this effect was not evaluated and 
 
 
 \begin{figure}[htbp]
+% cols <- c(brewer.pal(name="Blues", 6)[-c(1,2)],  rev(brewer.pal(name="Greens",3)[-1]), (brewer.pal(name="Oranges", 3)[-1]))
+% library(grid)
+% ggparallel(names(titanic)[c(1,4,2,1)], method="adj.angle", order=c(0,1,1,0), ratio=0.04, titanic, weight="Freq", text.angle=0) + 
+%     scale_fill_manual(values=cols, guide="none") +
+%     scale_colour_manual(values=cols, guide="none") + coord_flip() + theme_bw() + theme(plot.margin=unit(rep(0,4), units="cm"))
 \centering
 \includegraphics[width=\linewidth]{images/adj-angle}
+
 \caption{\label{adj.angle}Common angle plot of Titanic data using hammock correction.}
 \end{figure}
 In the original paper, parallel sets were introduced to reflect a hierarchy of variables. 
@@ -647,29 +680,30 @@ problems induced by the line width illusion.
 
 Another opportunity for extending common angle plots is to add interactivity. It is important to note that
 any additions of functionality via interactivity should not come at the expense of developing distortion-free
-displays. Simply augmenting a plot that has distortion of the \emph{line width illusion} variety does not eliminate
-the presence of that illusion, rather it obfuscates the message of the display. A display with visual cues in conflict
-with the interactive feedback introduces a higher cognitive load by asking the audience to decide on one of the sources of information.
-In the case where interactive feedback (e.g. summary data on mouse hover) is accurate when the visual cues
-suggest alternate interpretation, a mistrust of the graphical presentation may develop. In an extreme case,
-the user may develop a mistrust of their own perception, which would reduce effectiveness of all data displays, 
-regardless of the presence of any perceptual distortion. In the alternate case, where the audience chooses to
-rely on perception over interactive feedback, it is possible that distortions in displays that are part of 
-the initial exploratory analysis may lead to research choices that are unsupported by data. This is both a waste of resources and, when human or animal subjects are involved, may lead to ethical violations.
+displays. %Simply augmenting a plot that has distortion of the \emph{line width illusion} variety does not eliminate
+%the presence of that illusion, rather it obfuscates the message of the display. 
+In particular, a display with visual cues in conflict
+with (the)textual) interactive feedback introduces a higher cognitive load by asking the audience to make a decision between one of the sources of information (and disregard the other one as incorrect).
+%In the case where interactive feedback (e.g. summary data on mouse hover) is accurate when the visual cues
+%suggest alternate interpretation, a mistrust of the graphical presentation may develop. In an extreme case,
+%the user may develop a mistrust of their own perception, which would reduce effectiveness of all data displays, 
+%regardless of the presence of any perceptual distortion. In the alternate case, where the audience chooses to
+%rely on perception over interactive feedback, it is possible that distortions in displays that are part of 
+%the initial exploratory analysis may lead to research choices that are unsupported by data. This is both a waste of resources and, when human or animal subjects are involved, may lead to ethical violations.
 
 
 \section{Conclusion}
 We have proposed a new chart type for visualizing multivariate categorical data, common angle plots, 
 and tested its usability compared to existing charts that perform a similar function. Results from user testing
 indicate
-that common angle plots effectively communicate underlying data without encouraging perceptual distortion of the 
-\emph{line width} illusion.
+that common angle plots effectively communicate underlying data without being affected by perceptual distortions due to the line width illusion or its reverse.
+
 Two other chart types which address visualization of multivariate categorical data: parallel sets and hammock plots, 
 are subject to the line width illusions due to 
 contextual framework. Audiences perceive parallel sets with distortion due to a natural tendency to 
 evaluate line width in the orthogonal direction while data is mapped to the horizontal width.
 For hammock plots a correction is made to map data to the orthogonal width, however the centering of the lines creates a strong contextual cue that encourages an evaluation of line widths using the
-horizontal measure, leading to a (\emph{reverse line width illusion}). Common angles avoids the perceptual distortion 
+horizontal measure, leading to a reverse line width illusion. Common angles avoids the perceptual distortion 
 associated with either version of the illusion regardless of the underlying data set.
 
 %% if specified like this the section will be ommitted in review mode
@@ -693,30 +727,26 @@ The survey for this study was carried out with approval from  IRB-ID 12-204.
 
 
 \begin{appendix}%\appendices
-\section{Survey }\label{app2}
-
-At the survey start, participants were presented a brief tutorial regarding the different plot types. The tutorial can be found at \url{http://mariev.net/tutorial.html}
-
-Completion of all survey questions was anticipated to take 10 - 15 minutes.
-No personally identifiable information was collected, nor was any compensation offered.   
+\section{Survey Questions}\label{app2}
+The tutorial shown to participants at the start of the survey can be found at \url{http://mariev.net/tutorial.html}.
 
 \noindent The questions pertaining to the Titanic data were: 
 \begin{description}
-\item[\bf Task 1: ]\emph{ Agree, Disagree or Don't Know/Can't Determine with the following statements:}
+\item[\bf Task 1: ]\emph{Agree, Disagree or Don't Know/Can't Determine with the following statements:}
 \begin{itemize}
 \item There were an approximately equal number of Male and Female Survivors
 \item The group with largest number of travelers was Female Survivors
 \item There were more Male Non-Survivors than number of males in First and Second Class Combined
 \end{itemize}
 
-\item[\bf Task 2: ]\emph{ Order the following groups by number, fewest to most}
+\item[\bf Task 2: ]\emph{Order the following groups by number, fewest to most}
 \begin{itemize}
 \item 1st Class female passengers
 \item Male Survivors
 \item Crew Survivors
 \end{itemize}
 
-\item[\bf Task 3: ]\emph{ Order the categories of Class by number Survived, fewest to most.} 
+\item[\bf Task 3: ]\emph{Order the categories of Class by number Survived, fewest to most.} 
 \begin{itemize}
 \item 1st
 \item 2nd 
@@ -730,21 +760,21 @@ No personally identifiable information was collected, nor was any compensation o
 
 
 \begin{description}
-\item[\bf Task I:]\emph{ Agree, Disagree or Don't Know/Can't Determine with the following statements:}
+\item[\bf Task I:]\emph{Agree, Disagree or Don't Know/Can't Determine with the following statements:}
 \begin{itemize}
 \item There are about the same number of genes in the group "steroid biosynthesis:chromosome 1" as in the group "caffeine metabolism: chromosome 8"
 \item The group with the greatest number of genes is "drug metabolism:chromosome 4"
 \item there are more genes involved in the group "drug metabolism: chromosome 1" than all genes involved in the caffeine metabolism pathway
 \end{itemize}
 
-\item[\bf Task 2: \ ]\emph{ Order the following chromosomes by number of genes involved, fewest to most.}
+\item[\bf Task 2: \ ]\emph{Order the following chromosomes by number of genes involved, fewest to most.}
 \begin{itemize}
 \item steroid biosynthesis :: chromosome X
 \item steroid biosynthesis :: chromosome 4
 \item drug metabolism :: chromosome X
 \end{itemize} 
 
-\item[\bf Task 3: \ ] \emph{ Order the following chromosomes by number of genes involved in steroid biosynthesis pathway, fewest to most.}
+\item[\bf Task 3: \ ] \emph{Order the following chromosomes by number of genes involved in steroid biosynthesis pathway, fewest to most.}
 \begin{itemize}
 \item chromosome 1
 \item chromosome 4
