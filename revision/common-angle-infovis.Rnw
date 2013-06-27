@@ -386,7 +386,7 @@ This design allows for comparisons of display types and tasks while it is possib
 
 
 At the start of the survey, participants were given a link to a brief tutorial regarding the different plot types. Not all of the participants followed this link.
-The decision to not require participants to go through a thorough training beforehand was conscious. The main goal of our study was to assess performance of the plots  based on intuitive evaluation. We therefore refrained from any coaching on  how to evaluate plots in the training material and restricted ourselves to an explanation of the construction. XXX 
+The decision to not require participants to go through a thorough training beforehand was conscious. The main goal of our study was to assess performance of the plots  based on intuitive evaluation. We therefore refrained from any coaching on  how to evaluate plots in the training material and restricted ourselves to an explanation of the construction. 
 
 
 The choice to show only two of the three possible types of displays to a participant was made to encourage  participation by reducing the amount of time needed for its completion. 
